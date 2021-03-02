@@ -176,7 +176,7 @@ yawtb (=>:directories, ->:files)
 
 
 
-## Authors (alphabetical authors)
+## Authors (alphabetical order)
 - Alain Coron 
 - Laurent Demanet
 - [Laurent Jacques](https://perso.uclouvain.be/laurent.jacques/) (corresponding author) 
