@@ -39,18 +39,27 @@ Follow these steps to install the YAWtb Matlab toolbox,
 able to compile correctly the yawtb C code (e.g. cwtsph stuff). Use instead the free compiler of Borland available at http://www.borland.com (need a simple registration) and configure Matlab in function (run 'mex -setup' and read the Borland compiler FAQ and doc).
 
 3. Run `yaload` in Matlab to load the whole YAWtb path:
+```
+>> cd <YAWTBDIR>
+>> yaload
+```
 
-   >> cd <YAWTBDIR>
-   >> yaload
-    
 4. Add the following lines to a matlab startup file, either the general one (matlabrc.m) located in MATLABDIR/toolbox/local, or the local startup file (startup.m) somewhere in your home dir (see matlab doc):
-
-   %% YAWtb installation
-   olddir=pwd;
-   cd <YAWTBDIR>
-   yaload;
-   cd(olddir);
-   clear olddir;
+```
+%% YAWtb installation
+olddir=pwd;
+cd <YAWTBDIR>
+yaload;
+cd(olddir);
+clear olddir;
+```
 
 5. Enjoy of YAWtb !
 
+
+# Authors (alphabetical authors)
+- Alain Coron 
+- Laurent Demanet
+- Laurent Jacques 
+- Attilio Rivoldini 
+- Pierre Vandergheynst
