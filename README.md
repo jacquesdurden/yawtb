@@ -1,28 +1,28 @@
 # Welcome to the Yet Another Wavelet toolbox.
 
-![YAWTb](doc/images/yawtb_logo.jpg)
+![YAWtb](doc/images/yawtb_logo.jpg)
 
 ## Introduction
 
-This archive contains the code of the YAWtb toolbox. This toolbox was under active development till about 2010 nut *it is no longer developed*. The onlly purpose of this GitHub repository is to keep an accessible archive of this former toolbox, for instance, for possible analysis, fork, or porting into another numerical programming language (such as Python or Julia).
-
-The purpose of this toolbox is to implement in Matlab:
+This archive contains the code of the YAWtb toolbox. The purpose of this toolbox is to implement in Matlab:
 - 1D, 2D, 3D Continuous Wavelet Transforms (CWTs)
 - 1D+Time (spatio-temporal) CWT
 - (Stereographical) Spherical CWT
 - 2D dyadic Frames (isotropic and directional)
 - (in development) Spherical Frames of Stereographical Wavelets
 
+This toolbox was under active development till about 2010 but **it is no longer developed**. The onlly purpose of this GitHub repository is to keep an accessible archive of the YAWtb, for instance, for possible analysis, forks, or porting into another numerical programming language (such as Python or Julia).
 
 ## Documentation
 
+If you want to know more about the content and purpose of this Matlab toolbox, you can have a look to the following documents:
 - Some [slides](doc/slides/yawtb.pdf) describing the toolbox and its philosophy (2003)
 - [Yet Another Wavelet Toolbox Reference Guide](doc/tex/YAWTBReferenceManual.pdf) (2003, pdf)<br/>
 (remark: LaTeX sources are available in the repository) 
 
-## Wanna help?
+## You wanna help?
 
-This toolbox should ideally be ported to Python, which is more flexible than matlab and interface more naturally with the C files required for instance by the spherical wavelet transform. However, none of the authors have time anymore to make this transfer. If you want to help, feel free to contact [Laurent Jacques](https://perso.uclouvain.be/laurent.jacques/) for more information.  
+This toolbox should ideally be ported to Python, which is more flexible than Matlab and interfaces more naturally with the C files required for instance by the spherical wavelet transform. However, none of the toolbox's authors have time anymore to make this transfer. If you want to help, feel free to contact [Laurent Jacques](https://perso.uclouvain.be/laurent.jacques/) for more information.  
 
 ## License
 
@@ -31,17 +31,11 @@ See this [file](COPYING.txt) for more information.
 
 ## Warnings
 
-This is the version 0.1.0 of the YAWtb, the initial release.
-It is still an unstable version and a lot of work has to be done 
-especially on the documentation (use YAWtb at your own, rather limited, risk).
-Any comments are welcome on our mailing lists (see the YAWtb website)
+This repository contains the version 0.1.1 of the YAWtb. It was still an unstable version and a lot of work had to be done especially on the documentation (use YAWtb at your own, rather limited, risk). 
 
 ### Requirements
 
-The YAWtb works for Matlab versions greater than 5 and was developped onto the 6th.
-If you have some bugs, all emails are welcome at <yawtb-devel@lists.sourceforge.net>.
-See the YAWtb homepage (http://www.fyma.ucl.ac.be/projects/yawtb) if you desire more 
-information about this mailing list.
+The YAWtb worked for Matlab versions greater than 5 and was developped onto the 6th. It's not sure that this toolbox still works with recent version of Matlab. 
 
 ### Installation
 
