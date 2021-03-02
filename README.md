@@ -189,4 +189,4 @@ The YAWtb team want to thank you the following persons
 for their kind contributions to the toolbox :
 - Boris Cigale
 - Geoffroy Piroux
-- ...
+- Vincent Boucher
