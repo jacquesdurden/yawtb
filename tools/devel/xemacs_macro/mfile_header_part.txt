@@ -1,0 +1,38 @@
+function [] = %FILE_NAME%()
+% \manchap
+%
+% \mansecSyntax
+%
+% [] = %FILE_NAME%()
+%
+% \mansecDescription
+%
+% \mansubsecInputData
+% \begin{description}
+% \item[] []: 
+% \end{description} 
+%
+% \mansubsecOutputData
+% \begin{description}
+% \item[] []:
+% \end{description} 
+%
+% \mansecExample
+% \begin{code}
+% >>
+% \end{code}
+%
+% \mansecReference
+%
+% \mansecSeeAlso
+%
+% \mansecLicense
+%
+% This file is part of YAW Toolbox (Yet Another Wavelet Toolbox)
+% You can get it at
+% \url{"http://www.fyma.ucl.ac.be/projects/yawtb"}{"yawtb homepage"} 
+%
+% %HEADER%
+%
+% Copyright (C) 2001-2002, the YAWTB Team (see the file AUTHORS distributed with
+% this library) (See the notice at the end of the file.)

@@ -1,0 +1,51 @@
+A SPHARMONIC KIT INTERFACE FOR MATLAB AND YAWTB:
+================================================
+
+This directory contains an interface between the (GPL) SpharmonicKit [1]
+based on the work of Driscoll, Healy and Rockmore [2], and the YAWtb
+toolbox.
+
+Interesting programs are:
+
+* FST (mex file): Fast Spherical (harmonic) Transform for bandwidth > 64
+* IFST (mex file): Fast Inverse Spherical Transform for bw > 64
+* CONVSPH (mexfile): Fast Spherical Convolution for bw > 64
+* CONVSPH_SEMI (mexfile): Fast Spherical Convolution for bw < 64
+* FZT (mex file): Fast Zonal (spherical harmonic) Transform for bw > 64
+* LMSHAPE (mfile): turns the output of FST in a more readable format
+* ILMSHAPE (mfile): do the converse for further use of IFST
+*                   which needs the original format
+
+(* readmath (mex file): read mathematica list (ascii) formatted file of data.) 
+(* writemath (mex file): write mathematica list (ascii) formatted file of data.) 
+
+WARNINGS:
+=========
+
+The equi-angular spherical grid where the spherical data are implicitely defined is
+	(theta_i, phi_j) i=0..2B-1, j=0..2B-1
+where theta_i = (2*i+1)*pi/(2*B)
+      phi_j = j*2*pi/(2*B)
+      B is the (maximal) bandwidth of the data. 
+
+As for the line, the bandwidth B represents the maximum frequency 
+that we can reach in our frequency description of data.
+
+Remark that the North and South poles are excluded of this grid.
+	
+
+INSTALL:
+========
+See the INSTALL file.
+
+
+REFERENCES:
+===========
+[1] SpharmonicKit: http://www.cs.dartmouth.edu/~geelong/sphere/. 
+ Developed by Sean Moore, Dennis Healy, Dan Rockmore, Peter
+ Kostelec.
+
+[2] D. Healy Jr., D. Rockmore, P. Kostelec and S. Moore, 
+ "FFTs for the 2-Sphere - Improvements and Variations", 
+ Journal of Fourier Analysis and Applications, 9:4 (2003), 
+ pp. 341 - 385. 

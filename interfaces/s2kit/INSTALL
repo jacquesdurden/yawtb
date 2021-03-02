@@ -1,0 +1,99 @@
+INSTALLING AND COMPILING THE S2KIT INTERFACE FOR MATLAB AND YAWTB
+=================================================================
+
+Introduction:
+=============
+
+S2kit, is a lite version of SpharmonicKit.
+	
+
+SpharmonicKit is a collection of routines, written in C, which
+implement discrete Legendre and spherical harmonic transforms by a
+number of different algorithms. For certain algorithms, code for the
+inverse transform is also provided. Included as well are routines for
+spherical convolutions.
+
+The Legendre transforms in the Kit require that a function of
+bandwidth B be sampled on the 2B-many Chebyshev points and not the
+B-many Gaussian points. Therefore, the number of samples needed is
+twice the function's bandwidth. This implies that for the spherical
+transforms in the Kit, a function of bandwidth B is sampled on the
+equiangular 2Bx2B grid on the sphere.
+
+Some of the algorithms implemented in this package are based on the
+work of Driscoll and Healy.
+
+More information about S2kit and SpharmonicKit are available here:
+	http://www.cs.dartmouth.edu/~geelong/sphere/
+
+
+Requirements:
+=============
+
+The S2kit Matlab interface is only working with Matlab 7.0 (and
+later), i.e. Matlab R14, since S2kit requires the FFTW V3.0 library
+linked to Matlab from version 7.
+
+If you are running Matlab 7.0 under linux, be careful to read recent
+special issues regarding to GCC 3.2/GLIBC Matlab compatibility. You
+can find more information on
+
+http://www.mathworks.com/support/solutions/data/1-OQSVI.html?solution=1-OQSVI	
+
+
+
+Procedure:
+==========
+
+0°) Make sure that FFTW V3 is installed on your computer. For more
+information: 
+	http://www.fftw.org
+
+1°) Download the S2kit (a lite version of SpharmonicKit) v1.0 at 
+	http://www.cs.dartmouth.edu/~geelong/sphere/
+and in particular at the link
+	http://www.cs.dartmouth.edu/~geelong/sphere/s2kit10.tar.gz
+
+2°) Uncompress it somewhere, say in /tmp. This will create a directory
+called /tmp/s2kit10 containing all the SpharmonicKit stuff.
+
+3°) Go inside this last directory, read the README file to know how to
+configure S2kit (for instance, it has to know where to find FFTW3
+libraries), and compile it. That is
+	$> cd /tmp/s2kit10
+	$> make
+where '$>' stands for the shell prompt.
+
+
+
+4°) Return in the directory containing this INSTALL file 
+(that you are currently reading ;), say
+	<yawtb>/continuous/sphere/s2kit 
+and modify the file 'Makefile' as follow:
+  at the top, you find a variable called SKDIR (for S2kit Directory). 
+  Set it correspondingly to you SpharmonicKit directory, 
+  that is in our example
+	  SKDIR = /tmp/s2kit10
+
+5°) in <yawtb>/continuous/sphere/s2kit/, type just
+	make
+    This will compile all the mex file related to this SK interface.
+
+6°) That's it. Now you can go into a matlab session and test the different 
+demo by entering:
+	>> yademo s2fst
+	>> yademo s2ifst
+	>> yademo ilmshape
+
+where '>>' stands for the matlab prompt.
+
+7°) Enjoy of it and feel free to report any bugs/comments/wishes to
+the Yawtb mailing list.
+
+
+The YAWTB team.
+
+
+
+
+	

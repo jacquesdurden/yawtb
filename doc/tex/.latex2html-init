@@ -1,0 +1,71 @@
+$RGBCOLORFILE = './rgb.txt';
+$FONT_SIZE = '12pt';
+$INDEX_TABLE_WIDTH  = 450;
+$CONTENTS_TABLE_WIDTH  = 450;
+$INDEX_WIDTH  = 250;
+$CONTENTS_WIDTH  = 250;
+$HTML_VALIDATE = '';
+$LOCAL_ICONS = 1;
+
+###########
+## Options controlling Titles, File-Names and Sectioning 
+###########
+# $MAX_SPLIT_DEPTH: Stop splitting sections into separate files at this depth.
+$MAX_SPLIT_DEPTH = 5;
+# $TOC_DEPTH: Sectioning levels down to <num> are to be included within the 
+# Table-of-Contents tree. 
+$TOC_DEPTH = 3;
+# $DESTDIR: Redirect the output to the HTML directory
+$DESTDIR = "../html";
+
+###########
+# Options controlling Extensions and Special Features
+###########
+# $HTML_VERSION: This specifies both the HTML version to generate, and any extra 
+# (non-standard) HTML features that may be required.  
+$HTML_VERSION = "3.2,math";
+# $ADDRESS: Sign each page with this address
+$ADDRESS = "<yawtb-devel\@sourceforge.net>";
+
+###########
+# Switches controlling Image Generation 
+###########
+$IMAGE_TYPE = 'png';
+# $ANTI_ALIAS: Generated images of figure environments and external PostScript
+# files should use anti-aliasing. By default anti-aliasing is not used
+# with these images, since this may interfere with the contents of the
+# images themselves.
+$ANTI_ALIAS = 1;
+# $WHITE_BACKGROUND: Ensures that images of figure environments have a white
+# background. Otherwise transparency effects may not work correctly.
+$WHITE_BACKGROUND = 1;
+# $TRANSPARENT_FIGURES: When set, the background of images should be made
+# transparent; otherwise it is white.
+$TRANSPARENT_FIGURES = 0;
+
+###########
+# Switches controlling Navigation Panels 
+###########
+
+###########
+# Switches for Linking to other documents 
+###########
+# $EXTERNAL_UP_LINK: Specifies a universal resource locator (URL) to associate
+# with the ``UP'' button in the navigation panel(s).
+$EXTERNAL_UP_LINK = "http://www.fyma.ucl.ac.be/projects/yawtb";
+# $EXTERNAL_UP_TITLE: Specifies a title associated with this URL. 
+$EXTERNAL_UP_TITLE = "The YAWTb Homepage";
+
+###########
+# Switches for Help and Tracing 
+###########
+
+###########
+#Other Configuration Variables, without switches 
+###########
+# $NAV_BORDER: The value given here results in a border, measured in points, around
+# each icon. A value of `0' is common, to maintain strict alignment of
+# inactive and active buttons in the control panels.
+$NAV_BORDER = 0;
+
+1;

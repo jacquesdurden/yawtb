@@ -1,0 +1,39 @@
+A) MANUAL DOCUMENTATION BUILDING:
+=================================
+
+To generate the documentation of the YAWtb, follow these steps:
+
+1°) Move to the yawtb/doc/tex directory.
+
+2°) Run the DocProcess.pl perl script by typing
+	> ./Docprocess.pl 
+    on the commande line. 
+    This will create all the latex parts of the documentation.
+    
+3°) Apply latex and dvips on the YAWTBReferenceManual.tex to obtain
+    a dvi and a postscript file:
+        > latex YAWTBReferenceManual.tex
+	> dvips YAWTBReferenceManual.dvi -o
+	
+4°) Run latex2html on YAWTBReferenceManual.tex to obtain the html
+    reference manual (version >= 1.47 for a good result). 
+    All the files will be automatically placed in yawtb/doc/html.
+
+That' all!
+
+
+B) AUTOMATIC DOCUMENTATION BUILDING:
+====================================
+
+* To generate all the documentation
+
+  1°) Move to the yawtb/doc/tex directory.
+  2°) Run:
+	make
+
+* To remove useless files after building, try
+	make clean_code
+
+* To remove all the generated files
+	make clean
+

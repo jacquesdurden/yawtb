@@ -1,0 +1,62 @@
+Here is the current explanation of the yawtb tree
+
+===
+yawtb (=>:directories, ->:files)
+|
+|-> AUTHORS               /* GPL file */
+|-> COPYING               /* GPL file */
+|-> yaload.m              /* yawtb startup file (addpath, etc ...) */
+|-> yamake.m              /* compilations of the yawtb mexfiles */
+|
+|=> doc                   /* Documentation */
+|   |=> html
+|   |=> ps
+|   |=> ascii
+|   `=> tex
+|
+|=> continuous            /* All the continuous transfrom */
+|   |=> 1d                /* 1D CWT */ 
+|   |=> 2d                /* 2D CWT */
+|   |=> 1dt               /* 1D+T CWT (spatio-temporal) */ 
+|   `=> sphere            /* Spherical CWT */
+|
+|=> discrete
+|   |=> packet            /* Wavelet Packets in 1d and 2d */
+|   |   |=> 1d   	
+|   |   `=> 2d 	          
+|   |=> matchp            /* matching pursuit  */
+|   |=> laplacian
+|   `=> ortho             /* orthogonal wavelet */              
+|
+|=> frames                /* Wavelet Frames */
+|   |=> 1d   	
+|   |=> 2d 	          
+|   `=> sphere
+|
+|=> include               /* Directories for storing general usage
+|                            C-File that may be useful for many
+|=> interfaces            /* Various interfaces to external (GPL) program
+|   `=> spharmonickit     /* Interface to the SpharmonicKit */
+|
+|=> lib                   /* MEX-File */
+|
+|=> src
+|   
+|=> tools
+|   |=> display           /* universal display function (yashow.m) */
+|   |=> misc              /* various utils (vect, noising, thresholding, ...) */
+|   |=> cmap              /* various colormap needed by som yawtb functions (e.g. rgray, ...) */
+|   |=> devel             /* The developper corner (see README inside) */
+|   `=> io                /* Input/Output scripts (like pgm read & write) */
+|
+|=> demos                 /* some demo of yawtb */
+|   `=> denoising
+|	|=> 1d	          /* Various techniques related to signal denoising */  
+|	|=> 2d            /* Various techniques related to image denoising */
+|	`=> sphere        /* Various techniques related to spherical denoising */
+|
+`=> samples               /* samples for the different WT */            	
+    |=> 1d         
+    |=> 2d
+    |=> 1dt 
+    `=> sphere  

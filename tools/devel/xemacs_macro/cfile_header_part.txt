@@ -1,0 +1,32 @@
+/* %FILE_NAME%:
+ *
+ * \mansec{Syntax}
+ * [] = %FILE_NAME%()
+ *
+ * \mansec{Description}
+ *
+ * \mansubsec{Input data}
+ * \begin{description}
+ * \item[] 
+ * \end{description} 
+ *
+ * \mansubsec{Output data}
+ * \begin{description}
+ * \item[]
+ * \end{description} 
+ *
+ * \mansec{Example}
+ *
+ * \mansec{References}
+ *
+ * \mansec{See Also}
+ *
+ * \mansec{License}
+ *
+ * This file is part of YAW Toolbox (Yet Another Wavelet Toolbox)
+ * You can get it at \url{"http://www.fyma.ucl.ac.be/projects/yawtb"}{"yawtb homepage"} 
+ *
+ * %HEADER%
+ *
+ * Copyright (C) 2001-2002, the YAWTB Team (see the file AUTHORS distributed with this library)
+ * (See the notice at the end of the file.) */

@@ -1,0 +1,36 @@
+Here is a description of types accepted in the YAWtb documentation:
+
+* MISC: undetermined type. Can be any type of the list below.
+
+* BOOLEAN: for flag like 'square' for yashow
+
+* SCALAR: scalar of undetermined type
+* BOOL (SCALAR): boolean scalar that is 0 or 1 (SCALAR hasn't to be specified)
+* INT (SCALAR): integer scalar
+* REAL (SCALAR): real scalar
+* CPLX (SCALAR): complex scalar
+
+* VECTOR: vector of undetermined type
+* BOOL VECTOR: vector of boolean value
+* INT VECTOR: integer vector
+* REAL VECTOR: real vector
+* CPLX VECTOR: complex vector
+
+* MATRIX: matrix of undetermined type
+* BOOL MATRIX: matrix of boolean value
+* INT MATRIX: integer matrix
+* REAL MATRIX: real matrix
+* CPLX MATRIX: complex matrix
+
+* ARRAY: n dimensional array of undetermined type
+* BOOL ARRAY: n dimensional array of boolean value
+* INT ARRAY: n dimensional integer array
+* REAL ARRAY: n dimensional real array
+* CPLX ARRAY: n dimensional complex array
+
+* STRING: simple string
+
+* STRUCT: structured data
+* CELL: cell array
+
+For these two last types, some precision have to be added about the type of their content.

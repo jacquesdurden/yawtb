@@ -1,0 +1,9 @@
+YAWTb 0.1.1:
+============
+* mxSetName() is not necessary for matlab R13 in dogsph.c and morletsph.c.
+
+YAWTb 0.1.0: 
+============
+
+This is the initial release of yawtb.
+So, no changelog up to now. This will be for the 0.1.1.

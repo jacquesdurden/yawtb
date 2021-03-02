@@ -1,0 +1,27 @@
+If you want to write your own 1d wavelet, take care about this README content.
+
+1°) Yan can terminate the name of your wavelet by '1d' (e.g. 'mydog1d.m') to avoid
+confusing with eventual 2d version of your function. In this case, you can use 
+both 'mydog1d' and 'mydog' as wavname inside 'cwt1d'.
+
+2°) This name MUST be in lower case;
+
+3°) Be sure that your mfile returns the list of the "parameters 
+names"/"default value" if an empty matrix is the unique input
+(e.g. mydog1d([]) == {'order',6,'sigma',1} );
+
+4°) For optimization reasons inside cwt1d, be sure that your wavelet 
+works also with frequency matrices, that is: 
+  the kth row of the output is the 1d wavelet based on the kth row of the 
+  frequency input matrix. For example:
+      >> k = [-pi -pi/2 0 pi/2;
+              -pi -pi/2 0 pi/2]; 
+      >> wav = mydog1d(k,6,1);
+  must give the same result that
+      >> k = [-pi pi/2 0 pi/2];
+      >> wav(1,:) = mydog1d(k,6,1);
+      >> wav(2,:) = mydog1d(k,6,1);     
+
+5°) Enter a short description of your wavelet at the head to explain its use.
+
+L. Jacques (07/03/2001) 

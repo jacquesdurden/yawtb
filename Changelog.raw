@@ -1,0 +1,1805 @@
+2002-11-27  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* tools/display/yashow_matrix.m:
+	Allowing uint8 images with single layer to be displayed in gray
+
+	* tools/misc/yapsnr.m: Specializing this function to uint8 data type
+
+2002-11-26  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* sample/2d/lena.mat: update
+
+	* sample/2d/lena.mat:
+	Adding the most famous pictures of the image processing domain. see the full images here http://www.lenna.org/full/len_full.html
+
+2002-11-22  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* tools/misc/yapsnr.m, tools/misc/yasnr.m:
+	Adding this Peak Signal to Noise Ratio and simplifying the help header of yasnr.m.
+
+2002-11-21  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* continuous/1dt/cwt1dt.m, continuous/1dt/yashow_cwt1dt.m, continuous/2d/yashow_samcwt2d.m, tools/display/yashow_matrix.m, tools/display/yashow_spheric.m:
+	Making findstr independent of the matlab version by replacing it with yastrfind
+
+	* tools/display/yapbar.m, tools/help/yademo.m, tools/help/yahelp.m, tools/misc/whatin.m:
+	Making strfind independent of the matlab version with yastrfind
+
+	* tools/misc/yastrfind.m:
+	Adding this independent strfind function to deal with the abscence of strfind or findstr in certain matlab versions.
+
+	* doc/devel/yawtb_type.txt: Adding some integer types.
+
+	* tools/misc/yasnr.m:
+	Adding this other compution of signal to noise ratio for signals and images.
+
+	* doc/devel/yawtb_type.txt:
+	Adding this description of the accepted type in the YAWtb
+
+2002-10-30  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* tools/misc/yaspline.m: Error in the interval definition.
+
+	* tools/display/yapbar.m:
+	Deleting the .m extension of the calling function in the title.
+
+	* tools/display/yapbar.m:
+	Adding the name of the calling function in the title.
+
+2002-10-28  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* tools/misc/yaspline.m:
+	Adding this yawtb implementation of a cardinal B-spline.
+
+2002-10-25  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* tools/display/yashow.m, tools/display/yashow_matrix.m:
+	Specializing the different modes in yashow_matrix and simplifying the essangle mode.
+
+2002-10-08  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* continuous/sphere/wave_defs/morletsph.c, Changelog: Update
+
+	* continuous/sphere/wave_defs/dogsph.c, continuous/sphere/wave_defs/morletsph.c:
+	matPutVariable() in fact not necessary in R13
+
+	* Changelog, continuous/sphere/wave_defs/dogsph.c, continuous/sphere/wave_defs/morletsph.c, yamake.m:
+	Taking into account the obsolescence of mxSetName() for matlab R13.
+
+2002-09-19  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* tools/misc/yapuls2.m: Allowing size in shape of vector.
+
+	* tools/misc/yapuls2.m:
+	Adding yapuls2 to simplify a little bit our programmer life
+
+2002-08-21  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* tools/display/yashow.m:
+	Little bug with standard matrix and logical status (second)
+
+	* tools/display/yashow.m:
+	Little bug with standard matrix and logical status
+
+2002-08-06  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* discrete/frames/2d/frame_defs/cauchy2d_wav.m, discrete/frames/2d/frame_defs/gabor2d_wav.m:
+	Calibrating to center these wavelets on 3*pi/4
+
+	* continuous/2d/wave_defs/cauchy2d.m, tools/help/yademo.m, tools/misc/yawopts.m:
+	Simplifications
+
+	* discrete/frames/2d/frame_defs/cauchy2d_app.m, discrete/frames/2d/frame_defs/cauchy2d_wav.m, discrete/frames/2d/frame_defs/gabor2d_app.m, discrete/frames/2d/frame_defs/gabor2d_wav.m, discrete/frames/2d/fwt2d.m, discrete/frames/2d/ifwt2d.m:
+	Improvements and adding the cauchy frame.
+
+2002-08-01  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* discrete/frames/2d/fwt2d.m, discrete/frames/2d/ifwt2d.m:
+	Forgetting the HF remainder and improving the scale rule with scfirst
+
+	* discrete/frames/2d/frame_defs/box2d_rem.m, discrete/frames/2d/frame_defs/gabor2d_rem.m:
+	The high frequency remainder are not necessary (useless)
+
+	* discrete/frames/2d/fwt2d.m: Adding a demo
+
+	* discrete/frames/2d/frame_defs/box2d_app.m, discrete/frames/2d/frame_defs/box2d_rem.m, discrete/frames/2d/frame_defs/box2d_wav.m, discrete/frames/2d/frame_defs/gabor2d_app.m, discrete/frames/2d/frame_defs/gabor2d_rem.m, discrete/frames/2d/frame_defs/gabor2d_wav.m:
+	Completing each headers to explain what represents each function (must be completed)
+
+2002-07-31  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* discrete/frames/2d/fwt2d.m, discrete/frames/2d/ifwt2d.m:
+	Correcting a bug with the selection of scales and of angles
+
+	* discrete/frames/2d/fwt2d.m, discrete/frames/2d/ifwt2d.m:
+	Allowing different nang according to scales
+
+	* discrete/frames/2d/frame_defs/gabor2d_wav.m:
+	Bad value of sigma (k0 * sigma must be greater than 5.6)
+
+	* discrete/frames/2d/frame_defs/gabor2d_wav.m, discrete/frames/2d/frame_defs/box2d_app.m, discrete/frames/2d/ifwt2d.m:
+	Improvements and adding an option to gabor when the user want to auto adapt its spread
+
+	* tools/misc/yawopts.m:
+	Updating header and adding an possibility for boolean options
+
+	* tools/misc/yawopts.m: Little bug with the '*' detection
+
+2002-07-30  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* discrete/frames/2d/fwt2d.m:
+	Improving the 'export' option and adding the possibility to export only the sum of all the masks.
+
+2002-07-29  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* discrete/frames/2d/ifwt2d.m:
+	Adding an import function to rebuild the image only from the approximation, from the wavelet coefficients or from high frequency remainder
+
+	* discrete/frames/2d/fwt2d.m:
+	Adding an export function to compute only approximation, wavelet coefficients or high frequency remainder
+
+	* tools/display/yashow.m, tools/display/yashow_matrix.m:
+	'Mesh' option is becoming 'Surf'
+
+	* discrete/frames/2d/fwt2d.m:
+	Computing really all the mask in out.all_mask
+
+2002-07-26  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* discrete/frames/2d/frame_defs/gabor2d_app.m, discrete/frames/2d/frame_defs/gabor2d_rem.m, discrete/frames/2d/frame_defs/gabor2d_wav.m:
+	Correcting certain factors
+
+	* discrete/frames/2d/frame_defs/box2d_app.m, discrete/frames/2d/frame_defs/box2d_rem.m, discrete/frames/2d/frame_defs/box2d_wav.m, discrete/frames/2d/frame_defs/gabor2d_app.m, discrete/frames/2d/frame_defs/gabor2d_rem.m, discrete/frames/2d/frame_defs/gabor2d_wav.m, discrete/frames/2d/fwt2d.m, discrete/frames/2d/ifwt2d.m:
+	Adding the framed wavelet transform. Lots of work still to do! Help incomplete, probably better choice of parameter, ... but it exists!
+
+2002-07-25  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* continuous/2d/yashow_cwt2d.m, discrete/packet/2d/wpck2d.m:
+	Inserting yadiro() for the dilation and rotation actions.
+
+	* continuous/2d/cwt2d.m:
+	Including yadiro for the dilation and the rotation of the frequency plane.
+
+	* tools/misc/yadiro.m:
+	Adding this functions to perform dilation and rotation in the various 2D tranforms
+
+	* discrete/frames/2d/frame_defs/.is_in_mpath:
+	putting discrete/frames/2d/frame_defs in the matlab path
+
+	* continuous/2d/wave_defs/gabor2d.m:
+	Refering to morlet2d.m in the code. Comment about the equivalence with morlet2d.m
+
+	* continuous/2d/wave_defs/gabor2d, continuous/2d/wave_defs/gabor2d.m:
+	mv gabor2d gabor2d.m
+
+	* tools/display/yashow.m:
+	Specializations of yashow have now the format of "yashow_*.m" (instead of "*_yashow.m")
+
+	* discrete/packet/2d/wpck2d_yashow.m, discrete/packet/2d/yashow_wpck2d.m:
+	mv wpck2d_yashow.m yashow_wpck2d.m
+
+	* continuous/1d/cgt1d_yashow.m, continuous/1d/yashow_cgt1d.m:
+	mv cgt1d_yashow.m yashow_cgt1d.m
+
+	* continuous/sphere/cwtsph_yashow.m, continuous/sphere/yashow_cwtsph.m:
+	mv cwtsph_yashow.m yashow_cwtsph.m
+
+	* continuous/3d/cwt3d_yashow.m, continuous/3d/yashow_cwt3d.m:
+	mv cwt3d_yashow.m yashow_cwt3d.m
+
+	* continuous/2d/samcwt2d_yashow.m, continuous/2d/yashow_samcwt2d.m:
+	mv samcwt2d_yashow.m yashow_samcwt2d.m
+
+	* continuous/2d/cwt2d_yashow.m, continuous/2d/yashow_cwt2d.m:
+	mv cwt2d_yashow.m yashow_cwt2d.m
+
+	* continuous/1dt/cwt1dt_yashow.m, continuous/1dt/yashow_cwt1dt.m:
+	mv cwt1dt_yashow.m yashow_cwt1dt.m
+
+	* continuous/1d/cwt1d_yashow.m, continuous/1d/yashow_cwt1d.m:
+	mv yashow_cwt1d.m cwt1d_yashow.m
+
+	* continuous/2d/wave_defs/gabor2d:
+	Adding this function for the persons who know Gabor and not Morlet
+
+2002-07-24  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* tools/display/yashow.m, tools/display/yashow_matrix.m:
+	amin() and amax() subfunctions belong to yashow_matrix.m and not to yashow.m
+
+	* continuous/2d/cwt2d.m, tools/display/yashow_matrix.m:
+	*** empty log message ***
+
+	* continuous/1dt/cwt1dt.m:
+	Simplifying the code. Deleting the choice of the norm which has no sens in cwt1dt theory.
+
+	* tools/help/yademo.m:
+	Correcting a bug detected in cwt1dt with comments in the code environment.
+
+2002-07-23  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* tools/display/yashow.m, tools/display/yashow_matrix.m, tools/display/yashow_spheric.m, tools/display/yashow_timeseq.m, tools/display/yashow_volume.m:
+	Simplifying yashow by specialysing standard display methods (matrix, spheric, volume, ...) outside (in yashow_matrix, yashow_spheric, yashow_volume)
+
+2002-07-03  Alain Coron  <coron@pcfyma3>
+
+	* TODO:
+	Add new suggestions dealing with 1D+T CWT + one about the filter argument of
+	yashow.
+
+	* continuous/1dt/wave_defs/morlet1dt.m: Documentation improvements.
+
+	* continuous/1dt/wave_defs/mexican1dt.m: Doc improvements.
+
+2002-07-02  Alain Coron  <coron@pcfyma3>
+
+	* continuous/1dt/cwt1dt_yashow.m:
+	Improve the doc by adding \libfun commands and correcting some sentences.
+
+	* continuous/1dt/cwt1dt.m:
+	Improve the doc by adding a \libfun commands.
+
+	* tools/display/yashow.m:
+	Improve the \mansecSeeAlso section and add some \libfun commands.
+
+	* continuous/1d/cgt1d.m, continuous/1d/cgt1d_yashow.m, continuous/1d/cwt1d.m, continuous/1d/cwt1d_yashow.m, continuous/1d/wave_defs/morlet1d.m, continuous/1d/wave_defs/sdog1d.m, continuous/1d/win_defs/gauss1d.m:
+	Improve the \mansecSeeAlso section.
+
+2002-06-28  Alain Coron  <coron@pcfyma3>
+
+	* doc/tex/DocProcess.pl:
+	Adapt the doc to the files that moved from frames/2d to packet/2d.
+
+	* doc/tex/YAWTBReferenceManual.tex:
+	Improve the section "Writing the Matlab headers".  Adapt the doc to the
+	files that moved from frames/2d to packet/2d.
+
+	* tools/display/yashow.m: Doc improvements
+
+2002-06-27  Alain Coron  <coron@pcfyma3>
+
+	* continuous/1dt/cwt1dt.m: Doc improvements.
+
+2002-06-20  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* tools/display/yashow.m:
+	Adding the possibility to control the threshold of the essangle mode
+
+	* discrete/packet/2d/wpck_defs/.is_in_mpath:
+	Putting  discrete/packet/2d/wpck_defs/ in the matlab path
+
+	* tools/display/yashow.m:
+	Adding the essangle mode for the angle of data thresholded at 1% of the modulus value.
+
+	* continuous/2d/cwt2d_yashow.m: Simplifying the code
+
+	* continuous/2d/cwt2d_yashow.m: Simplifying the code with varargin.
+
+2002-06-20  Alain Coron  <coron@pcfyma3>
+
+	* continuous/1d/cwt1d_yashow.m:
+	thresh.m was renamed to yathresh.m.  Script modified accordingly.
+
+	* tools/misc/thresh.m, tools/misc/yathresh.m:
+	Renamed thresh.m to yathresh.m
+
+2002-06-19  Alain Coron  <coron@pcfyma3>
+
+	* continuous/1d/cwt1d_yashow.m:
+	If the option fig is not specified, use the current figure.
+
+	* continuous/1dt/cwt1dt_yashow.m:
+	if the option fig is not specified, use the current figure.
+
+	* tools/misc/thresh.m:
+	Add mode in the \mansecSyntax section of the doc.
+
+2002-06-17  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* tools/misc/yamax.m:
+	Adding the 'dir' option and several examples in the header.
+
+	* tools/display/yashow.m:
+	Removing the come back to the preceeding figure.
+
+	* YAWTB_TREE: Update to put wavelet packet
+
+	* discrete/frames/2d/iwpck2d.m, discrete/frames/2d/wpck2d.m, discrete/frames/2d/wpck2d_yashow.m, discrete/packet/2d/iwpck2d.m, discrete/packet/2d/wpck2d.m, discrete/packet/2d/wpck2d_yashow.m, discrete/packet/2d/wpck_defs/README, discrete/packet/2d/wpck_defs/phin.m, discrete/packet/2d/wpck_defs/pmexican2d.m, discrete/packet/2d/wpck_defs/pseudiff.m:
+	Moving discrete/frame/2d into discrete/packet/2d
+
+	* discrete/packet/2d/.is_in_mpath:
+	Marking yawtb/discrete/packet/2d to include it in the matlab path
+
+2002-06-13  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* INSTALL, README: Adding some words about the initial release.
+
+	* Changelog:
+	Adding this file to take into account the changelog between each futur version.
+
+	* tools/display/yashow.m:
+	Yashow display an object in the current figure now except if 'fig' is set.
+
+2002-06-12  Alain Coron  <coron@pcfyma3>
+
+	* continuous/sphere/wave_defs/morletsph.m:
+	Shorten the description.  Add an empty line between each reference
+	(Otherwise only one paragraph of reference.  Hard to read).
+
+2002-06-12  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* continuous/1d/cwt1d_yashow.m, tools/misc/yamax.m:
+	Updating the calls of thresh correspondingly to its recent change.
+
+	* tools/misc/thresh.m:
+	Changing the definition of level. Now it is comprised inside [0,1].
+	The usage of thresh is also dispayed at each error.
+
+	* continuous/sphere/wave_defs/morletsph.m:
+	Correcting some latex errors.
+
+	* continuous/sphere/wave_defs/morletsph.m:
+	Adding the L. Demanet's description of his wavelet ;-)
+
+	* TODO: Adding this file to don't forget all the things TODO.
+
+2002-06-11  Alain Coron  <coron@pcfyma3>
+
+	* continuous/sphere/wave_defs/morletsph.m:
+	Documentation read from the C-file.
+
+	* continuous/sphere/wave_defs/morletsph.c:
+	Move the documentation to the M-file.
+
+	* continuous/sphere/wave_defs/dogsph.m:
+	Documentation read from the C-file.
+
+	* continuous/sphere/wave_defs/dogsph.c:
+	Move the documentation to the M-file.
+
+2002-06-04  Alain Coron  <coron@pcfyma3>
+
+	* continuous/2d/wave_defs/wheel2d.m, continuous/2d/wave_defs/pethat2d.m:
+	Add {} and dollars before and after |K|=2^0.5
+
+	* continuous/1dt/cwt1dt.m, continuous/1d/cwt1d.m:
+	Documentation enhancement.
+
+2002-06-03  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* continuous/2d/cwt2d.m:
+	A bug with the 'Pos' option and the position vector input
+
+2002-05-30  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* continuous/2d/cwt2d_yashow.m:
+	Adding some words in the title of the fixed position mode about fixed scale or fixed angle
+
+	* continuous/2d/cwt2d.m, continuous/2d/cwt2d_yashow.m:
+	Adding a mode for cwt2d_yashow to display the result of cwt2d on selected point ('pos' mode of cwt2d).
+	Simplifying the code with wavopts and varargin in their call through eval
+
+2002-05-27  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* continuous/2d/cwt2d.m:
+	Adding an option ('NoPBAR') to disable the progress bar.
+
+	* sample/2d/thedisk.m:
+	Adding the 'Center' option to control the center of the disk.
+
+2002-05-24  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* sample/2d/thedisk.m:
+	Changing the type of smoothing. It uses now a square cosine to define edge.
+
+2002-05-13  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* continuous/2d/cwt2d.m: Correcting an error in the (x,y) format of pos
+
+2002-05-10  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* continuous/2d/cwt2d.m:
+	Rewriting the SelPos like a Pos mode with either the entering of a vector or the selection on the current figure with the keyword 'inter'
+
+2002-05-08  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* continuous/2d/cwt2d.m:
+	Adding the 'SelPos' mode to select interactively a position b on the current/selected figure where to do the CWT
+
+2002-05-06  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* tools/misc/yamax.m: Little bug in the cache creation position
+
+	* tools/misc/yamax.m:
+	Adding the binary matrix of maxima as a 'cache' field of out in the 'pos' mode.
+
+	* tools/misc/yamax.m:
+	Adding a new field 'lin' to out in case where 'pos' is specified. This is for referring the position of the maxima of mat in a linear way.
+
+2002-05-03  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* tools/display/yashow.m:
+	Setting a minimal default thresholding when we show minima and maxima of an image.
+
+	* continuous/2d/cwt2d.m: Completing the exec function.
+
+	* continuous/2d/cwt2d.m:
+	Adding the option exec to handle the result in a scale-angle computing loop.
+	Adding a yapbar for the loop
+
+	* sample/2d/thedisk.m:
+	Radius is now controlled by varargin and getopts.
+	Adding a 'Smoothed' option to smooth the disk by a Gaussian convolution of specified width.
+
+	* sample/2d/thedisk.m: Adding the control of the radius.
+
+2002-04-24  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* tools/display/yashow.m:
+	Adding a 'Normalize' option to normalize any data by the maximum of their absolute value
+
+	* tools/misc/getopts.m, continuous/2d/wave_defs/wheel2d.m:
+	Updating the help header
+
+	* continuous/2d/wave_defs/wheel2d.m:
+	Adding this wavelet which seems like a wheel in frequency
+
+2002-04-23  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* continuous/2d/wave_defs/pethat2d.m:
+	Inadequate extra parameter herited from the mexican hat.
+
+	* continuous/2d/samcwt2d.m, continuous/2d/samcwt2d_yashow.m:
+	Link sam yashow to the yashow of signal and images.
+	Correcting some bugs in samcwt2d
+
+	* tools/misc/yawopts.m:
+	The empty case had a bug. It didn't retuen an empty cell {}, but an empty array [].
+
+2002-04-22  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* continuous/2d/wave_defs/pethat2d.m:
+	Adding the wavelet of Aurell and Frick
+
+2002-04-16  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* tools/display/yashow.m: Suppressing the empty "Reference" section.
+
+	* tools/help/yahelp.m: Adding the sectionning and simplifying the code.
+
+	* tools/display/yapbar.m: Simplifying the code.
+
+2002-04-02  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* continuous/1d/cgt1d_yashow.m, continuous/1d/cgt1d.m:
+	Modifying the demo to obtain a prety example
+
+	* continuous/1d/cgt1d.m:
+	Forgot to multiply freqs by 2pi to obtain pulsation
+
+	* continuous/1d/cgt1d.m: Changing gabor to Gabor
+
+	* continuous/1d/cgt1d.m: Changing the function presentation in header
+
+	* doc/tex/DocProcess.pl:
+	Adding continuous/1d/win_defs to the processed directories
+
+	* continuous/1d/cgt1d.m, continuous/1d/cgt1d_yashow.m, continuous/1d/win_defs/gauss1d.m:
+	Adding the Continuous Gabor Transform and its yashow.
+
+	* sample/1d/superpos.mat:
+	Adding this sample for cgt1d.m (coming from the exercices of PVdG)
+
+	* continuous/1d/wave_defs/gauss1d.m, continuous/1d/win_defs/gauss1d.m:
+	Moving gauss1d.m from the wave_defs to win_defs
+
+	* continuous/1d/cwt1d.m: Completing the help.
+
+	* continuous/1d/win_defs/.is_in_mpath:
+	Adding the win_defs subdir for the possible windows of the gabor transform.
+
+2002-03-29  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* continuous/1d/cwt1d_yashow.m:
+	Changing the sens of graph: signal is now above cwt.
+
+2002-03-27  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* tools/misc/vect.m:
+	Correcting a bug in 'log2': a 'log' instead of a 'log2' was reamining.
+
+	* sample/2d/thedisk.m: Adding this 2D disk sample
+
+2002-03-26  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* continuous/1dt/cwt1dt.m, continuous/2d/cwt2d.m, continuous/2d/samcwt2d.m, continuous/3d/cwt3d.m, discrete/frames/2d/iwpck2d.m, discrete/frames/2d/wpck2d.m:
+	Suppressing the use of vect(.,.,.,'fftshift') by this of yapuls.
+	Removing fftshift whis is also not needed anymore.
+
+	* tools/misc/yapuls.m:
+	Removing trailing ^M (coming from the winworld ?)
+
+2002-03-25  Alain Coron  <coron@pcfyma3>
+
+	* continuous/1d/cwt1d.m: Now use yapuls to generate the frequency line.
+
+	* tools/misc/vect.m: Remove fftshift type.
+
+	* tools/misc/yapuls.m: Pulsation vector.
+
+2002-03-11  Alain Coron  <coron@pcfyma3>
+
+	* continuous/1d/cwt1d.m:
+	Safer way of assigning a default L^2 normalisation.
+
+	* continuous/1d/cwt1d.m:
+	A bug in the default (L^2) normalization exponent of the scale. It is 0.5 and not 1.
+
+2002-03-06  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* continuous/1d/cwt1d.m:
+	A bug in the normalization exponent of the scale. It is 0.5 and not 1.
+
+	* continuous/1d/cwt1d.m:
+	Rewriting the use of structure wavopts in function callings (with eval)
+
+	* continuous/1d/cwt1d.m:
+	Allowing negative scales by putting sign(a).*abs(a)^norm instead of a^norm
+
+2002-03-06  Alain Coron  <coron@pcfyma3>
+
+	* doc/tex/YAWTBReferenceManual.tex:
+	"How to contribute" section:  It describes the commands \libfun \libvar
+	\YAWTB.  New advices for the function description.
+
+2002-03-05  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* continuous/1d/cwt1d.m:
+	Replacing the transposition of scales by scales(:) which is safer in case of column matrix scales.
+	Adding the conjugaison of the mask which was missing.
+
+	* continuous/1d/cwt1d.m: Adding a word about out.extra
+
+2002-03-05  Alain Coron  <coron@pcfyma3>
+
+	* continuous/1d/wave_defs/sdog1d.m, continuous/1d/wave_defs/morlet1d.m, continuous/1d/wave_defs/gauss1d.m:
+	Correct the documentation in the header part.
+
+	* continuous/1d/wave_defs/README: Typos
+
+	* continuous/1d/cwt1d_yashow.m, continuous/1d/cwt1d.m:
+	Correct the documentation in the header part.
+
+	* doc/tex/YAWTBReferenceManual.tex:
+	Add two commands \libfun and \libvar to respectively highlight a function and
+	a variable in the documentation.
+
+2002-03-04  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* tools/misc/whatin.m: Adding information about data memory usage.
+
+2002-03-01  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* doc/tex/Makefile:
+	Removing .pl file in doc/html dir in the "clean" section
+
+	* tools/io/pgmread.m, tools/io/pgmwrite.m:
+	Adding other pgm function in the "see also" section
+
+	* tools/io/pgmwrite.m:
+	Adding the author of the original writepgm which is the base of this file
+
+	* doc/tex/DocProcess.pl: Adding the tools/io dir.
+
+	* YAWTB_TREE: Adding a line for tools/io dir
+
+	* tools/io/pgmwrite.m:
+	Adding an automatic .pgm extension to all file written by pgmwrite.
+
+	* tools/io/pgmwrite.m: Adding this file to be able to write pgm file
+
+	* tools/io/pgmread.m: Correcting an inversion between row and column.
+
+	* tools/io/pgmread.m: Forgot to close the file
+
+	* tools/io/pgmread.m: Adding this file to read pgm file.
+
+	* tools/io/.is_in_mpath: Adding io dir in the yawtb path
+
+	* tools/misc/whatin.m:
+	Updating the comments in help header for the use of name instead of variable.
+
+	* tools/misc/whatin.m:
+	Allowing mat to carry the name of the variable instead of the variable
+	itself.
+
+	* tools/misc/whatin.m:
+	Rewritting the display and adding information about sizes
+
+2002-02-28  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* tools/display/yapbar.m:
+	Adding the name "Progress Bar" to the window of the yapbar.
+
+	* continuous/2d/cwt2d.m:
+	Allowing a matrix result of cwt2d (instead of yawtb struct) with the
+	new option 'Export'. Deleting loop in case of 1 scale/1 angle computation.
+
+2002-02-27  Alain Coron  <coron@pcfyma3>
+
+	* doc/tex/DocProcess.pl:
+	See Also section: Add a comma between each function
+
+2002-02-27  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* doc/tex/YAWTBReferenceManual.tex:
+	Modifying the titlepage in latex and in html to better display the logos in each mode.
+
+	* doc/tex/Makefile:
+	Adding the deleting of eventual ps file into the "clean" section.
+
+	* doc/tex/YAWTBReferenceManual.tex, doc/tex/logo_bgwhite.eps, doc/tex/yawtb_cwtsph.eps:
+	Adding logos for the documentation
+
+	* doc/tex/Makefile:
+	Modularizing all the specific compilation part into latex, postscript, pdf, ...
+
+	* tools/misc/thresh.m: Correcting a bug with 3D matrices.
+	Thresholding of yawtb object returns now a yawtb object.
+
+2002-02-23  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* tools/misc/yahist.m:
+	A little bug with round. Adding an 'eps' effect to correct this.
+
+	* tools/misc/yahist.m:
+	Correcting a bug with 2D histogram due to the last correction
+
+	* tools/misc/vect.m:
+	Correcting the representation of vector in the 'rlopen' mode.
+	Points of rlopen vectors were not the center of subintervals of
+	identical lengths.
+
+	* tools/misc/yahist.m: A bug for one dimensional histogram.
+
+2002-02-21  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* tools/misc/yahist.m: Error in the last adding.
+
+	* tools/misc/yahist.m: Adding an error checking rule.
+
+	* tools/misc/yahist.m: Adding support of range of data.
+	Updating the help.
+
+	* tools/misc/yahist.m:
+	Changing the rules for inputs recognition. It is based now on the size
+	of varargin{2}
+
+2002-02-19  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* tools/display/yashow.m: Correcting a bug with maxi/mini & histeq
+
+2002-02-15  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* tools/misc/yahist.m: More precise manchap.
+
+	* tools/misc/yahist.m:
+	This is a new implementation of histogram function hist which support 1D and 2D histogram.
+
+2002-02-12  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* yamake.m, sample/2d/theL.m: test
+
+2002-02-11  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* INSTALL: Spelling change.
+
+2002-02-07  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* tools/display/yashow.m:
+	Adding the mesh option. Updating the help for contour and the new mesh
+	option.
+
+2002-02-01  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* tools/display/yapbar.m:
+	Allowing the user to kill the yapbar window during any process without reporting error.
+
+2002-01-25  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* continuous/3d/cwt3d.m, continuous/3d/cwt3d_yashow.m, continuous/3d/wave_defs/morlet3d.m:
+	Correcting a bug in the spherical representation on the CWT angle. Now, (theta,phi) correspond to the spherical coordinates of a vector perpandicular to the detected objects. Like in 1D!
+
+	* tools/display/yashow.m:
+	Mofication of the help relative to the 'maxi' and 'mini' options.
+
+	* tools/display/yashow.m:
+	Profiting of the new thresholding option of yamax to modify 'maxi' &
+	'mini' options of yashow::matrix
+
+	* tools/misc/yamax.m: Adding a threshold option 'thresh'.
+
+	* tools/display/yashow.m:
+	Adding the 'mini' option for representation of minimum with 'o' on the
+	figure
+
+2002-01-23  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* continuous/1dt/cwt1dt_yashow.m, include/yawtb.h, tools/display/yashow.m:
+	English spelling changes.
+
+	* tools/display/yashow.m: Little bug in the transparency manipulation.
+
+2002-01-22  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* doc/tex/README: Adding a word about the Makefile
+
+	* doc/tex/Makefile:
+	Adding a 'clean_code' section to removed useless files after documentation building.
+
+	* doc/tex/Makefile:
+	Adding this Makefile to simplify the life of developpers in the documentation building.
+
+	* continuous/3d/wave_defs/morlet3d.m:
+	Matlab syntax error in the header example section.
+
+	* continuous/3d/cwt3d_yashow.m: Z label was missing.
+
+	* continuous/3d/cwt3d_yashow.m: Forget to add cwt3d_yashow
+
+	* continuous/3d/cwt3d.m:
+	Adding the support of the angles in the cwt3d. This implies the same in cwt3d_yashow
+
+	* continuous/3d/wave_defs/morlet3d.m: Adding the 3D morlet wavelet.
+
+	* doc/tex/YAWTBReferenceManual.tex: Adding the 3D input.
+
+	* sample/3d/the3dL.m: Latex spelling error with & instead of \&
+
+	* sample/3d/cube.m: Latex error with the use of & instead of \&
+
+	* doc/tex/DocProcess.pl:
+	Adding the cwt3d subdirs: continuous/3d, continuous/3d/wave_defs, sample/3d.
+
+	* tools/display/yashow.m:
+	Several bug in the axis for the volume section. Simplification in the code.
+
+	* tools/display/yashow.m:
+	A little bug in volume section between transparency and manual values.
+
+2002-01-21  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* tools/display/yashow.m: Hold on bug in volume section.
+
+	* tools/display/yashow.m:
+	Suppressing hold mode in volume section because it does nothing.
+
+	* sample/3d/.is_in_mpath, sample/3d/the3dL.m:
+	Adding the 3D L shape sample. Correct the .is_in_mpath missing in sample/3d
+
+	* tools/display/yashow.m: A little bug with hold on in the volume mode.
+
+	* tools/help/yademo.m: Minor bug correction.
+
+	* continuous/3d/cwt3d.m: Modifying the demo sample.
+
+	* sample/3d/cube.m: Adding this short cube sample for cwt3d demo.
+
+	* continuous/3d/wave_defs/.is_in_mpath, continuous/3d/wave_defs/mexican3d.m:
+	Adding the first 3D wavelet: the mexican hat.
+
+	* continuous/3d/.is_in_mpath, continuous/3d/cwt3d.m:
+	Adding the first implementation of the 3D wavelet transform.
+
+	* tools/display/yashow.m:
+	Adding support of the volume through transparent iso layers.
+
+2002-01-11  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* continuous/2d/wave_defs/endstop1.m:
+	Changing the Example section which was outdated. Error in the header
+	about epsilon.
+
+	* tools/help/yahelp.m:
+	A little bug with underscore. Prevent the same effect with $.
+
+	* continuous/2d/samcwt2d.m, continuous/2d/sarcwt2d.m, continuous/sphere/cwtsph.m, tools/display/yapbar.m:
+	Simplification of the use of yapbar and modifications associated in each mfile.
+
+	* tools/misc/regrep.m:
+	Some syntax error in the perl analysis due to possible quotes and $ in string.
+
+	* doc/tex/README:
+	Adding this readme to remember the way to generate the doc.
+
+2002-01-10  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* tools/help/yademo.m: Bad sentence in the begin of the header.
+
+	* tools/misc/ereg_replace.m, tools/misc/regrep.m:
+	Renaming ereg_replace (toolong) by regrep.
+
+2002-01-10  Alain Coron  <coron@pcfyma3>
+
+	* doc/tex/RefManual_1.tex:
+	This file was generated by the script DocProcess.pl.  No need to be in the
+	CVS repository.
+
+	* doc/tex/DocProcess.pl, doc/tex/YAWTBReferenceManual.tex:
+	Add the category "Help, help!".  Replace the autogenerated file
+	RefManual_1.tex by the more explicit one TMP_cmd_by_alpha.tex.
+
+2002-01-10  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* continuous/1d/cwt1d.m, doc/tex/RefManual_1.tex, tools/display/yashow.m:
+	An error in the header example section 'cwt2d' -> 'cwt1d'
+
+	* tools/help/yademo.m:
+	Adding this script to execute demo part of each yawtb mfile header.
+
+2002-01-09  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* tools/help/yahelp.m:
+	Adding this yawtb help parser to obtain a clear help on the matlab command line.
+
+	* tools/misc/ereg_replace.m:
+	Adding this script to perform substring replacement with regexp.
+
+2002-01-08  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* tools/help/.is_in_mpath:
+	Adding the directory tools/help to the matlab path.
+
+2002-01-07  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* doc/ps/YAWTBReferenceManual.ps:
+	Removing the postscript documentation like suggested by Alain.
+
+2002-01-06  Alain Coron  <coron@pcfyma3>
+
+	* tools/display/yashow.m:
+	Improve regular expressions in "See Also" section.
+
+	* tools/devel/xemacs_macro/cfile_header_part.txt, tools/devel/xemacs_macro/mfile_header_part.txt:
+	Modify the year attached to the Copyright.
+
+	* doc/tex/YAWTBReferenceManual.tex, doc/tex/RefManual_1.tex:
+	Add category sections in the manual.
+
+	* doc/tex/DocProcess.pl:
+	Label are provided with each toolbox command and each sectionning command.
+	Add automatic writing of category sections.
+	"See Also" section process the regular expressions, and add to the function
+	  names a link to the functions.
+
+	* doc/tex/.latex2html-init:
+	Add a destination directory and improve the comments.
+
+	* discrete/frames/2d/wpck2d_yashow.m, continuous/sphere/cwtsph.m:
+	Correct typos.
+
+	* continuous/2d/wave_defs/cauchy2d.m:
+	Improve regular expressions in "See Also" section.
+
+	* continuous/2d/samcwt2d.m, continuous/2d/cwt2d_yashow.m:
+	Correct typos.
+
+	* continuous/2d/cwt2d.m:
+	Correct typos + regular expression in See Also section.
+
+	* continuous/1dt/cwt1dt.m: Correct typos.
+
+	* continuous/1d/cwt1d.m:
+	Correct typos + regular expression in See Also section.
+
+	* AUTHORS:
+	Add Alain Coron's address at Laboratoire d'Imagerie Paramétrique.
+
+2001-12-18  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* continuous/2d/wave_defs/esmex2d.m: A little bug in esmex.
+
+	* continuous/2d/cwt2d_yashow.m: Adding the positional filter display.
+
+2001-12-13  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* continuous/sphere/cwtsph.m:
+	Adding the yapbar (see tools/display) to show the progression status.
+
+	* sample/sphere/sector.mat:
+	The sector is now defined like in the A.C.H.A. paper.
+
+2001-11-26  Laurent Demanet  <demanet@pcfyma3>
+
+	* INSTALL: A test modif.
+
+2001-11-14  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* tools/display/yapbar.m, tools/misc/yapbar.m:
+	Yapbar is more specificely a display tool than a miscellanous tool.
+
+2001-11-06  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* tools/misc/yapbar.m: Tuning the size of the text box.
+
+	* tools/misc/yapbar.m: Tuning the text box size around the percentage.
+
+	* tools/misc/yapbar.m: A little bug in the figure size.
+
+	* tools/misc/yapbar.m:
+	Adding a white box around the text for a better lisibility.
+
+	* tools/misc/yapbar.m:
+	Adding this progress bar for long computation program.
+
+2001-11-05  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* tools/misc/yamax.m:
+	Adding the 'strict' modifier to obtain strict maximum, that is maximum strictly greater than their neighbours.
+
+	* tools/misc/vect.m: Supressing the restriction of deb<fin.
+
+	* tools/display/yashow.m:
+	The 'matrix' type can have now the 'x' and the 'y' fields for appropriate displays.
+
+	* tools/display/yashow.m:
+	Adding the possibility to display the 'matrix', 'vector', 'spheric', 'timeseq' types defined outside of yashow.
+
+2001-11-04  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* tools/cmap/rgray.m:
+	Adding this reverse gray colormap for convenience.
+
+	* YAWTB_TREE:
+	Adding the yawtb/tools/cmap subdir for the yawtb special colormaps.
+
+	* tools/cmap/.is_in_mpath: Adding yawtb/tools/cmap in the yawtb path.
+
+2001-11-03  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* AUTHORS: Modifying the Alain's email address.
+
+	* tools/misc/yamax.m:
+	Adding the 'pos' option to obtain the position of max as result.
+	The connection is now also an option.
+
+2001-10-30  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* continuous/2d/wave_defs/esmex2d.m: Epsilon was misplaced.
+
+2001-10-28  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* doc/tex/RefManual_1.tex:
+	Adding the source code of the reference manual.
+
+	* continuous/2d/wave_defs/esmex2d.m: Latex bug.
+
+	* doc/ps/YAWTBReferenceManual.ps:
+	The first YAWTB documentation generated thanks to Alain with his great perl script.
+
+	* doc/tex/YAWTBReferenceManual.tex:
+	Some error in the red color which is understood like the capital RED term. Why?
+
+	* continuous/2d/wave_defs/gaussz2d.m, continuous/2d/wave_defs/gaussx2d.m:
+	Latex bug.
+
+2001-10-26  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* tools/display/yashow.m:
+	For 'timeseq': adding the 'pause' modifier to allow a pause between each frame.
+
+	* tools/display/yashow.m:
+	For 'TimeSeq' case: a title is now added to give information in the frame evolution.
+
+2001-10-25  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* continuous/2d/wave_defs/esmex2d.m:
+	Adding this wavelet to prove that an endstop1 wavelet can be formed with a radial (Mex. H.) and and angular part.
+
+	* continuous/1dt/cwt1dt_yashow.m:
+	Bug in compatibility with strfind & findstr.
+
+	* continuous/1dt/cwt1dt.m:
+	Just a bug between strfind (Matlab 6) and findstr ( Matlab 5 & 6).
+
+2001-10-24  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* continuous/2d/wave_defs/esmex2d.m:
+	This wavelet tries to implement a new kind of endstop wavelet.
+
+	* continuous/1d/wave_defs/gauss1d.m, continuous/2d/wave_defs/gauss2d.m, continuous/2d/wave_defs/gaussx2d.m, continuous/2d/wave_defs/gaussz2d.m:
+	Turning the header into an Alain's way compatible header ;-)
+
+	* continuous/1d/wave_defs/gauss1d.m, continuous/2d/wave_defs/gauss2d.m, continuous/2d/wave_defs/gaussx2d.m, continuous/2d/wave_defs/gaussz2d.m:
+	Adding the gaussians which had strangely disapeared.
+
+	* continuous/2d/cwt2d_yashow.m:
+	A bug in the 'filter' showing case prevented to see the modifications of the wavelet parameters.
+
+	* continuous/2d/wave_defs/endstop1.m:
+	Adding anisotropy factor epsilon (set to 1 by default)
+
+	* continuous/2d/wave_defs/endstop1.m:
+	Correcting a bug in the formulation of the derivative.
+
+2001-10-22  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* tools/devel/xemacs_macro/yawtb-code-comment.el:
+	Setting a more general path for the txt pattern on the basis of the home variable ($HOME))
+
+2001-10-21  Alain Coron  <coron@pcfyma3>
+
+	* doc/tex/DocProcess.pl: Perl Script to generate the documentation
+
+	* continuous/1d/cwt1d.m, continuous/1d/cwt1d_yashow.m, continuous/1d/wave_defs/morlet1d.m, continuous/1d/wave_defs/sdog1d.m, continuous/1dt/cwt1dt.m, continuous/1dt/cwt1dt_yashow.m, continuous/1dt/wave_defs/mexican1dt.m, continuous/1dt/wave_defs/morlet1dt.m, continuous/2d/cwt2d.m, continuous/2d/cwt2d_yashow.m, continuous/2d/samcwt2d.m, continuous/2d/samcwt2d_yashow.m, continuous/2d/sarcwt2d.m, continuous/2d/wave_defs/cauchy2d.m, continuous/2d/wave_defs/dergauss2d.m, continuous/2d/wave_defs/dog2d.m, continuous/2d/wave_defs/endstop1.m, continuous/2d/wave_defs/endstop2.m, continuous/2d/wave_defs/mexican2d.m, continuous/2d/wave_defs/mexican2d_ctr.m, continuous/2d/wave_defs/morlet2d.m, continuous/2d/wave_defs/sdog2d.m, continuous/2d/wave_defs/sqdog2d.m, continuous/sphere/cwtsph.m, continuous/sphere/cwtsph_yashow.m, discrete/frames/2d/iwpck2d.m, discrete/frames/2d/wpck2d.m, discrete/frames/2d/wpck2d_yashow.m, doc/tex/.latex2html-init, doc/tex/FDL.tex, doc/tex/GPL.tex, doc/tex/YAWTBReferenceManual.tex, sample/1d/linearchirp.m, sample/1d/yachirp.m, sample/1dt/movgauss.m, sample/2d/theL.m, tools/devel/xemacs_macro/mfile_header_part.txt, tools/display/yashow.m, tools/misc/getopts.m, tools/misc/list_elem.m, tools/misc/normopts.m, tools/misc/thresh.m, tools/misc/vect.m, tools/misc/whatin.m, tools/misc/yamax.m, tools/misc/yawopts.m, yaload.m, yamake.m:
+	Modification of the header for automatic documentation generation
+
+2001-10-19  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* tools/display/yashow.m:
+	Logical matrix has the 'gray' colormap by default. This is also true in case of logical result of the 'exec' modifier.
+
+2001-10-16  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* continuous/1d/wave_defs/gaussian1d.m, continuous/2d/wave_defs/gaussian2d.m, continuous/2d/wave_defs/gaussx.m, continuous/2d/wave_defs/gaussz.m:
+	Renaming all the gaussian to have coherent names "gauss<smth>[1d,2d]" and not gaussian.
+
+	* continuous/1d/cwt1d_yashow.m, continuous/1dt/cwt1dt_yashow.m, continuous/2d/cwt2d_yashow.m, continuous/sphere/cwtsph_yashow.m:
+	Modifying the figure size to allow a two lines title on the screen.
+
+2001-10-15  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* continuous/1d/wave_defs/gaussian1d.m, continuous/1d/wave_defs/sdog1d.m:
+	Forgot of the 1/2 in the gaussian expressions.
+
+	* continuous/1d/wave_defs/gaussian1d.m:
+	Adding the 1D gaussian function.
+
+	* continuous/2d/wave_defs/gaussian2d.m:
+	Spelling error in help for the arguments of gaussian2d.
+
+2001-10-03  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* continuous/2d/sarcwt2d.m:
+	Renaming sacwt2d by sarcwt2d for Scale Angle Representation CWT
+
+	* continuous/2d/sacwt2d.m:
+	Renaming sacwt2d by sarcwt2d, for Scale Angle Representation CWT.
+
+2001-09-06  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* continuous/1d/cwt1d_yashow.m, continuous/1dt/cwt1dt_yashow.m, continuous/2d/cwt2d_yashow.m, continuous/sphere/cwtsph_yashow.m:
+	Setting multiline title for conveniency.
+
+	* tools/display/yashow.m: A little bug with the contour option.
+
+2001-09-05  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* yamake.m:
+	Removing evalc which is not compatible with matlab 5.2 and replacing it with a try block.
+
+	* yamake.m:
+	Compatibility adding in the yawtb_include variable under windows
+
+2001-09-04  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* tools/display/yashow.m:
+	Adding the maxi option to display crosses on maxima of an image.
+
+	* tools/misc/yamax.m:
+	A simple function computing regional maxima for the 4 or the 8 pixel connection.
+
+	* continuous/1dt/cwt1dt.m: A little bug in the dotted status bar.
+
+2001-08-31  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* sample/1dt/movgauss.m:
+	Correcting the help. Velocities are now in pixel per frame.
+
+	* continuous/1dt/cwt1dt.m, continuous/1dt/cwt1dt_yashow.m, continuous/1dt/wave_defs/morlet1dt.m:
+	Suppressing all the time inversion problem. Positive velocities are for increasing positions (of course ;)
+
+	* continuous/1dt/cwt1dt.m, continuous/1dt/cwt1dt_yashow.m:
+	directional 2D wavelets can now be used inside cwt1dt assuming their loclization on the X or the Y axis.
+
+	* continuous/1dt/cwt1dt.m, continuous/1dt/cwt1dt_yashow.m:
+	Bug tracking.
+
+2001-08-30  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* continuous/1dt/cwt1dt_yashow.m: Bug correcting.
+
+	* continuous/1dt/cwt1dt.m:
+	Correcting a bug with the zero velocities (solution: turn into NaN)
+
+	* continuous/1dt/cwt1dt_yashow.m:
+	Correcting some bugs with the figure numbers handling.
+
+	* continuous/1dt/wave_defs/morlet1dt.m: Adding the morlet 1dt wavelet.
+
+	* continuous/1dt/cwt1dt_yashow.m:
+	Adding subplot of the signal in the fixed time case.
+
+	* continuous/1dt/cwt1dt.m: Little bug. out.ftime was not real.
+
+	* continuous/1dt/cwt1dt.m:
+	Adding an output field '.ftime' in the fixed time case.
+
+2001-08-29  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* continuous/1dt/cwt1dt.m, tools/display/yashow.m:
+	Adding the 'TimeSeq' to display 1DT movie inside yashow.
+	Update of cwt1dt.m
+
+	* continuous/1dt/cwt1dt.m: Updating the example of the help header.
+
+	* continuous/1dt/cwt1dt_yashow.m:
+	Adding this yashow version of cwt1dt. It contains 3 mode (filter,normal,fixed time)
+
+	* continuous/1dt/cwt1dt.m, sample/1dt/movgauss.m: Tuning the method.
+
+2001-08-28  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* sample/1dt/movgauss.m:
+	Adding this sample for the CWT 1D+T case. It consists of 3 moving Gaussians.
+
+	* sample/1dt/.is_in_mpath: Adding yawtb/sample/1dt in path.
+
+	* continuous/1dt/wave_defs/mexican1dt.m:
+	Adding the 1dt mexican wavelet.
+
+	* continuous/1dt/cwt1dt.m: Adding the first 1D+T CWT.
+
+2001-08-27  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* continuous/1dt/.is_in_mpath, continuous/1dt/wave_defs/.is_in_mpath:
+	Adding yawtb/continuous/1dt & yawtb/continuous/1dt/wave_defs to path.
+
+	* YAWTB_TREE: Adding the 1dt subdir for spatio-temporal wavelet.
+
+	* continuous/2d/cwt2d_yashow.m:
+	Adding some functionalities to the 'filter' display (frequency axis, xlim & ylim in [-pi, pi[)
+
+2001-08-24  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* tools/display/yashow.m:
+	Adding the 'Equal' modifier to display matrix with square pixel.
+
+	* tools/misc/whatin.m:
+	ewritting whatin for any dimension. Display the true number of dimension.
+
+	* tools/misc/whatin.m: A bug prevented whatin to handle 3D matrix.
+
+2001-08-23  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* continuous/2d/wave_defs/gaussz.m:
+	Inserting this wavelet for gradient and curvature images computation.
+
+2001-08-20  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* yaload.m, yamake.m:
+	Removing all the fprintf for Mac/XEmacs matlab compatibility.
+	Yaload has also a debug mode now.
+
+2001-08-14  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* yaload.m: Replacing '/' by filesep for compatibility.
+
+	* yamake.m: A little error.
+
+	* yamake.m:
+	Replacing the character '/' by filesep for windows/mac compatibility.
+
+	* yamake.m: Removed the support of matlab 4 into yamake.
+
+	* include/yawtb.h, yamake.m:
+	Macro of mex like matlab<n> are now in capital letters.
+
+	* yamake.m: Adding a comment for the version handling.
+
+	* continuous/sphere/wave_defs/dogsph.c, continuous/sphere/wave_defs/morletsph.c:
+	Remove of some functions now included into yawtb/include/yawtb.h
+
+	* yamake.m: Now yamake takes into account of the Matlab version.
+	It don't execute line of .to_compile file not beginning by 'mex'.
+	It adds -I<yawtbdir>/include to any mex compilation.
+	It adds -Dmatlab<n> (<n>= 4, 5 or 6) to matlab version dependent code.
+
+	* include/yawtb.h:
+	Adding the first yawtb include file. It is needed by the yawtb mexfiles.
+
+	* continuous/sphere/wave_defs/dogsph.c, continuous/sphere/wave_defs/morletsph.c:
+	Removing mxCreateDoubleScale and implementing mxCreateMyScalar (-> Matlab 5.x compatibility)
+
+2001-08-13  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* continuous/1d/cwt1d.m, continuous/2d/samcwt2d.m, continuous/sphere/cwtsph.m, discrete/frames/2d/wpck2d.m:
+	Correcting a little error in the out.extra setting.
+
+	* continuous/2d/wave_defs/mexican2d_ctr.m:
+	Adding this kernel (gaussian) for contrast analysis associated to the Mexican hat.
+
+	* continuous/2d/cwt2d.m:
+	Adding contrast support and correcting a little error in the out.extra setting.
+
+	* continuous/1d/cwt1d.m, continuous/1d/cwt1d_yashow.m, continuous/1d/wave_defs/morlet1d.m, continuous/1d/wave_defs/sdog1d.m, continuous/2d/cwt2d.m, continuous/2d/cwt2d_yashow.m, continuous/2d/sacwt2d.m, continuous/2d/samcwt2d.m, continuous/2d/samcwt2d_yashow.m, continuous/2d/wave_defs/cauchy2d.m, continuous/2d/wave_defs/dergauss2d.m, continuous/2d/wave_defs/dog2d.m, continuous/2d/wave_defs/endstop1.m, continuous/2d/wave_defs/endstop2.m, continuous/2d/wave_defs/gaussian2d.m, continuous/2d/wave_defs/gaussx.m, continuous/2d/wave_defs/mexican2d.m, continuous/2d/wave_defs/morlet2d.m, continuous/2d/wave_defs/sdog2d.m, continuous/2d/wave_defs/sqdog2d.m, continuous/sphere/cwtsph.m, continuous/sphere/cwtsph_yashow.m, continuous/sphere/wave_defs/dogsph.c, continuous/sphere/wave_defs/morletsph.c, discrete/frames/2d/iwpck2d.m, discrete/frames/2d/wpck2d.m, discrete/frames/2d/wpck2d_yashow.m, sample/1d/linearchirp.m, sample/1d/yachirp.m, sample/2d/theL.m, tools/devel/xemacs_macro/cfile_header_part.txt, tools/devel/xemacs_macro/mfile_header_part.txt, tools/devel/xemacs_macro/yawtb-code-comment.el, tools/display/yashow.m, tools/misc/getopts.m, tools/misc/list_elem.m, tools/misc/normopts.m, tools/misc/thresh.m, tools/misc/vect.m, tools/misc/whatin.m, tools/misc/yawopts.m, yaload.m, yamake.m:
+	Turning the authors list into a link to the author file (A. Coron idea)
+
+2001-08-10  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* continuous/2d/wave_defs/morlet2d.m, continuous/2d/wave_defs/sdog2d.m, continuous/2d/wave_defs/sqdog2d.m, continuous/sphere/cwtsph.m, continuous/sphere/cwtsph_yashow.m, continuous/sphere/wave_defs/dogsph.c, continuous/sphere/wave_defs/morletsph.c, discrete/frames/2d/iwpck2d.m, discrete/frames/2d/wpck2d_yashow.m, sample/1d/linearchirp.m, sample/1d/yachirp.m, sample/2d/theL.m, tools/devel/xemacs_macro/cfile_header_part.txt, tools/devel/xemacs_macro/mfile_header_part.txt, tools/devel/xemacs_macro/yawtb-code-comment.el, tools/display/yashow.m, tools/misc/getopts.m, tools/misc/list_elem.m, tools/misc/normopts.m, tools/misc/thresh.m, tools/misc/vect.m, tools/misc/whatin.m, tools/misc/yawopts.m, AUTHORS, continuous/1d/cwt1d.m, continuous/1d/cwt1d_yashow.m, continuous/1d/wave_defs/morlet1d.m, continuous/1d/wave_defs/sdog1d.m, continuous/2d/cwt2d.m, continuous/2d/cwt2d_yashow.m, continuous/2d/sacwt2d.m, continuous/2d/samcwt2d.m, continuous/2d/samcwt2d_yashow.m, continuous/2d/wave_defs/cauchy2d.m, continuous/2d/wave_defs/dergauss2d.m, continuous/2d/wave_defs/dog2d.m, continuous/2d/wave_defs/endstop1.m, continuous/2d/wave_defs/endstop2.m, continuous/2d/wave_defs/gaussian2d.m, continuous/2d/wave_defs/gaussx.m, continuous/2d/wave_defs/mexican2d.m, yaload.m, yamake.m:
+	Adding L. Demanet to the developper list of each YAWtb file.
+
+	* sample/sphere/moon.mat, sample/sphere/sector.mat:
+	Adding to new spherical samples: a spherical sector and the Moon's map.
+
+	* continuous/sphere/wave_defs/.to_compile:
+	Adding a line to compile morletsph.c
+
+	* continuous/sphere/wave_defs/morletsph.c:
+	Adding the Demanet's spherical Moerlet Wavelet.
+
+	* continuous/sphere/cwtsph_yashow.m, tools/display/yashow.m, tools/misc/yawopts.m:
+	All the spherical display has be rewritten and put inside yashow.
+
+2001-08-09  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* YAWTB_TREE: yawtb/utils becomes yawtb/tools/misc
+
+	* tools/misc/.is_in_mpath: Adding yawtb/tools/misc in path
+
+	* tools/misc/getopts.m, tools/misc/list_elem.m, tools/misc/normopts.m, tools/misc/thresh.m, tools/misc/vect.m, tools/misc/whatin.m, tools/misc/yawopts.m:
+	yawtb/utils becomes yawtb/tools/misc
+
+2001-08-08  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* .is_in_mpath, discrete/frames/.is_in_mpath:
+	adding some .is_in_path in cvs
+
+	* continuous/sphere/cwtsph_yashow.m:
+	Little bug in the relief case. There was no overlapping of phi=-pi and phi=+pi, inducing a gap in the mesh.
+
+2001-08-07  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* continuous/sphere/cwtsph_yashow.m: minor changes
+
+	* continuous/sphere/cwtsph_yashow.m: Little bug in map fliplr.
+
+	* continuous/sphere/cwtsph_yashow.m: Adding the missing titles.
+
+	* YAWTB_TREE: update
+
+	* continuous/sphere/wave_defs/dogspheric.c:
+	Removing the old dogspheric.c
+
+	* INSTALL, README:
+	Updating the INSTALL file (to take into account of yamake) and copying it with the README name.
+
+2001-08-06  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* yamake.m: Adding the 'debug' mode into header.
+
+	* yamake.m: Adding this script to compile all the mex files of yawtb.
+
+	* continuous/sphere/wave_defs/.to_compile:
+	Adding this little ascii file (not a mfile) to describe which file has to be compiled by yawtb/yamake.m
+
+	* continuous/sphere/wave_defs/.is_in_mpath, continuous/sphere/wave_defs/dogsph.c:
+	Forgot to add dogsph.c
+
+	* continuous/sphere/wave_defs/dogsph.m:
+	Replacing dogsph.m by dogsph.c (oldly dogspheric.c)
+
+	* continuous/sphere/cwtsph.m:
+	Error in the correction of the correction. I'm tired !
+
+	* continuous/sphere/cwtsph.m: Error in the last correction
+
+	* continuous/sphere/cwtsph.m:
+	cwtsph didn't check if wavelet was a mexfile instead of a mfile.
+
+	* tools/devel/xemacs_macro/cfile_gpl_part.txt, tools/devel/xemacs_macro/cfile_header_part.txt:
+	minor changes in the *
+
+	* tools/devel/xemacs_macro/yawtb-code-comment.el:
+	Little bug. $header$ was understood by cvs like a macro instead the word "$header$"
+
+	* tools/devel/xemacs_macro/cfile_gpl_part.txt, tools/devel/xemacs_macro/cfile_header_part.txt, tools/devel/xemacs_macro/mfile_header_part.txt, tools/devel/xemacs_macro/yawtb-code-comment.el:
+	Adding header and gpl part of cfiles.
+
+	* tools/devel/xemacs_macro/gpl_part.txt, tools/devel/xemacs_macro/header_part.txt, tools/devel/xemacs_macro/mfile_gpl_part.txt, tools/devel/xemacs_macro/mfile_header_part.txt, tools/devel/xemacs_macro/mfiles-header.el, tools/devel/xemacs_macro/yawtb-code-comment.el:
+	Renaming files more explicitely. Adding c code support in yawtb-code-comment.c
+
+2001-07-27  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* continuous/sphere/wave_defs/dogspheric.c:
+	Moving dogspheric.c in wave_defs subdir
+
+	* continuous/sphere/dogspheric.c:
+	Moving dogspheric.c in the right place, i.e. wave_defs
+
+	* continuous/sphere/cwtsph.m, continuous/sphere/cwtsph_yashow.m, tools/display/yashow.m:
+	Changing the example
+
+	* sample/sphere/world.mat:
+	Dividing the resolution of the world mapping by 2.
+
+	* continuous/sphere/cwtsph_yashow.m:
+	Adding the 'relief' option to display a 3D surfaces.
+
+	* continuous/sphere/cwtsph.m, continuous/sphere/cwtsph_yashow.m, continuous/sphere/dogspheric.c, continuous/sphere/wave_defs/dogsph.m:
+	First version of a spherical wavelet transform in yawtb
+
+	* continuous/2d/cwt2d_yashow.m:
+	Lost of time in the 'filter' case. All scales and angles was computed for only one display.
+
+	* sample/sphere/world.mat: Changing europa to wolrd map.
+
+	* sample/sphere/europa.mat:
+	Bad name, it is the world map and not europa.
+
+	* sample/sphere/europa.mat: Adding the binary map of the world
+
+2001-07-24  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* tools/display/yashow.m:
+	Adding a 'square' option for squared (picture) representation.
+
+2001-07-19  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* continuous/1d/wave_defs/morlet1d.m, continuous/1d/wave_defs/sdog1d.m, continuous/2d/cwt2d_yashow.m:
+	Turning the 'leak' and the 'rleak' options of vect into 'open' and 'lopen'.
+
+2001-07-16  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* continuous/1d/cwt1d_yashow.m, continuous/2d/cwt2d_yashow.m:
+	Changing the header.
+
+	* COPYING: Errrorrrr! It was LGPL but it must be GPL !!!
+
+	* continuous/1d/cwt1d_yashow.m: Header completed
+
+	* continuous/1d/cwt1d_yashow.m:
+	Adding the default thresholding of the phase (and all mode) to 5% of the absolute value. This value can be change by the modifier 'thresh'.
+
+2001-07-13  Alain Coron  <coron@pcfyma3>
+
+	* sample/1d/linearchirp.m:
+	Add a function to compute complex linear chirps.
+
+2001-07-12  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* continuous/1d/cwt1d_yashow.m:
+	Adding logarihmic scale detection in cwt1d_yashow.m for nice plot
+
+2001-07-11  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* continuous/1d/cwt1d.m, continuous/1d/cwt1d_yashow.m:
+	Changing the display with the signal in the bottom.
+
+2001-07-10  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* INSTALL: Spelling change.
+
+	* INSTALL: Change for the use of yaload
+
+	* yaload.m: Adding a little progress status in yaload
+
+	* .is_yawtb_root, yaload.m:
+	update_yawtb_path.sh is now became a matlab script instead of shell script
+
+2001-07-02  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* continuous/2d/sacwt2d.m: ... only in the 'mousechoose' case
+
+	* continuous/2d/sacwt2d.m:
+	A message informs the user of the selected points.
+
+	* continuous/2d/sacwt2d.m:
+	Adding the 'Mark' option to specify if a mark of the selected point is desired (default: no)
+
+2001-06-27  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* continuous/2d/sacwt2d.m, tools/display/yashow.m:
+	Adding the possibility to add options to plot/vector case
+
+	* tools/display/yashow.m:
+	Adding the support of 'vector' in the standard yashow
+
+2001-06-26  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* tools/display/yashow.m:
+	A little bug for the 'histeq' in case of true color matrix in [0,1[^3
+
+2001-06-25  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* tools/display/yashow.m: A little bug in the histeq option
+
+2001-06-21  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* continuous/2d/cwt2d.m: Spelling change
+
+	* INSTALL: Just a test. Nothing has changed.
+
+2001-06-20  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* discrete/frames/2d/wpck2d_yashow.m:
+	Simplifying the display through the improving of yashow for matrix
+
+	* continuous/1d/cwt1d_yashow.m, tools/display/yashow.m:
+	Revisiting the code of the different display mfiles to eliminate redondancy
+
+	* continuous/1d/cwt1d_yashow.m:
+	imagesc is replaced by yashow for matrix. This allows the inheritance of many features of yashow.
+
+	* tools/display/yashow.m:
+	A simple bug. A each display, two figures were created.
+
+	* tools/display/yashow.m:
+	Creation of a new figure for each use of yashow unless the 'fig' command is used
+
+2001-06-19  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* tools/display/yashow.m:
+	Adding the 'exec' option to manipulate matrix.
+
+	* continuous/2d/cwt2d.m, continuous/2d/cwt2d_yashow.m, continuous/2d/wave_defs/sqdog2d.m:
+	Changes to handle multiple scales and angle in any cwt2d.
+	Taking account of that for the display in cwt2d_yashow with the 'sc' and the 'ang' options
+
+2001-06-15  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* continuous/2d/sacwt2d.m, continuous/2d/wave_defs/sqdog2d.m:
+	Little bugs
+
+	* sample/2d/MdH.mat:
+	Adding the image of the Color Marc de Hemptine Building
+
+2001-06-11  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* continuous/2d/wave_defs/sqdog2d.m:
+	Adding the non wavelet "square of sdog2d" for statistical application.
+
+	* continuous/2d/wave_defs/sdog2d.m:
+	Error in the k2 gaussian argument. It must be divided by 2.
+
+2001-05-28  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* sample/1d/.is_in_mpath: Adding the sample/1d dir in the YAWtb path
+
+2001-05-23  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* continuous/2d/cwt2d_yashow.m:
+	Adding the 'ener' mode for modulus square mode.
+
+	* continuous/1d/cwt1d_yashow.m: Adding the 'ener' mode.
+
+	* continuous/1d/wave_defs/sdog1d.m:
+	Correcting a little bug (misnamed variable 'kx' instead of simply 'k')
+
+	* sample/1d/yachirp.m:
+	Adding this chirp example for typical signal example used with cwt1d
+
+	* continuous/1d/cwt1d.m:
+	Adding the fftshift1 instead of fftshift(.,[],2) for matlab 5 compatibility
+
+2001-05-16  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* continuous/2d/samcwt2d_yashow.m:
+	Error in xaxis of imagesc and spelling changes
+
+	* continuous/2d/samcwt2d_yashow.m:
+	Adding the visualization of samcwt2d.
+
+	* continuous/2d/samcwt2d.m:
+	Yet the first version of 2D CWT Scale-Angle measure.
+
+	* continuous/2d/msacwt2d.m:
+	Renaming msacwt2d to samcwt2d for English conventions
+
+	* continuous/2d/msacwt2d.m:
+	A first version of the 2D CWT scale angle measure
+
+2001-05-10  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* INSTALL: Complementary information in the use of update_yawtb_dir.sh
+
+	* continuous/2d/sacwt2d.m:
+	Changing some display feature of the curves in the case of 'Show' option
+
+2001-04-27  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* tools/display/yashow.m:
+	The default mode of yashow for matrices is set to 'real' for real matrices and to 'abs' for imaginary ones.
+
+2001-04-26  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* sample/sphere/.is_in_mpath: Adding the sphere directory samples
+	Adding the .is_in_mpath file inside to add it to the matlab path
+
+	* continuous/sphere/.is_in_mpath:
+	Adding the sphere directory for the wavelet on the sphere
+	Adding the .is_in_mpath for adding it to the matlab path
+
+	* continuous/2d/sacwt2d.m:
+	Again a cosmetic change. The cross of the selected pixel is now arounded by a circle.
+
+	* continuous/2d/sacwt2d.m:
+	Cosmetics change in the display of the result
+
+	* continuous/2d/sacwt2d.m:
+	Removing the autoselect of the figure with results
+	Adding the 'ShowIn' option to permit the add of plot in a particular figure
+
+2001-04-24  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* continuous/2d/wave_defs/mexican2d.m:
+	I have to multiply by 2pi, not to divide!
+
+	* continuous/2d/wave_defs/mexican2d.m:
+	Forgot the 2pi in the mask formula
+
+2001-04-10  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* discrete/frames/2d/wpck2d_yashow.m:
+	Adding the display of the wavelet packet.
+
+	* continuous/2d/sacwt2d.m:
+	Suppressing the white color of the possible plot colors.
+
+	* continuous/2d/sacwt2d.m, tools/display/yashow.m:
+	Adding the 'HistEq' option to enhance contrast in simple matrix visualization.
+
+	* tools/display/yashow.m:
+	Adding the handle of figure number with the ['Fig',fig] option/value
+	couple command
+
+2001-04-09  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* continuous/2d/sacwt2d.m:
+	Axis tight and equal added in the 'show' case.
+
+2001-04-06  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* tools/display/yashow.m:
+	Adding the axis 'equal' and 'tight' to yashow for the 'matrix' type.
+
+	* continuous/1d/cwt1d.m, discrete/frames/2d/iwpck2d.m, discrete/frames/2d/wpck2d.m:
+	Modifying vect(..., 'leak') for vect(..., 'fftshift') taking account of the
+	special frequency behaviour of fftshift.
+
+	* continuous/2d/cwt2d.m:
+	Modifying inconsistency between the frequency vector creation through 'vect.m'
+	and the frequency behaviour of fftshift, by adding the special mode
+	'fftshift' to vect.m .
+
+	* continuous/2d/wave_defs/dergauss2d.m:
+	Adding the multiple derivative of gaussian.
+
+	* continuous/2d/wave_defs/cauchy2d.m, continuous/2d/wave_defs/dog2d.m, continuous/2d/wave_defs/endstop1.m, continuous/2d/wave_defs/endstop2.m, continuous/2d/wave_defs/gaussian2d.m, continuous/2d/wave_defs/gaussx.m, continuous/2d/wave_defs/mexican2d.m, continuous/2d/wave_defs/morlet2d.m, continuous/2d/wave_defs/sdog2d.m:
+	Correction of the first header line for the wavelet name.
+
+	* continuous/1d/cwt1d_yashow.m, continuous/2d/cwt2d_yashow.m, tools/display/yashow.m:
+	Dissociate the display of cwt1d and cwt2d from yashow by the call of
+	cwt1d_yashow and cwt2d_yashow
+
+2001-04-05  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* tools/devel/xemacs_macro/gpl_part.txt: Spelling change
+
+	* tools/display/yashow.m: Yashow can now display filters for cwt2d
+
+	* continuous/2d/wave_defs/gaussx.m: Forget the i in front of kx
+
+	* continuous/2d/wave_defs/gaussx.m, continuous/2d/wave_defs/mexican2d.m:
+	Adding the x derivative of gaussian wavelet (gaussx.m) and
+	supressing superflous calcul in mexican2d.m
+
+	* tools/display/yashow.m: Yashow can handle now simple matrix.
+
+	* sample/2d/BigImage.mat, sample/2d/SmallImage.mat, sample/2d/autumn.tif, sample/2d/cameraman.tif, sample/2d/essai.tif, sample/2d/mikado.mat, sample/2d/woman.mat:
+	Adding some 2D samples from Pierre's exercices.
+
+2001-04-04  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* discrete/frames/2d/iwpck2d.m, discrete/frames/2d/wpck2d.m:
+	Little bugs with the extra argument calling and the alpha parameter of any wavelet packet of wpck_def/ .
+
+	* discrete/frames/2d/iwpck2d.m:
+	A first version of the inverse wavelet packet decomposition (rebuilding)
+
+2001-03-28  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* discrete/frames/2d/wpck2d.m: Spelling changes.
+
+	* discrete/frames/2d/wpck2d.m:
+	Adding a first version for isotropical wavelet packets (like pmexican2d)
+
+	* continuous/1d/cwt1d.m:
+	Adding the 'extra' field for varargin in the 'out' output.
+
+	* continuous/1d/cwt1d.m, continuous/2d/cwt2d.m:
+	Modifying cwt2d for the use of yawopts.m
+
+2001-03-27  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* continuous/1d/cwt1d.m, continuous/2d/cwt2d.m, continuous/2d/sacwt2d.m, continuous/2d/wave_defs/mexican2d.m:
+	Some rectification inside cwt1d and cwt2d for linked default value (with a '*').
+	Changing mexican2d.m in regards of that (see the code).
+
+2001-03-22  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* continuous/2d/sacwt2d.m: Spelling changes.
+
+	* continuous/2d/sacwt2d.m: Adding the TODO header field.
+
+	* continuous/2d/sacwt2d.m:
+	Changing real to abs view of the ScaleAngle representation
+
+	* continuous/2d/sacwt2d.m:
+	A first version of an algorithm which give the scale angle wavelet representation in a point of an image.
+
+	* continuous/1d/cwt1d.m, continuous/2d/cwt2d.m:
+	Allow specification of a wavelet parameter from anothers in the 'wavparval' inside each continuous wavelet (1D & 2D) codes (e.g. mexican2d)
+
+	* continuous/2d/wave_defs/mexican2d.m:
+	Putting anisotropy case inside the mexican hat.
+
+2001-03-21  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* continuous/2d/wave_defs/gaussian2d.m:
+	Adding a gaussian in the list of wavelets for futur approximations calculations.
+
+2001-03-20  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* continuous/2d/wave_defs/mexican2d.m:
+	It leaks a division by 2 inside exponential
+
+2001-03-16  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* continuous/1d/wave_defs/sdog1d.m:
+	Adding the Scaling 1D Difference of Gaussian.
+
+	* continuous/2d/wave_defs/sdog2d.m:
+	Adding the (scling) difference of gaussian wavelet.
+
+	* sample/2d/theL.m, tools/devel/xemacs_macro/header_part.txt, tools/display/yashow.m, continuous/1d/cwt1d.m, continuous/1d/wave_defs/morlet1d.m, continuous/2d/cwt2d.m, continuous/2d/wave_defs/cauchy2d.m, continuous/2d/wave_defs/dog2d.m, continuous/2d/wave_defs/endstop1.m, continuous/2d/wave_defs/endstop2.m, continuous/2d/wave_defs/mexican2d.m, continuous/2d/wave_defs/morlet2d.m:
+	Turning the YAWtb Homepage into http://www.fyma.ucl.ac.be/projects/yawtb
+
+	* tools/devel/xemacs_macro/header_part.txt, tools/devel/xemacs_macro/mfiles-header.el:
+	PLacing the correct Xemacs macros
+
+2001-03-15  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* sample/2d/.is_in_mpath:
+	Adding samples/2d in the MAtlab PAth through the presence of .is_in_mpath
+
+	* continuous/2d/wave_defs/endstop2.m:
+	Adding my thoughts about the true Sushil second EndStop wavelet.
+
+	* continuous/2d/wave_defs/endstop2.m: Minor changes
+
+	* sample/2d/theL.m: Adding the 'L' academical example/sample.
+
+	* continuous/2d/wave_defs/dog2d.m, continuous/2d/wave_defs/endstop1.m, continuous/2d/wave_defs/endstop2.m:
+	Implementation of the two EndStopped Wavelet of Sushil Kumar BHATTACHARJEE.
+	Spelling changes inside dog2d.m
+
+	* continuous/1d/cwt1d.m, continuous/1d/wave_defs/README, continuous/2d/cwt2d.m, continuous/2d/wave_defs/README:
+	1D and 2D continuous wavelet must have dimensional suffix only if the user want to avoid confusion between this two case (good for 1D or 2D wavelet only).
+
+2001-03-08  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* continuous/1d/cwt1d.m: It leaks the norm exponent. Sorry...
+
+	* continuous/1d/cwt1d.m:
+	Scales leaks inside the last cwt1d optimization.
+	Correction with the use of diag(scales) .* the_result
+
+	* continuous/1d/cwt1d.m, continuous/2d/cwt2d.m:
+	Updating the example in the header with yashow
+
+	* tools/display/yashow.m: The first version of yashow.
+
+	* continuous/1d/cwt1d.m: Change in out fields order
+
+	* continuous/1d/cwt1d.m, continuous/2d/cwt2d.m:
+	The current 'type' field of out is replaced by the 'wav' field, and 'type' is reserved for the name of the calling function (e.g. 'cwt1d')
+
+	* continuous/1d/cwt1d.m, continuous/2d/cwt2d.m:
+	Adding scales 'sc' (and angle 'ang') field(s) to out in cwt1d (cwt2d)
+
+	* continuous/1d/wave_defs/README:
+	Any new 1D wavelet must work on 1d frequency matrices (not only vectors)
+
+	* continuous/1d/cwt1d.m:
+	Optimizing cwt1d by turn the for loop into a meshgrid application.
+
+	* continuous/1d/cwt1d.m, continuous/2d/cwt2d.m:
+	Adding a field 'para' for wavelet parameter inside the cwt1d and cwt2d output.
+
+2001-03-07  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* continuous/2d/wave_defs/README: Spelling change in REAME file
+
+	* continuous/1d/wave_defs/README:
+	Adding the README file to write its own 1D wavelet.
+
+	* continuous/1d/cwt1d.m, continuous/1d/wave_defs/.is_in_mpath, continuous/1d/wave_defs/morlet1d.m:
+	Adding the 1D continuous wavelet transform with Morlet for the first wavelet.
+
+	* continuous/2d/cwt2d.m: A little complication with strwavoption
+
+	* continuous/2d/wave_defs/morlet2d.m: Spelling changes
+
+	* continuous/2d/cwt2d.m:
+	Adding the missing wavelet conjugaison. Spelling changes.
+
+	* continuous/2d/cwt2d.m: Spelling change.
+
+	* continuous/2d/cwt2d.m: Spelling change
+
+	* continuous/2d/cwt2d.m:
+	Transform the output into a struct. Spelling errors inside the header.
+
+	* continuous/2d/cwt2d.m:
+	Hum... Removing a remaining 'impuls' inside the cwt2d help part.
+
+2001-03-06  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* continuous/2d/wave_defs/cauchy2d.m: Adding the Cauchy 2D wavelet
+
+	* continuous/2d/wave_defs/mexican2d.m:
+	Adding the (isotropic) Mexican Wavelet into "wave_defs/"
+
+	* continuous/2d/cwt2d.m: Some errors inside cwt2d header
+
+	* continuous/2d/cwt2d.m, continuous/2d/wave_defs/dog2d.m, continuous/2d/wave_defs/morlet2d.m:
+	Updating the header/comments of the wavelet functions.
+
+	* continuous/2d/cwt2d.m, continuous/2d/wave_defs/README:
+	*** empty log message ***
+
+2001-03-05  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* continuous/2d/wave_defs/.is_in_mpath:
+	Adding .is_in_mpath tag inside wave_defs for the matlab path
+
+	* continuous/2d/wave_defs/dog2d.m, continuous/2d/wave_defs/morlet2d.m:
+	Adding two 2D wavelets inside wave_Defs subdirs
+
+	* continuous/2d/cwt2d.m, continuous/2d/wave_2d_defs.m, continuous/2d/wave_defs/README:
+	Replacing the function wave_2d_defs.m by a subdirs
+	Adapting cwt2d for that
+
+	* continuous/2d/wave_defs/README:
+	Adding a README file to explain how to write its own wavelet which will be use
+	by 'cwt2d.m'
+
+	* continuous/2d/cwt2d.m:
+	Entering the Alain suggestion. 'wave_defs' is now a directory
+
+2001-02-16  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* continuous/1d/.is_in_mpath, continuous/2d/.is_in_mpath, demos/.is_in_mpath, discrete/frames/1d/.is_in_mpath, discrete/frames/2d/.is_in_mpath, discrete/laplacian/.is_in_mpath, discrete/matchp/.is_in_mpath, discrete/ortho/.is_in_mpath, tools/display/.is_in_mpath:
+	Adding some tag for subdirs to add in matlab path by 'update_yawtb_path.sh'
+
+	* YAWTB_TREE:
+	Correction of some errors inside the samples (signals,images => 1d, 2d)
+
+	* YAWTB_TREE: Adding the yawtb general tree (so we have the same copy).
+
+	* tools/devel/README:
+	README file to explain the devel directory of tools
+
+	* tools/devel/xemacs_macro/gpl_part.txt, tools/devel/xemacs_macro/header_part.txt, tools/devel/xemacs_macro/mfiles-header.el:
+	Adding the xemacs macro files to add automatically GPL header to the new mfiles
+
+	* INSTALL: The first INSTALL file for install explanations.
+
+	* continuous/2d/cwt2d.m, continuous/2d/wave_2d_defs.m:
+	*** empty log message ***
+
+2001-02-14  Laurent Jacques  <ljacques@fyma.ucl.ac.be>
+
+	* AUTHORS, COPYING: Adding GPLed files (AUTHORS, COPYING)
+

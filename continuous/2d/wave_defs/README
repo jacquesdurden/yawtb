@@ -1,0 +1,15 @@
+If you want to write your own 2d wavelet, take care about this README content.
+
+1°) Yan can terminate the name of your wavelet by '2d' (e.g. 'mydog2d.m') to avoid
+confusing with eventual 1d version of your function. In this case, you can use 
+both 'mydog2d' and 'mydog' as wavname inside 'cwt2d'.
+
+2°) This name MUST be in lower case;
+
+3°) Be sure that your mfile return the list of the "parameters
+names"/"default value" if an empty matrix is the unique input
+(e.g. mydog2d([]) == {'w0',6,'sigma',1} );
+
+4°) Enter a short description of your wavelet at the head to explain its use.
+
+L. Jacques (05/03/2001) 

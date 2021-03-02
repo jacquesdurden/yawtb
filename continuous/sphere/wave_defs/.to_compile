@@ -1,0 +1,7 @@
+mex dogsph.c
+mex morletsph.c
+mex gausssph.c
+mex gaussxxsph.c
+mex gaussxysph.c
+mex mexicansph.c
+mex emexicansph.c

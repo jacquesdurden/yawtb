@@ -1,0 +1,49 @@
+INSTALLING AND COMPILING THE SPHARMONICKIT INTERFACE FOR MATLAB AND YAWTB
+=========================================================================
+
+1°) Download the SPHARMONICKIT v2.6 at 
+	http://www.cs.dartmouth.edu/~geelong/sphere/
+and in particular at the link
+	http://www.cs.dartmouth.edu/~geelong/sphere/SpharmonicKit26.tar.gz
+
+2°) Untargezed it somewhere, say in /tmp. This will create a directory
+called /tmp/SpharmonicKit26 containing all the SpharmonicKit stuff.
+
+3°) Go inside this last directory and compile it:
+	$> cd /tmp/SpharmonicKit26
+	$> make
+where '$>' stands for the shell prompt.
+
+4°) Return in the directory containing this INSTALL file 
+(that you are currently reading ;), say
+	<yawtb>/continuous/sphere/spharmonickit 
+and modify the file 'Makefile' as follow:
+  at the top, you find a variable called SKDIR (for SpharmonicKit Directory). 
+  Set it correspondingly to you SpharmonicKit directory, 
+  that is in our example
+	  SKDIR = /tmp/SpharmonicKit26
+
+5°) in <yawtb>/continuous/sphere/spharmonickit/, type just
+	make
+    This will compile all the mex file related to this SK interface.
+
+6°) That's it. Now you can go into a matlab session and test the different 
+demo by entering:
+	>> yademo fst
+	>> yademo ifst
+	>> yademo ilmshape
+
+where '>>' stands for the matlab prompt.
+
+And... the 'Fast!' continuous spherical transform
+	>> yademo fcwtsph
+
+7°) Enjoy of it and feel free to report any bugs/comments/wishes to the Yawtb mailing list.
+
+
+The YAWTB team.
+
+
+
+
+	

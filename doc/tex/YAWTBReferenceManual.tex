@@ -1,0 +1,396 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{color}
+
+%%%% Special package for Latex2html
+\usepackage{html}
+\usepackage{heqn}
+
+%%%%  Margin modifications --> Geometry package
+% \begin{latexonly}
+  \usepackage[verbose,hmargin={2cm,2cm},vmargin={2cm,2cm}]{geometry}
+% \end{latexonly}
+
+\setcounter{secnumdepth}{1}
+\setcounter{tocdepth}{1}
+
+\definecolor{dark-blue}{rgb}{0.0,0.0,0.5}
+\definecolor{RED}{rgb}{1.0,0.0,0.0}
+
+% Some new command
+\newcommand{\YAWTB}{\textsc{YAWTb}}
+\newcommand{\YAWTBHomePage}{%
+http://www.fyma.ucl.ac.be/projects/yawtb}
+\newcommand{\Matlab}{%
+\htmladdnormallink{Matlab}{http://www.mathworks.com}}
+
+%
+% Commands related to the authors
+%
+\newcommand{\ACoron}{%
+\htmladdnormallink{Alain Coron}{mailto:alain.coron@free.fr}}
+\newcommand{\LDemanet}{%
+\htmladdnormallink{Laurent Demanet}{mailto:demanet@student.fsa.ucl.ac.be}}
+\newcommand{\LJacques}{%
+\htmladdnormallink{Laurent Jacques}{mailto:ljacques@fyma.ucl.ac.be}}
+\newcommand{\ARivoldini}{%
+\htmladdnormallink{Attilio Rivoldini}{mailto:rivoldini@fyma.ucl.ac.be}}
+\newcommand{\PVandergheynst}{%
+\htmladdnormallink{Pierre Vandergheynst}{mailto:Pierre.Vandergheynst@epfl.ch}}
+
+% Mailing lists
+\newcommand{\yawtbdevel}{\htmladdnormallink{yawtb-devel@lists.sourceforge.net}{%
+mailto:yawtb-devel@lists.sourceforge.net}}
+\newcommand{\yawtbcode}{\htmladdnormallink{yawtb-code@lists.sourceforge.net}{%
+mailto:yawtb-code@lists.sourceforge.net}}
+
+% Extra commands that one could use in the doc
+\newcommand{\libfun}[1]{\texttt{#1}}  % \libfun : Library function
+\newcommand{\libvar}[1]{\texttt{#1}}  % \libvar : Library variable
+
+
+\begin{htmlonly}
+  \pagecolor[named]{White}
+\end{htmlonly}
+
+
+\pagestyle{headings}
+\setlength{\parindent}{0cm}
+
+\begin{document}
+
+\title{%
+Yet Another Wavelet Toolbox (YAW Toolbox) Reference Guide\\ \medskip
+  Version 0.1.1}
+\author{%
+  The YAW Toolbox Team}
+
+\begin{titlepage}
+\begin{center}
+\includegraphics[width=2cm,keepaspectratio]{yawtb_cwtsph.eps}\quad
+\includegraphics[width=11cm,keepaspectratio]{logo_bgwhite.eps}\\
+\vspace{0.5cm}
+{\LARGE\bf Yet Another Wavelet Toolbox\\[0.5cm]
+Reference Guide}\\[1cm] 
+Version 0.1.1\\[0.5cm]
+The YAW Toolbox Team\\[0.5cm]
+\today
+\end{center}
+\end{titlepage}
+
+%% VERSO TITLEPAGE IN LATEX
+\begin{latexonly}
+\begin{titlepage}
+\clearpage
+\vspace*{17cm}
+\thispagestyle{empty}
+Copyright \copyright\ 2001-2002,  The YAW Toolbox Team.
+
+\medskip
+
+Permission is granted to copy, distribute and/or modify this document under
+the terms of the GNU Free Documentation License, Version 1.1 or any later
+version published by the Free Software Foundation; with the Invariant
+Sections being ``GNU General Public License'', with no Front-Cover Texts
+and with no Back-Cover Texts. A copy of the license is included in the
+section entitled ``GNU Free Documentation License''.
+
+
+% (a) The Front-Cover text is: ``Yet Another Wavelet Toolbox (YAW Toolbox)
+% Reference Guide''.
+%
+% (b) The Back-Cover text is: `` ``.
+\end{titlepage}
+\end{latexonly}
+
+%% VERSO TITLEPAGE IN HTML 
+\begin{htmlonly}
+\ \\[2cm]
+\htmlrule
+\ \\[1cm]
+Copyright \copyright\ 2001-2002,  The YAW Toolbox Team.
+
+\medskip
+
+Permission is granted to copy, distribute and/or modify this document under
+the terms of the GNU Free Documentation License, Version 1.1 or any later
+version published by the Free Software Foundation; with the Invariant
+Sections being ``GNU General Public License'', with no Front-Cover Texts
+and with no Back-Cover Texts. A copy of the license is included in the
+section entitled ``GNU Free Documentation License''.
+
+
+% (a) The Front-Cover text is: ``Yet Another Wavelet Toolbox (YAW Toolbox)
+% Reference Guide''.
+% 
+% (b) The Back-Cover text is: `` ``.
+\end{htmlonly}
+
+\htmlrule
+
+\abstract{The aim of this toolbox is to provide a clear and well documented
+  implementation in Matlab of some time-frequency and time-scale
+  transformations like the well known continuous/discrete wavelet
+  transforms.
+  
+  In this guide each function of the Yet Another Wavelet Toolbox is
+  documented.}
+
+%\htmlrule
+
+\tableofcontents
+
+
+\section{History and contributors}
+\label{sec:HisCon}
+
+The \htmladdnormallink{\YAWTB{}}{\YAWTBHomePage}{} project started on
+December 2000 few days after \LJacques' decisive E-Mail.  \ACoron,
+\LJacques, \ARivoldini, and \PVandergheynst{} make up the core of the team.
+Later \LDemanet{} joined the team.
+
+% It is registered as follows:
+%   + Project Full Name:  YAW Toolbox
+%   + Project Unix Name:  yawtb
+%   + CVS Server:         cvs.yawtb.sourceforge.net
+%   + Shell/Web Server:   yawtb.sourceforge.net
+
+The software is distributed under GNU General Public License.  So your
+contributions are welcome.  You may join the two following mailing lists:
+\begin{itemize}
+\item \yawtbdevel{} is devoted to the development.  We discuss on features
+  that we plan to add and how to code them.
+\item \yawtbcode{} is devoted to the users.  They could
+  send remarks, submit patches or new M-file.
+\end{itemize}
+
+
+\section{How to contribute ?}
+\label{sec:HowToCon}
+
+\subsection{Writing the Matlab headers}
+\label{sec:WriMatHea}
+
+
+\begin{itemize}
+\item First of all, you should use the template that you will find in\\
+  \texttt{tools/devel/xemacs\_macro/mfile\_header\_part.txt}.
+\item A \verb|\YAWTB| command exist to denote the \YAWTB{} toolbox
+\item Short description are better.  We do not need to say the one function
+  compute or return something.  For example,
+  \begin{itemize}
+  \item cwt1d: 1D continuous wavelet transform
+  \item gauss1d: 1D Gaussian wavelet in the frequency domain
+  \end{itemize}
+\item Some commands need and underscore \_.  In \LaTeX{} the \verb|_| has a
+  special meaning.  Protect this character.
+\item Use \verb|\libfun{function}| if you means the function
+  \libfun{function}
+\item Use \verb|\libvar{variable}| if you means the variable \libvar{variable}
+\item In ths Sections ``Input Data'' and ``Output Data'' we indicate the
+  type of the variable.  We already use the following types:
+  \begin{itemize}
+  \item BOOLEAN : A real number with two possible values $0$ or $1$
+  \item COMPLEX MATRIX
+  \item CPLX a complex
+  \item CPLX MATRIX
+  \item CPLX VECTOR a vector of complexes
+  \item MATRIX : the matrix may be real or complex
+  \item MISC when the type depends on the context
+  \item REAL
+  \item REAL SCALAR
+  \item REAL MATRIX
+  \item REAL VECTOR
+  \item SCALAR : real or complex scalar
+  \item STRING
+  \item STRUCT a \Matlab structure
+  \item VECTOR
+  \item YAWTB OBJECT a structure that stores the output of functions like
+    \libfun{cwt1d}
+  \end{itemize}
+  Some are redundant.  I guess that some should be considered as obsolete.
+\item The environments 
+\begin{verbatim}
+     \begin{latexonly} ... \end{latexonly}
+\end{verbatim} or
+\begin{verbatim}
+      \begin{htmlonly} ... \end{htmlonly}
+\end{verbatim} 
+   enable you to include different comments in the printed and htmlize
+   versions.
+ \item Each function will get its own label during processing the doc.  This
+   label is build with the string \texttt{cmd:} followed by the name of the
+   Matlab function.  For example the label of the \libfun{cauchy2d} command is
+   \texttt{cmd:cauchy2d}.  Even the subsections of each command have their
+   own labels.  So you can reference the functions with the command
+   \texttt{\\htmlref}.  This command has two mandatory argument, the text
+   that will appeak as a link and the reference of the link.
+ \item Fill in the ``See Also'' sections with Perl regular expression
+   separated by spaces.  The regular expression should match the name of
+   files (without the Matlab extension) in the tree of the toolbox on a Unix
+   machine.  Those regular will be expanded accordingly by a Perl script.
+   
+   For example, if you wish to add the function cwt2d, you may add
+   \texttt{$\hat{ }$cwt2d\$} or \texttt{$\hat{ }$continuous/.*/cwt2d\$}.  If
+   you wish to add all the functions under the continuous directory, type
+   \texttt{$\hat{ }$continuous/.*}.
+
+   If the regular expression does not match any name in the \YAWTB{} tree, then
+   the leading $\hat{}$ (if any) and the terminated \$ (if any) of the expression
+   are removed.  The remaining expression is added to the list of files.  So
+   you may add the \texttt{fft} command by typing \texttt{$\hat{}$fft\$}.
+
+\end{itemize}
+
+\subsection{TODO}
+\label{sec:TODO}
+
+I list a lot of possible improvements:
+\begin{itemize}
+\item Parse the Matlab header files and build a tree to be able to perform
+  easy transformation.  Having a tree should help at applying different type
+  of transformation (depending on the context) on the different section
+  (Example section, See Also section).  But building a tree may require a
+  lot of memory.
+\item Fill in the \htmlref{Section ``Writing the Matlab headers''}{sec:WriMatHea}
+% \item The ``See Also'' should accept regex as command and replace those
+%  regex by a direct link to the documentation.  It also means that we should
+%  automatically add a label to each command.
+% \item Insert an index.  In this index, the index entry Wavelet 1D could
+%   point to all the 1D implemented wavelets
+\item Code example Section: We should be able to extract the example code
+  from the documentation, run separately those pieces of code and include
+  the textual output as well as the figures in the final documentation.
+  There should be a line-numbering system of the code and an automatic
+  labelling of the code and the figure.
+
+  How could we implement this?
+  \begin{itemize}
+  \item Maybe with a code environement like this:
+\begin{verbatim}
+  \begin{code}[number=<number_of_figures>,
+               label=<label>]
+  \end{code}
+\end{verbatim}
+  \item I suggest to internally construct the label of the code with
+    \texttt{cmd:$<$cmd\_name$>$:code:$<$label$>$}
+  \item The label of the associated figures could be\\
+    \texttt{cmd:$<$cmd\_name$>$:code:$<$label$>$:fig$<$fig\_number$>$}
+  \item The Matlab command line input/output\\
+    \texttt{$<$cmd\_name$>$:code:$<$label$>$:Matlab.txt}.  Which directory?
+  \item The figures could be saved under the name\\
+    \texttt{$<$cmd\_name$>$:code:$<$label$>$:fig$<$fig\_number$>$.$<$extension$>$}.
+    Which directory?
+  \end{itemize}
+
+\end{itemize}
+
+\clearpage
+
+%
+% The commands sorted by category
+%
+\section{The commands by category}
+\label{sec:ComCat}
+
+\subsection{Contiuous Wavelet Transform}
+
+\subsubsection{1D}
+
+
+\input{TMP_cmd_cont_1d}
+
+
+
+\subsubsection{1D+T}
+
+\input{TMP_cmd_cont_1dt}
+ 
+\subsubsection{2D}
+
+\input{TMP_cmd_cont_2d}
+
+\subsubsection{3D}
+
+\input{TMP_cmd_cont_3d}
+
+\subsubsection{Sphere}
+
+\input{TMP_cmd_cont_sph}
+
+
+\subsection{Discrete Wavelet Transform}
+
+% \subsubsection{Frames 1D}
+
+% \input{TMP_cmd_disc_frames_1d}
+
+
+\subsubsection{Frames 2D}
+
+\input{TMP_cmd_disc_frames_2d}
+
+\subsubsection{Spherical Frames}
+
+\input{TMP_cmd_disc_frames_sph}
+
+% subsubsection{Laplacian}
+
+% \input{TMP_cmd_disc_lap}
+
+
+% \subsubsection{Matching Pursuit}
+
+% \input{TMP_cmd_disc_mat}
+
+
+% \subsubsection{Orthogonal}
+
+% \input{TMP_cmd_disc_ort}
+
+\subsubsection{Packet}
+
+\paragraph{2d}
+
+\input{TMP_cmd_disc_pack_2d}
+
+
+
+\subsection{Interfaces}
+
+\subsubsection{SpharmonicKit}
+
+\input{TMP_cmd_interfaces_spharmonickit}
+
+
+
+\subsection{Sample}
+
+\input{TMP_cmd_samp}
+
+
+\subsection{Help, help !}
+
+\input{TMP_cmd_help}
+
+\subsection{Tools}
+
+\input{TMP_cmd_tool}
+
+
+
+\clearpage
+
+\section{The commands in alphabetical order}
+\label{sec:ComAlpOrd}
+
+\input{TMP_cmd_by_alpha}
+
+% Include the GNU GENERAL PUBLIC LICENSE
+\input{GPL}
+
+% Include the GNU Free Documentation License
+\input{FDL}
+
+\end{document}

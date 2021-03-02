@@ -1,0 +1,116 @@
+INSTALLING AND COMPILING THE SOFT INTERFACE FOR MATLAB AND YAWTB
+=================================================================
+
+Introduction:
+=============
+
+"snipped from [1]:"
+
+SOFT is a collection of C routines which compute the discrete Fourier
+transform of a function defined on SO(3), the group of orthogonal
+matrices of determinant 1, i.e. the Rotation Group. (So SOFT equals
+``SO(3) Fourier Transforms.") The routines in this collection are
+based on the ``Separation of Variables'' technique (e.g. see the paper
+by D. Maslen and D. Rockmore below).
+
+Both forward (spatial to spectral) and inverse (spectral to spatial)
+Fourier transform routines are provided, as well as examples of how
+they may be used, e.g. pattern matching on the sphere via
+correlation. The transforms within the package assume a power-of-2
+bandwidth.
+
+
+A subset of SpharmonicKit, necessary for some of the included examples
+(correlation; rotating functions defined on the sphere), is also
+included within SOFT, as is a document explaining the contents of the
+distribution. For the curious, the document itself may be downloaded
+separately here. There is also a preprint available which offers a
+detailed theoretical development and description of the algorithms
+implemented in SOFT, as well as numerical and timing results, and some
+discussion of applications.
+
+
+Finally, variations of some routines are provided which use the more
+efficient FFTW collection (version 3, to be precise), and not our
+home-grown code, to perform the requisite Cooley-Tukey FFTs.
+
+
+SOFT is free software and is distributed under the terms of the GNU
+General Public License.
+
+...
+
+More information about SOFT, SpharmonicKit and S2KIT are available
+here:
+	[1] http://www.cs.dartmouth.edu/~geelong/soft/
+	[2] http://www.cs.dartmouth.edu/~geelong/sphere/
+
+Requirements:
+=============
+
+The SOFT Matlab interface is only working with Matlab 7.0 (and
+later), i.e. Matlab R14, since SOFT requires the FFTW V3.0 library
+linked to Matlab from version 7.
+
+If you are running Matlab 7.0 under linux, be careful to read recent
+special issues regarding to GCC 3.2/GLIBC Matlab compatibility. You
+can find more information on
+
+http://www.mathworks.com/support/solutions/data/1-OQSVI.html?solution=1-OQSVI	
+
+
+
+Procedure:
+==========
+
+0°) Make sure that FFTW V3 is installed on your computer. For more
+information: 
+	http://www.fftw.org
+
+1°) Download the SOFT v1.0 at 
+	http://www.cs.dartmouth.edu/~geelong/soft/
+and in particular one of the link
+	http://www.cs.dartmouth.edu/~geelong/soft/soft-1.0.tar.gz
+	http://www.cs.dartmouth.edu/~geelong/soft/soft10.zip
+
+2°) Uncompress it somewhere, say in /tmp. This will create a directory
+called /tmp/soft-1.0 containing all the SOFT stuff.
+
+3°) Go inside this last directory, read the README file to know how to
+configure SOFT (for instance, it has to know where to find FFTW3
+libraries), and compile it. That is
+	$> cd /tmp/soft-1.0
+	$> make all
+where '$>' stands for the shell prompt.
+
+
+
+4°) Return in the directory containing this INSTALL file 
+(that you are currently reading ;), say
+	<yawtb>/continuous/sphere/soft 
+and modify the file 'Makefile' as follow:
+  at the top, you find a variable called SOFTDIR (for SOFT Directory). 
+  Set it correspondingly to you SOFT directory, 
+  that is in our example
+	SOFTDIR = /tmp/soft-1.0
+
+5°) in <yawtb>/continuous/sphere/soft/, type just
+	make
+    This will compile all the mex file related to this SOFT interface.
+
+6°) That's it. Now you can go into a matlab session and test the different 
+demo by entering:
+	>> yademo softcorr
+
+where '>>' stands for the matlab prompt.
+
+7°) Enjoy of it and feel free to report any bugs/comments/wishes to
+the Yawtb mailing list.
+
+
+The YAWTB team.
+
+
+
+
+	

@@ -1,0 +1,23 @@
+Conditions to add your own wavelet packets
+
+1°) The input argument of your mfile must be
+	(kx,ky,mode,alpha, varargin)
+So, you have the frequency plane (kx and ky), the mode of your function which 
+can be 'infinit', 'scaling', 'wavelet', 'dscaling' and 'dwavelet' respectively 
+for the return of the infinitesimal wavelet, the scaling function, the 
+integrated wavelet and the dual of the last two. 'alpha' is for the definition 
+of wavelet and dwavelet. It represents one of the integral bound which defined 
+these functions. Note that this is 'varargin' which will contain the extra 
+parameters of your packet.
+     	
+2°) Like for standard wavelets, your mfile must return the list of the 
+extra parameters with corresponding default values if only the empty array 
+is given as input argument. For instance,
+        pmymexican2d([]) == {'sigma', 1}
+
+3°) We suggest to begin your wavelet packet by a 'p' (for packet);
+
+4°) If you want to avoid confusion with the 1d case, terminate the name of 
+your wavelet packet by '2d'.
+
+L. Jacques (28/03/2001)

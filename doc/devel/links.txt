@@ -1,0 +1,3 @@
+Here is a list of useful links helping the YAWtb developer in his code creation: 
+
+* http://www.datatool.com/MatlabStyle.pdf: "Matlab Programming Style Guidelines"

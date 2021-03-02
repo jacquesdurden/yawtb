@@ -1,0 +1,44 @@
+A S2KIT INTERFACE FOR MATLAB AND YAWTB:
+================================================
+
+This directory contains an interface between the (GPL) S2KIT, a lite
+version of SpharmonicKit [1], based on the work of Driscoll, Healy and
+Rockmore [2], and the YAWtb toolbox.
+
+Interesting programs are:
+
+* S2FST (mex file): Fast Spherical (harmonic) Transform
+* S2IFST (mex file): Fast Inverse Spherical Transform
+
+WARNINGS:
+=========
+
+The equi-angular spherical grid where the spherical data are implicitely defined is
+	(theta_i, phi_j) i=0..2B-1, j=0..2B-1
+where theta_i = (2*i+1)*pi/(2*B)
+      phi_j = j*2*pi/(2*B)
+      B is the (maximal) bandwidth of the data. 
+
+As for the line, the bandwidth B represents the maximum frequency 
+that we can reach in our frequency description of data.
+
+Remark that the North and South poles are excluded of this grid.
+	
+
+INSTALL:
+========
+See the INSTALL file.
+
+
+REFERENCES:
+===========
+
+[1] S2kit and SpharmonicKit:
+ http://www.cs.dartmouth.edu/~geelong/sphere/.
+ Developed by Sean Moore, Dennis Healy, Dan Rockmore, Peter
+ Kostelec.
+
+[2] D. Healy Jr., D. Rockmore, P. Kostelec and S. Moore, 
+ "FFTs for the 2-Sphere - Improvements and Variations", 
+ Journal of Fourier Analysis and Applications, 9:4 (2003), 
+ pp. 341 - 385. 
