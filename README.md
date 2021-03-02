@@ -4,7 +4,24 @@
 
 ## Introduction
 
-This archive contains the code of the YAWtb toolbox. This toolbox was under active development till about 2010. It is no longer developed and the purpose of this GitHub repository is only to keep an accessible archive for possible analysis.  
+This archive contains the code of the YAWtb toolbox. This toolbox was under active development till about 2010. It is no longer developed and the purpose of this GitHub repository is only to keep an accessible archive for possible analysis.
+
+The purpose of this toolbox is to implement in Matlab:
+- 1D, 2D, 3D Continuous Wavelet Transforms (CWTs)
+- 1D+Time (spatio-temporal) CWT
+- (Stereographical) Spherical CWT
+- 2D dyadic Frames (isotropic and directional)
+- (in development) Spherical Frames of Stereographical Wavelets
+
+
+## Documentation
+
+- Some [slides](doc/yawtb.pdf) describing the toolbox and its philosophy (2003)
+- [Yet Another Wavelet Toolbox Reference Guide](doc/tex/YAWTBReferenceManual.pdf) (2003, pdf)
+
+## Wanna help?
+
+This toolbox should ideally be ported to Python, which is more flexible than matlab and interface more naturally with the C files required for instance by the spherical wavelet transform. However, none of the authors have time anymore to make this transfer. If you want to help, feel free to contact [Laurent Jacques](https://perso.uclouvain.be/laurent.jacques/) for more information.  
 
 ## License
 
@@ -167,7 +184,7 @@ yawtb (=>:directories, ->:files)
 ## Authors (alphabetical authors)
 - Alain Coron 
 - Laurent Demanet
-- Laurent Jacques 
+- [Laurent Jacques](https://perso.uclouvain.be/laurent.jacques/) (corresponding author) 
 - Attilio Rivoldini 
 - Pierre Vandergheynst
 
@@ -178,4 +195,3 @@ for their kind contributions to the toolbox :
 - Boris Cigale
 - Geoffroy Piroux
 - ...
-
