@@ -4,7 +4,7 @@
 
 ## Introduction
 
-This archive contains the code of the YAWtb toolbox. This toolbox was under active development till about 2010. It is no longer developed and the purpose of this GitHub repository is only to keep an accessible archive for possible analysis.
+This archive contains the code of the YAWtb toolbox. This toolbox was under active development till about 2010 nut *it is no longer developed*. The onlly purpose of this GitHub repository is to keep an accessible archive of this former toolbox, for instance, for possible analysis, fork, or porting into another numerical programming language (such as Python or Julia).
 
 The purpose of this toolbox is to implement in Matlab:
 - 1D, 2D, 3D Continuous Wavelet Transforms (CWTs)
@@ -16,8 +16,9 @@ The purpose of this toolbox is to implement in Matlab:
 
 ## Documentation
 
-- Some [slides](doc/yawtb.pdf) describing the toolbox and its philosophy (2003)
+- Some [slides](doc/slides/yawtb.pdf) describing the toolbox and its philosophy (2003)
 - [Yet Another Wavelet Toolbox Reference Guide](doc/tex/YAWTBReferenceManual.pdf) (2003, pdf)
+(remark: LaTeX sources are available in the repository) 
 
 ## Wanna help?
 
