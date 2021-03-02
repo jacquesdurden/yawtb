@@ -29,8 +29,10 @@ Follow these steps to install the YAWtb Matlab toolbox,
 1. Unpack YAWtb where you want (say the `<YAWTBDIR>` directory for simplicity);
 
 2. Compile all the YAWtb mexfiles (provided that your `mex` matlab script is well configured) with the  `yamake` utility:
-   `>> cd <YAWTBDIR>`
-   `>> yamake`
+```
+>> cd <YAWTBDIR>
+>> yamake
+```
 (and for a more explicit compilation `>> yamake debug`)
 
 **Remark**: If you have Microsoft Windows (9x, 2000, XP, ...), it seems that the native Matlab compiler, and also this of Windows, are not
