@@ -6,6 +6,11 @@
 
 This archive contains the code of the YAWtb toolbox. This toolbox was under active development till about 2010. It is no longer developed and the purpose of this GitHub repository is only to keep an accessible archive for possible analysis.  
 
+## License
+
+This toolbox and all its files are provided under the "GNU GENERAL PUBLIC LICENSE, Version 2, June 1991".
+See this [file](COPYING.txt) for more information.
+
 ## Warnings
 
 This is the version 0.1.0 of the YAWtb, the initial release.
@@ -57,9 +62,18 @@ clear olddir;
 5. Enjoy of YAWtb !
 
 
-# Authors (alphabetical authors)
+## Authors (alphabetical authors)
 - Alain Coron 
 - Laurent Demanet
 - Laurent Jacques 
 - Attilio Rivoldini 
 - Pierre Vandergheynst
+
+## Acknowledgements
+
+The YAWtb team want to thank you the following persons 
+for their kind contributions to the toolbox :
+- Boris Cigale
+- Geoffroy Piroux
+- ...
+
