@@ -17,7 +17,7 @@ The purpose of this toolbox is to implement in Matlab:
 ## Documentation
 
 - Some [slides](doc/slides/yawtb.pdf) describing the toolbox and its philosophy (2003)
-- [Yet Another Wavelet Toolbox Reference Guide](doc/tex/YAWTBReferenceManual.pdf) (2003, pdf)
+- [Yet Another Wavelet Toolbox Reference Guide](doc/tex/YAWTBReferenceManual.pdf) (2003, pdf)<br/>
 (remark: LaTeX sources are available in the repository) 
 
 ## Wanna help?
