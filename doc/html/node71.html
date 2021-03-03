@@ -1,0 +1,205 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>ifftsph</TITLE>
+<META NAME="description" CONTENT="ifftsph">
+<META NAME="keywords" CONTENT="YAWTBReferenceManual">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="YAWTBReferenceManual.css">
+
+<LINK REL="next" HREF="node72.html">
+<LINK REL="previous" HREF="node70.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node72.html">
+</HEAD>
+
+<BODY  bgcolor="#ffffff">
+<!--Navigation Panel-->
+<A NAME="tex2html3972"
+  HREF="node72.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html3968"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html3962"
+  HREF="node70.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html3970"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html3973"
+  HREF="node72.html">ifst</A>
+<B> Up:</B> <A NAME="tex2html3969"
+  HREF="node13.html">The commands in alphabetical</A>
+<B> Previous:</B> <A NAME="tex2html3963"
+  HREF="node70.html">getyawtbprefs</A>
+ &nbsp; <B>  <A NAME="tex2html3971"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html3974"
+  HREF="node71.html#SECTION000558100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html3975"
+  HREF="node71.html#SECTION000558200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html3976"
+  HREF="node71.html#SECTION000558210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html3977"
+  HREF="node71.html#SECTION000558220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<BR>
+<LI><A NAME="tex2html3978"
+  HREF="node71.html#SECTION000558300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html3979"
+  HREF="node71.html#SECTION000558400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html3980"
+  HREF="node71.html#SECTION000558500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html3981"
+  HREF="node71.html#SECTION000558600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H2><A NAME="SECTION000558000000000000000"></A>
+<A NAME="cmd:ifftsph"></A>
+<BR>
+<FONT COLOR="#ff0000">ifftsph</FONT>
+</H2>
+
+<P>
+Inverse Spherical Harmonic Transform
+
+<P>
+
+<H3><A NAME="SECTION000558100000000000000"></A>
+<A NAME="cmd:ifftsph:Syn"></A>
+<BR>
+<FONT COLOR="#000080">Syntax</FONT>
+</H3>
+
+<P>
+[out] = ifftsph(fmat, theta, phi)
+
+<P>
+
+<H3><A NAME="SECTION000558200000000000000"></A>
+<A NAME="cmd:ifftsph:Des"></A>
+<BR>
+<FONT COLOR="#000080">Description</FONT>
+</H3>
+
+<P>
+Compute the inverse Spherical Harmonics transform.
+
+<P>
+
+<H4><A NAME="SECTION000558210000000000000"></A>
+<A NAME="cmd:ifftsph:InpD"></A>
+<BR>
+<FONT COLOR="#000080">Input Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>fmat</STRONG></DT>
+<DD>[MATRIX]: The SPherical Harmonics coeffcients, for
+instance the result of fftsph.
+
+<P>
+</DD>
+<DT><STRONG>theta, phi</STRONG></DT>
+<DD>[MATRICES]: the equiangular grid in
+latitude-longitude coordinate where the function is defined. The
+size of this grid must be (2M+1)xN with an odd number of latitudes.
+
+<P>
+</DD>
+</DL> 
+
+<P>
+
+<H4><A NAME="SECTION000558220000000000000"></A>
+<A NAME="cmd:ifftsph:OutD"></A>
+<BR>
+<FONT COLOR="#000080">Output Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>out</STRONG></DT>
+<DD>[MATRIX]: the rebuilt function.
+</DD>
+</DL> 
+
+<P>
+
+<H3><A NAME="SECTION000558300000000000000"></A>
+<A NAME="cmd:ifftsph:Exa"></A>
+<BR>
+<FONT COLOR="#000080">Example(s)</FONT>
+</H3>
+
+<P>
+<PRE>
+&gt;&gt; %% Creating the equiangular spherical grid
+&gt;&gt; [phi, theta] = meshgrid(vect(0,2*pi,32,'open'), vect(0,pi,17));
+&gt;&gt; %% Creating a function
+&gt;&gt; mat = yaspharm(theta, phi, 3,2) + yaspharm(theta, phi, 5,0);
+&gt;&gt; figure; yashow(mat, 'spheric', 'relief', 'mode', 'real');
+&gt;&gt; %% Computing the SH transform
+&gt;&gt; tmat = fftsph(mat);
+&gt;&gt; nmat = ifftsph(tmat, theta, phi);
+&gt;&gt; yapsnr(mat,nmat)
+&gt;&gt; figure; yashow(nmat, 'spheric', 'relief', 'mode', 'real');
+</PRE>
+
+<P>
+
+<H3><A NAME="SECTION000558400000000000000"></A>
+<A NAME="cmd:ifftsph:Ref"></A>
+<BR>
+<FONT COLOR="#000080">References</FONT>
+</H3>
+
+<P>
+
+<H3><A NAME="SECTION000558500000000000000"></A>
+<A NAME="cmd:ifftsph:See"></A>
+<BR>
+<FONT COLOR="#000080">See Also</FONT>
+</H3>
+
+<P>
+fftsph,, sphweight,, yaspharm.
+
+<P>
+
+<H3><A NAME="SECTION000558600000000000000">
+<FONT COLOR="#000080">Location</FONT></A>
+</H3>
+tools/misc/ifftsph.m
+
+<P>
+<BR><HR>
+<ADDRESS>
+<yawtb-devel@sourceforge.net>
+</ADDRESS>
+</BODY>
+</HTML>

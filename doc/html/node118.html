@@ -1,0 +1,224 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>sphweight</TITLE>
+<META NAME="description" CONTENT="sphweight">
+<META NAME="keywords" CONTENT="YAWTBReferenceManual">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="YAWTBReferenceManual.css">
+
+<LINK REL="next" HREF="node119.html">
+<LINK REL="previous" HREF="node117.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node119.html">
+</HEAD>
+
+<BODY  bgcolor="#ffffff">
+<!--Navigation Panel-->
+<A NAME="tex2html4904"
+  HREF="node119.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html4900"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html4894"
+  HREF="node117.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html4902"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html4905"
+  HREF="node119.html">sqdog2d</A>
+<B> Up:</B> <A NAME="tex2html4901"
+  HREF="node13.html">The commands in alphabetical</A>
+<B> Previous:</B> <A NAME="tex2html4895"
+  HREF="node117.html">sphrichardson</A>
+ &nbsp; <B>  <A NAME="tex2html4903"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html4906"
+  HREF="node118.html#SECTION0005105100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html4907"
+  HREF="node118.html#SECTION0005105200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html4908"
+  HREF="node118.html#SECTION0005105210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html4909"
+  HREF="node118.html#SECTION0005105220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<BR>
+<LI><A NAME="tex2html4910"
+  HREF="node118.html#SECTION0005105300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html4911"
+  HREF="node118.html#SECTION0005105400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html4912"
+  HREF="node118.html#SECTION0005105500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html4913"
+  HREF="node118.html#SECTION0005105600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H2><A NAME="SECTION0005105000000000000000"></A>
+<A NAME="cmd:sphweight"></A>
+<BR>
+<FONT COLOR="#ff0000">sphweight</FONT>
+</H2>
+
+<P>
+Clenshaw-Curtis weights for spherical quadrature on grid (Odd x Even)
+
+<P>
+
+<H3><A NAME="SECTION0005105100000000000000"></A>
+<A NAME="cmd:sphweight:Syn"></A>
+<BR>
+<FONT COLOR="#000080">Syntax</FONT>
+</H3>
+
+<P>
+w = sphweight(Nth, Nph [,'nopoles'])
+
+<P>
+
+<H3><A NAME="SECTION0005105200000000000000"></A>
+<A NAME="cmd:sphweight:Des"></A>
+<BR>
+<FONT COLOR="#000080">Description</FONT>
+</H3>
+
+<P>
+
+<H4><A NAME="SECTION0005105210000000000000"></A>
+<A NAME="cmd:sphweight:InpD"></A>
+<BR>
+<FONT COLOR="#000080">Input Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>Nth</STRONG></DT>
+<DD>[INT]: the height of the grid
+</DD>
+<DT><STRONG>Nph</STRONG></DT>
+<DD>[INT]: the width of the grid. 
+</DD>
+<DT><STRONG>'nopoles'</STRONG></DT>
+<DD>[BOOL]: use the square grid with no poles
+described in [2]
+</DD>
+</DL> 
+
+<P>
+
+<H4><A NAME="SECTION0005105220000000000000"></A>
+<A NAME="cmd:sphweight:OutD"></A>
+<BR>
+<FONT COLOR="#000080">Output Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>w</STRONG></DT>
+<DD>[REAL MATRIX]: the Clenshaw-Curtis weights or the
+quadrature weight of the grid obtained with the <TT>nopoles</TT>
+flag (see above) of size (Nth x Nph).
+</DD>
+</DL> 
+
+<P>
+
+<H3><A NAME="SECTION0005105300000000000000"></A>
+<A NAME="cmd:sphweight:Exa"></A>
+<BR>
+<FONT COLOR="#000080">Example(s)</FONT>
+</H3>
+
+<P>
+<PRE>
+&gt;&gt;
+</PRE>
+
+<P>
+
+<H3><A NAME="SECTION0005105400000000000000"></A>
+<A NAME="cmd:sphweight:Ref"></A>
+<BR>
+<FONT COLOR="#000080">References</FONT>
+</H3>
+
+<P>
+[1] J. P. Imhof, "On the Method for Numerical Integration of
+Clenshaw and Curtis", Numerische Mathematik 5, 138-141 (1963)
+
+<P>
+[2] J.R. Driscol and D. M. Healy. Computing fourier transforms 
+and convolutions on the 2-sphere. Advances in Applied
+Mathematics, 15 :202-250, 1994.
+
+<P>
+
+<H3><A NAME="SECTION0005105500000000000000"></A>
+<A NAME="cmd:sphweight:See"></A>
+<BR>
+<FONT COLOR="#000080">See Also</FONT>
+</H3>
+
+<P>
+fftshp,, ifftsph,, <A HREF="node156.html#cmd:yaspharm">yaspharm</A>
+
+<P>
+
+<H3><A NAME="SECTION0005105600000000000000">
+<FONT COLOR="#000080">Location</FONT></A>
+</H3>
+tools/misc/sphweight.m
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html4904"
+  HREF="node119.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html4900"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html4894"
+  HREF="node117.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html4902"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html4905"
+  HREF="node119.html">sqdog2d</A>
+<B> Up:</B> <A NAME="tex2html4901"
+  HREF="node13.html">The commands in alphabetical</A>
+<B> Previous:</B> <A NAME="tex2html4895"
+  HREF="node117.html">sphrichardson</A>
+ &nbsp; <B>  <A NAME="tex2html4903"
+  HREF="node1.html">Contents</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+<yawtb-devel@sourceforge.net>
+</ADDRESS>
+</BODY>
+</HTML>

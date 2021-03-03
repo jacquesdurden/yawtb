@@ -1,0 +1,210 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>wheel2d</TITLE>
+<META NAME="description" CONTENT="wheel2d">
+<META NAME="keywords" CONTENT="YAWTBReferenceManual">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="YAWTBReferenceManual.css">
+
+<LINK REL="next" HREF="node126.html">
+<LINK REL="previous" HREF="node124.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node126.html">
+</HEAD>
+
+<BODY  bgcolor="#ffffff">
+<!--Navigation Panel-->
+<A NAME="tex2html5043"
+  HREF="node126.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html5039"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html5033"
+  HREF="node124.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html5041"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html5044"
+  HREF="node126.html">wpck2d</A>
+<B> Up:</B> <A NAME="tex2html5040"
+  HREF="node13.html">The commands in alphabetical</A>
+<B> Previous:</B> <A NAME="tex2html5034"
+  HREF="node124.html">whatin</A>
+ &nbsp; <B>  <A NAME="tex2html5042"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html5045"
+  HREF="node125.html#SECTION0005112100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html5046"
+  HREF="node125.html#SECTION0005112200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html5047"
+  HREF="node125.html#SECTION0005112210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html5048"
+  HREF="node125.html#SECTION0005112220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<BR>
+<LI><A NAME="tex2html5049"
+  HREF="node125.html#SECTION0005112300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html5050"
+  HREF="node125.html#SECTION0005112400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html5051"
+  HREF="node125.html#SECTION0005112500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html5052"
+  HREF="node125.html#SECTION0005112600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H2><A NAME="SECTION0005112000000000000000"></A>
+<A NAME="cmd:wheel2d"></A>
+<BR>
+<FONT COLOR="#ff0000">wheel2d</FONT>
+</H2>
+
+<P>
+Compute the 2D Wheel wavelet in frequency plane
+
+<P>
+
+<H3><A NAME="SECTION0005112100000000000000"></A>
+<A NAME="cmd:wheel2d:Syn"></A>
+<BR>
+<FONT COLOR="#000080">Syntax</FONT>
+</H3>
+
+<P>
+[out] = pethat2d(kx,ky)
+
+<P>
+
+<H3><A NAME="SECTION0005112200000000000000"></A>
+<A NAME="cmd:wheel2d:Des"></A>
+<BR>
+<FONT COLOR="#000080">Description</FONT>
+</H3>
+
+<P>
+This function is based on the Aurell's 2D Pet Hat wavelet in frequency plane.
+It is given by:
+<PRE>
+                   _
+                  |   cos^2(pi/2 * log( |K| ) / log(sigma) )
+PSIHAT (kx,ky) = &lt;                if 1/sigma &lt;= |K| &lt; sigma
+                  |   0           elsewhere
+                  `-
+</PRE>
+where PSIHAT is the Fourier transform of PSI;
+<PRE>
+      K = (kx,ky);
+</PRE>
+
+<P>
+
+<H4><A NAME="SECTION0005112210000000000000"></A>
+<A NAME="cmd:wheel2d:InpD"></A>
+<BR>
+<FONT COLOR="#000080">Input Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>kx, ky</STRONG></DT>
+<DD>[REAL MATRICES]: The frequency plane. Use meshgrid
+to create it. 
+
+<P>
+</DD>
+<DT><STRONG>sigma</STRONG></DT>
+<DD>[REAL]: The spread of the wavelet in frequency
+(default, sigma=2<SUP>0.5</SUP>) 
+
+<P>
+</DD>
+</DL> 
+
+<P>
+
+<H4><A NAME="SECTION0005112220000000000000"></A>
+<A NAME="cmd:wheel2d:OutD"></A>
+<BR>
+<FONT COLOR="#000080">Output Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>out</STRONG></DT>
+<DD>[REAL MATRIX]: The wavelet in frequency plane. 
+</DD>
+</DL> 
+
+<P>
+
+<H3><A NAME="SECTION0005112300000000000000"></A>
+<A NAME="cmd:wheel2d:Exa"></A>
+<BR>
+<FONT COLOR="#000080">Example(s)</FONT>
+</H3>
+
+<P>
+<PRE>
+&gt;&gt; step = 2*pi/128;
+&gt;&gt; [kx,ky] = meshgrid( -pi : step : (pi-step) );
+&gt;&gt; wav = wheel2d(kx,ky);
+&gt;&gt; yashow(wav);
+</PRE>
+
+<P>
+
+<H3><A NAME="SECTION0005112400000000000000"></A>
+<A NAME="cmd:wheel2d:Ref"></A>
+<BR>
+<FONT COLOR="#000080">References</FONT>
+</H3>
+
+<P>
+
+<H3><A NAME="SECTION0005112500000000000000"></A>
+<A NAME="cmd:wheel2d:See"></A>
+<BR>
+<FONT COLOR="#000080">See Also</FONT>
+</H3>
+
+<P>
+<A HREF="node29.html#cmd:cwt2d">cwt2d</A>, meshgrid, <A HREF="node101.html#cmd:pethat2d">pethat2d</A>, <A HREF="node110.html#cmd:samcwt2d">samcwt2d</A>, <A HREF="node111.html#cmd:sarcwt2d">sarcwt2d</A>, <A HREF="node146.html#cmd:yashow_cwt2d">yashow_cwt2d</A>, <A HREF="node150.html#cmd:yashow_samcwt2d">yashow_samcwt2d</A>
+
+<P>
+
+<H3><A NAME="SECTION0005112600000000000000">
+<FONT COLOR="#000080">Location</FONT></A>
+</H3>
+continuous/2d/wave_defs/wheel2d.m
+
+<P>
+<BR><HR>
+<ADDRESS>
+<yawtb-devel@sourceforge.net>
+</ADDRESS>
+</BODY>
+</HTML>

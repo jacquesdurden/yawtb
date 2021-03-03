@@ -1,0 +1,242 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>gabor2d_wav</TITLE>
+<META NAME="description" CONTENT="gabor2d_wav">
+<META NAME="keywords" CONTENT="YAWTBReferenceManual">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="YAWTBReferenceManual.css">
+
+<LINK REL="next" HREF="node65.html">
+<LINK REL="previous" HREF="node63.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node65.html">
+</HEAD>
+
+<BODY  bgcolor="#ffffff">
+<!--Navigation Panel-->
+<A NAME="tex2html3832"
+  HREF="node65.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html3828"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html3822"
+  HREF="node63.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html3830"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html3833"
+  HREF="node65.html">gauss1d</A>
+<B> Up:</B> <A NAME="tex2html3829"
+  HREF="node13.html">The commands in alphabetical</A>
+<B> Previous:</B> <A NAME="tex2html3823"
+  HREF="node63.html">gabor2d_app</A>
+ &nbsp; <B>  <A NAME="tex2html3831"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html3834"
+  HREF="node64.html#SECTION000551100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html3835"
+  HREF="node64.html#SECTION000551200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html3836"
+  HREF="node64.html#SECTION000551210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html3837"
+  HREF="node64.html#SECTION000551220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<BR>
+<LI><A NAME="tex2html3838"
+  HREF="node64.html#SECTION000551300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html3839"
+  HREF="node64.html#SECTION000551400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html3840"
+  HREF="node64.html#SECTION000551500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html3841"
+  HREF="node64.html#SECTION000551600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H2><A NAME="SECTION000551000000000000000"></A>
+<A NAME="cmd:gabor2d_wav"></A>
+<BR>
+<FONT COLOR="#ff0000">gabor2d_wav</FONT>
+</H2>
+
+<P>
+The wavelet of the Gabor frame.
+
+<P>
+
+<H3><A NAME="SECTION000551100000000000000"></A>
+<A NAME="cmd:gabor2d_wav:Syn"></A>
+<BR>
+<FONT COLOR="#000080">Syntax</FONT>
+</H3>
+
+<P>
+out = gabor2d_app(kx, ky, nang, sigma, autospread)
+
+<P>
+
+<H3><A NAME="SECTION000551200000000000000"></A>
+<A NAME="cmd:gabor2d_wav:Des"></A>
+<BR>
+<FONT COLOR="#000080">Description</FONT>
+</H3>
+
+<P>
+Compute the wavelet of the Gabor frame, that is a Gabor function
+given by
+<PRE>
+PSIHAT(kx,ky) = exp( - 0.5 * [ ((kx - k0)/wx)^2 + (ky/wy)^2 ] ),
+</PRE>
+where k0 = 3*pi/4, <TT>wx</TT> and 'wy' are respectively
+the horizontal and the vertical spread. 
+'wx' is always equal to 1/<TT>sigma</TT>. 
+In the case where autospread is set to 1, 'wy' is computed to
+obtain a complete angular covering according to the number of
+sectors <TT>nang</TT>. If <TT>autospread</TT> is set to 0
+(default), then 'wy' equals 'wx', that is 1/<TT>sigma</TT>.
+
+<P>
+
+<H4><A NAME="SECTION000551210000000000000"></A>
+<A NAME="cmd:gabor2d_wav:InpD"></A>
+<BR>
+<FONT COLOR="#000080">Input Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>kx</STRONG></DT>
+<DD>[MATRIX]: the horizontal frequencies; 
+
+<P>
+</DD>
+<DT><STRONG>ky</STRONG></DT>
+<DD>[MATRIX]: the vertical frequencies; 
+
+<P>
+</DD>
+<DT><STRONG>nang</STRONG></DT>
+<DD>[INTEGER]: the number of angular sectors on which the
+frame decomposition is computed.
+
+<P>
+</DD>
+<DT><STRONG>sigma</STRONG></DT>
+<DD>[REAL]: the horizontal spread of the gabor function
+in position.
+
+<P>
+</DD>
+<DT><STRONG>autospread</STRONG></DT>
+<DD>[BOOLEAN]: 1 if 'wy' must be set to obtain a
+complete angular covering with 'nang' rotated wavelets, 0 if not.
+
+<P>
+</DD>
+</DL> 
+
+<P>
+
+<H4><A NAME="SECTION000551220000000000000"></A>
+<A NAME="cmd:gabor2d_wav:OutD"></A>
+<BR>
+<FONT COLOR="#000080">Output Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>out</STRONG></DT>
+<DD>[MATRIX]: the computed function on the frequency plane.
+</DD>
+</DL> 
+
+<P>
+
+<H3><A NAME="SECTION000551300000000000000"></A>
+<A NAME="cmd:gabor2d_wav:Exa"></A>
+<BR>
+<FONT COLOR="#000080">Example(s)</FONT>
+</H3>
+
+<P>
+<PRE>
+&gt;&gt;
+</PRE>
+
+<P>
+
+<H3><A NAME="SECTION000551400000000000000"></A>
+<A NAME="cmd:gabor2d_wav:Ref"></A>
+<BR>
+<FONT COLOR="#000080">References</FONT>
+</H3>
+
+<P>
+
+<H3><A NAME="SECTION000551500000000000000"></A>
+<A NAME="cmd:gabor2d_wav:See"></A>
+<BR>
+<FONT COLOR="#000080">See Also</FONT>
+</H3>
+
+<P>
+
+<H3><A NAME="SECTION000551600000000000000">
+<FONT COLOR="#000080">Location</FONT></A>
+</H3>
+discrete/frames/2d/frame_defs/gabor2d_wav.m
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html3832"
+  HREF="node65.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html3828"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html3822"
+  HREF="node63.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html3830"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html3833"
+  HREF="node65.html">gauss1d</A>
+<B> Up:</B> <A NAME="tex2html3829"
+  HREF="node13.html">The commands in alphabetical</A>
+<B> Previous:</B> <A NAME="tex2html3823"
+  HREF="node63.html">gabor2d_app</A>
+ &nbsp; <B>  <A NAME="tex2html3831"
+  HREF="node1.html">Contents</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+<yawtb-devel@sourceforge.net>
+</ADDRESS>
+</BODY>
+</HTML>

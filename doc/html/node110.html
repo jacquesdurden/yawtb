@@ -1,0 +1,199 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>samcwt2d</TITLE>
+<META NAME="description" CONTENT="samcwt2d">
+<META NAME="keywords" CONTENT="YAWTBReferenceManual">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="YAWTBReferenceManual.css">
+
+<LINK REL="next" HREF="node111.html">
+<LINK REL="previous" HREF="node109.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node111.html">
+</HEAD>
+
+<BODY  bgcolor="#ffffff">
+<!--Navigation Panel-->
+<A NAME="tex2html4748"
+  HREF="node111.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html4744"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html4738"
+  HREF="node109.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html4746"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html4749"
+  HREF="node111.html">sarcwt2d</A>
+<B> Up:</B> <A NAME="tex2html4745"
+  HREF="node13.html">The commands in alphabetical</A>
+<B> Previous:</B> <A NAME="tex2html4739"
+  HREF="node109.html">rmorlet2d</A>
+ &nbsp; <B>  <A NAME="tex2html4747"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html4750"
+  HREF="node110.html#SECTION000597100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html4751"
+  HREF="node110.html#SECTION000597200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html4752"
+  HREF="node110.html#SECTION000597210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html4753"
+  HREF="node110.html#SECTION000597220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<BR>
+<LI><A NAME="tex2html4754"
+  HREF="node110.html#SECTION000597300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html4755"
+  HREF="node110.html#SECTION000597400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html4756"
+  HREF="node110.html#SECTION000597500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html4757"
+  HREF="node110.html#SECTION000597600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H2><A NAME="SECTION000597000000000000000"></A>
+<A NAME="cmd:samcwt2d"></A>
+<BR>
+<FONT COLOR="#ff0000">samcwt2d</FONT>
+</H2>
+
+<P>
+Compute the 2D CWT scale-angle measure
+
+<P>
+
+<H3><A NAME="SECTION000597100000000000000"></A>
+<A NAME="cmd:samcwt2d:Syn"></A>
+<BR>
+<FONT COLOR="#000080">Syntax</FONT>
+</H3>
+
+<P>
+sam = samcwt2d(fimg, wavname, scales, angles
+                [, WaveletParameter ]
+                [,'Norm', NormValue ] )
+
+<P>
+sam = samcwt2d(fimg, wavname, scales, angles 
+                [,'WaveletOptionName', WaveletOptionValue ]
+                [,'Norm', NormValue ] )
+
+<P>
+
+<H3><A NAME="SECTION000597200000000000000"></A>
+<A NAME="cmd:samcwt2d:Des"></A>
+<BR>
+<FONT COLOR="#000080">Description</FONT>
+</H3>
+
+<P>
+This function compute the scale-angle measure of an image through its
+Fourier transform 'fimg', that is the integration over all the
+position of the CWT of mat according the wavelet 'wavname'.
+
+<P>
+
+<H4><A NAME="SECTION000597210000000000000"></A>
+<A NAME="cmd:samcwt2d:InpD"></A>
+<BR>
+<FONT COLOR="#000080">Input Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>fimg</STRONG></DT>
+<DD>[COMPLEX MATRIX]: the Fourier transform of the image
+
+<P>
+</DD>
+<DT><STRONG>wavname</STRONG></DT>
+<DD>[STRING]: the name of the wavelet. See
+<code>yawtdir/continuous/2d/wave\_defs</code> to see which wavelets are
+available.
+
+<P>
+</DD>
+<DT><STRONG>scales, angles</STRONG></DT>
+<DD>[REAL VECTORS]: the scale and the angle vectors.
+</DD>
+</DL> 
+
+<P>
+
+<H4><A NAME="SECTION000597220000000000000"></A>
+<A NAME="cmd:samcwt2d:OutD"></A>
+<BR>
+<FONT COLOR="#000080">Output Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>out</STRONG></DT>
+<DD>[YAWTB OBJECT]: the scale-angle measure.
+</DD>
+</DL> 
+
+<P>
+
+<H3><A NAME="SECTION000597300000000000000"></A>
+<A NAME="cmd:samcwt2d:Exa"></A>
+<BR>
+<FONT COLOR="#000080">Example(s)</FONT>
+</H3>
+
+<P>
+
+<H3><A NAME="SECTION000597400000000000000"></A>
+<A NAME="cmd:samcwt2d:Ref"></A>
+<BR>
+<FONT COLOR="#000080">References</FONT>
+</H3>
+
+<P>
+
+<H3><A NAME="SECTION000597500000000000000"></A>
+<A NAME="cmd:samcwt2d:See"></A>
+<BR>
+<FONT COLOR="#000080">See Also</FONT>
+</H3>
+
+<P>
+
+<H3><A NAME="SECTION000597600000000000000">
+<FONT COLOR="#000080">Location</FONT></A>
+</H3>
+continuous/2d/samcwt2d.m
+
+<P>
+<BR><HR>
+<ADDRESS>
+<yawtb-devel@sourceforge.net>
+</ADDRESS>
+</BODY>
+</HTML>

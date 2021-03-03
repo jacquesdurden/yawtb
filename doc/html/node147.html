@@ -1,0 +1,190 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>yashow_cwt3d</TITLE>
+<META NAME="description" CONTENT="yashow_cwt3d">
+<META NAME="keywords" CONTENT="YAWTBReferenceManual">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="YAWTBReferenceManual.css">
+
+<LINK REL="next" HREF="node148.html">
+<LINK REL="previous" HREF="node146.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node148.html">
+</HEAD>
+
+<BODY  bgcolor="#ffffff">
+<!--Navigation Panel-->
+<A NAME="tex2html5461"
+  HREF="node148.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html5457"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html5451"
+  HREF="node146.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html5459"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html5462"
+  HREF="node148.html">yashow_cwtsph</A>
+<B> Up:</B> <A NAME="tex2html5458"
+  HREF="node13.html">The commands in alphabetical</A>
+<B> Previous:</B> <A NAME="tex2html5452"
+  HREF="node146.html">yashow_cwt2d</A>
+ &nbsp; <B>  <A NAME="tex2html5460"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html5463"
+  HREF="node147.html#SECTION0005134100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html5464"
+  HREF="node147.html#SECTION0005134200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html5465"
+  HREF="node147.html#SECTION0005134210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html5466"
+  HREF="node147.html#SECTION0005134220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<BR>
+<LI><A NAME="tex2html5467"
+  HREF="node147.html#SECTION0005134300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html5468"
+  HREF="node147.html#SECTION0005134400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html5469"
+  HREF="node147.html#SECTION0005134500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html5470"
+  HREF="node147.html#SECTION0005134600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H2><A NAME="SECTION0005134000000000000000"></A>
+<A NAME="cmd:yashow_cwt3d"></A>
+<BR>
+<FONT COLOR="#ff0000">yashow_cwt3d</FONT>
+</H2>
+
+<P>
+Display the result of cwt3d. Automatically called by yashow!
+
+<P>
+
+<H3><A NAME="SECTION0005134100000000000000"></A>
+<A NAME="cmd:yashow_cwt3d:Syn"></A>
+<BR>
+<FONT COLOR="#000080">Syntax</FONT>
+</H3>
+
+<P>
+cwt3d_yashow(yawres [,'filter' [,filter_type]] )
+
+<P>
+
+<H3><A NAME="SECTION0005134200000000000000"></A>
+<A NAME="cmd:yashow_cwt3d:Des"></A>
+<BR>
+<FONT COLOR="#000080">Description</FONT>
+</H3>
+
+<P>
+This function displays the result of the cwt3d function. It is
+automatically called by yashow with respect to the type of
+yawres, that is, the name of yawres.type. 
+
+<P>
+
+<H4><A NAME="SECTION0005134210000000000000"></A>
+<A NAME="cmd:yashow_cwt3d:InpD"></A>
+<BR>
+<FONT COLOR="#000080">Input Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>yawres</STRONG></DT>
+<DD>[YAWTB OBJECT]:  the input structure coming from
+cwt3d.
+
+<P>
+</DD>
+<DT><STRONG>filter</STRONG></DT>
+<DD>[BOOLEAN]: the presence of this modifier specify if
+we want to display the filter, that is, the wavelet in frequency.
+
+<P>
+</DD>
+<DT><STRONG>filter_type</STRONG></DT>
+<DD>['freq'|'pos']: the type of filter to
+display: its frequency ('freq') or its positional ('pos')
+representation. By default, without any precision, the frequency
+part is drawn.
+
+<P>
+</DD>
+</DL> 
+
+<P>
+
+<H4><A NAME="SECTION0005134220000000000000"></A>
+<A NAME="cmd:yashow_cwt3d:OutD"></A>
+<BR>
+<FONT COLOR="#000080">Output Data</FONT>
+</H4>
+
+<P>
+
+<H3><A NAME="SECTION0005134300000000000000"></A>
+<A NAME="cmd:yashow_cwt3d:Exa"></A>
+<BR>
+<FONT COLOR="#000080">Example(s)</FONT>
+</H3>
+
+<P>
+
+<H3><A NAME="SECTION0005134400000000000000"></A>
+<A NAME="cmd:yashow_cwt3d:Ref"></A>
+<BR>
+<FONT COLOR="#000080">References</FONT>
+</H3>
+
+<P>
+
+<H3><A NAME="SECTION0005134500000000000000"></A>
+<A NAME="cmd:yashow_cwt3d:See"></A>
+<BR>
+<FONT COLOR="#000080">See Also</FONT>
+</H3>
+
+<P>
+
+<H3><A NAME="SECTION0005134600000000000000">
+<FONT COLOR="#000080">Location</FONT></A>
+</H3>
+continuous/3d/yashow_cwt3d.m
+
+<P>
+<BR><HR>
+<ADDRESS>
+<yawtb-devel@sourceforge.net>
+</ADDRESS>
+</BODY>
+</HTML>

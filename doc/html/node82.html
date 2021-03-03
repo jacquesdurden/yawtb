@@ -1,0 +1,197 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>iwpck2d</TITLE>
+<META NAME="description" CONTENT="iwpck2d">
+<META NAME="keywords" CONTENT="YAWTBReferenceManual">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="YAWTBReferenceManual.css">
+
+<LINK REL="next" HREF="node83.html">
+<LINK REL="previous" HREF="node81.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node83.html">
+</HEAD>
+
+<BODY  bgcolor="#ffffff">
+<!--Navigation Panel-->
+<A NAME="tex2html4191"
+  HREF="node83.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html4187"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html4181"
+  HREF="node81.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html4189"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html4192"
+  HREF="node83.html">linearchirp</A>
+<B> Up:</B> <A NAME="tex2html4188"
+  HREF="node13.html">The commands in alphabetical</A>
+<B> Previous:</B> <A NAME="tex2html4182"
+  HREF="node81.html">isomor2d</A>
+ &nbsp; <B>  <A NAME="tex2html4190"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html4193"
+  HREF="node82.html#SECTION000569100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html4194"
+  HREF="node82.html#SECTION000569200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html4195"
+  HREF="node82.html#SECTION000569210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html4196"
+  HREF="node82.html#SECTION000569220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<BR>
+<LI><A NAME="tex2html4197"
+  HREF="node82.html#SECTION000569300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html4198"
+  HREF="node82.html#SECTION000569400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html4199"
+  HREF="node82.html#SECTION000569500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html4200"
+  HREF="node82.html#SECTION000569600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H2><A NAME="SECTION000569000000000000000"></A>
+<A NAME="cmd:iwpck2d"></A>
+<BR>
+<FONT COLOR="#ff0000">iwpck2d</FONT>
+</H2>
+
+<P>
+Compute the reconstruction of the wavelet packets transform
+
+<P>
+
+<H3><A NAME="SECTION000569100000000000000"></A>
+<A NAME="cmd:iwpck2d:Syn"></A>
+<BR>
+<FONT COLOR="#000080">Syntax</FONT>
+</H3>
+
+<P>
+[img] = iwpck2d(yawpck)
+
+<P>
+
+<H3><A NAME="SECTION000569200000000000000"></A>
+<A NAME="cmd:iwpck2d:Des"></A>
+<BR>
+<FONT COLOR="#000080">Description</FONT>
+</H3>
+
+<P>
+This function computes the reconstruction of the wavelet packets
+transform from the output of the 'wpck2d' function which
+calculates the wavelet packet decomposition.
+
+<P>
+
+<H4><A NAME="SECTION000569210000000000000"></A>
+<A NAME="cmd:iwpck2d:InpD"></A>
+<BR>
+<FONT COLOR="#000080">Input Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>yawpck</STRONG></DT>
+<DD>[STRUCT]: The output of 'wpck2d'  
+</DD>
+</DL> 
+
+<P>
+
+<H4><A NAME="SECTION000569220000000000000"></A>
+<A NAME="cmd:iwpck2d:OutD"></A>
+<BR>
+<FONT COLOR="#000080">Output Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>img</STRONG></DT>
+<DD>[COMPLEX MATRIX]: the rebuilded image.
+</DD>
+</DL> 
+
+<P>
+
+<H3><A NAME="SECTION000569300000000000000"></A>
+<A NAME="cmd:iwpck2d:Exa"></A>
+<BR>
+<FONT COLOR="#000080">Example(s)</FONT>
+</H3>
+
+<P>
+<PRE>
+&gt;&gt; mat = theL(128);
+&gt;&gt; fmat = fft2(mat);
+&gt;&gt; sc = linspace(0.3,10,12);
+&gt;&gt; ypck = wpck2d(fmat,'pmexican',sc);
+&gt;&gt; figure; imagesc(real(ypck.approx));
+&gt;&gt; figure; imagesc(real(ypck.details(:,:,1)));
+&gt;&gt; figure; imagesc(real(iwpck2d(ypck)));
+</PRE>
+Compute the wavelet packet decomposition of a 'L' picture (see
+'theL'), show the approximation at the last scale and the first
+details and finally display the rebuilded image.
+
+<P>
+
+<H3><A NAME="SECTION000569400000000000000"></A>
+<A NAME="cmd:iwpck2d:Ref"></A>
+<BR>
+<FONT COLOR="#000080">References</FONT>
+</H3>
+
+<P>
+
+<H3><A NAME="SECTION000569500000000000000"></A>
+<A NAME="cmd:iwpck2d:See"></A>
+<BR>
+<FONT COLOR="#000080">See Also</FONT>
+</H3>
+
+<P>
+<A HREF="#cmd:iwpck2d">iwpck2d</A>, <A HREF="node105.html#cmd:pmexican2d">pmexican2d</A>, <A HREF="node121.html#cmd:theL">theL</A>, <A HREF="node126.html#cmd:wpck2d">wpck2d</A>, <A HREF="node154.html#cmd:yashow_wpck2d">yashow_wpck2d</A>
+
+<P>
+
+<H3><A NAME="SECTION000569600000000000000">
+<FONT COLOR="#000080">Location</FONT></A>
+</H3>
+discrete/packet/2d/iwpck2d.m
+
+<P>
+<BR><HR>
+<ADDRESS>
+<yawtb-devel@sourceforge.net>
+</ADDRESS>
+</BODY>
+</HTML>

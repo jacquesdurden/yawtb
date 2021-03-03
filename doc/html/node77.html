@@ -1,0 +1,190 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>ifwtsph</TITLE>
+<META NAME="description" CONTENT="ifwtsph">
+<META NAME="keywords" CONTENT="YAWTBReferenceManual">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="YAWTBReferenceManual.css">
+
+<LINK REL="next" HREF="node78.html">
+<LINK REL="previous" HREF="node76.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node78.html">
+</HEAD>
+
+<BODY  bgcolor="#ffffff">
+<!--Navigation Panel-->
+<A NAME="tex2html4092"
+  HREF="node78.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html4088"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html4082"
+  HREF="node76.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html4090"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html4093"
+  HREF="node78.html">ilmshape</A>
+<B> Up:</B> <A NAME="tex2html4089"
+  HREF="node13.html">The commands in alphabetical</A>
+<B> Previous:</B> <A NAME="tex2html4083"
+  HREF="node76.html">ifwt2d_wav</A>
+ &nbsp; <B>  <A NAME="tex2html4091"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html4094"
+  HREF="node77.html#SECTION000564100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html4095"
+  HREF="node77.html#SECTION000564200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html4096"
+  HREF="node77.html#SECTION000564210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html4097"
+  HREF="node77.html#SECTION000564220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<BR>
+<LI><A NAME="tex2html4098"
+  HREF="node77.html#SECTION000564300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html4099"
+  HREF="node77.html#SECTION000564400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html4100"
+  HREF="node77.html#SECTION000564500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html4101"
+  HREF="node77.html#SECTION000564600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H2><A NAME="SECTION000564000000000000000"></A>
+<A NAME="cmd:ifwtsph"></A>
+<BR>
+<FONT COLOR="#ff0000">ifwtsph</FONT>
+</H2>
+
+<P>
+Inverse Framed Wavelet Transform approximation on the sphere
+
+<P>
+
+<H3><A NAME="SECTION000564100000000000000"></A>
+<A NAME="cmd:ifwtsph:Syn"></A>
+<BR>
+<FONT COLOR="#000080">Syntax</FONT>
+</H3>
+
+<P>
+out = ifwtsph(fwt)
+
+<P>
+
+<H3><A NAME="SECTION000564200000000000000"></A>
+<A NAME="cmd:ifwtsph:Des"></A>
+<BR>
+<FONT COLOR="#000080">Description</FONT>
+</H3>
+
+<P>
+Compute an approximation of the rebuilding of the spherical data
+using the same wavelet for the reconstruction than for the
+analysis.
+
+<P>
+
+<H4><A NAME="SECTION000564210000000000000"></A>
+<A NAME="cmd:ifwtsph:InpD"></A>
+<BR>
+<FONT COLOR="#000080">Input Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>fwt</STRONG></DT>
+<DD>[STRUCT]: the result of the framed wavelet tranform
+obtain with fwtsph.
+</DD>
+</DL> 
+
+<P>
+
+<H4><A NAME="SECTION000564220000000000000"></A>
+<A NAME="cmd:ifwtsph:OutD"></A>
+<BR>
+<FONT COLOR="#000080">Output Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>out</STRONG></DT>
+<DD>[MATRIX]: the rebuilt spherical signal
+</DD>
+</DL> 
+
+<P>
+
+<H3><A NAME="SECTION000564300000000000000"></A>
+<A NAME="cmd:ifwtsph:Exa"></A>
+<BR>
+<FONT COLOR="#000080">Example(s)</FONT>
+</H3>
+
+<P>
+<PRE>
+&gt;&gt; load world
+&gt;&gt; yashow(mat, 'spheric', 'fig', 1);
+&gt;&gt; wav = fwtsph(mat, 'dog'); %% It's time to drink a cup of coffee!
+&gt;&gt; nmat = ifwtsph(wav);
+&gt;&gt; yashow(nmat, 'spheric', 'fig', 2);
+</PRE>
+
+<P>
+
+<H3><A NAME="SECTION000564400000000000000"></A>
+<A NAME="cmd:ifwtsph:Ref"></A>
+<BR>
+<FONT COLOR="#000080">References</FONT>
+</H3>
+
+<P>
+
+<H3><A NAME="SECTION000564500000000000000"></A>
+<A NAME="cmd:ifwtsph:See"></A>
+<BR>
+<FONT COLOR="#000080">See Also</FONT>
+</H3>
+
+<P>
+
+<H3><A NAME="SECTION000564600000000000000">
+<FONT COLOR="#000080">Location</FONT></A>
+</H3>
+discrete/frames/sphere/ifwtsph.m
+
+<P>
+<BR><HR>
+<ADDRESS>
+<yawtb-devel@sourceforge.net>
+</ADDRESS>
+</BODY>
+</HTML>

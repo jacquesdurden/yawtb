@@ -1,0 +1,139 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>TODO</TITLE>
+<META NAME="description" CONTENT="TODO">
+<META NAME="keywords" CONTENT="YAWTBReferenceManual">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="YAWTBReferenceManual.css">
+
+<LINK REL="previous" HREF="node4.html">
+<LINK REL="up" HREF="node3.html">
+<LINK REL="next" HREF="node6.html">
+</HEAD>
+
+<BODY  bgcolor="#ffffff">
+<!--Navigation Panel-->
+<A NAME="tex2html1414"
+  HREF="node6.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html1410"
+  HREF="node3.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html1406"
+  HREF="node4.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html1412"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html1415"
+  HREF="node6.html">The commands by category</A>
+<B> Up:</B> <A NAME="tex2html1411"
+  HREF="node3.html">How to contribute ?</A>
+<B> Previous:</B> <A NAME="tex2html1407"
+  HREF="node4.html">Writing the Matlab headers</A>
+ &nbsp; <B>  <A NAME="tex2html1413"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00032000000000000000"></A>
+<A NAME="sec:TODO"></A>
+<BR>
+TODO
+</H2>
+
+<P>
+I list a lot of possible improvements:
+
+<UL>
+<LI>Parse the Matlab header files and build a tree to be able to perform
+  easy transformation.  Having a tree should help at applying different type
+  of transformation (depending on the context) on the different section
+  (Example section, See Also section).  But building a tree may require a
+  lot of memory.
+</LI>
+<LI>Fill in the <A HREF="node4.html#sec:WriMatHea">Section ``Writing the Matlab headers''</A>
+</LI>
+<LI>Code example Section: We should be able to extract the example code
+  from the documentation, run separately those pieces of code and include
+  the textual output as well as the figures in the final documentation.
+  There should be a line-numbering system of the code and an automatic
+  labelling of the code and the figure.
+
+<P>
+How could we implement this?
+  
+<UL>
+<LI>Maybe with a code environement like this:
+<PRE>
+  \begin{code}[number=&lt;number_of_figures&gt;,
+               label=&lt;label&gt;]
+  \end{code}
+</PRE>
+</LI>
+<LI>I suggest to internally construct the label of the code with
+    <TT>cmd:&lt;cmd_name&gt;:code:&lt;label&gt;</TT>
+</LI>
+<LI>The label of the associated figures could be
+<BR>    <TT>cmd:&lt;cmd_name&gt;:code:&lt;label&gt;:fig&lt;fig_number&gt;</TT>
+</LI>
+<LI>The Matlab command line input/output
+<BR>    <TT>&lt;cmd_name&gt;:code:&lt;label&gt;:Matlab.txt</TT>.  Which directory?
+</LI>
+<LI>The figures could be saved under the name
+<BR>    <TT>&lt;cmd_name&gt;:code:&lt;label&gt;:fig&lt;fig_number&gt;.&lt;extension&gt;</TT>.
+    Which directory?
+  
+</LI>
+</UL>
+
+<P>
+</LI>
+</UL>
+
+<P>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1414"
+  HREF="node6.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html1410"
+  HREF="node3.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html1406"
+  HREF="node4.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html1412"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html1415"
+  HREF="node6.html">The commands by category</A>
+<B> Up:</B> <A NAME="tex2html1411"
+  HREF="node3.html">How to contribute ?</A>
+<B> Previous:</B> <A NAME="tex2html1407"
+  HREF="node4.html">Writing the Matlab headers</A>
+ &nbsp; <B>  <A NAME="tex2html1413"
+  HREF="node1.html">Contents</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+<yawtb-devel@sourceforge.net>
+</ADDRESS>
+</BODY>
+</HTML>

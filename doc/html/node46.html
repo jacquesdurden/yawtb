@@ -1,0 +1,337 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>fwt2d</TITLE>
+<META NAME="description" CONTENT="fwt2d">
+<META NAME="keywords" CONTENT="YAWTBReferenceManual">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="YAWTBReferenceManual.css">
+
+<LINK REL="next" HREF="node47.html">
+<LINK REL="previous" HREF="node45.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node47.html">
+</HEAD>
+
+<BODY  bgcolor="#ffffff">
+<!--Navigation Panel-->
+<A NAME="tex2html3474"
+  HREF="node47.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html3470"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html3464"
+  HREF="node45.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html3472"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html3475"
+  HREF="node47.html">fwt2d_allwav</A>
+<B> Up:</B> <A NAME="tex2html3471"
+  HREF="node13.html">The commands in alphabetical</A>
+<B> Previous:</B> <A NAME="tex2html3465"
+  HREF="node45.html">fst</A>
+ &nbsp; <B>  <A NAME="tex2html3473"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html3476"
+  HREF="node46.html#SECTION000533100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html3477"
+  HREF="node46.html#SECTION000533200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html3478"
+  HREF="node46.html#SECTION000533210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html3479"
+  HREF="node46.html#SECTION000533220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<BR>
+<LI><A NAME="tex2html3480"
+  HREF="node46.html#SECTION000533300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html3481"
+  HREF="node46.html#SECTION000533400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html3482"
+  HREF="node46.html#SECTION000533500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html3483"
+  HREF="node46.html#SECTION000533600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H2><A NAME="SECTION000533000000000000000"></A>
+<A NAME="cmd:fwt2d"></A>
+<BR>
+<FONT COLOR="#ff0000">fwt2d</FONT>
+</H2>
+
+<P>
+2D framed wavelet transform
+
+<P>
+
+<H3><A NAME="SECTION000533100000000000000"></A>
+<A NAME="cmd:fwt2d:Syn"></A>
+<BR>
+<FONT COLOR="#000080">Syntax</FONT>
+</H3>
+
+<P>
+obj = fwt2d( tI, framename, J, K, ...
+             [, 'scbase', scbase] [, 'scfirst', scfirst] ...
+             [, 'sc', sc ], [, 'ang', ang ] ...
+             [, 'FrameOptionName', FrameOptionValue] ...
+             [, 'export', export ] )
+
+<P>
+
+<H3><A NAME="SECTION000533200000000000000"></A>
+<A NAME="cmd:fwt2d:Des"></A>
+<BR>
+<FONT COLOR="#000080">Description</FONT>
+</H3>
+
+<P>
+<TT>fwt2d</TT> computes and returns the 2D framed wavelet
+transform, or frame decomposition, of an image, 
+that is the coefficients:
+<PRE>
+App      =  I * PHI[a\_J]
+Wav[j,k] =  I * PSI[a\_j, \theta\_k]
+</PRE>
+where * is the convolution operator,
+      <I>j</I> = 1..<I>J</I>, <I>k</I> = 1..<I>K</I>, 
+      <!-- MATH
+ $a_j = a_0*p^(j-1)$
+ -->
+<I>a</I><SUB>j</SUB> = <I>a</I><SUB>0</SUB>*<I>p</I><SUP>(</SUP><I>j</I> - 1) for a first scale <I>a</I><SUB>0</SUB> and a base <I>p</I>, 
+      <!-- MATH
+ $\theta_k = k*2*pi/K$
+ -->
+<IMG
+ WIDTH="21" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img14.png"
+ ALT="$ \theta_{k}^{}$"> = <I>k</I>*2*<I>pi</I>/<I>K</I>.
+
+<P>
+The frame scheme, that is the set of of functions <I>PHI</I>, <I>PSI</I>
+and <I>CHI</I>, may be chosen among the
+ones defined in the subdirectory 'frame_defs'. Notice that in
+this directory, to one kind of frame correspond always three
+functions: 
+
+<UL>
+<LI>'&lt;framename&gt;_app' for the low frequency approximation
+</LI>
+<LI>'&lt;framename&gt;_wav' for the wavelet definition
+the decomposition.
+</LI>
+</UL>
+
+<P>
+
+<H4><A NAME="SECTION000533210000000000000"></A>
+<A NAME="cmd:fwt2d:InpD"></A>
+<BR>
+<FONT COLOR="#000080">Input Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>tI</STRONG></DT>
+<DD>[CPLX ARRAY]: the Fourier transform of the image to
+analyze;
+
+<P>
+</DD>
+<DT><STRONG>framename</STRONG></DT>
+<DD>[STRING]: the name of the frame to use;
+
+<P>
+</DD>
+<DT><STRONG>J</STRONG></DT>
+<DD>[INTEGER]: the number of scales on which the frame is
+based;
+
+<P>
+</DD>
+<DT><STRONG>K</STRONG></DT>
+<DD>[INTEGER|VECTOR]: in case of a directional frame, the
+number of sectors to use. If this number is different for each
+scale, it is allowed to enter a vector of length <TT>J</TT>
+representing the number of sectors for each scale from the first
+to the last one;
+
+<P>
+</DD>
+<DT><STRONG>scbase</STRONG></DT>
+<DD>[REAL]: the base 'p' in the power law rule that
+governs the scales, i.e. <!-- MATH
+ $a_j = a_0 * p^(j-1)$
+ -->
+<I>a</I><SUB>j</SUB> = <I>a</I><SUB>0</SUB>*<I>p</I><SUP>(</SUP><I>j</I> - 1);
+
+<P>
+</DD>
+<DT><STRONG>scfirst</STRONG></DT>
+<DD>[REAL]: the first scale <I>a</I><SUB>0</SUB> in the scale rule
+above. By default, this <I>a</I><SUB>0</SUB> is set to 1/2 giving a complete
+covering of the frequency plane if the wavelet is contained in
+the ring -pi/2 &lt;= abs(k) &lt; pi;
+
+<P>
+</DD>
+<DT><STRONG>sc</STRONG></DT>
+<DD>[VECTOR]: vector of scale indices between 1 and 'J'
+in which the decomposition must be restricted;
+
+<P>
+</DD>
+<DT><STRONG>ang</STRONG></DT>
+<DD>[VECTOR]: vector of angle indices between 1 and 'K'
+in which the decomposition must be restricted;
+
+<P>
+</DD>
+<DT><STRONG>export</STRONG></DT>
+<DD>[STRING]: could be 'app', 'wav', 'allwav', or 'rem'
+and involves respectively the computation of only the
+approximation, the wavelet coefficients or the high frequency
+remainder.
+
+<P>
+</DD>
+</DL> 
+
+<P>
+
+<H4><A NAME="SECTION000533220000000000000"></A>
+<A NAME="cmd:fwt2d:OutD"></A>
+<BR>
+<FONT COLOR="#000080">Output Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>out</STRONG></DT>
+<DD>[STRUCT]: the output of the transform. It is a
+structure with the following fields:
+
+<UL>
+<LI><TT>out.type</TT> [STRING]: transform type ('fwt2d')
+</LI>
+<LI><TT>out.app</TT> [MATRIX]: the approximation
+coefficients;
+</LI>
+<LI><TT>out.wav</TT> [CELL]: 2D list of 2D matrices where the
+wavelet coefficients are stored.
+</LI>
+<LI><TT>out.rem</TT> [MATRIX]: matrix storing the
+high frequency remains coefficients
+</LI>
+</UL>
+</DD>
+</DL> 
+
+<P>
+
+<H3><A NAME="SECTION000533300000000000000"></A>
+<A NAME="cmd:fwt2d:Exa"></A>
+<BR>
+<FONT COLOR="#000080">Example(s)</FONT>
+</H3>
+
+<P>
+<PRE>
+&gt;&gt; %% Create the woman example
+&gt;&gt; load woman; tX = fft2(X);
+&gt;&gt; figure; yashow(X,'square','cmap','gray');
+&gt;&gt; %% Decompose mat on the Angular Spline frame of 3 scales and 6 angles
+&gt;&gt; fc = fwt2d(tX,'aspline',2,9);
+&gt;&gt; %% Displaying the approximation
+&gt;&gt; figure; yashow(fc.app, 'square');
+&gt;&gt; %% Displaying the wavelet coefficient for sc=1 and ang=2
+&gt;&gt; yashow(fc.wav{1,2}, 'square');
+&gt;&gt; %% Displaying the summation of all the frequency masks
+&gt;&gt; yashow(fftshift(fc.allwav), 'square');
+&gt;&gt; %% Rebuilding the matrix without the approximation
+&gt;&gt; fc.app = zeros(size(X));
+&gt;&gt; nX=ifwt2d(fc);
+&gt;&gt; %% Showing the result
+&gt;&gt; yashow(nX, 'square', 'cmap', 'gray');
+</PRE>
+
+<P>
+
+<H3><A NAME="SECTION000533400000000000000"></A>
+<A NAME="cmd:fwt2d:Ref"></A>
+<BR>
+<FONT COLOR="#000080">References</FONT>
+</H3>
+
+<P>
+
+<H3><A NAME="SECTION000533500000000000000"></A>
+<A NAME="cmd:fwt2d:See"></A>
+<BR>
+<FONT COLOR="#000080">See Also</FONT>
+</H3>
+
+<P>
+<A HREF="node14.html#cmd:aspline2d_app">aspline2d_app</A>, <A HREF="node15.html#cmd:aspline2d_high">aspline2d_high</A>, <A HREF="node16.html#cmd:aspline2d_info">aspline2d_info</A>, <A HREF="node17.html#cmd:aspline2d_wav">aspline2d_wav</A>
+
+<P>
+
+<H3><A NAME="SECTION000533600000000000000">
+<FONT COLOR="#000080">Location</FONT></A>
+</H3>
+discrete/frames/2d/fwt2d.m
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html3474"
+  HREF="node47.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html3470"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html3464"
+  HREF="node45.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html3472"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html3475"
+  HREF="node47.html">fwt2d_allwav</A>
+<B> Up:</B> <A NAME="tex2html3471"
+  HREF="node13.html">The commands in alphabetical</A>
+<B> Previous:</B> <A NAME="tex2html3465"
+  HREF="node45.html">fst</A>
+ &nbsp; <B>  <A NAME="tex2html3473"
+  HREF="node1.html">Contents</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+<yawtb-devel@sourceforge.net>
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,186 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>rgray</TITLE>
+<META NAME="description" CONTENT="rgray">
+<META NAME="keywords" CONTENT="YAWTBReferenceManual">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="YAWTBReferenceManual.css">
+
+<LINK REL="next" HREF="node109.html">
+<LINK REL="previous" HREF="node107.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node109.html">
+</HEAD>
+
+<BODY  bgcolor="#ffffff">
+<!--Navigation Panel-->
+<A NAME="tex2html4708"
+  HREF="node109.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html4704"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html4698"
+  HREF="node107.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html4706"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html4709"
+  HREF="node109.html">rmorlet2d</A>
+<B> Up:</B> <A NAME="tex2html4705"
+  HREF="node13.html">The commands in alphabetical</A>
+<B> Previous:</B> <A NAME="tex2html4699"
+  HREF="node107.html">regrep</A>
+ &nbsp; <B>  <A NAME="tex2html4707"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html4710"
+  HREF="node108.html#SECTION000595100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html4711"
+  HREF="node108.html#SECTION000595200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html4712"
+  HREF="node108.html#SECTION000595210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html4713"
+  HREF="node108.html#SECTION000595220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<BR>
+<LI><A NAME="tex2html4714"
+  HREF="node108.html#SECTION000595300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html4715"
+  HREF="node108.html#SECTION000595400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html4716"
+  HREF="node108.html#SECTION000595500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html4717"
+  HREF="node108.html#SECTION000595600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H2><A NAME="SECTION000595000000000000000"></A>
+<A NAME="cmd:rgray"></A>
+<BR>
+<FONT COLOR="#ff0000">rgray</FONT>
+</H2>
+This function return the reverse gray colormap 
+
+<P>
+
+<H3><A NAME="SECTION000595100000000000000"></A>
+<A NAME="cmd:rgray:Syn"></A>
+<BR>
+<FONT COLOR="#000080">Syntax</FONT>
+</H3>
+
+<P>
+[out] = rgray([n])
+
+<P>
+
+<H3><A NAME="SECTION000595200000000000000"></A>
+<A NAME="cmd:rgray:Des"></A>
+<BR>
+<FONT COLOR="#000080">Description</FONT>
+</H3>
+
+<P>
+This function returns the reverse gray colormap simply given by
+1-gray.
+The number of gray level can optionnally be given through the n variable.
+
+<P>
+
+<H4><A NAME="SECTION000595210000000000000"></A>
+<A NAME="cmd:rgray:InpD"></A>
+<BR>
+<FONT COLOR="#000080">Input Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>n</STRONG></DT>
+<DD>[INTEGER]: the number of gray level (64 by default) 
+</DD>
+</DL> 
+
+<P>
+
+<H4><A NAME="SECTION000595220000000000000"></A>
+<A NAME="cmd:rgray:OutD"></A>
+<BR>
+<FONT COLOR="#000080">Output Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>out</STRONG></DT>
+<DD>[MATRIX]: the reverse gray colormap of nx3 size.
+</DD>
+</DL> 
+
+<P>
+
+<H3><A NAME="SECTION000595300000000000000"></A>
+<A NAME="cmd:rgray:Exa"></A>
+<BR>
+<FONT COLOR="#000080">Example(s)</FONT>
+</H3>
+
+<P>
+<PRE>
+&gt;&gt; yashow(rand(128,128),'cmap','rgray');
+</PRE>
+
+<P>
+
+<H3><A NAME="SECTION000595400000000000000"></A>
+<A NAME="cmd:rgray:Ref"></A>
+<BR>
+<FONT COLOR="#000080">References</FONT>
+</H3>
+
+<P>
+
+<H3><A NAME="SECTION000595500000000000000"></A>
+<A NAME="cmd:rgray:See"></A>
+<BR>
+<FONT COLOR="#000080">See Also</FONT>
+</H3>
+
+<P>
+<A HREF="node142.html#cmd:yashow">yashow</A>, <A HREF="node143.html#cmd:yashow_cgt1d">yashow_cgt1d</A>, <A HREF="node144.html#cmd:yashow_cwt1d">yashow_cwt1d</A>, <A HREF="node145.html#cmd:yashow_cwt1dt">yashow_cwt1dt</A>, <A HREF="node146.html#cmd:yashow_cwt2d">yashow_cwt2d</A>, <A HREF="node147.html#cmd:yashow_cwt3d">yashow_cwt3d</A>, <A HREF="node148.html#cmd:yashow_cwtsph">yashow_cwtsph</A>, <A HREF="node149.html#cmd:yashow_matrix">yashow_matrix</A>, <A HREF="node150.html#cmd:yashow_samcwt2d">yashow_samcwt2d</A>, <A HREF="node151.html#cmd:yashow_spheric">yashow_spheric</A>, <A HREF="node152.html#cmd:yashow_timeseq">yashow_timeseq</A>, <A HREF="node153.html#cmd:yashow_volume">yashow_volume</A>, <A HREF="node154.html#cmd:yashow_wpck2d">yashow_wpck2d</A>
+
+<P>
+
+<H3><A NAME="SECTION000595600000000000000">
+<FONT COLOR="#000080">Location</FONT></A>
+</H3>
+tools/cmap/rgray.m
+
+<P>
+<BR><HR>
+<ADDRESS>
+<yawtb-devel@sourceforge.net>
+</ADDRESS>
+</BODY>
+</HTML>

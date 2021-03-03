@@ -1,0 +1,300 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>cwt3d</TITLE>
+<META NAME="description" CONTENT="cwt3d">
+<META NAME="keywords" CONTENT="YAWTBReferenceManual">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="YAWTBReferenceManual.css">
+
+<LINK REL="next" HREF="node31.html">
+<LINK REL="previous" HREF="node29.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node31.html">
+</HEAD>
+
+<BODY  bgcolor="#ffffff">
+<!--Navigation Panel-->
+<A NAME="tex2html3154"
+  HREF="node31.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html3150"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html3144"
+  HREF="node29.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html3152"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html3155"
+  HREF="node31.html">cwtsph</A>
+<B> Up:</B> <A NAME="tex2html3151"
+  HREF="node13.html">The commands in alphabetical</A>
+<B> Previous:</B> <A NAME="tex2html3145"
+  HREF="node29.html">cwt2d</A>
+ &nbsp; <B>  <A NAME="tex2html3153"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html3156"
+  HREF="node30.html#SECTION000517100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html3157"
+  HREF="node30.html#SECTION000517200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html3158"
+  HREF="node30.html#SECTION000517210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html3159"
+  HREF="node30.html#SECTION000517220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<BR>
+<LI><A NAME="tex2html3160"
+  HREF="node30.html#SECTION000517300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html3161"
+  HREF="node30.html#SECTION000517400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html3162"
+  HREF="node30.html#SECTION000517500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html3163"
+  HREF="node30.html#SECTION000517600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H2><A NAME="SECTION000517000000000000000"></A>
+<A NAME="cmd:cwt3d"></A>
+<BR>
+<FONT COLOR="#ff0000">cwt3d</FONT>
+</H2>
+
+<P>
+Compute several 3D continuous wavelet transforms
+
+<P>
+
+<H3><A NAME="SECTION000517100000000000000"></A>
+<A NAME="cmd:cwt3d:Syn"></A>
+<BR>
+<FONT COLOR="#000080">Syntax</FONT>
+</H3>
+
+<P>
+out = cwt3d(fvol, wavname, scale, angles, [,WaveletParameter] 
+            [,'Norm',NormValue] ) 
+
+<P>
+out = cwt3d(fvol, wavname, scale, angles, [,'WaveletOptionName',
+            WaveletOptionValue] [,'Norm',NormValue] )
+
+<P>
+
+<H3><A NAME="SECTION000517200000000000000"></A>
+<A NAME="cmd:cwt3d:Des"></A>
+<BR>
+<FONT COLOR="#000080">Description</FONT>
+</H3>
+
+<P>
+This function computes the 3d continuous wavelet transform of an
+image. Wavelets are taken inside the sub directory 'wave_defs' (see  
+the README to know how to write your own wavelet)
+
+<P>
+
+<H4><A NAME="SECTION000517210000000000000"></A>
+<A NAME="cmd:cwt3d:InpD"></A>
+<BR>
+<FONT COLOR="#000080">Input Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>fvol</STRONG></DT>
+<DD>[CPLX MATRIX]: the fourier transform of the image;
+
+<P>
+</DD>
+<DT><STRONG>wavname</STRONG></DT>
+<DD>[STRING]: the name of the wavelet to use; 
+
+<P>
+</DD>
+<DT><STRONG>scale</STRONG></DT>
+<DD>[REALS]: contains the scale of the transform. 
+
+<P>
+</DD>
+<DT><STRONG>angles</STRONG></DT>
+<DD>[2 REALS]: a 1x2 vector containing the two angles
+of the cwt, that is tha angles (theta,phi). 
+
+<P>
+</DD>
+<DT><STRONG>WaveletParameter</STRONG></DT>
+<DD>[MISC]: a wavelet parameter. His type
+depend of the wavelet used. See the corresponding wavelet mfile
+(inside wave_defs) for the correct parameters.
+
+<P>
+</DD>
+<DT><STRONG>WaveletOptionName, WaveletOptionValue</STRONG></DT>
+<DD>[STRING, MISC]:
+Another way of writting wavelet parameters. The wavelet parameter
+name (a string) is followed by its value. See the corresponding
+wavelet mfile (inside wave_defs) for the parameter to enter.
+
+<P>
+</DD>
+<DT><STRONG>NormValue</STRONG></DT>
+<DD>['l1'|'l2']: is a string which describes the
+normalization of the wavelet transform, namely the 'L1' or 'L2'
+normalization. The 'L2' is taken by default.
+
+<P>
+</DD>
+</DL>
+
+<P>
+
+<H4><A NAME="SECTION000517220000000000000"></A>
+<A NAME="cmd:cwt3d:OutD"></A>
+<BR>
+<FONT COLOR="#000080">Output Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>out</STRONG></DT>
+<DD>[STRUCT]: the output of the transform. A structured
+  data with the following fields:
+  
+<UL>
+<LI>"out.data" (the resulting matrix)
+</LI>
+<LI>"out.type" (the type of the transform)
+  
+</LI>
+</UL>
+</DD>
+</DL>
+
+<P>
+
+<H3><A NAME="SECTION000517300000000000000"></A>
+<A NAME="cmd:cwt3d:Exa"></A>
+<BR>
+<FONT COLOR="#000080">Example(s)</FONT>
+</H3>
+
+<P>
+<PRE>
+&gt;&gt; vol  = cube(64);
+&gt;&gt; yashow(vol,'fig',1),
+&gt;&gt; fvol = fftn(vol);
+&gt;&gt; wvol = cwt3d(fvol, 'mexican', 2, [0 0]);
+&gt;&gt; yashow(wvol,'fig',2);
+</PRE>
+
+<P>
+This code gives the 3D Mexican Hat wavelet transform of a 64 pixel width cube
+for a scale equal to 2. The angles here are useless because of
+the MH isotropicity.
+The implicit values are the Mexcian wavelet parameters: sigma=1.
+For other values, you can type something like
+<PRE>
+&gt;&gt; wvol  = cwt3d(fvol, 'mexican', 2, [0 0], 2);
+</PRE>
+or,
+<PRE>
+&gt;&gt; wvol  = cwt3d(fvol, 'mexican', 2, [0 0], 'sigma', 2);
+</PRE>
+This change values of sigma respectively to 2.
+Note that the first example is order dependant and not the second.
+
+<P>
+Notice that you can change the normalization of the cwt with the
+following command:
+<PRE>
+&gt;&gt; wvol  = cwt3d(fvol, 'mexican', 2, [0 0], 'sigma', 2, 'norm','l1');
+</PRE>
+for the L1 normalization (and 'l2' for L2).
+
+<P>
+Finally, you can visualize several transparent layers of the
+result by specifying the number of levels to show: 
+<PRE>
+&gt;&gt; yashow(wvol,'levels',3)
+</PRE>
+
+<P>
+
+<H3><A NAME="SECTION000517400000000000000"></A>
+<A NAME="cmd:cwt3d:Ref"></A>
+<BR>
+<FONT COLOR="#000080">References</FONT>
+</H3>
+
+<P>
+
+<H3><A NAME="SECTION000517500000000000000"></A>
+<A NAME="cmd:cwt3d:See"></A>
+<BR>
+<FONT COLOR="#000080">See Also</FONT>
+</H3>
+
+<P>
+<A HREF="#cmd:cwt3d">cwt3d</A>, <A HREF="node89.html#cmd:mexican3d">mexican3d</A>, <A HREF="node97.html#cmd:morlet3d">morlet3d</A>, <A HREF="node142.html#cmd:yashow">yashow</A>, <A HREF="node147.html#cmd:yashow_cwt3d">yashow_cwt3d</A>
+
+<P>
+
+<H3><A NAME="SECTION000517600000000000000">
+<FONT COLOR="#000080">Location</FONT></A>
+</H3>
+continuous/3d/cwt3d.m
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html3154"
+  HREF="node31.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html3150"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html3144"
+  HREF="node29.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html3152"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html3155"
+  HREF="node31.html">cwtsph</A>
+<B> Up:</B> <A NAME="tex2html3151"
+  HREF="node13.html">The commands in alphabetical</A>
+<B> Previous:</B> <A NAME="tex2html3145"
+  HREF="node29.html">cwt2d</A>
+ &nbsp; <B>  <A NAME="tex2html3153"
+  HREF="node1.html">Contents</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+<yawtb-devel@sourceforge.net>
+</ADDRESS>
+</BODY>
+</HTML>

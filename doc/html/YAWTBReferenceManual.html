@@ -1,0 +1,3421 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Yet Another Wavelet Toolbox (YAW Toolbox) Reference Guide Version 0.1.1</TITLE>
+<META NAME="description" CONTENT="Yet Another Wavelet Toolbox (YAW Toolbox) Reference Guide Version 0.1.1">
+<META NAME="keywords" CONTENT="YAWTBReferenceManual">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="YAWTBReferenceManual.css">
+
+<LINK REL="next" HREF="node1.html">
+</HEAD>
+
+<BODY  bgcolor="#ffffff">
+<!--Navigation Panel-->
+<A NAME="tex2html16"
+  HREF="node1.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html12"
+  HREF="http://www.fyma.ucl.ac.be/projects/yawtb">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev_g.png"> 
+<A NAME="tex2html14"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html17"
+  HREF="node1.html">Contents</A>
+<B> Up:</B> <A NAME="tex2html13"
+  HREF="http://www.fyma.ucl.ac.be/projects/yawtb">The YAWTb Homepage</A>
+ &nbsp; <B>  <A NAME="tex2html15"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<P>
+
+<P>
+
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="90" HEIGHT="91" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="\includegraphics[width=2cm,keepaspectratio]{yawtb_cwtsph.eps}">&nbsp;&nbsp;&nbsp;&nbsp;
+<IMG
+ WIDTH="498" HEIGHT="70" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="\includegraphics[width=11cm,keepaspectratio]{logo_bgwhite.eps}">
+<BR>
+<BR>
+<BR>
+<FONT SIZE="+2"><B>Yet Another Wavelet Toolbox
+<BR>
+<BR>
+Reference Guide</B></FONT>
+<BR>
+<BR>
+<BR>
+Version 0.1.1
+<BR>
+<BR>
+The YAW Toolbox Team
+<BR>
+<BR>
+November 18, 2003
+
+</DIV>
+
+<P>
+ <BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR>
+<BR CLEAR="ALL">
+<HR> <BR>
+<BR>
+<BR>
+Copyright &#169; 2001-2002,  The YAW Toolbox Team.
+
+<P>
+
+<P>
+<BR>
+
+<P>
+Permission is granted to copy, distribute and/or modify this document under
+the terms of the GNU Free Documentation License, Version 1.1 or any later
+version published by the Free Software Foundation; with the Invariant
+Sections being ``GNU General Public License'', with no Front-Cover Texts
+and with no Back-Cover Texts. A copy of the license is included in the
+section entitled ``GNU Free Documentation License''.
+
+<P>
+<BR CLEAR="ALL">
+<HR>
+<P>
+
+<H3>Abstract:</H3>
+<DIV>
+The aim of this toolbox is to provide a clear and well documented
+  implementation in Matlab of some time-frequency and time-scale
+  transformations like the well known continuous/discrete wavelet
+  transforms.
+
+<P>
+In this guide each function of the Yet Another Wavelet Toolbox is
+  documented.</DIV>
+<P>
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"></A>
+
+<UL>
+<LI><A NAME="tex2html18"
+  HREF="node1.html">Contents</A>
+<LI><A NAME="tex2html19"
+  HREF="node2.html">History and contributors</A>
+<LI><A NAME="tex2html20"
+  HREF="node3.html">How to contribute ?</A>
+<UL>
+<LI><A NAME="tex2html21"
+  HREF="node4.html">Writing the Matlab headers</A>
+<LI><A NAME="tex2html22"
+  HREF="node5.html">TODO</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html23"
+  HREF="node6.html">The commands by category</A>
+<UL>
+<LI><A NAME="tex2html24"
+  HREF="node7.html">Contiuous Wavelet Transform</A>
+<UL>
+<LI><A NAME="tex2html25"
+  HREF="node7.html#SECTION00041100000000000000">1D</A>
+<LI><A NAME="tex2html26"
+  HREF="node7.html#SECTION00041200000000000000">1D+T</A>
+<LI><A NAME="tex2html27"
+  HREF="node7.html#SECTION00041300000000000000">2D</A>
+<LI><A NAME="tex2html28"
+  HREF="node7.html#SECTION00041400000000000000">3D</A>
+<LI><A NAME="tex2html29"
+  HREF="node7.html#SECTION00041500000000000000">Sphere</A>
+</UL>
+<LI><A NAME="tex2html30"
+  HREF="node8.html">Discrete Wavelet Transform</A>
+<UL>
+<LI><A NAME="tex2html31"
+  HREF="node8.html#SECTION00042100000000000000">Frames 2D</A>
+<LI><A NAME="tex2html32"
+  HREF="node8.html#SECTION00042200000000000000">Spherical Frames</A>
+<LI><A NAME="tex2html33"
+  HREF="node8.html#SECTION00042300000000000000">Packet</A>
+<UL>
+<LI><A NAME="tex2html34"
+  HREF="node8.html#SECTION00042310000000000000">2d</A>
+</UL>
+</UL>
+<LI><A NAME="tex2html35"
+  HREF="node9.html">Interfaces</A>
+<UL>
+<LI><A NAME="tex2html36"
+  HREF="node9.html#SECTION00043100000000000000">SpharmonicKit</A>
+</UL>
+<LI><A NAME="tex2html37"
+  HREF="node10.html">Sample</A>
+<LI><A NAME="tex2html38"
+  HREF="node11.html">Help, help !</A>
+<LI><A NAME="tex2html39"
+  HREF="node12.html">Tools</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html40"
+  HREF="node13.html">The commands in alphabetical order</A>
+<UL>
+<LI><A NAME="tex2html41"
+  HREF="node14.html"><FONT COLOR="#ff0000">aspline2d_app</FONT></A>
+<UL>
+<LI><A NAME="tex2html42"
+  HREF="node14.html#SECTION00051100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html43"
+  HREF="node14.html#SECTION00051200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html44"
+  HREF="node14.html#SECTION00051210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html45"
+  HREF="node14.html#SECTION00051220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html46"
+  HREF="node14.html#SECTION00051300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html47"
+  HREF="node14.html#SECTION00051400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html48"
+  HREF="node14.html#SECTION00051500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html49"
+  HREF="node14.html#SECTION00051600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html50"
+  HREF="node15.html"><FONT COLOR="#ff0000">aspline2d_high</FONT></A>
+<UL>
+<LI><A NAME="tex2html51"
+  HREF="node15.html#SECTION00052100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html52"
+  HREF="node15.html#SECTION00052200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html53"
+  HREF="node15.html#SECTION00052210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html54"
+  HREF="node15.html#SECTION00052220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html55"
+  HREF="node15.html#SECTION00052300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html56"
+  HREF="node15.html#SECTION00052400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html57"
+  HREF="node15.html#SECTION00052500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html58"
+  HREF="node15.html#SECTION00052600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html59"
+  HREF="node16.html"><FONT COLOR="#ff0000">aspline2d_info</FONT></A>
+<UL>
+<LI><A NAME="tex2html60"
+  HREF="node16.html#SECTION00053100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html61"
+  HREF="node16.html#SECTION00053200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html62"
+  HREF="node16.html#SECTION00053210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html63"
+  HREF="node16.html#SECTION00053220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html64"
+  HREF="node16.html#SECTION00053300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html65"
+  HREF="node16.html#SECTION00053400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html66"
+  HREF="node16.html#SECTION00053500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html67"
+  HREF="node16.html#SECTION00053600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html68"
+  HREF="node17.html"><FONT COLOR="#ff0000">aspline2d_wav</FONT></A>
+<UL>
+<LI><A NAME="tex2html69"
+  HREF="node17.html#SECTION00054100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html70"
+  HREF="node17.html#SECTION00054200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html71"
+  HREF="node17.html#SECTION00054210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html72"
+  HREF="node17.html#SECTION00054220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html73"
+  HREF="node17.html#SECTION00054300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html74"
+  HREF="node17.html#SECTION00054400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html75"
+  HREF="node17.html#SECTION00054500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html76"
+  HREF="node17.html#SECTION00054600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html77"
+  HREF="node18.html"><FONT COLOR="#ff0000">box2d_app</FONT></A>
+<UL>
+<LI><A NAME="tex2html78"
+  HREF="node18.html#SECTION00055100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html79"
+  HREF="node18.html#SECTION00055200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html80"
+  HREF="node18.html#SECTION00055210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html81"
+  HREF="node18.html#SECTION00055220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html82"
+  HREF="node18.html#SECTION00055300000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html83"
+  HREF="node19.html"><FONT COLOR="#ff0000">box2d_wav</FONT></A>
+<UL>
+<LI><A NAME="tex2html84"
+  HREF="node19.html#SECTION00056100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html85"
+  HREF="node19.html#SECTION00056200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html86"
+  HREF="node19.html#SECTION00056210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html87"
+  HREF="node19.html#SECTION00056220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html88"
+  HREF="node19.html#SECTION00056300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html89"
+  HREF="node19.html#SECTION00056400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html90"
+  HREF="node19.html#SECTION00056500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html91"
+  HREF="node19.html#SECTION00056600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html92"
+  HREF="node20.html"><FONT COLOR="#ff0000">cauchy2d</FONT></A>
+<UL>
+<LI><A NAME="tex2html93"
+  HREF="node20.html#SECTION00057100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html94"
+  HREF="node20.html#SECTION00057200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html95"
+  HREF="node20.html#SECTION00057210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html96"
+  HREF="node20.html#SECTION00057220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html97"
+  HREF="node20.html#SECTION00057300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html98"
+  HREF="node20.html#SECTION00057400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html99"
+  HREF="node20.html#SECTION00057500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html100"
+  HREF="node20.html#SECTION00057600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html101"
+  HREF="node21.html"><FONT COLOR="#ff0000">cauchy2d_app</FONT></A>
+<UL>
+<LI><A NAME="tex2html102"
+  HREF="node21.html#SECTION00058100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html103"
+  HREF="node21.html#SECTION00058200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html104"
+  HREF="node21.html#SECTION00058210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html105"
+  HREF="node21.html#SECTION00058220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html106"
+  HREF="node21.html#SECTION00058300000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html107"
+  HREF="node21.html#SECTION00058400000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html108"
+  HREF="node22.html"><FONT COLOR="#ff0000">cauchy2d_wav</FONT></A>
+<UL>
+<LI><A NAME="tex2html109"
+  HREF="node22.html#SECTION00059100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html110"
+  HREF="node22.html#SECTION00059200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html111"
+  HREF="node22.html#SECTION00059210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html112"
+  HREF="node22.html#SECTION00059220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html113"
+  HREF="node22.html#SECTION00059300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html114"
+  HREF="node22.html#SECTION00059400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html115"
+  HREF="node22.html#SECTION00059500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html116"
+  HREF="node22.html#SECTION00059600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html117"
+  HREF="node23.html"><FONT COLOR="#ff0000">cgt1d</FONT></A>
+<UL>
+<LI><A NAME="tex2html118"
+  HREF="node23.html#SECTION000510100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html119"
+  HREF="node23.html#SECTION000510200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html120"
+  HREF="node23.html#SECTION000510210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html121"
+  HREF="node23.html#SECTION000510220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html122"
+  HREF="node23.html#SECTION000510300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html123"
+  HREF="node23.html#SECTION000510400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html124"
+  HREF="node23.html#SECTION000510500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html125"
+  HREF="node23.html#SECTION000510600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html126"
+  HREF="node24.html"><FONT COLOR="#ff0000">convsph</FONT></A>
+<UL>
+<LI><A NAME="tex2html127"
+  HREF="node24.html#SECTION000511100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html128"
+  HREF="node24.html#SECTION000511200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html129"
+  HREF="node24.html#SECTION000511210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html130"
+  HREF="node24.html#SECTION000511220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html131"
+  HREF="node24.html#SECTION000511300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html132"
+  HREF="node24.html#SECTION000511400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html133"
+  HREF="node24.html#SECTION000511500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html134"
+  HREF="node24.html#SECTION000511600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html135"
+  HREF="node25.html"><FONT COLOR="#ff0000">convsph_semi</FONT></A>
+<UL>
+<LI><A NAME="tex2html136"
+  HREF="node25.html#SECTION000512100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html137"
+  HREF="node25.html#SECTION000512200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html138"
+  HREF="node25.html#SECTION000512210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html139"
+  HREF="node25.html#SECTION000512220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html140"
+  HREF="node25.html#SECTION000512300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html141"
+  HREF="node25.html#SECTION000512400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html142"
+  HREF="node25.html#SECTION000512500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html143"
+  HREF="node25.html#SECTION000512600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html144"
+  HREF="node26.html"><FONT COLOR="#ff0000">cube</FONT></A>
+<UL>
+<LI><A NAME="tex2html145"
+  HREF="node26.html#SECTION000513100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html146"
+  HREF="node26.html#SECTION000513200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html147"
+  HREF="node26.html#SECTION000513210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html148"
+  HREF="node26.html#SECTION000513220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html149"
+  HREF="node26.html#SECTION000513300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html150"
+  HREF="node26.html#SECTION000513400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html151"
+  HREF="node26.html#SECTION000513500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html152"
+  HREF="node26.html#SECTION000513600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html153"
+  HREF="node27.html"><FONT COLOR="#ff0000">cwt1d</FONT></A>
+<UL>
+<LI><A NAME="tex2html154"
+  HREF="node27.html#SECTION000514100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html155"
+  HREF="node27.html#SECTION000514200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html156"
+  HREF="node27.html#SECTION000514210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html157"
+  HREF="node27.html#SECTION000514220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html158"
+  HREF="node27.html#SECTION000514300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html159"
+  HREF="node27.html#SECTION000514400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html160"
+  HREF="node27.html#SECTION000514500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html161"
+  HREF="node27.html#SECTION000514600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html162"
+  HREF="node28.html"><FONT COLOR="#ff0000">cwt1dt</FONT></A>
+<UL>
+<LI><A NAME="tex2html163"
+  HREF="node28.html#SECTION000515100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html164"
+  HREF="node28.html#SECTION000515200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html165"
+  HREF="node28.html#SECTION000515210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html166"
+  HREF="node28.html#SECTION000515220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html167"
+  HREF="node28.html#SECTION000515300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html168"
+  HREF="node28.html#SECTION000515400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html169"
+  HREF="node28.html#SECTION000515500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html170"
+  HREF="node28.html#SECTION000515600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html171"
+  HREF="node29.html"><FONT COLOR="#ff0000">cwt2d</FONT></A>
+<UL>
+<LI><A NAME="tex2html172"
+  HREF="node29.html#SECTION000516100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html173"
+  HREF="node29.html#SECTION000516200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html174"
+  HREF="node29.html#SECTION000516210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html175"
+  HREF="node29.html#SECTION000516220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html176"
+  HREF="node29.html#SECTION000516300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html177"
+  HREF="node29.html#SECTION000516400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html178"
+  HREF="node29.html#SECTION000516500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html179"
+  HREF="node29.html#SECTION000516600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html180"
+  HREF="node30.html"><FONT COLOR="#ff0000">cwt3d</FONT></A>
+<UL>
+<LI><A NAME="tex2html181"
+  HREF="node30.html#SECTION000517100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html182"
+  HREF="node30.html#SECTION000517200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html183"
+  HREF="node30.html#SECTION000517210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html184"
+  HREF="node30.html#SECTION000517220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html185"
+  HREF="node30.html#SECTION000517300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html186"
+  HREF="node30.html#SECTION000517400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html187"
+  HREF="node30.html#SECTION000517500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html188"
+  HREF="node30.html#SECTION000517600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html189"
+  HREF="node31.html"><FONT COLOR="#ff0000">cwtsph</FONT></A>
+<UL>
+<LI><A NAME="tex2html190"
+  HREF="node31.html#SECTION000518100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html191"
+  HREF="node31.html#SECTION000518200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html192"
+  HREF="node31.html#SECTION000518210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html193"
+  HREF="node31.html#SECTION000518220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html194"
+  HREF="node31.html#SECTION000518300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html195"
+  HREF="node31.html#SECTION000518400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html196"
+  HREF="node31.html#SECTION000518500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html197"
+  HREF="node31.html#SECTION000518600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html198"
+  HREF="node32.html"><FONT COLOR="#ff0000">dergauss2d</FONT></A>
+<UL>
+<LI><A NAME="tex2html199"
+  HREF="node32.html#SECTION000519100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html200"
+  HREF="node32.html#SECTION000519200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html201"
+  HREF="node32.html#SECTION000519210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html202"
+  HREF="node32.html#SECTION000519220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html203"
+  HREF="node32.html#SECTION000519300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html204"
+  HREF="node32.html#SECTION000519400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html205"
+  HREF="node32.html#SECTION000519500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html206"
+  HREF="node32.html#SECTION000519600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html207"
+  HREF="node33.html"><FONT COLOR="#ff0000">dgauss1d</FONT></A>
+<UL>
+<LI><A NAME="tex2html208"
+  HREF="node33.html#SECTION000520100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html209"
+  HREF="node33.html#SECTION000520200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html210"
+  HREF="node33.html#SECTION000520210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html211"
+  HREF="node33.html#SECTION000520220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html212"
+  HREF="node33.html#SECTION000520300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html213"
+  HREF="node33.html#SECTION000520400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html214"
+  HREF="node33.html#SECTION000520500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html215"
+  HREF="node33.html#SECTION000520600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html216"
+  HREF="node34.html"><FONT COLOR="#ff0000">dog2d</FONT></A>
+<UL>
+<LI><A NAME="tex2html217"
+  HREF="node34.html#SECTION000521100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html218"
+  HREF="node34.html#SECTION000521200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html219"
+  HREF="node34.html#SECTION000521210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html220"
+  HREF="node34.html#SECTION000521220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html221"
+  HREF="node34.html#SECTION000521300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html222"
+  HREF="node34.html#SECTION000521400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html223"
+  HREF="node34.html#SECTION000521500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html224"
+  HREF="node34.html#SECTION000521600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html225"
+  HREF="node35.html"><FONT COLOR="#ff0000">dogsph</FONT></A>
+<UL>
+<LI><A NAME="tex2html226"
+  HREF="node35.html#SECTION000522100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html227"
+  HREF="node35.html#SECTION000522200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html228"
+  HREF="node35.html#SECTION000522210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html229"
+  HREF="node35.html#SECTION000522220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html230"
+  HREF="node35.html#SECTION000522300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html231"
+  HREF="node35.html#SECTION000522400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html232"
+  HREF="node35.html#SECTION000522500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html233"
+  HREF="node35.html#SECTION000522600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html234"
+  HREF="node36.html"><FONT COLOR="#ff0000">endstop1</FONT></A>
+<UL>
+<LI><A NAME="tex2html235"
+  HREF="node36.html#SECTION000523100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html236"
+  HREF="node36.html#SECTION000523200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html237"
+  HREF="node36.html#SECTION000523210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html238"
+  HREF="node36.html#SECTION000523220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html239"
+  HREF="node36.html#SECTION000523300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html240"
+  HREF="node36.html#SECTION000523400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html241"
+  HREF="node36.html#SECTION000523500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html242"
+  HREF="node36.html#SECTION000523600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html243"
+  HREF="node37.html"><FONT COLOR="#ff0000">endstop2</FONT></A>
+<UL>
+<LI><A NAME="tex2html244"
+  HREF="node37.html#SECTION000524100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html245"
+  HREF="node37.html#SECTION000524200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html246"
+  HREF="node37.html#SECTION000524210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html247"
+  HREF="node37.html#SECTION000524220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html248"
+  HREF="node37.html#SECTION000524300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html249"
+  HREF="node37.html#SECTION000524400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html250"
+  HREF="node37.html#SECTION000524500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html251"
+  HREF="node37.html#SECTION000524600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html252"
+  HREF="node38.html"><FONT COLOR="#ff0000">es2cauchy2d</FONT></A>
+<UL>
+<LI><A NAME="tex2html253"
+  HREF="node38.html#SECTION000525100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html254"
+  HREF="node38.html#SECTION000525200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html255"
+  HREF="node38.html#SECTION000525210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html256"
+  HREF="node38.html#SECTION000525220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html257"
+  HREF="node38.html#SECTION000525300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html258"
+  HREF="node38.html#SECTION000525400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html259"
+  HREF="node38.html#SECTION000525500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html260"
+  HREF="node38.html#SECTION000525600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html261"
+  HREF="node39.html"><FONT COLOR="#ff0000">es2morlet2d</FONT></A>
+<UL>
+<LI><A NAME="tex2html262"
+  HREF="node39.html#SECTION000526100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html263"
+  HREF="node39.html#SECTION000526200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html264"
+  HREF="node39.html#SECTION000526210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html265"
+  HREF="node39.html#SECTION000526220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html266"
+  HREF="node39.html#SECTION000526300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html267"
+  HREF="node39.html#SECTION000526400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html268"
+  HREF="node39.html#SECTION000526500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html269"
+  HREF="node39.html#SECTION000526600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html270"
+  HREF="node40.html"><FONT COLOR="#ff0000">esmex2d</FONT></A>
+<UL>
+<LI><A NAME="tex2html271"
+  HREF="node40.html#SECTION000527100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html272"
+  HREF="node40.html#SECTION000527200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html273"
+  HREF="node40.html#SECTION000527210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html274"
+  HREF="node40.html#SECTION000527220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html275"
+  HREF="node40.html#SECTION000527300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html276"
+  HREF="node40.html#SECTION000527400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html277"
+  HREF="node40.html#SECTION000527500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html278"
+  HREF="node40.html#SECTION000527600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html279"
+  HREF="node41.html"><FONT COLOR="#ff0000">estimnoise2d</FONT></A>
+<UL>
+<LI><A NAME="tex2html280"
+  HREF="node41.html#SECTION000528100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html281"
+  HREF="node41.html#SECTION000528200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html282"
+  HREF="node41.html#SECTION000528210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html283"
+  HREF="node41.html#SECTION000528220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html284"
+  HREF="node41.html#SECTION000528300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html285"
+  HREF="node41.html#SECTION000528400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html286"
+  HREF="node41.html#SECTION000528500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html287"
+  HREF="node41.html#SECTION000528600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html288"
+  HREF="node42.html"><FONT COLOR="#ff0000">fcwtsph</FONT></A>
+<UL>
+<LI><A NAME="tex2html289"
+  HREF="node42.html#SECTION000529100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html290"
+  HREF="node42.html#SECTION000529200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html291"
+  HREF="node42.html#SECTION000529210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html292"
+  HREF="node42.html#SECTION000529220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html293"
+  HREF="node42.html#SECTION000529300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html294"
+  HREF="node42.html#SECTION000529400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html295"
+  HREF="node42.html#SECTION000529500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html296"
+  HREF="node42.html#SECTION000529600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html297"
+  HREF="node43.html"><FONT COLOR="#ff0000">fftsph</FONT></A>
+<UL>
+<LI><A NAME="tex2html298"
+  HREF="node43.html#SECTION000530100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html299"
+  HREF="node43.html#SECTION000530200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html300"
+  HREF="node43.html#SECTION000530210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html301"
+  HREF="node43.html#SECTION000530220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html302"
+  HREF="node43.html#SECTION000530300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html303"
+  HREF="node43.html#SECTION000530400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html304"
+  HREF="node43.html#SECTION000530500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html305"
+  HREF="node43.html#SECTION000530600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html306"
+  HREF="node44.html"><FONT COLOR="#ff0000">freq_delta</FONT></A>
+<UL>
+<LI><A NAME="tex2html307"
+  HREF="node44.html#SECTION000531100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html308"
+  HREF="node44.html#SECTION000531200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html309"
+  HREF="node44.html#SECTION000531210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html310"
+  HREF="node44.html#SECTION000531220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html311"
+  HREF="node44.html#SECTION000531300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html312"
+  HREF="node44.html#SECTION000531400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html313"
+  HREF="node44.html#SECTION000531500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html314"
+  HREF="node44.html#SECTION000531600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html315"
+  HREF="node45.html"><FONT COLOR="#ff0000">fst</FONT></A>
+<UL>
+<LI><A NAME="tex2html316"
+  HREF="node45.html#SECTION000532100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html317"
+  HREF="node45.html#SECTION000532200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html318"
+  HREF="node45.html#SECTION000532210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html319"
+  HREF="node45.html#SECTION000532220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html320"
+  HREF="node45.html#SECTION000532300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html321"
+  HREF="node45.html#SECTION000532400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html322"
+  HREF="node45.html#SECTION000532500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html323"
+  HREF="node45.html#SECTION000532600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html324"
+  HREF="node46.html"><FONT COLOR="#ff0000">fwt2d</FONT></A>
+<UL>
+<LI><A NAME="tex2html325"
+  HREF="node46.html#SECTION000533100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html326"
+  HREF="node46.html#SECTION000533200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html327"
+  HREF="node46.html#SECTION000533210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html328"
+  HREF="node46.html#SECTION000533220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html329"
+  HREF="node46.html#SECTION000533300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html330"
+  HREF="node46.html#SECTION000533400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html331"
+  HREF="node46.html#SECTION000533500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html332"
+  HREF="node46.html#SECTION000533600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html333"
+  HREF="node47.html"><FONT COLOR="#ff0000">fwt2d_allwav</FONT></A>
+<UL>
+<LI><A NAME="tex2html334"
+  HREF="node47.html#SECTION000534100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html335"
+  HREF="node47.html#SECTION000534200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html336"
+  HREF="node47.html#SECTION000534210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html337"
+  HREF="node47.html#SECTION000534220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html338"
+  HREF="node47.html#SECTION000534300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html339"
+  HREF="node47.html#SECTION000534400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html340"
+  HREF="node47.html#SECTION000534500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html341"
+  HREF="node47.html#SECTION000534600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html342"
+  HREF="node48.html"><FONT COLOR="#ff0000">fwt2d_app</FONT></A>
+<UL>
+<LI><A NAME="tex2html343"
+  HREF="node48.html#SECTION000535100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html344"
+  HREF="node48.html#SECTION000535200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html345"
+  HREF="node48.html#SECTION000535210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html346"
+  HREF="node48.html#SECTION000535220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html347"
+  HREF="node48.html#SECTION000535300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html348"
+  HREF="node48.html#SECTION000535400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html349"
+  HREF="node48.html#SECTION000535500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html350"
+  HREF="node48.html#SECTION000535600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html351"
+  HREF="node49.html"><FONT COLOR="#ff0000">fwt2d_app_filter</FONT></A>
+<UL>
+<LI><A NAME="tex2html352"
+  HREF="node49.html#SECTION000536100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html353"
+  HREF="node49.html#SECTION000536200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html354"
+  HREF="node49.html#SECTION000536210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html355"
+  HREF="node49.html#SECTION000536220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html356"
+  HREF="node49.html#SECTION000536300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html357"
+  HREF="node49.html#SECTION000536400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html358"
+  HREF="node49.html#SECTION000536500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html359"
+  HREF="node49.html#SECTION000536600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html360"
+  HREF="node50.html"><FONT COLOR="#ff0000">fwt2d_dapp_filter</FONT></A>
+<UL>
+<LI><A NAME="tex2html361"
+  HREF="node50.html#SECTION000537100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html362"
+  HREF="node50.html#SECTION000537200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html363"
+  HREF="node50.html#SECTION000537210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html364"
+  HREF="node50.html#SECTION000537220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html365"
+  HREF="node50.html#SECTION000537300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html366"
+  HREF="node50.html#SECTION000537400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html367"
+  HREF="node50.html#SECTION000537500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html368"
+  HREF="node50.html#SECTION000537600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html369"
+  HREF="node51.html"><FONT COLOR="#ff0000">fwt2d_denoise</FONT></A>
+<UL>
+<LI><A NAME="tex2html370"
+  HREF="node51.html#SECTION000538100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html371"
+  HREF="node51.html#SECTION000538200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html372"
+  HREF="node51.html#SECTION000538210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html373"
+  HREF="node51.html#SECTION000538220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html374"
+  HREF="node51.html#SECTION000538300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html375"
+  HREF="node51.html#SECTION000538400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html376"
+  HREF="node51.html#SECTION000538500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html377"
+  HREF="node51.html#SECTION000538600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html378"
+  HREF="node52.html"><FONT COLOR="#ff0000">fwt2d_dwav_filter</FONT></A>
+<UL>
+<LI><A NAME="tex2html379"
+  HREF="node52.html#SECTION000539100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html380"
+  HREF="node52.html#SECTION000539200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html381"
+  HREF="node52.html#SECTION000539210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html382"
+  HREF="node52.html#SECTION000539220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html383"
+  HREF="node52.html#SECTION000539300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html384"
+  HREF="node52.html#SECTION000539400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html385"
+  HREF="node52.html#SECTION000539500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html386"
+  HREF="node52.html#SECTION000539600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html387"
+  HREF="node53.html"><FONT COLOR="#ff0000">fwt2d_high</FONT></A>
+<UL>
+<LI><A NAME="tex2html388"
+  HREF="node53.html#SECTION000540100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html389"
+  HREF="node53.html#SECTION000540200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html390"
+  HREF="node53.html#SECTION000540210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html391"
+  HREF="node53.html#SECTION000540220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html392"
+  HREF="node53.html#SECTION000540300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html393"
+  HREF="node53.html#SECTION000540400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html394"
+  HREF="node53.html#SECTION000540500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html395"
+  HREF="node53.html#SECTION000540600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html396"
+  HREF="node54.html"><FONT COLOR="#ff0000">fwt2d_high_filter</FONT></A>
+<UL>
+<LI><A NAME="tex2html397"
+  HREF="node54.html#SECTION000541100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html398"
+  HREF="node54.html#SECTION000541200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html399"
+  HREF="node54.html#SECTION000541210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html400"
+  HREF="node54.html#SECTION000541220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html401"
+  HREF="node54.html#SECTION000541300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html402"
+  HREF="node54.html#SECTION000541400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html403"
+  HREF="node54.html#SECTION000541500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html404"
+  HREF="node54.html#SECTION000541600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html405"
+  HREF="node55.html"><FONT COLOR="#ff0000">fwt2d_init</FONT></A>
+<UL>
+<LI><A NAME="tex2html406"
+  HREF="node55.html#SECTION000542100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html407"
+  HREF="node55.html#SECTION000542200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html408"
+  HREF="node55.html#SECTION000542210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html409"
+  HREF="node55.html#SECTION000542220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html410"
+  HREF="node55.html#SECTION000542300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html411"
+  HREF="node55.html#SECTION000542400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html412"
+  HREF="node55.html#SECTION000542500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html413"
+  HREF="node55.html#SECTION000542600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html414"
+  HREF="node56.html"><FONT COLOR="#ff0000">fwt2d_sthresh</FONT></A>
+<UL>
+<LI><A NAME="tex2html415"
+  HREF="node56.html#SECTION000543100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html416"
+  HREF="node56.html#SECTION000543200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html417"
+  HREF="node56.html#SECTION000543210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html418"
+  HREF="node56.html#SECTION000543220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html419"
+  HREF="node56.html#SECTION000543300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html420"
+  HREF="node56.html#SECTION000543400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html421"
+  HREF="node56.html#SECTION000543500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html422"
+  HREF="node56.html#SECTION000543600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html423"
+  HREF="node57.html"><FONT COLOR="#ff0000">fwt2d_thresh</FONT></A>
+<UL>
+<LI><A NAME="tex2html424"
+  HREF="node57.html#SECTION000544100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html425"
+  HREF="node57.html#SECTION000544200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html426"
+  HREF="node57.html#SECTION000544210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html427"
+  HREF="node57.html#SECTION000544220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html428"
+  HREF="node57.html#SECTION000544300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html429"
+  HREF="node57.html#SECTION000544400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html430"
+  HREF="node57.html#SECTION000544500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html431"
+  HREF="node57.html#SECTION000544600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html432"
+  HREF="node58.html"><FONT COLOR="#ff0000">fwt2d_wav</FONT></A>
+<UL>
+<LI><A NAME="tex2html433"
+  HREF="node58.html#SECTION000545100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html434"
+  HREF="node58.html#SECTION000545200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html435"
+  HREF="node58.html#SECTION000545210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html436"
+  HREF="node58.html#SECTION000545220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html437"
+  HREF="node58.html#SECTION000545300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html438"
+  HREF="node58.html#SECTION000545400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html439"
+  HREF="node58.html#SECTION000545500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html440"
+  HREF="node58.html#SECTION000545600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html441"
+  HREF="node59.html"><FONT COLOR="#ff0000">fwt2d_wav_filter</FONT></A>
+<UL>
+<LI><A NAME="tex2html442"
+  HREF="node59.html#SECTION000546100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html443"
+  HREF="node59.html#SECTION000546200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html444"
+  HREF="node59.html#SECTION000546210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html445"
+  HREF="node59.html#SECTION000546220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html446"
+  HREF="node59.html#SECTION000546300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html447"
+  HREF="node59.html#SECTION000546400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html448"
+  HREF="node59.html#SECTION000546500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html449"
+  HREF="node59.html#SECTION000546600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html450"
+  HREF="node60.html"><FONT COLOR="#ff0000">fwtsph</FONT></A>
+<UL>
+<LI><A NAME="tex2html451"
+  HREF="node60.html#SECTION000547100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html452"
+  HREF="node60.html#SECTION000547200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html453"
+  HREF="node60.html#SECTION000547210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html454"
+  HREF="node60.html#SECTION000547220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html455"
+  HREF="node60.html#SECTION000547300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html456"
+  HREF="node60.html#SECTION000547400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html457"
+  HREF="node60.html#SECTION000547500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html458"
+  HREF="node60.html#SECTION000547600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html459"
+  HREF="node61.html"><FONT COLOR="#ff0000">fzt</FONT></A>
+<UL>
+<LI><A NAME="tex2html460"
+  HREF="node61.html#SECTION000548100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html461"
+  HREF="node61.html#SECTION000548200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html462"
+  HREF="node61.html#SECTION000548210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html463"
+  HREF="node61.html#SECTION000548220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html464"
+  HREF="node61.html#SECTION000548300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html465"
+  HREF="node61.html#SECTION000548400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html466"
+  HREF="node61.html#SECTION000548500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html467"
+  HREF="node61.html#SECTION000548600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html468"
+  HREF="node62.html"><FONT COLOR="#ff0000">gabor2d</FONT></A>
+<UL>
+<LI><A NAME="tex2html469"
+  HREF="node62.html#SECTION000549100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html470"
+  HREF="node62.html#SECTION000549200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html471"
+  HREF="node62.html#SECTION000549210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html472"
+  HREF="node62.html#SECTION000549220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html473"
+  HREF="node62.html#SECTION000549300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html474"
+  HREF="node62.html#SECTION000549400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html475"
+  HREF="node62.html#SECTION000549500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html476"
+  HREF="node62.html#SECTION000549600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html477"
+  HREF="node63.html"><FONT COLOR="#ff0000">gabor2d_app</FONT></A>
+<UL>
+<LI><A NAME="tex2html478"
+  HREF="node63.html#SECTION000550100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html479"
+  HREF="node63.html#SECTION000550200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html480"
+  HREF="node63.html#SECTION000550210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html481"
+  HREF="node63.html#SECTION000550220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html482"
+  HREF="node63.html#SECTION000550300000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html483"
+  HREF="node63.html#SECTION000550400000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html484"
+  HREF="node64.html"><FONT COLOR="#ff0000">gabor2d_wav</FONT></A>
+<UL>
+<LI><A NAME="tex2html485"
+  HREF="node64.html#SECTION000551100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html486"
+  HREF="node64.html#SECTION000551200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html487"
+  HREF="node64.html#SECTION000551210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html488"
+  HREF="node64.html#SECTION000551220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html489"
+  HREF="node64.html#SECTION000551300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html490"
+  HREF="node64.html#SECTION000551400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html491"
+  HREF="node64.html#SECTION000551500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html492"
+  HREF="node64.html#SECTION000551600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html493"
+  HREF="node65.html"><FONT COLOR="#ff0000">gauss1d</FONT></A>
+<UL>
+<LI><A NAME="tex2html494"
+  HREF="node65.html#SECTION000552100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html495"
+  HREF="node65.html#SECTION000552200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html496"
+  HREF="node65.html#SECTION000552210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html497"
+  HREF="node65.html#SECTION000552220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html498"
+  HREF="node65.html#SECTION000552300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html499"
+  HREF="node65.html#SECTION000552400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html500"
+  HREF="node65.html#SECTION000552500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html501"
+  HREF="node65.html#SECTION000552600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html502"
+  HREF="node66.html"><FONT COLOR="#ff0000">gauss2d</FONT></A>
+<UL>
+<LI><A NAME="tex2html503"
+  HREF="node66.html#SECTION000553100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html504"
+  HREF="node66.html#SECTION000553200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html505"
+  HREF="node66.html#SECTION000553210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html506"
+  HREF="node66.html#SECTION000553220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html507"
+  HREF="node66.html#SECTION000553300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html508"
+  HREF="node66.html#SECTION000553400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html509"
+  HREF="node66.html#SECTION000553500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html510"
+  HREF="node66.html#SECTION000553600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html511"
+  HREF="node67.html"><FONT COLOR="#ff0000">gaussx2d</FONT></A>
+<UL>
+<LI><A NAME="tex2html512"
+  HREF="node67.html#SECTION000554100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html513"
+  HREF="node67.html#SECTION000554200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html514"
+  HREF="node67.html#SECTION000554210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html515"
+  HREF="node67.html#SECTION000554220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html516"
+  HREF="node67.html#SECTION000554300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html517"
+  HREF="node67.html#SECTION000554400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html518"
+  HREF="node67.html#SECTION000554500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html519"
+  HREF="node67.html#SECTION000554600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html520"
+  HREF="node68.html"><FONT COLOR="#ff0000">gaussz2d</FONT></A>
+<UL>
+<LI><A NAME="tex2html521"
+  HREF="node68.html#SECTION000555100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html522"
+  HREF="node68.html#SECTION000555200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html523"
+  HREF="node68.html#SECTION000555210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html524"
+  HREF="node68.html#SECTION000555220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html525"
+  HREF="node68.html#SECTION000555300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html526"
+  HREF="node68.html#SECTION000555400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html527"
+  HREF="node68.html#SECTION000555500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html528"
+  HREF="node68.html#SECTION000555600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html529"
+  HREF="node69.html"><FONT COLOR="#ff0000">getopts</FONT></A>
+<UL>
+<LI><A NAME="tex2html530"
+  HREF="node69.html#SECTION000556100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html531"
+  HREF="node69.html#SECTION000556200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html532"
+  HREF="node69.html#SECTION000556210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html533"
+  HREF="node69.html#SECTION000556220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html534"
+  HREF="node69.html#SECTION000556300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html535"
+  HREF="node69.html#SECTION000556400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html536"
+  HREF="node69.html#SECTION000556500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html537"
+  HREF="node69.html#SECTION000556600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html538"
+  HREF="node70.html"><FONT COLOR="#ff0000">getyawtbprefs</FONT></A>
+<UL>
+<LI><A NAME="tex2html539"
+  HREF="node70.html#SECTION000557100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html540"
+  HREF="node70.html#SECTION000557200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html541"
+  HREF="node70.html#SECTION000557210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html542"
+  HREF="node70.html#SECTION000557220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html543"
+  HREF="node70.html#SECTION000557300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html544"
+  HREF="node70.html#SECTION000557400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html545"
+  HREF="node70.html#SECTION000557500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html546"
+  HREF="node70.html#SECTION000557600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html547"
+  HREF="node71.html"><FONT COLOR="#ff0000">ifftsph</FONT></A>
+<UL>
+<LI><A NAME="tex2html548"
+  HREF="node71.html#SECTION000558100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html549"
+  HREF="node71.html#SECTION000558200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html550"
+  HREF="node71.html#SECTION000558210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html551"
+  HREF="node71.html#SECTION000558220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html552"
+  HREF="node71.html#SECTION000558300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html553"
+  HREF="node71.html#SECTION000558400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html554"
+  HREF="node71.html#SECTION000558500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html555"
+  HREF="node71.html#SECTION000558600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html556"
+  HREF="node72.html"><FONT COLOR="#ff0000">ifst</FONT></A>
+<UL>
+<LI><A NAME="tex2html557"
+  HREF="node72.html#SECTION000559100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html558"
+  HREF="node72.html#SECTION000559200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html559"
+  HREF="node72.html#SECTION000559210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html560"
+  HREF="node72.html#SECTION000559220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html561"
+  HREF="node72.html#SECTION000559300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html562"
+  HREF="node72.html#SECTION000559400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html563"
+  HREF="node72.html#SECTION000559500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html564"
+  HREF="node72.html#SECTION000559600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html565"
+  HREF="node73.html"><FONT COLOR="#ff0000">ifwt2d</FONT></A>
+<UL>
+<LI><A NAME="tex2html566"
+  HREF="node73.html#SECTION000560100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html567"
+  HREF="node73.html#SECTION000560200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html568"
+  HREF="node73.html#SECTION000560210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html569"
+  HREF="node73.html#SECTION000560220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html570"
+  HREF="node73.html#SECTION000560300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html571"
+  HREF="node73.html#SECTION000560400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html572"
+  HREF="node73.html#SECTION000560500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html573"
+  HREF="node73.html#SECTION000560600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html574"
+  HREF="node74.html"><FONT COLOR="#ff0000">ifwt2d_app</FONT></A>
+<UL>
+<LI><A NAME="tex2html575"
+  HREF="node74.html#SECTION000561100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html576"
+  HREF="node74.html#SECTION000561200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html577"
+  HREF="node74.html#SECTION000561210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html578"
+  HREF="node74.html#SECTION000561220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html579"
+  HREF="node74.html#SECTION000561300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html580"
+  HREF="node74.html#SECTION000561400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html581"
+  HREF="node74.html#SECTION000561500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html582"
+  HREF="node74.html#SECTION000561600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html583"
+  HREF="node75.html"><FONT COLOR="#ff0000">ifwt2d_high</FONT></A>
+<UL>
+<LI><A NAME="tex2html584"
+  HREF="node75.html#SECTION000562100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html585"
+  HREF="node75.html#SECTION000562200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html586"
+  HREF="node75.html#SECTION000562210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html587"
+  HREF="node75.html#SECTION000562220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html588"
+  HREF="node75.html#SECTION000562300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html589"
+  HREF="node75.html#SECTION000562400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html590"
+  HREF="node75.html#SECTION000562500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html591"
+  HREF="node75.html#SECTION000562600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html592"
+  HREF="node76.html"><FONT COLOR="#ff0000">ifwt2d_wav</FONT></A>
+<UL>
+<LI><A NAME="tex2html593"
+  HREF="node76.html#SECTION000563100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html594"
+  HREF="node76.html#SECTION000563200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html595"
+  HREF="node76.html#SECTION000563210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html596"
+  HREF="node76.html#SECTION000563220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html597"
+  HREF="node76.html#SECTION000563300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html598"
+  HREF="node76.html#SECTION000563400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html599"
+  HREF="node76.html#SECTION000563500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html600"
+  HREF="node76.html#SECTION000563600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html601"
+  HREF="node77.html"><FONT COLOR="#ff0000">ifwtsph</FONT></A>
+<UL>
+<LI><A NAME="tex2html602"
+  HREF="node77.html#SECTION000564100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html603"
+  HREF="node77.html#SECTION000564200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html604"
+  HREF="node77.html#SECTION000564210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html605"
+  HREF="node77.html#SECTION000564220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html606"
+  HREF="node77.html#SECTION000564300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html607"
+  HREF="node77.html#SECTION000564400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html608"
+  HREF="node77.html#SECTION000564500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html609"
+  HREF="node77.html#SECTION000564600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html610"
+  HREF="node78.html"><FONT COLOR="#ff0000">ilmshape</FONT></A>
+<UL>
+<LI><A NAME="tex2html611"
+  HREF="node78.html#SECTION000565100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html612"
+  HREF="node78.html#SECTION000565200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html613"
+  HREF="node78.html#SECTION000565210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html614"
+  HREF="node78.html#SECTION000565220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html615"
+  HREF="node78.html#SECTION000565300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html616"
+  HREF="node78.html#SECTION000565400000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html617"
+  HREF="node78.html#SECTION000565500000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html618"
+  HREF="node79.html"><FONT COLOR="#ff0000">inputeof</FONT></A>
+<UL>
+<LI><A NAME="tex2html619"
+  HREF="node79.html#SECTION000566100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html620"
+  HREF="node79.html#SECTION000566200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html621"
+  HREF="node79.html#SECTION000566210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html622"
+  HREF="node79.html#SECTION000566220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html623"
+  HREF="node79.html#SECTION000566300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html624"
+  HREF="node79.html#SECTION000566400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html625"
+  HREF="node79.html#SECTION000566500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html626"
+  HREF="node79.html#SECTION000566600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html627"
+  HREF="node80.html"><FONT COLOR="#ff0000">isdog2d</FONT></A>
+<UL>
+<LI><A NAME="tex2html628"
+  HREF="node80.html#SECTION000567100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html629"
+  HREF="node80.html#SECTION000567200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html630"
+  HREF="node80.html#SECTION000567210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html631"
+  HREF="node80.html#SECTION000567220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html632"
+  HREF="node80.html#SECTION000567300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html633"
+  HREF="node80.html#SECTION000567400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html634"
+  HREF="node80.html#SECTION000567500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html635"
+  HREF="node80.html#SECTION000567600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html636"
+  HREF="node81.html"><FONT COLOR="#ff0000">isomor2d</FONT></A>
+<UL>
+<LI><A NAME="tex2html637"
+  HREF="node81.html#SECTION000568100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html638"
+  HREF="node81.html#SECTION000568200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html639"
+  HREF="node81.html#SECTION000568210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html640"
+  HREF="node81.html#SECTION000568220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html641"
+  HREF="node81.html#SECTION000568300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html642"
+  HREF="node81.html#SECTION000568400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html643"
+  HREF="node81.html#SECTION000568500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html644"
+  HREF="node81.html#SECTION000568600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html645"
+  HREF="node82.html"><FONT COLOR="#ff0000">iwpck2d</FONT></A>
+<UL>
+<LI><A NAME="tex2html646"
+  HREF="node82.html#SECTION000569100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html647"
+  HREF="node82.html#SECTION000569200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html648"
+  HREF="node82.html#SECTION000569210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html649"
+  HREF="node82.html#SECTION000569220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html650"
+  HREF="node82.html#SECTION000569300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html651"
+  HREF="node82.html#SECTION000569400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html652"
+  HREF="node82.html#SECTION000569500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html653"
+  HREF="node82.html#SECTION000569600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html654"
+  HREF="node83.html"><FONT COLOR="#ff0000">linearchirp</FONT></A>
+<UL>
+<LI><A NAME="tex2html655"
+  HREF="node83.html#SECTION000570100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html656"
+  HREF="node83.html#SECTION000570200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html657"
+  HREF="node83.html#SECTION000570210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html658"
+  HREF="node83.html#SECTION000570220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html659"
+  HREF="node83.html#SECTION000570300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html660"
+  HREF="node83.html#SECTION000570400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html661"
+  HREF="node83.html#SECTION000570500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html662"
+  HREF="node83.html#SECTION000570600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html663"
+  HREF="node84.html"><FONT COLOR="#ff0000">list_elem</FONT></A>
+<UL>
+<LI><A NAME="tex2html664"
+  HREF="node84.html#SECTION000571100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html665"
+  HREF="node84.html#SECTION000571200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html666"
+  HREF="node84.html#SECTION000571210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html667"
+  HREF="node84.html#SECTION000571220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html668"
+  HREF="node84.html#SECTION000571300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html669"
+  HREF="node84.html#SECTION000571400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html670"
+  HREF="node84.html#SECTION000571500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html671"
+  HREF="node84.html#SECTION000571600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html672"
+  HREF="node85.html"><FONT COLOR="#ff0000">lmshape</FONT></A>
+<UL>
+<LI><A NAME="tex2html673"
+  HREF="node85.html#SECTION000572100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html674"
+  HREF="node85.html#SECTION000572200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html675"
+  HREF="node85.html#SECTION000572210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html676"
+  HREF="node85.html#SECTION000572220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html677"
+  HREF="node85.html#SECTION000572300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html678"
+  HREF="node85.html#SECTION000572400000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html679"
+  HREF="node85.html#SECTION000572500000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html680"
+  HREF="node86.html"><FONT COLOR="#ff0000">mexican1dt</FONT></A>
+<UL>
+<LI><A NAME="tex2html681"
+  HREF="node86.html#SECTION000573100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html682"
+  HREF="node86.html#SECTION000573200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html683"
+  HREF="node86.html#SECTION000573210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html684"
+  HREF="node86.html#SECTION000573220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html685"
+  HREF="node86.html#SECTION000573300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html686"
+  HREF="node86.html#SECTION000573400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html687"
+  HREF="node86.html#SECTION000573500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html688"
+  HREF="node86.html#SECTION000573600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html689"
+  HREF="node87.html"><FONT COLOR="#ff0000">mexican2d</FONT></A>
+<UL>
+<LI><A NAME="tex2html690"
+  HREF="node87.html#SECTION000574100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html691"
+  HREF="node87.html#SECTION000574200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html692"
+  HREF="node87.html#SECTION000574210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html693"
+  HREF="node87.html#SECTION000574220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html694"
+  HREF="node87.html#SECTION000574300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html695"
+  HREF="node87.html#SECTION000574400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html696"
+  HREF="node87.html#SECTION000574500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html697"
+  HREF="node87.html#SECTION000574600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html698"
+  HREF="node88.html"><FONT COLOR="#ff0000">mexican2d_ctr</FONT></A>
+<UL>
+<LI><A NAME="tex2html699"
+  HREF="node88.html#SECTION000575100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html700"
+  HREF="node88.html#SECTION000575200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html701"
+  HREF="node88.html#SECTION000575210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html702"
+  HREF="node88.html#SECTION000575220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html703"
+  HREF="node88.html#SECTION000575300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html704"
+  HREF="node88.html#SECTION000575400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html705"
+  HREF="node88.html#SECTION000575500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html706"
+  HREF="node88.html#SECTION000575600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html707"
+  HREF="node89.html"><FONT COLOR="#ff0000">mexican3d</FONT></A>
+<UL>
+<LI><A NAME="tex2html708"
+  HREF="node89.html#SECTION000576100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html709"
+  HREF="node89.html#SECTION000576200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html710"
+  HREF="node89.html#SECTION000576210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html711"
+  HREF="node89.html#SECTION000576220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html712"
+  HREF="node89.html#SECTION000576300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html713"
+  HREF="node89.html#SECTION000576400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html714"
+  HREF="node89.html#SECTION000576500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html715"
+  HREF="node89.html#SECTION000576600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html716"
+  HREF="node90.html"><FONT COLOR="#ff0000">meyer2d_app</FONT></A>
+<UL>
+<LI><A NAME="tex2html717"
+  HREF="node90.html#SECTION000577100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html718"
+  HREF="node90.html#SECTION000577200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html719"
+  HREF="node90.html#SECTION000577210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html720"
+  HREF="node90.html#SECTION000577220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html721"
+  HREF="node90.html#SECTION000577300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html722"
+  HREF="node90.html#SECTION000577400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html723"
+  HREF="node90.html#SECTION000577500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html724"
+  HREF="node90.html#SECTION000577600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html725"
+  HREF="node91.html"><FONT COLOR="#ff0000">meyer2d_high</FONT></A>
+<UL>
+<LI><A NAME="tex2html726"
+  HREF="node91.html#SECTION000578100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html727"
+  HREF="node91.html#SECTION000578200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html728"
+  HREF="node91.html#SECTION000578210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html729"
+  HREF="node91.html#SECTION000578220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html730"
+  HREF="node91.html#SECTION000578300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html731"
+  HREF="node91.html#SECTION000578400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html732"
+  HREF="node91.html#SECTION000578500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html733"
+  HREF="node91.html#SECTION000578600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html734"
+  HREF="node92.html"><FONT COLOR="#ff0000">meyer2d_info</FONT></A>
+<UL>
+<LI><A NAME="tex2html735"
+  HREF="node92.html#SECTION000579100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html736"
+  HREF="node92.html#SECTION000579200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html737"
+  HREF="node92.html#SECTION000579210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html738"
+  HREF="node92.html#SECTION000579220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html739"
+  HREF="node92.html#SECTION000579300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html740"
+  HREF="node92.html#SECTION000579400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html741"
+  HREF="node92.html#SECTION000579500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html742"
+  HREF="node92.html#SECTION000579600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html743"
+  HREF="node93.html"><FONT COLOR="#ff0000">meyer2d_wav</FONT></A>
+<UL>
+<LI><A NAME="tex2html744"
+  HREF="node93.html#SECTION000580100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html745"
+  HREF="node93.html#SECTION000580200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html746"
+  HREF="node93.html#SECTION000580210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html747"
+  HREF="node93.html#SECTION000580220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html748"
+  HREF="node93.html#SECTION000580300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html749"
+  HREF="node93.html#SECTION000580400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html750"
+  HREF="node93.html#SECTION000580500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html751"
+  HREF="node93.html#SECTION000580600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html752"
+  HREF="node94.html"><FONT COLOR="#ff0000">morlet1d</FONT></A>
+<UL>
+<LI><A NAME="tex2html753"
+  HREF="node94.html#SECTION000581100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html754"
+  HREF="node94.html#SECTION000581200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html755"
+  HREF="node94.html#SECTION000581210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html756"
+  HREF="node94.html#SECTION000581220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html757"
+  HREF="node94.html#SECTION000581300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html758"
+  HREF="node94.html#SECTION000581400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html759"
+  HREF="node94.html#SECTION000581500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html760"
+  HREF="node94.html#SECTION000581600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html761"
+  HREF="node95.html"><FONT COLOR="#ff0000">morlet1dt</FONT></A>
+<UL>
+<LI><A NAME="tex2html762"
+  HREF="node95.html#SECTION000582100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html763"
+  HREF="node95.html#SECTION000582200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html764"
+  HREF="node95.html#SECTION000582210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html765"
+  HREF="node95.html#SECTION000582220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html766"
+  HREF="node95.html#SECTION000582300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html767"
+  HREF="node95.html#SECTION000582400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html768"
+  HREF="node95.html#SECTION000582500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html769"
+  HREF="node95.html#SECTION000582600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html770"
+  HREF="node96.html"><FONT COLOR="#ff0000">morlet2d</FONT></A>
+<UL>
+<LI><A NAME="tex2html771"
+  HREF="node96.html#SECTION000583100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html772"
+  HREF="node96.html#SECTION000583200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html773"
+  HREF="node96.html#SECTION000583210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html774"
+  HREF="node96.html#SECTION000583220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html775"
+  HREF="node96.html#SECTION000583300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html776"
+  HREF="node96.html#SECTION000583400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html777"
+  HREF="node96.html#SECTION000583500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html778"
+  HREF="node96.html#SECTION000583600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html779"
+  HREF="node97.html"><FONT COLOR="#ff0000">morlet3d</FONT></A>
+<UL>
+<LI><A NAME="tex2html780"
+  HREF="node97.html#SECTION000584100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html781"
+  HREF="node97.html#SECTION000584200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html782"
+  HREF="node97.html#SECTION000584210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html783"
+  HREF="node97.html#SECTION000584220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html784"
+  HREF="node97.html#SECTION000584300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html785"
+  HREF="node97.html#SECTION000584400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html786"
+  HREF="node97.html#SECTION000584500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html787"
+  HREF="node97.html#SECTION000584600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html788"
+  HREF="node98.html"><FONT COLOR="#ff0000">morletsph</FONT></A>
+<UL>
+<LI><A NAME="tex2html789"
+  HREF="node98.html#SECTION000585100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html790"
+  HREF="node98.html#SECTION000585200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html791"
+  HREF="node98.html#SECTION000585210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html792"
+  HREF="node98.html#SECTION000585220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html793"
+  HREF="node98.html#SECTION000585300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html794"
+  HREF="node98.html#SECTION000585400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html795"
+  HREF="node98.html#SECTION000585500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html796"
+  HREF="node98.html#SECTION000585600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html797"
+  HREF="node99.html"><FONT COLOR="#ff0000">movgauss</FONT></A>
+<UL>
+<LI><A NAME="tex2html798"
+  HREF="node99.html#SECTION000586100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html799"
+  HREF="node99.html#SECTION000586200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html800"
+  HREF="node99.html#SECTION000586210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html801"
+  HREF="node99.html#SECTION000586220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html802"
+  HREF="node99.html#SECTION000586300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html803"
+  HREF="node99.html#SECTION000586400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html804"
+  HREF="node99.html#SECTION000586500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html805"
+  HREF="node99.html#SECTION000586600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html806"
+  HREF="node100.html"><FONT COLOR="#ff0000">normopts</FONT></A>
+<UL>
+<LI><A NAME="tex2html807"
+  HREF="node100.html#SECTION000587100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html808"
+  HREF="node100.html#SECTION000587200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html809"
+  HREF="node100.html#SECTION000587210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html810"
+  HREF="node100.html#SECTION000587220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html811"
+  HREF="node100.html#SECTION000587300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html812"
+  HREF="node100.html#SECTION000587400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html813"
+  HREF="node100.html#SECTION000587500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html814"
+  HREF="node100.html#SECTION000587600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html815"
+  HREF="node101.html"><FONT COLOR="#ff0000">pethat2d</FONT></A>
+<UL>
+<LI><A NAME="tex2html816"
+  HREF="node101.html#SECTION000588100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html817"
+  HREF="node101.html#SECTION000588200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html818"
+  HREF="node101.html#SECTION000588210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html819"
+  HREF="node101.html#SECTION000588220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html820"
+  HREF="node101.html#SECTION000588300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html821"
+  HREF="node101.html#SECTION000588400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html822"
+  HREF="node101.html#SECTION000588500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html823"
+  HREF="node101.html#SECTION000588600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html824"
+  HREF="node102.html"><FONT COLOR="#ff0000">pgmread</FONT></A>
+<UL>
+<LI><A NAME="tex2html825"
+  HREF="node102.html#SECTION000589100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html826"
+  HREF="node102.html#SECTION000589200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html827"
+  HREF="node102.html#SECTION000589210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html828"
+  HREF="node102.html#SECTION000589220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html829"
+  HREF="node102.html#SECTION000589300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html830"
+  HREF="node102.html#SECTION000589400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html831"
+  HREF="node102.html#SECTION000589500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html832"
+  HREF="node102.html#SECTION000589600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html833"
+  HREF="node103.html"><FONT COLOR="#ff0000">pgmwrite</FONT></A>
+<UL>
+<LI><A NAME="tex2html834"
+  HREF="node103.html#SECTION000590100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html835"
+  HREF="node103.html#SECTION000590200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html836"
+  HREF="node103.html#SECTION000590210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html837"
+  HREF="node103.html#SECTION000590220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html838"
+  HREF="node103.html#SECTION000590300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html839"
+  HREF="node103.html#SECTION000590400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html840"
+  HREF="node103.html#SECTION000590500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html841"
+  HREF="node103.html#SECTION000590600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html842"
+  HREF="node104.html"><FONT COLOR="#ff0000">phin</FONT></A>
+<UL>
+<LI><A NAME="tex2html843"
+  HREF="node104.html#SECTION000591100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html844"
+  HREF="node104.html#SECTION000591200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html845"
+  HREF="node104.html#SECTION000591210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html846"
+  HREF="node104.html#SECTION000591220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html847"
+  HREF="node104.html#SECTION000591300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html848"
+  HREF="node104.html#SECTION000591400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html849"
+  HREF="node104.html#SECTION000591500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html850"
+  HREF="node104.html#SECTION000591600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html851"
+  HREF="node105.html"><FONT COLOR="#ff0000">pmexican2d</FONT></A>
+<UL>
+<LI><A NAME="tex2html852"
+  HREF="node105.html#SECTION000592100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html853"
+  HREF="node105.html#SECTION000592200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html854"
+  HREF="node105.html#SECTION000592210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html855"
+  HREF="node105.html#SECTION000592220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html856"
+  HREF="node105.html#SECTION000592300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html857"
+  HREF="node105.html#SECTION000592400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html858"
+  HREF="node105.html#SECTION000592500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html859"
+  HREF="node105.html#SECTION000592600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html860"
+  HREF="node106.html"><FONT COLOR="#ff0000">pseudiff</FONT></A>
+<UL>
+<LI><A NAME="tex2html861"
+  HREF="node106.html#SECTION000593100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html862"
+  HREF="node106.html#SECTION000593200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html863"
+  HREF="node106.html#SECTION000593210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html864"
+  HREF="node106.html#SECTION000593220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html865"
+  HREF="node106.html#SECTION000593300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html866"
+  HREF="node106.html#SECTION000593400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html867"
+  HREF="node106.html#SECTION000593500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html868"
+  HREF="node106.html#SECTION000593600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html869"
+  HREF="node107.html"><FONT COLOR="#ff0000">regrep</FONT></A>
+<UL>
+<LI><A NAME="tex2html870"
+  HREF="node107.html#SECTION000594100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html871"
+  HREF="node107.html#SECTION000594200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html872"
+  HREF="node107.html#SECTION000594210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html873"
+  HREF="node107.html#SECTION000594220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html874"
+  HREF="node107.html#SECTION000594300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html875"
+  HREF="node107.html#SECTION000594400000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html876"
+  HREF="node108.html"><FONT COLOR="#ff0000">rgray</FONT></A>
+<UL>
+<LI><A NAME="tex2html877"
+  HREF="node108.html#SECTION000595100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html878"
+  HREF="node108.html#SECTION000595200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html879"
+  HREF="node108.html#SECTION000595210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html880"
+  HREF="node108.html#SECTION000595220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html881"
+  HREF="node108.html#SECTION000595300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html882"
+  HREF="node108.html#SECTION000595400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html883"
+  HREF="node108.html#SECTION000595500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html884"
+  HREF="node108.html#SECTION000595600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html885"
+  HREF="node109.html"><FONT COLOR="#ff0000">rmorlet2d</FONT></A>
+<UL>
+<LI><A NAME="tex2html886"
+  HREF="node109.html#SECTION000596100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html887"
+  HREF="node109.html#SECTION000596200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html888"
+  HREF="node109.html#SECTION000596210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html889"
+  HREF="node109.html#SECTION000596220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html890"
+  HREF="node109.html#SECTION000596300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html891"
+  HREF="node109.html#SECTION000596400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html892"
+  HREF="node109.html#SECTION000596500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html893"
+  HREF="node109.html#SECTION000596600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html894"
+  HREF="node110.html"><FONT COLOR="#ff0000">samcwt2d</FONT></A>
+<UL>
+<LI><A NAME="tex2html895"
+  HREF="node110.html#SECTION000597100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html896"
+  HREF="node110.html#SECTION000597200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html897"
+  HREF="node110.html#SECTION000597210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html898"
+  HREF="node110.html#SECTION000597220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html899"
+  HREF="node110.html#SECTION000597300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html900"
+  HREF="node110.html#SECTION000597400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html901"
+  HREF="node110.html#SECTION000597500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html902"
+  HREF="node110.html#SECTION000597600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html903"
+  HREF="node111.html"><FONT COLOR="#ff0000">sarcwt2d</FONT></A>
+<UL>
+<LI><A NAME="tex2html904"
+  HREF="node111.html#SECTION000598100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html905"
+  HREF="node111.html#SECTION000598200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html906"
+  HREF="node111.html#SECTION000598210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html907"
+  HREF="node111.html#SECTION000598220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html908"
+  HREF="node111.html#SECTION000598300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html909"
+  HREF="node111.html#SECTION000598400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html910"
+  HREF="node111.html#SECTION000598500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html911"
+  HREF="node111.html#SECTION000598600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html912"
+  HREF="node112.html"><FONT COLOR="#ff0000">sdog1d</FONT></A>
+<UL>
+<LI><A NAME="tex2html913"
+  HREF="node112.html#SECTION000599100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html914"
+  HREF="node112.html#SECTION000599200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html915"
+  HREF="node112.html#SECTION000599210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html916"
+  HREF="node112.html#SECTION000599220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html917"
+  HREF="node112.html#SECTION000599300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html918"
+  HREF="node112.html#SECTION000599400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html919"
+  HREF="node112.html#SECTION000599500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html920"
+  HREF="node112.html#SECTION000599600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html921"
+  HREF="node113.html"><FONT COLOR="#ff0000">sdog2d</FONT></A>
+<UL>
+<LI><A NAME="tex2html922"
+  HREF="node113.html#SECTION0005100100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html923"
+  HREF="node113.html#SECTION0005100200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html924"
+  HREF="node113.html#SECTION0005100210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html925"
+  HREF="node113.html#SECTION0005100220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html926"
+  HREF="node113.html#SECTION0005100300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html927"
+  HREF="node113.html#SECTION0005100400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html928"
+  HREF="node113.html#SECTION0005100500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html929"
+  HREF="node113.html#SECTION0005100600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html930"
+  HREF="node114.html"><FONT COLOR="#ff0000">setyawtbprefs</FONT></A>
+<UL>
+<LI><A NAME="tex2html931"
+  HREF="node114.html#SECTION0005101100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html932"
+  HREF="node114.html#SECTION0005101200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html933"
+  HREF="node114.html#SECTION0005101210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html934"
+  HREF="node114.html#SECTION0005101300000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html935"
+  HREF="node114.html#SECTION0005101400000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html936"
+  HREF="node115.html"><FONT COLOR="#ff0000">sphcg</FONT></A>
+<UL>
+<LI><A NAME="tex2html937"
+  HREF="node115.html#SECTION0005102100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html938"
+  HREF="node115.html#SECTION0005102200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html939"
+  HREF="node115.html#SECTION0005102210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html940"
+  HREF="node115.html#SECTION0005102220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html941"
+  HREF="node115.html#SECTION0005102300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html942"
+  HREF="node115.html#SECTION0005102400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html943"
+  HREF="node115.html#SECTION0005102500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html944"
+  HREF="node115.html#SECTION0005102600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html945"
+  HREF="node116.html"><FONT COLOR="#ff0000">sphgrid</FONT></A>
+<UL>
+<LI><A NAME="tex2html946"
+  HREF="node116.html#SECTION0005103100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html947"
+  HREF="node116.html#SECTION0005103200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html948"
+  HREF="node116.html#SECTION0005103210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html949"
+  HREF="node116.html#SECTION0005103220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html950"
+  HREF="node116.html#SECTION0005103300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html951"
+  HREF="node116.html#SECTION0005103400000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html952"
+  HREF="node116.html#SECTION0005103500000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html953"
+  HREF="node117.html"><FONT COLOR="#ff0000">sphrichardson</FONT></A>
+<UL>
+<LI><A NAME="tex2html954"
+  HREF="node117.html#SECTION0005104100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html955"
+  HREF="node117.html#SECTION0005104200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html956"
+  HREF="node117.html#SECTION0005104210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html957"
+  HREF="node117.html#SECTION0005104220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html958"
+  HREF="node117.html#SECTION0005104300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html959"
+  HREF="node117.html#SECTION0005104400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html960"
+  HREF="node117.html#SECTION0005104500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html961"
+  HREF="node117.html#SECTION0005104600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html962"
+  HREF="node118.html"><FONT COLOR="#ff0000">sphweight</FONT></A>
+<UL>
+<LI><A NAME="tex2html963"
+  HREF="node118.html#SECTION0005105100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html964"
+  HREF="node118.html#SECTION0005105200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html965"
+  HREF="node118.html#SECTION0005105210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html966"
+  HREF="node118.html#SECTION0005105220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html967"
+  HREF="node118.html#SECTION0005105300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html968"
+  HREF="node118.html#SECTION0005105400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html969"
+  HREF="node118.html#SECTION0005105500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html970"
+  HREF="node118.html#SECTION0005105600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html971"
+  HREF="node119.html"><FONT COLOR="#ff0000">sqdog2d</FONT></A>
+<UL>
+<LI><A NAME="tex2html972"
+  HREF="node119.html#SECTION0005106100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html973"
+  HREF="node119.html#SECTION0005106200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html974"
+  HREF="node119.html#SECTION0005106210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html975"
+  HREF="node119.html#SECTION0005106220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html976"
+  HREF="node119.html#SECTION0005106300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html977"
+  HREF="node119.html#SECTION0005106400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html978"
+  HREF="node119.html#SECTION0005106500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html979"
+  HREF="node119.html#SECTION0005106600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html980"
+  HREF="node120.html"><FONT COLOR="#ff0000">the3dL</FONT></A>
+<UL>
+<LI><A NAME="tex2html981"
+  HREF="node120.html#SECTION0005107100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html982"
+  HREF="node120.html#SECTION0005107200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html983"
+  HREF="node120.html#SECTION0005107210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html984"
+  HREF="node120.html#SECTION0005107220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html985"
+  HREF="node120.html#SECTION0005107300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html986"
+  HREF="node120.html#SECTION0005107400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html987"
+  HREF="node120.html#SECTION0005107500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html988"
+  HREF="node120.html#SECTION0005107600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html989"
+  HREF="node121.html"><FONT COLOR="#ff0000">theL</FONT></A>
+<UL>
+<LI><A NAME="tex2html990"
+  HREF="node121.html#SECTION0005108100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html991"
+  HREF="node121.html#SECTION0005108200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html992"
+  HREF="node121.html#SECTION0005108210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html993"
+  HREF="node121.html#SECTION0005108220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html994"
+  HREF="node121.html#SECTION0005108300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html995"
+  HREF="node121.html#SECTION0005108400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html996"
+  HREF="node121.html#SECTION0005108500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html997"
+  HREF="node121.html#SECTION0005108600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html998"
+  HREF="node122.html"><FONT COLOR="#ff0000">thedisk</FONT></A>
+<UL>
+<LI><A NAME="tex2html999"
+  HREF="node122.html#SECTION0005109100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html1000"
+  HREF="node122.html#SECTION0005109200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html1001"
+  HREF="node122.html#SECTION0005109210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html1002"
+  HREF="node122.html#SECTION0005109220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html1003"
+  HREF="node122.html#SECTION0005109300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html1004"
+  HREF="node122.html#SECTION0005109400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html1005"
+  HREF="node122.html#SECTION0005109500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html1006"
+  HREF="node122.html#SECTION0005109600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html1007"
+  HREF="node123.html"><FONT COLOR="#ff0000">vect</FONT></A>
+<UL>
+<LI><A NAME="tex2html1008"
+  HREF="node123.html#SECTION0005110100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html1009"
+  HREF="node123.html#SECTION0005110200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html1010"
+  HREF="node123.html#SECTION0005110210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html1011"
+  HREF="node123.html#SECTION0005110220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html1012"
+  HREF="node123.html#SECTION0005110300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html1013"
+  HREF="node123.html#SECTION0005110400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html1014"
+  HREF="node123.html#SECTION0005110500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html1015"
+  HREF="node123.html#SECTION0005110600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html1016"
+  HREF="node124.html"><FONT COLOR="#ff0000">whatin</FONT></A>
+<UL>
+<LI><A NAME="tex2html1017"
+  HREF="node124.html#SECTION0005111100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html1018"
+  HREF="node124.html#SECTION0005111200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html1019"
+  HREF="node124.html#SECTION0005111210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html1020"
+  HREF="node124.html#SECTION0005111300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html1021"
+  HREF="node124.html#SECTION0005111400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html1022"
+  HREF="node124.html#SECTION0005111500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html1023"
+  HREF="node124.html#SECTION0005111600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html1024"
+  HREF="node125.html"><FONT COLOR="#ff0000">wheel2d</FONT></A>
+<UL>
+<LI><A NAME="tex2html1025"
+  HREF="node125.html#SECTION0005112100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html1026"
+  HREF="node125.html#SECTION0005112200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html1027"
+  HREF="node125.html#SECTION0005112210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html1028"
+  HREF="node125.html#SECTION0005112220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html1029"
+  HREF="node125.html#SECTION0005112300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html1030"
+  HREF="node125.html#SECTION0005112400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html1031"
+  HREF="node125.html#SECTION0005112500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html1032"
+  HREF="node125.html#SECTION0005112600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html1033"
+  HREF="node126.html"><FONT COLOR="#ff0000">wpck2d</FONT></A>
+<UL>
+<LI><A NAME="tex2html1034"
+  HREF="node126.html#SECTION0005113100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html1035"
+  HREF="node126.html#SECTION0005113200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html1036"
+  HREF="node126.html#SECTION0005113210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html1037"
+  HREF="node126.html#SECTION0005113220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html1038"
+  HREF="node126.html#SECTION0005113300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html1039"
+  HREF="node126.html#SECTION0005113400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html1040"
+  HREF="node126.html#SECTION0005113500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html1041"
+  HREF="node126.html#SECTION0005113600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html1042"
+  HREF="node127.html"><FONT COLOR="#ff0000">yabeta</FONT></A>
+<UL>
+<LI><A NAME="tex2html1043"
+  HREF="node127.html#SECTION0005114100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html1044"
+  HREF="node127.html#SECTION0005114200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html1045"
+  HREF="node127.html#SECTION0005114210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html1046"
+  HREF="node127.html#SECTION0005114220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html1047"
+  HREF="node127.html#SECTION0005114300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html1048"
+  HREF="node127.html#SECTION0005114400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html1049"
+  HREF="node127.html#SECTION0005114500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html1050"
+  HREF="node127.html#SECTION0005114600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html1051"
+  HREF="node128.html"><FONT COLOR="#ff0000">yachirp</FONT></A>
+<UL>
+<LI><A NAME="tex2html1052"
+  HREF="node128.html#SECTION0005115100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html1053"
+  HREF="node128.html#SECTION0005115200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html1054"
+  HREF="node128.html#SECTION0005115210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html1055"
+  HREF="node128.html#SECTION0005115220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html1056"
+  HREF="node128.html#SECTION0005115300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html1057"
+  HREF="node128.html#SECTION0005115400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html1058"
+  HREF="node128.html#SECTION0005115500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html1059"
+  HREF="node128.html#SECTION0005115600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html1060"
+  HREF="node129.html"><FONT COLOR="#ff0000">yademo</FONT></A>
+<UL>
+<LI><A NAME="tex2html1061"
+  HREF="node129.html#SECTION0005116100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html1062"
+  HREF="node129.html#SECTION0005116200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html1063"
+  HREF="node129.html#SECTION0005116210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html1064"
+  HREF="node129.html#SECTION0005116300000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html1065"
+  HREF="node130.html"><FONT COLOR="#ff0000">yadiro</FONT></A>
+<UL>
+<LI><A NAME="tex2html1066"
+  HREF="node130.html#SECTION0005117100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html1067"
+  HREF="node130.html#SECTION0005117200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html1068"
+  HREF="node130.html#SECTION0005117210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html1069"
+  HREF="node130.html#SECTION0005117220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html1070"
+  HREF="node130.html#SECTION0005117300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html1071"
+  HREF="node130.html#SECTION0005117400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html1072"
+  HREF="node130.html#SECTION0005117500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html1073"
+  HREF="node130.html#SECTION0005117600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html1074"
+  HREF="node131.html"><FONT COLOR="#ff0000">yahelp</FONT></A>
+<UL>
+<LI><A NAME="tex2html1075"
+  HREF="node131.html#SECTION0005118100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html1076"
+  HREF="node131.html#SECTION0005118200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html1077"
+  HREF="node131.html#SECTION0005118210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html1078"
+  HREF="node131.html#SECTION0005118300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html1079"
+  HREF="node131.html#SECTION0005118400000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html1080"
+  HREF="node132.html"><FONT COLOR="#ff0000">yahist</FONT></A>
+<UL>
+<LI><A NAME="tex2html1081"
+  HREF="node132.html#SECTION0005119100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html1082"
+  HREF="node132.html#SECTION0005119200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html1083"
+  HREF="node132.html#SECTION0005119210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html1084"
+  HREF="node132.html#SECTION0005119220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html1085"
+  HREF="node132.html#SECTION0005119300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html1086"
+  HREF="node132.html#SECTION0005119400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html1087"
+  HREF="node132.html#SECTION0005119500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html1088"
+  HREF="node132.html#SECTION0005119600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html1089"
+  HREF="node133.html"><FONT COLOR="#ff0000">yaload</FONT></A>
+<UL>
+<LI><A NAME="tex2html1090"
+  HREF="node133.html#SECTION0005120100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html1091"
+  HREF="node133.html#SECTION0005120200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html1092"
+  HREF="node133.html#SECTION0005120210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html1093"
+  HREF="node133.html#SECTION0005120300000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html1094"
+  HREF="node134.html"><FONT COLOR="#ff0000">yamake</FONT></A>
+<UL>
+<LI><A NAME="tex2html1095"
+  HREF="node134.html#SECTION0005121100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html1096"
+  HREF="node134.html#SECTION0005121200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html1097"
+  HREF="node134.html#SECTION0005121210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html1098"
+  HREF="node134.html#SECTION0005121300000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html1099"
+  HREF="node135.html"><FONT COLOR="#ff0000">yamax</FONT></A>
+<UL>
+<LI><A NAME="tex2html1100"
+  HREF="node135.html#SECTION0005122100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html1101"
+  HREF="node135.html#SECTION0005122200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html1102"
+  HREF="node135.html#SECTION0005122210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html1103"
+  HREF="node135.html#SECTION0005122220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html1104"
+  HREF="node135.html#SECTION0005122300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html1105"
+  HREF="node135.html#SECTION0005122400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html1106"
+  HREF="node135.html#SECTION0005122500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html1107"
+  HREF="node135.html#SECTION0005122600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html1108"
+  HREF="node136.html"><FONT COLOR="#ff0000">yamse</FONT></A>
+<UL>
+<LI><A NAME="tex2html1109"
+  HREF="node136.html#SECTION0005123100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html1110"
+  HREF="node136.html#SECTION0005123200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html1111"
+  HREF="node136.html#SECTION0005123210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html1112"
+  HREF="node136.html#SECTION0005123220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html1113"
+  HREF="node136.html#SECTION0005123300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html1114"
+  HREF="node136.html#SECTION0005123400000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html1115"
+  HREF="node137.html"><FONT COLOR="#ff0000">yapbar</FONT></A>
+<UL>
+<LI><A NAME="tex2html1116"
+  HREF="node137.html#SECTION0005124100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html1117"
+  HREF="node137.html#SECTION0005124200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html1118"
+  HREF="node137.html#SECTION0005124210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html1119"
+  HREF="node137.html#SECTION0005124220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html1120"
+  HREF="node137.html#SECTION0005124300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html1121"
+  HREF="node137.html#SECTION0005124400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html1122"
+  HREF="node137.html#SECTION0005124500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html1123"
+  HREF="node137.html#SECTION0005124600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html1124"
+  HREF="node138.html"><FONT COLOR="#ff0000">yapsnr</FONT></A>
+<UL>
+<LI><A NAME="tex2html1125"
+  HREF="node138.html#SECTION0005125100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html1126"
+  HREF="node138.html#SECTION0005125200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html1127"
+  HREF="node138.html#SECTION0005125210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html1128"
+  HREF="node138.html#SECTION0005125220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html1129"
+  HREF="node138.html#SECTION0005125300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html1130"
+  HREF="node138.html#SECTION0005125400000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html1131"
+  HREF="node139.html"><FONT COLOR="#ff0000">yapuls</FONT></A>
+<UL>
+<LI><A NAME="tex2html1132"
+  HREF="node139.html#SECTION0005126100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html1133"
+  HREF="node139.html#SECTION0005126200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html1134"
+  HREF="node139.html#SECTION0005126210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html1135"
+  HREF="node139.html#SECTION0005126220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html1136"
+  HREF="node139.html#SECTION0005126300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html1137"
+  HREF="node139.html#SECTION0005126400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html1138"
+  HREF="node139.html#SECTION0005126500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html1139"
+  HREF="node139.html#SECTION0005126600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html1140"
+  HREF="node140.html"><FONT COLOR="#ff0000">yapuls2</FONT></A>
+<UL>
+<LI><A NAME="tex2html1141"
+  HREF="node140.html#SECTION0005127100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html1142"
+  HREF="node140.html#SECTION0005127200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html1143"
+  HREF="node140.html#SECTION0005127210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html1144"
+  HREF="node140.html#SECTION0005127220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html1145"
+  HREF="node140.html#SECTION0005127300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html1146"
+  HREF="node140.html#SECTION0005127400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html1147"
+  HREF="node140.html#SECTION0005127500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html1148"
+  HREF="node140.html#SECTION0005127600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html1149"
+  HREF="node141.html"><FONT COLOR="#ff0000">yasave</FONT></A>
+<UL>
+<LI><A NAME="tex2html1150"
+  HREF="node141.html#SECTION0005128100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html1151"
+  HREF="node141.html#SECTION0005128200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html1152"
+  HREF="node141.html#SECTION0005128210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html1153"
+  HREF="node141.html#SECTION0005128300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html1154"
+  HREF="node141.html#SECTION0005128400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html1155"
+  HREF="node141.html#SECTION0005128500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html1156"
+  HREF="node141.html#SECTION0005128600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html1157"
+  HREF="node142.html"><FONT COLOR="#ff0000">yashow</FONT></A>
+<UL>
+<LI><A NAME="tex2html1158"
+  HREF="node142.html#SECTION0005129100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html1159"
+  HREF="node142.html#SECTION0005129200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html1160"
+  HREF="node142.html#SECTION0005129210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html1161"
+  HREF="node142.html#SECTION0005129300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html1162"
+  HREF="node142.html#SECTION0005129400000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html1163"
+  HREF="node142.html#SECTION0005129500000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html1164"
+  HREF="node143.html"><FONT COLOR="#ff0000">yashow_cgt1d</FONT></A>
+<UL>
+<LI><A NAME="tex2html1165"
+  HREF="node143.html#SECTION0005130100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html1166"
+  HREF="node143.html#SECTION0005130200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html1167"
+  HREF="node143.html#SECTION0005130210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html1168"
+  HREF="node143.html#SECTION0005130220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html1169"
+  HREF="node143.html#SECTION0005130300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html1170"
+  HREF="node143.html#SECTION0005130400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html1171"
+  HREF="node143.html#SECTION0005130500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html1172"
+  HREF="node143.html#SECTION0005130600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html1173"
+  HREF="node144.html"><FONT COLOR="#ff0000">yashow_cwt1d</FONT></A>
+<UL>
+<LI><A NAME="tex2html1174"
+  HREF="node144.html#SECTION0005131100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html1175"
+  HREF="node144.html#SECTION0005131200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html1176"
+  HREF="node144.html#SECTION0005131210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html1177"
+  HREF="node144.html#SECTION0005131220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html1178"
+  HREF="node144.html#SECTION0005131300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html1179"
+  HREF="node144.html#SECTION0005131400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html1180"
+  HREF="node144.html#SECTION0005131500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html1181"
+  HREF="node144.html#SECTION0005131600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html1182"
+  HREF="node145.html"><FONT COLOR="#ff0000">yashow_cwt1dt</FONT></A>
+<UL>
+<LI><A NAME="tex2html1183"
+  HREF="node145.html#SECTION0005132100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html1184"
+  HREF="node145.html#SECTION0005132200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html1185"
+  HREF="node145.html#SECTION0005132210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html1186"
+  HREF="node145.html#SECTION0005132220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html1187"
+  HREF="node145.html#SECTION0005132300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html1188"
+  HREF="node145.html#SECTION0005132400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html1189"
+  HREF="node145.html#SECTION0005132500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html1190"
+  HREF="node145.html#SECTION0005132600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html1191"
+  HREF="node146.html"><FONT COLOR="#ff0000">yashow_cwt2d</FONT></A>
+<UL>
+<LI><A NAME="tex2html1192"
+  HREF="node146.html#SECTION0005133100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html1193"
+  HREF="node146.html#SECTION0005133200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html1194"
+  HREF="node146.html#SECTION0005133210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html1195"
+  HREF="node146.html#SECTION0005133220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html1196"
+  HREF="node146.html#SECTION0005133300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html1197"
+  HREF="node146.html#SECTION0005133400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html1198"
+  HREF="node146.html#SECTION0005133500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html1199"
+  HREF="node146.html#SECTION0005133600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html1200"
+  HREF="node147.html"><FONT COLOR="#ff0000">yashow_cwt3d</FONT></A>
+<UL>
+<LI><A NAME="tex2html1201"
+  HREF="node147.html#SECTION0005134100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html1202"
+  HREF="node147.html#SECTION0005134200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html1203"
+  HREF="node147.html#SECTION0005134210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html1204"
+  HREF="node147.html#SECTION0005134220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html1205"
+  HREF="node147.html#SECTION0005134300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html1206"
+  HREF="node147.html#SECTION0005134400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html1207"
+  HREF="node147.html#SECTION0005134500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html1208"
+  HREF="node147.html#SECTION0005134600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html1209"
+  HREF="node148.html"><FONT COLOR="#ff0000">yashow_cwtsph</FONT></A>
+<UL>
+<LI><A NAME="tex2html1210"
+  HREF="node148.html#SECTION0005135100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html1211"
+  HREF="node148.html#SECTION0005135200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html1212"
+  HREF="node148.html#SECTION0005135210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html1213"
+  HREF="node148.html#SECTION0005135220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html1214"
+  HREF="node148.html#SECTION0005135300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html1215"
+  HREF="node148.html#SECTION0005135400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html1216"
+  HREF="node148.html#SECTION0005135500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html1217"
+  HREF="node148.html#SECTION0005135600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html1218"
+  HREF="node149.html"><FONT COLOR="#ff0000">yashow_matrix</FONT></A>
+<UL>
+<LI><A NAME="tex2html1219"
+  HREF="node149.html#SECTION0005136100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html1220"
+  HREF="node149.html#SECTION0005136200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html1221"
+  HREF="node149.html#SECTION0005136210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html1222"
+  HREF="node149.html#SECTION0005136220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html1223"
+  HREF="node149.html#SECTION0005136300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html1224"
+  HREF="node149.html#SECTION0005136400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html1225"
+  HREF="node149.html#SECTION0005136500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html1226"
+  HREF="node149.html#SECTION0005136600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html1227"
+  HREF="node150.html"><FONT COLOR="#ff0000">yashow_samcwt2d</FONT></A>
+<UL>
+<LI><A NAME="tex2html1228"
+  HREF="node150.html#SECTION0005137100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html1229"
+  HREF="node150.html#SECTION0005137200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html1230"
+  HREF="node150.html#SECTION0005137210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html1231"
+  HREF="node150.html#SECTION0005137220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html1232"
+  HREF="node150.html#SECTION0005137300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html1233"
+  HREF="node150.html#SECTION0005137400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html1234"
+  HREF="node150.html#SECTION0005137500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html1235"
+  HREF="node150.html#SECTION0005137600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html1236"
+  HREF="node151.html"><FONT COLOR="#ff0000">yashow_spheric</FONT></A>
+<UL>
+<LI><A NAME="tex2html1237"
+  HREF="node151.html#SECTION0005138100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html1238"
+  HREF="node151.html#SECTION0005138200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html1239"
+  HREF="node151.html#SECTION0005138210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html1240"
+  HREF="node151.html#SECTION0005138220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html1241"
+  HREF="node151.html#SECTION0005138300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html1242"
+  HREF="node151.html#SECTION0005138400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html1243"
+  HREF="node151.html#SECTION0005138500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html1244"
+  HREF="node151.html#SECTION0005138600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html1245"
+  HREF="node152.html"><FONT COLOR="#ff0000">yashow_timeseq</FONT></A>
+<UL>
+<LI><A NAME="tex2html1246"
+  HREF="node152.html#SECTION0005139100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html1247"
+  HREF="node152.html#SECTION0005139200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html1248"
+  HREF="node152.html#SECTION0005139210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html1249"
+  HREF="node152.html#SECTION0005139220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html1250"
+  HREF="node152.html#SECTION0005139300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html1251"
+  HREF="node152.html#SECTION0005139400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html1252"
+  HREF="node152.html#SECTION0005139500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html1253"
+  HREF="node152.html#SECTION0005139600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html1254"
+  HREF="node153.html"><FONT COLOR="#ff0000">yashow_volume</FONT></A>
+<UL>
+<LI><A NAME="tex2html1255"
+  HREF="node153.html#SECTION0005140100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html1256"
+  HREF="node153.html#SECTION0005140200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html1257"
+  HREF="node153.html#SECTION0005140210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html1258"
+  HREF="node153.html#SECTION0005140220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html1259"
+  HREF="node153.html#SECTION0005140300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html1260"
+  HREF="node153.html#SECTION0005140400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html1261"
+  HREF="node153.html#SECTION0005140500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html1262"
+  HREF="node153.html#SECTION0005140600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html1263"
+  HREF="node154.html"><FONT COLOR="#ff0000">yashow_wpck2d</FONT></A>
+<UL>
+<LI><A NAME="tex2html1264"
+  HREF="node154.html#SECTION0005141100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html1265"
+  HREF="node154.html#SECTION0005141200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html1266"
+  HREF="node154.html#SECTION0005141210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html1267"
+  HREF="node154.html#SECTION0005141220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html1268"
+  HREF="node154.html#SECTION0005141300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html1269"
+  HREF="node154.html#SECTION0005141400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html1270"
+  HREF="node154.html#SECTION0005141500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html1271"
+  HREF="node154.html#SECTION0005141600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html1272"
+  HREF="node155.html"><FONT COLOR="#ff0000">yasnr</FONT></A>
+<UL>
+<LI><A NAME="tex2html1273"
+  HREF="node155.html#SECTION0005142100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html1274"
+  HREF="node155.html#SECTION0005142200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html1275"
+  HREF="node155.html#SECTION0005142210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html1276"
+  HREF="node155.html#SECTION0005142220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html1277"
+  HREF="node155.html#SECTION0005142300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html1278"
+  HREF="node155.html#SECTION0005142400000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html1279"
+  HREF="node156.html"><FONT COLOR="#ff0000">yaspharm</FONT></A>
+<UL>
+<LI><A NAME="tex2html1280"
+  HREF="node156.html#SECTION0005143100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html1281"
+  HREF="node156.html#SECTION0005143200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html1282"
+  HREF="node156.html#SECTION0005143210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html1283"
+  HREF="node156.html#SECTION0005143220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html1284"
+  HREF="node156.html#SECTION0005143300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html1285"
+  HREF="node156.html#SECTION0005143400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html1286"
+  HREF="node156.html#SECTION0005143500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html1287"
+  HREF="node156.html#SECTION0005143600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html1288"
+  HREF="node157.html"><FONT COLOR="#ff0000">yaspline</FONT></A>
+<UL>
+<LI><A NAME="tex2html1289"
+  HREF="node157.html#SECTION0005144100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html1290"
+  HREF="node157.html#SECTION0005144200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html1291"
+  HREF="node157.html#SECTION0005144210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html1292"
+  HREF="node157.html#SECTION0005144220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html1293"
+  HREF="node157.html#SECTION0005144300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html1294"
+  HREF="node157.html#SECTION0005144400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html1295"
+  HREF="node157.html#SECTION0005144500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html1296"
+  HREF="node157.html#SECTION0005144600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html1297"
+  HREF="node158.html"><FONT COLOR="#ff0000">yasthresh</FONT></A>
+<UL>
+<LI><A NAME="tex2html1298"
+  HREF="node158.html#SECTION0005145100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html1299"
+  HREF="node158.html#SECTION0005145200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html1300"
+  HREF="node158.html#SECTION0005145210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html1301"
+  HREF="node158.html#SECTION0005145220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html1302"
+  HREF="node158.html#SECTION0005145300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html1303"
+  HREF="node158.html#SECTION0005145400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html1304"
+  HREF="node158.html#SECTION0005145500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html1305"
+  HREF="node158.html#SECTION0005145600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html1306"
+  HREF="node159.html"><FONT COLOR="#ff0000">yastrfind</FONT></A>
+<UL>
+<LI><A NAME="tex2html1307"
+  HREF="node159.html#SECTION0005146100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html1308"
+  HREF="node159.html#SECTION0005146200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html1309"
+  HREF="node159.html#SECTION0005146210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html1310"
+  HREF="node159.html#SECTION0005146220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html1311"
+  HREF="node159.html#SECTION0005146300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html1312"
+  HREF="node159.html#SECTION0005146400000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html1313"
+  HREF="node160.html"><FONT COLOR="#ff0000">yathresh</FONT></A>
+<UL>
+<LI><A NAME="tex2html1314"
+  HREF="node160.html#SECTION0005147100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html1315"
+  HREF="node160.html#SECTION0005147200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html1316"
+  HREF="node160.html#SECTION0005147210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html1317"
+  HREF="node160.html#SECTION0005147220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html1318"
+  HREF="node160.html#SECTION0005147300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html1319"
+  HREF="node160.html#SECTION0005147400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html1320"
+  HREF="node160.html#SECTION0005147500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html1321"
+  HREF="node160.html#SECTION0005147600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html1322"
+  HREF="node161.html"><FONT COLOR="#ff0000">yawopts</FONT></A>
+<UL>
+<LI><A NAME="tex2html1323"
+  HREF="node161.html#SECTION0005148100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html1324"
+  HREF="node161.html#SECTION0005148200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html1325"
+  HREF="node161.html#SECTION0005148210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html1326"
+  HREF="node161.html#SECTION0005148220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<LI><A NAME="tex2html1327"
+  HREF="node161.html#SECTION0005148300000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html1328"
+  HREF="node161.html#SECTION0005148400000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<LI><A NAME="tex2html1329"
+  HREF="node162.html"><FONT COLOR="#ff0000">yawtbprefs</FONT></A>
+<UL>
+<LI><A NAME="tex2html1330"
+  HREF="node162.html#SECTION0005149100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html1331"
+  HREF="node162.html#SECTION0005149200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<LI><A NAME="tex2html1332"
+  HREF="node162.html#SECTION0005149300000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html1333"
+  HREF="node162.html#SECTION0005149400000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+</UL>
+<BR>
+<LI><A NAME="tex2html1334"
+  HREF="node163.html">GNU GENERAL PUBLIC LICENSE</A>
+<UL>
+<LI><A NAME="tex2html1335"
+  HREF="node164.html">Preamble</A>
+<LI><A NAME="tex2html1336"
+  HREF="node165.html">TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION</A>
+<LI><A NAME="tex2html1337"
+  HREF="node166.html">How to Apply These Terms to Your New Programs</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html1338"
+  HREF="node167.html">GNU Free Documentation License</A>
+<UL>
+<LI><A NAME="tex2html1339"
+  HREF="node168.html">Preamble</A>
+<LI><A NAME="tex2html1340"
+  HREF="node169.html">Applicability and Definitions</A>
+<LI><A NAME="tex2html1341"
+  HREF="node170.html">Verbatim Copying</A>
+<LI><A NAME="tex2html1342"
+  HREF="node171.html">Copying in Quantity</A>
+<LI><A NAME="tex2html1343"
+  HREF="node172.html">Modifications</A>
+<LI><A NAME="tex2html1344"
+  HREF="node173.html">Combining Documents</A>
+<LI><A NAME="tex2html1345"
+  HREF="node174.html">Collections of Documents</A>
+<LI><A NAME="tex2html1346"
+  HREF="node175.html">Aggregation With Independent Works</A>
+<LI><A NAME="tex2html1347"
+  HREF="node176.html">Translation</A>
+<LI><A NAME="tex2html1348"
+  HREF="node177.html">Termination</A>
+<LI><A NAME="tex2html1349"
+  HREF="node178.html">Future Revisions of This License</A>
+<LI><A NAME="tex2html1350"
+  HREF="node179.html">ADDENDUM: How to use this License for your documents</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html1351"
+  HREF="node180.html">About this document ...</A>
+</UL>
+<!--End of Table of Child-Links-->
+<BR><HR>
+<ADDRESS>
+<yawtb-devel@sourceforge.net>
+</ADDRESS>
+</BODY>
+</HTML>

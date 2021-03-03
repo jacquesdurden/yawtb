@@ -1,0 +1,235 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>yapuls2</TITLE>
+<META NAME="description" CONTENT="yapuls2">
+<META NAME="keywords" CONTENT="YAWTBReferenceManual">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="YAWTBReferenceManual.css">
+
+<LINK REL="next" HREF="node141.html">
+<LINK REL="previous" HREF="node139.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node141.html">
+</HEAD>
+
+<BODY  bgcolor="#ffffff">
+<!--Navigation Panel-->
+<A NAME="tex2html5324"
+  HREF="node141.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html5320"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html5314"
+  HREF="node139.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html5322"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html5325"
+  HREF="node141.html">yasave</A>
+<B> Up:</B> <A NAME="tex2html5321"
+  HREF="node13.html">The commands in alphabetical</A>
+<B> Previous:</B> <A NAME="tex2html5315"
+  HREF="node139.html">yapuls</A>
+ &nbsp; <B>  <A NAME="tex2html5323"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html5326"
+  HREF="node140.html#SECTION0005127100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html5327"
+  HREF="node140.html#SECTION0005127200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html5328"
+  HREF="node140.html#SECTION0005127210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html5329"
+  HREF="node140.html#SECTION0005127220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<BR>
+<LI><A NAME="tex2html5330"
+  HREF="node140.html#SECTION0005127300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html5331"
+  HREF="node140.html#SECTION0005127400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html5332"
+  HREF="node140.html#SECTION0005127500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html5333"
+  HREF="node140.html#SECTION0005127600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H2><A NAME="SECTION0005127000000000000000"></A>
+<A NAME="cmd:yapuls2"></A>
+<BR>
+<FONT COLOR="#ff0000">yapuls2</FONT>
+</H2>
+
+<P>
+Pulsation matrix
+
+<P>
+
+<H3><A NAME="SECTION0005127100000000000000"></A>
+<A NAME="cmd:yapuls2:Syn"></A>
+<BR>
+<FONT COLOR="#000080">Syntax</FONT>
+</H3>
+
+<P>
+[pulsx,pulsy] = yapuls2(npulsx [,npulsy])
+[pulsx,pulsy] = yapuls2(npuls)
+
+<P>
+
+<H3><A NAME="SECTION0005127200000000000000"></A>
+<A NAME="cmd:yapuls2:Des"></A>
+<BR>
+<FONT COLOR="#000080">Description</FONT>
+</H3>
+
+<P>
+<TT>yapuls2</TT> returns two pulsation matrices <TT>pulsx</TT>
+and <TT>pulsy</TT> of size <TT>npulsx</TT>*<TT>npulsy</TT> such
+that, each row of <TT>pulsx</TT> or each column of <TT>pulsy</TT>
+is the concatenation of two  subvectors whose elements are 
+respectively in  [0,<IMG
+ WIDTH="15" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img16.png"
+ ALT="$ \pi$">) and  [- <IMG
+ WIDTH="15" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img16.png"
+ ALT="$ \pi$">, 0).  Useful function
+when computing 2D wavelets directly in the Fourier domain.
+
+<P>
+
+<H4><A NAME="SECTION0005127210000000000000"></A>
+<A NAME="cmd:yapuls2:InpD"></A>
+<BR>
+<FONT COLOR="#000080">Input Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>npulsx</STRONG></DT>
+<DD>[REAL SCALAR]: length of the x-pulsation vector
+</DD>
+<DT><STRONG>npulsy</STRONG></DT>
+<DD>[REAL SCALAR]: length of the y-pulsation vector
+equals to <TT>npulsx</TT> by default.
+</DD>
+<DT><STRONG>npuls</STRONG></DT>
+<DD>[REAL VECTOR]: 2-length vector containing the
+values of npulsx and npulsy.
+</DD>
+</DL> 
+
+<P>
+
+<H4><A NAME="SECTION0005127220000000000000"></A>
+<A NAME="cmd:yapuls2:OutD"></A>
+<BR>
+<FONT COLOR="#000080">Output Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>pulsx</STRONG></DT>
+<DD>[REAL MATRIX]: the x-pulsation matrix
+</DD>
+<DT><STRONG>pulsy</STRONG></DT>
+<DD>[REAL MATRIX]: the y-pulsation matrix
+</DD>
+</DL> 
+
+<P>
+
+<H3><A NAME="SECTION0005127300000000000000"></A>
+<A NAME="cmd:yapuls2:Exa"></A>
+<BR>
+<FONT COLOR="#000080">Example(s)</FONT>
+</H3>
+
+<P>
+<PRE>
+&gt;&gt; [pulsx,pulsy] = yapuls2(5)
+&gt;&gt; [pulsx,pulsy] = yapuls2([5 4])
+&gt;&gt; [pulsx,pulsy] = yapuls2(5,4)
+</PRE>
+prints and returns a 5x5-size, and two 5x4-size pulsation matrix.
+
+<P>
+
+<H3><A NAME="SECTION0005127400000000000000"></A>
+<A NAME="cmd:yapuls2:Ref"></A>
+<BR>
+<FONT COLOR="#000080">References</FONT>
+</H3>
+
+<P>
+
+<H3><A NAME="SECTION0005127500000000000000"></A>
+<A NAME="cmd:yapuls2:See"></A>
+<BR>
+<FONT COLOR="#000080">See Also</FONT>
+</H3>
+
+<P>
+<A HREF="node27.html#cmd:cwt1d">cwt1d</A>, <A HREF="node29.html#cmd:cwt2d">cwt2d</A>, <A HREF="node30.html#cmd:cwt3d">cwt3d</A>, <A HREF="node123.html#cmd:vect">vect</A>
+
+<P>
+
+<H3><A NAME="SECTION0005127600000000000000">
+<FONT COLOR="#000080">Location</FONT></A>
+</H3>
+tools/misc/yapuls2.m
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html5324"
+  HREF="node141.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html5320"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html5314"
+  HREF="node139.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html5322"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html5325"
+  HREF="node141.html">yasave</A>
+<B> Up:</B> <A NAME="tex2html5321"
+  HREF="node13.html">The commands in alphabetical</A>
+<B> Previous:</B> <A NAME="tex2html5315"
+  HREF="node139.html">yapuls</A>
+ &nbsp; <B>  <A NAME="tex2html5323"
+  HREF="node1.html">Contents</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+<yawtb-devel@sourceforge.net>
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,243 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>sphcg</TITLE>
+<META NAME="description" CONTENT="sphcg">
+<META NAME="keywords" CONTENT="YAWTBReferenceManual">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="YAWTBReferenceManual.css">
+
+<LINK REL="next" HREF="node116.html">
+<LINK REL="previous" HREF="node114.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node116.html">
+</HEAD>
+
+<BODY  bgcolor="#ffffff">
+<!--Navigation Panel-->
+<A NAME="tex2html4845"
+  HREF="node116.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html4841"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html4835"
+  HREF="node114.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html4843"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html4846"
+  HREF="node116.html">sphgrid</A>
+<B> Up:</B> <A NAME="tex2html4842"
+  HREF="node13.html">The commands in alphabetical</A>
+<B> Previous:</B> <A NAME="tex2html4836"
+  HREF="node114.html">setyawtbprefs</A>
+ &nbsp; <B>  <A NAME="tex2html4844"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html4847"
+  HREF="node115.html#SECTION0005102100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html4848"
+  HREF="node115.html#SECTION0005102200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html4849"
+  HREF="node115.html#SECTION0005102210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html4850"
+  HREF="node115.html#SECTION0005102220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<BR>
+<LI><A NAME="tex2html4851"
+  HREF="node115.html#SECTION0005102300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html4852"
+  HREF="node115.html#SECTION0005102400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html4853"
+  HREF="node115.html#SECTION0005102500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html4854"
+  HREF="node115.html#SECTION0005102600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H2><A NAME="SECTION0005102000000000000000"></A>
+<A NAME="cmd:sphcg"></A>
+<BR>
+<FONT COLOR="#ff0000">sphcg</FONT>
+</H2>
+
+<P>
+Spherical Conjugate Gradient Reconstruction
+
+<P>
+
+<H3><A NAME="SECTION0005102100000000000000"></A>
+<A NAME="cmd:sphcg:Syn"></A>
+<BR>
+<FONT COLOR="#000080">Syntax</FONT>
+</H3>
+
+<P>
+[out, err] = sphcg(wav, n [,'ref', ref], [,'approx', g])
+
+<P>
+
+<H3><A NAME="SECTION0005102200000000000000"></A>
+<A NAME="cmd:sphcg:Des"></A>
+<BR>
+<FONT COLOR="#000080">Description</FONT>
+</H3>
+
+<P>
+Iterativeley rebuild a spherical signal from the wavelet
+coefficients of a spherical frame.
+
+<P>
+
+<H4><A NAME="SECTION0005102210000000000000"></A>
+<A NAME="cmd:sphcg:InpD"></A>
+<BR>
+<FONT COLOR="#000080">Input Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>wav</STRONG></DT>
+<DD>[STRUCT]: the frame coefficients obtained by fwtsph.
+
+<P>
+</DD>
+<DT><STRONG>n</STRONG></DT>
+<DD>[INT]: number of iteration to perform in the algorithm.
+
+<P>
+</DD>
+<DT><STRONG>ref</STRONG></DT>
+<DD>[REAL MATRIX]: the original spherical data if
+available. It is used to compute the rebuilding error at each
+iteration.
+
+<P>
+</DD>
+<DT><STRONG>g</STRONG></DT>
+<DD>[REAL MATRIX]: approximated rebuilding of the spherical
+data obtained with ifwtsph if available.
+
+<P>
+</DD>
+</DL> 
+
+<P>
+
+<H4><A NAME="SECTION0005102220000000000000"></A>
+<A NAME="cmd:sphcg:OutD"></A>
+<BR>
+<FONT COLOR="#000080">Output Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>out</STRONG></DT>
+<DD>[REAL MATRIX]: approximated rebuilding the spherical
+data after <I>n</I> iteration of the conjugated gradient algorithm.
+
+<P>
+</DD>
+<DT><STRONG>err</STRONG></DT>
+<DD>[REAL VECTOR]: convergence error at each iteration.
+
+<P>
+</DD>
+</DL> 
+
+<P>
+
+<H3><A NAME="SECTION0005102300000000000000"></A>
+<A NAME="cmd:sphcg:Exa"></A>
+<BR>
+<FONT COLOR="#000080">Example(s)</FONT>
+</H3>
+
+<P>
+<PRE>
+&gt;&gt; load sector
+&gt;&gt; mat=mat(1:2:end,1:4:end);
+&gt;&gt; whos
+&gt;&gt; yashow(mat,'spheric','fig',1);
+&gt;&gt; wav=fwtsph(mat,'dog'); 
+&gt;&gt; g=ifwtsph(wav);
+&gt;&gt; yashow(g,'spheric','fig',2);
+&gt;&gt; nmat=sphcg(wav,5,'ref',mat,'approx',g); %% It's time to take two pills of Temesta ;-)
+&gt;&gt; yashow(nmat,'spheric','fig',3);
+</PRE>
+
+<P>
+
+<H3><A NAME="SECTION0005102400000000000000"></A>
+<A NAME="cmd:sphcg:Ref"></A>
+<BR>
+<FONT COLOR="#000080">References</FONT>
+</H3>
+
+<P>
+
+<H3><A NAME="SECTION0005102500000000000000"></A>
+<A NAME="cmd:sphcg:See"></A>
+<BR>
+<FONT COLOR="#000080">See Also</FONT>
+</H3>
+
+<P>
+
+<H3><A NAME="SECTION0005102600000000000000">
+<FONT COLOR="#000080">Location</FONT></A>
+</H3>
+discrete/frames/sphere/sphcg.m
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html4845"
+  HREF="node116.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html4841"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html4835"
+  HREF="node114.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html4843"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html4846"
+  HREF="node116.html">sphgrid</A>
+<B> Up:</B> <A NAME="tex2html4842"
+  HREF="node13.html">The commands in alphabetical</A>
+<B> Previous:</B> <A NAME="tex2html4836"
+  HREF="node114.html">setyawtbprefs</A>
+ &nbsp; <B>  <A NAME="tex2html4844"
+  HREF="node1.html">Contents</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+<yawtb-devel@sourceforge.net>
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,225 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>sphgrid</TITLE>
+<META NAME="description" CONTENT="sphgrid">
+<META NAME="keywords" CONTENT="YAWTBReferenceManual">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="YAWTBReferenceManual.css">
+
+<LINK REL="next" HREF="node117.html">
+<LINK REL="previous" HREF="node115.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node117.html">
+</HEAD>
+
+<BODY  bgcolor="#ffffff">
+<!--Navigation Panel-->
+<A NAME="tex2html4865"
+  HREF="node117.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html4861"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html4855"
+  HREF="node115.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html4863"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html4866"
+  HREF="node117.html">sphrichardson</A>
+<B> Up:</B> <A NAME="tex2html4862"
+  HREF="node13.html">The commands in alphabetical</A>
+<B> Previous:</B> <A NAME="tex2html4856"
+  HREF="node115.html">sphcg</A>
+ &nbsp; <B>  <A NAME="tex2html4864"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html4867"
+  HREF="node116.html#SECTION0005103100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html4868"
+  HREF="node116.html#SECTION0005103200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html4869"
+  HREF="node116.html#SECTION0005103210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html4870"
+  HREF="node116.html#SECTION0005103220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<BR>
+<LI><A NAME="tex2html4871"
+  HREF="node116.html#SECTION0005103300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html4872"
+  HREF="node116.html#SECTION0005103400000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html4873"
+  HREF="node116.html#SECTION0005103500000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H2><A NAME="SECTION0005103000000000000000"></A>
+<A NAME="cmd:sphgrid"></A>
+<BR>
+<FONT COLOR="#ff0000">sphgrid</FONT>
+</H2>
+
+<P>
+Spherical grid
+
+<P>
+
+<H3><A NAME="SECTION0005103100000000000000"></A>
+<A NAME="cmd:sphgrid:Syn"></A>
+<BR>
+<FONT COLOR="#000080">Syntax</FONT>
+</H3>
+
+<P>
+[phi, theta] = sphgrid(nth [,nph] [,'withpoles'] )
+
+<P>
+
+<H3><A NAME="SECTION0005103200000000000000"></A>
+<A NAME="cmd:sphgrid:Des"></A>
+<BR>
+<FONT COLOR="#000080">Description</FONT>
+</H3>
+
+<P>
+Compute a equi-angular spherical grid. By default, this one is
+given by
+     (theta_i,phi_j), i=0..nth-1, j=0..nph-1
+with theta_i = (2*i+1)*pi/nth
+     phi_j = j*2*pi/nph
+The size of this grid is nth*nph
+
+<P>
+If 'withpoles' is set, the grid is then defined by
+     (theta_i,phi_j), i=0..nth, j=0..nph-1
+with theta_i = i*pi/nth
+     phi_j = j*2*pi/nph 
+The size is then equal to (nth+1)*nph.
+
+<P>
+
+<H4><A NAME="SECTION0005103210000000000000"></A>
+<A NAME="cmd:sphgrid:InpD"></A>
+<BR>
+<FONT COLOR="#000080">Input Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>nth</STRONG></DT>
+<DD>[INT]: the number of angles theta
+</DD>
+<DT><STRONG>nph</STRONG></DT>
+<DD>[INT]: the number of angles phi
+</DD>
+<DT><STRONG>'withpoles'</STRONG></DT>
+<DD>[BOOL]: activate the second grid forming
+method described above.
+</DD>
+</DL> 
+
+<P>
+
+<H4><A NAME="SECTION0005103220000000000000"></A>
+<A NAME="cmd:sphgrid:OutD"></A>
+<BR>
+<FONT COLOR="#000080">Output Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>phi</STRONG></DT>
+<DD>[REAL MATRIX]: the values of phi increasing with the
+column index only.
+</DD>
+<DT><STRONG>theta</STRONG></DT>
+<DD>[REAL MATRIX]: the values of theta increasing with
+the row index.
+</DD>
+</DL> 
+
+<P>
+
+<H3><A NAME="SECTION0005103300000000000000"></A>
+<A NAME="cmd:sphgrid:Exa"></A>
+<BR>
+<FONT COLOR="#000080">Example(s)</FONT>
+</H3>
+
+<P>
+<PRE>
+&gt;&gt; [phi,theta] = sphgrid(256);
+&gt;&gt; f=exp(-tan(theta/2).^2).*cos(6*phi);
+&gt;&gt; yashow(f,'spheric','relief');
+</PRE>
+
+<P>
+
+<H3><A NAME="SECTION0005103400000000000000"></A>
+<A NAME="cmd:sphgrid:See"></A>
+<BR>
+<FONT COLOR="#000080">See Also</FONT>
+</H3>
+
+<P>
+cwtsph,, <A HREF="node42.html#cmd:fcwtsph">fcwtsph</A>, fst,, ifst,
+
+<P>
+
+<H3><A NAME="SECTION0005103500000000000000">
+<FONT COLOR="#000080">Location</FONT></A>
+</H3>
+tools/misc/sphgrid.m
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html4865"
+  HREF="node117.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html4861"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html4855"
+  HREF="node115.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html4863"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html4866"
+  HREF="node117.html">sphrichardson</A>
+<B> Up:</B> <A NAME="tex2html4862"
+  HREF="node13.html">The commands in alphabetical</A>
+<B> Previous:</B> <A NAME="tex2html4856"
+  HREF="node115.html">sphcg</A>
+ &nbsp; <B>  <A NAME="tex2html4864"
+  HREF="node1.html">Contents</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+<yawtb-devel@sourceforge.net>
+</ADDRESS>
+</BODY>
+</HTML>

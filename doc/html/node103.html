@@ -1,0 +1,198 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>pgmwrite</TITLE>
+<META NAME="description" CONTENT="pgmwrite">
+<META NAME="keywords" CONTENT="YAWTBReferenceManual">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="YAWTBReferenceManual.css">
+
+<LINK REL="next" HREF="node104.html">
+<LINK REL="previous" HREF="node102.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node104.html">
+</HEAD>
+
+<BODY  bgcolor="#ffffff">
+<!--Navigation Panel-->
+<A NAME="tex2html4610"
+  HREF="node104.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html4606"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html4600"
+  HREF="node102.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html4608"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html4611"
+  HREF="node104.html">phin</A>
+<B> Up:</B> <A NAME="tex2html4607"
+  HREF="node13.html">The commands in alphabetical</A>
+<B> Previous:</B> <A NAME="tex2html4601"
+  HREF="node102.html">pgmread</A>
+ &nbsp; <B>  <A NAME="tex2html4609"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html4612"
+  HREF="node103.html#SECTION000590100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html4613"
+  HREF="node103.html#SECTION000590200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html4614"
+  HREF="node103.html#SECTION000590210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html4615"
+  HREF="node103.html#SECTION000590220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<BR>
+<LI><A NAME="tex2html4616"
+  HREF="node103.html#SECTION000590300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html4617"
+  HREF="node103.html#SECTION000590400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html4618"
+  HREF="node103.html#SECTION000590500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html4619"
+  HREF="node103.html#SECTION000590600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H2><A NAME="SECTION000590000000000000000"></A>
+<A NAME="cmd:pgmwrite"></A>
+<BR>
+<FONT COLOR="#ff0000">pgmwrite</FONT>
+</H2>
+
+<P>
+Write an image in the raw PGM format.
+
+<P>
+
+<H3><A NAME="SECTION000590100000000000000"></A>
+<A NAME="cmd:pgmwrite:Syn"></A>
+<BR>
+<FONT COLOR="#000080">Syntax</FONT>
+</H3>
+
+<P>
+pgmwrite(mat, fname)
+
+<P>
+
+<H3><A NAME="SECTION000590200000000000000"></A>
+<A NAME="cmd:pgmwrite:Des"></A>
+<BR>
+<FONT COLOR="#000080">Description</FONT>
+</H3>
+
+<P>
+Write an image 'mat' in a file 'fname' in the raw PGM format.
+
+<P>
+
+<H4><A NAME="SECTION000590210000000000000"></A>
+<A NAME="cmd:pgmwrite:InpD"></A>
+<BR>
+<FONT COLOR="#000080">Input Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>mat</STRONG></DT>
+<DD>[ARRAY]: the origanl matrix. If this file is not in
+the uint8 format, it is converted.
+
+<P>
+</DD>
+<DT><STRONG>fname</STRONG></DT>
+<DD>[STRING]: the string containing the name of the file
+to write in the current dir.
+
+<P>
+</DD>
+</DL> 
+
+<P>
+
+<H4><A NAME="SECTION000590220000000000000"></A>
+<A NAME="cmd:pgmwrite:OutD"></A>
+<BR>
+<FONT COLOR="#000080">Output Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT></DT>
+<DD>[]:
+</DD>
+</DL> 
+
+<P>
+
+<H3><A NAME="SECTION000590300000000000000"></A>
+<A NAME="cmd:pgmwrite:Exa"></A>
+<BR>
+<FONT COLOR="#000080">Example(s)</FONT>
+</H3>
+
+<P>
+<PRE>
+&gt;&gt;
+</PRE>
+
+<P>
+
+<H3><A NAME="SECTION000590400000000000000"></A>
+<A NAME="cmd:pgmwrite:Ref"></A>
+<BR>
+<FONT COLOR="#000080">References</FONT>
+</H3>
+
+<P>
+Matthew Dailey's writepgm.m file (see http://ai.ucsd.edu/Tutorial/matlab.html)
+
+<P>
+
+<H3><A NAME="SECTION000590500000000000000"></A>
+<A NAME="cmd:pgmwrite:See"></A>
+<BR>
+<FONT COLOR="#000080">See Also</FONT>
+</H3>
+
+<P>
+<A HREF="node102.html#cmd:pgmread">pgmread</A>
+
+<P>
+
+<H3><A NAME="SECTION000590600000000000000">
+<FONT COLOR="#000080">Location</FONT></A>
+</H3>
+tools/io/pgmwrite.m
+
+<P>
+<BR><HR>
+<ADDRESS>
+<yawtb-devel@sourceforge.net>
+</ADDRESS>
+</BODY>
+</HTML>

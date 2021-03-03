@@ -1,0 +1,270 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>fcwtsph</TITLE>
+<META NAME="description" CONTENT="fcwtsph">
+<META NAME="keywords" CONTENT="YAWTBReferenceManual">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="YAWTBReferenceManual.css">
+
+<LINK REL="next" HREF="node43.html">
+<LINK REL="previous" HREF="node41.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node43.html">
+</HEAD>
+
+<BODY  bgcolor="#ffffff">
+<!--Navigation Panel-->
+<A NAME="tex2html3394"
+  HREF="node43.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html3390"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html3384"
+  HREF="node41.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html3392"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html3395"
+  HREF="node43.html">fftsph</A>
+<B> Up:</B> <A NAME="tex2html3391"
+  HREF="node13.html">The commands in alphabetical</A>
+<B> Previous:</B> <A NAME="tex2html3385"
+  HREF="node41.html">estimnoise2d</A>
+ &nbsp; <B>  <A NAME="tex2html3393"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html3396"
+  HREF="node42.html#SECTION000529100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html3397"
+  HREF="node42.html#SECTION000529200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html3398"
+  HREF="node42.html#SECTION000529210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html3399"
+  HREF="node42.html#SECTION000529220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<BR>
+<LI><A NAME="tex2html3400"
+  HREF="node42.html#SECTION000529300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html3401"
+  HREF="node42.html#SECTION000529400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html3402"
+  HREF="node42.html#SECTION000529500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html3403"
+  HREF="node42.html#SECTION000529600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H2><A NAME="SECTION000529000000000000000"></A>
+<A NAME="cmd:fcwtsph"></A>
+<BR>
+<FONT COLOR="#ff0000">fcwtsph</FONT>
+</H2>
+
+<P>
+Compute the fast spherical wavelet transform
+
+<P>
+
+<H3><A NAME="SECTION000529100000000000000"></A>
+<A NAME="cmd:fcwtsph:Syn"></A>
+<BR>
+<FONT COLOR="#000080">Syntax</FONT>
+</H3>
+
+<P>
+out = fcwtsph(fimg, wavname, scales [,WaveletParameter] )
+
+<P>
+out = fcwtsph(fimg, wavname, scales [,'WaveletOptionName', 
+            WaveletOptionValue] )
+
+<P>
+
+<H3><A NAME="SECTION000529200000000000000"></A>
+<A NAME="cmd:fcwtsph:Des"></A>
+<BR>
+<FONT COLOR="#000080">Description</FONT>
+</H3>
+
+<P>
+This function performs a spherical wavelet transform on a
+sphere in spherical coordinates. The algorithm is based on the
+use of FFT according phi coordinates (phi and theta are of
+course defined on a cartezian grid). The computation time is of
+order <!-- MATH
+ $N^3\log(N)$
+ -->
+<I>N</I><SUP>3</SUP>log(<I>N</I>) if mat is an <!-- MATH
+ $N\times{}N$
+ -->
+<I>N</I> <TT>x</TT> <I>N</I> matrix. Wavelets are taken
+inside the sub directory 'wave_defs' (see the README to know how
+to write your own wavelet). 
+
+<P>
+
+<H4><A NAME="SECTION000529210000000000000"></A>
+<A NAME="cmd:fcwtsph:InpD"></A>
+<BR>
+<FONT COLOR="#000080">Input Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>fimg</STRONG></DT>
+<DD>[DOUBLE MATRIX] : the fast spherical transform of the
+data (cfr fst)
+
+<P>
+</DD>
+<DT><STRONG>wavname</STRONG></DT>
+<DD>[STRING]: the name of the wavelet to use (see
+yawtb/continuous/sphere/wave_defs for existing wavelet); 
+
+<P>
+</DD>
+<DT><STRONG>scales</STRONG></DT>
+<DD>[DOUBLE VECTOR] : the interval of scales where you
+want to compute a spherical CWT.
+
+<P>
+</DD>
+<DT><STRONG>angles</STRONG></DT>
+<DD>[DOUBLE VECTOR] : the interval of angles where you
+want to compute a spherical CWT.
+
+<P>
+</DD>
+<DT><STRONG>WaveletParameter</STRONG></DT>
+<DD>[MISC]: a wavelet parameter. His type
+depend of the wavelet used. See the corresponding wavelet mfile
+(inside wave_defs) for the correct parameters.
+
+<P>
+</DD>
+<DT><STRONG>WaveletOptionName,WaveletOptionValue</STRONG></DT>
+<DD>[STRING, MISC]:
+Another way of writting wavelet parameters. The wavelet parameter
+name (a string) is followed by its value. See the corresponding
+wavelet mfile (inside wave_defs) for the parameter to enter.
+
+<P>
+</DD>
+</DL> 
+
+<P>
+
+<H4><A NAME="SECTION000529220000000000000"></A>
+<A NAME="cmd:fcwtsph:OutD"></A>
+<BR>
+<FONT COLOR="#000080">Output Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>out</STRONG></DT>
+<DD>[YAWTB OBJECT]: contains the different results of cwtsph
+</DD>
+</DL> 
+
+<P>
+
+<H3><A NAME="SECTION000529300000000000000"></A>
+<A NAME="cmd:fcwtsph:Exa"></A>
+<BR>
+<FONT COLOR="#000080">Example(s)</FONT>
+</H3>
+
+<P>
+<PRE>
+&gt;&gt; load world;
+&gt;&gt; mat=1*(mat(1:256,1:2:end));
+&gt;&gt; fmat = fst(mat);
+&gt;&gt; wav = fcwtsph(fmat,'dog',0.05,0);
+&gt;&gt; yashow(wav);
+</PRE>
+
+<P>
+
+<H3><A NAME="SECTION000529400000000000000"></A>
+<A NAME="cmd:fcwtsph:Ref"></A>
+<BR>
+<FONT COLOR="#000080">References</FONT>
+</H3>
+
+<P>
+[1] : "Ondelettes directionnelles et ondelettes sur la
+       sphère", P. Vandergheynst, Thèse, Université Catholique
+       de Louvain, 1998  
+
+<P>
+
+<H3><A NAME="SECTION000529500000000000000"></A>
+<A NAME="cmd:fcwtsph:See"></A>
+<BR>
+<FONT COLOR="#000080">See Also</FONT>
+</H3>
+
+<P>
+cwtsph_yashow
+
+<P>
+
+<H3><A NAME="SECTION000529600000000000000">
+<FONT COLOR="#000080">Location</FONT></A>
+</H3>
+continuous/sphere/fcwtsph.m
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html3394"
+  HREF="node43.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html3390"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html3384"
+  HREF="node41.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html3392"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html3395"
+  HREF="node43.html">fftsph</A>
+<B> Up:</B> <A NAME="tex2html3391"
+  HREF="node13.html">The commands in alphabetical</A>
+<B> Previous:</B> <A NAME="tex2html3385"
+  HREF="node41.html">estimnoise2d</A>
+ &nbsp; <B>  <A NAME="tex2html3393"
+  HREF="node1.html">Contents</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+<yawtb-devel@sourceforge.net>
+</ADDRESS>
+</BODY>
+</HTML>

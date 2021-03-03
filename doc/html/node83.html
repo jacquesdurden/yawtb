@@ -1,0 +1,235 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>linearchirp</TITLE>
+<META NAME="description" CONTENT="linearchirp">
+<META NAME="keywords" CONTENT="YAWTBReferenceManual">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="YAWTBReferenceManual.css">
+
+<LINK REL="next" HREF="node84.html">
+<LINK REL="previous" HREF="node82.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node84.html">
+</HEAD>
+
+<BODY  bgcolor="#ffffff">
+<!--Navigation Panel-->
+<A NAME="tex2html4211"
+  HREF="node84.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html4207"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html4201"
+  HREF="node82.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html4209"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html4212"
+  HREF="node84.html">list_elem</A>
+<B> Up:</B> <A NAME="tex2html4208"
+  HREF="node13.html">The commands in alphabetical</A>
+<B> Previous:</B> <A NAME="tex2html4202"
+  HREF="node82.html">iwpck2d</A>
+ &nbsp; <B>  <A NAME="tex2html4210"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html4213"
+  HREF="node83.html#SECTION000570100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html4214"
+  HREF="node83.html#SECTION000570200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html4215"
+  HREF="node83.html#SECTION000570210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html4216"
+  HREF="node83.html#SECTION000570220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<BR>
+<LI><A NAME="tex2html4217"
+  HREF="node83.html#SECTION000570300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html4218"
+  HREF="node83.html#SECTION000570400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html4219"
+  HREF="node83.html#SECTION000570500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html4220"
+  HREF="node83.html#SECTION000570600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H2><A NAME="SECTION000570000000000000000"></A>
+<A NAME="cmd:linearchirp"></A>
+<BR>
+<FONT COLOR="#ff0000">linearchirp</FONT>
+</H2>
+
+<P>
+Return a complex linear chirp and its theoretical instantaneous 
+frequency
+
+<P>
+
+<H3><A NAME="SECTION000570100000000000000"></A>
+<A NAME="cmd:linearchirp:Syn"></A>
+<BR>
+<FONT COLOR="#000080">Syntax</FONT>
+</H3>
+
+<P>
+[out,nu] = linearchirp([n[,nu_0[,nu_1[,phi]]]])
+
+<P>
+
+<H3><A NAME="SECTION000570200000000000000"></A>
+<A NAME="cmd:linearchirp:Des"></A>
+<BR>
+<FONT COLOR="#000080">Description</FONT>
+</H3>
+
+<P>
+This function computes and returns a complex linear chirp of n points
+whose instantaneous frequency starts at nu_0 ends at nu_1 with
+phi as the phase at the origin.
+
+<P>
+The default values are: n = 256, nu_0 = 0, nu_1 = 0.4, phi = 0
+
+<P>
+
+<H4><A NAME="SECTION000570210000000000000"></A>
+<A NAME="cmd:linearchirp:InpD"></A>
+<BR>
+<FONT COLOR="#000080">Input Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>n</STRONG></DT>
+<DD>[INTEGER]: the number of points.
+
+<P>
+</DD>
+<DT><STRONG>nu_0</STRONG></DT>
+<DD>[REAL abs(nu_0)&lt;0.5]: Instantaneous frequency of the 
+first point.
+
+<P>
+</DD>
+<DT><STRONG>nu_1</STRONG></DT>
+<DD>[REAL abs(nu_1)&lt;0.5]: Instantaneous frequency of the
+last point.
+
+<P>
+</DD>
+<DT><STRONG>phi</STRONG></DT>
+<DD>[REAL]: Phase of the signal at the origin.
+</DD>
+</DL> 
+
+<P>
+
+<H4><A NAME="SECTION000570220000000000000"></A>
+<A NAME="cmd:linearchirp:OutD"></A>
+<BR>
+<FONT COLOR="#000080">Output Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>out</STRONG></DT>
+<DD>:The complex linear chirp.
+
+<P>
+</DD>
+<DT><STRONG>nu</STRONG></DT>
+<DD>:The instantaneous frequency of the linear chirp.
+</DD>
+</DL> 
+
+<P>
+
+<H3><A NAME="SECTION000570300000000000000"></A>
+<A NAME="cmd:linearchirp:Exa"></A>
+<BR>
+<FONT COLOR="#000080">Example(s)</FONT>
+</H3>
+
+<P>
+<PRE>
+&gt;&gt; [signal,nu] = linearchirp(256, 0, 0.1 )
+&gt;&gt; plot(real(signal))
+</PRE>
+
+<P>
+
+<H3><A NAME="SECTION000570400000000000000"></A>
+<A NAME="cmd:linearchirp:Ref"></A>
+<BR>
+<FONT COLOR="#000080">References</FONT>
+</H3>
+
+<P>
+
+<H3><A NAME="SECTION000570500000000000000"></A>
+<A NAME="cmd:linearchirp:See"></A>
+<BR>
+<FONT COLOR="#000080">See Also</FONT>
+</H3>
+
+<P>
+
+<H3><A NAME="SECTION000570600000000000000">
+<FONT COLOR="#000080">Location</FONT></A>
+</H3>
+sample/1d/linearchirp.m
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html4211"
+  HREF="node84.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html4207"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html4201"
+  HREF="node82.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html4209"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html4212"
+  HREF="node84.html">list_elem</A>
+<B> Up:</B> <A NAME="tex2html4208"
+  HREF="node13.html">The commands in alphabetical</A>
+<B> Previous:</B> <A NAME="tex2html4202"
+  HREF="node82.html">iwpck2d</A>
+ &nbsp; <B>  <A NAME="tex2html4210"
+  HREF="node1.html">Contents</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+<yawtb-devel@sourceforge.net>
+</ADDRESS>
+</BODY>
+</HTML>

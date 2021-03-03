@@ -1,0 +1,293 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>cwt1dt</TITLE>
+<META NAME="description" CONTENT="cwt1dt">
+<META NAME="keywords" CONTENT="YAWTBReferenceManual">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="YAWTBReferenceManual.css">
+
+<LINK REL="next" HREF="node29.html">
+<LINK REL="previous" HREF="node27.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node29.html">
+</HEAD>
+
+<BODY  bgcolor="#ffffff">
+<!--Navigation Panel-->
+<A NAME="tex2html3114"
+  HREF="node29.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html3110"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html3104"
+  HREF="node27.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html3112"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html3115"
+  HREF="node29.html">cwt2d</A>
+<B> Up:</B> <A NAME="tex2html3111"
+  HREF="node13.html">The commands in alphabetical</A>
+<B> Previous:</B> <A NAME="tex2html3105"
+  HREF="node27.html">cwt1d</A>
+ &nbsp; <B>  <A NAME="tex2html3113"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html3116"
+  HREF="node28.html#SECTION000515100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html3117"
+  HREF="node28.html#SECTION000515200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html3118"
+  HREF="node28.html#SECTION000515210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html3119"
+  HREF="node28.html#SECTION000515220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<BR>
+<LI><A NAME="tex2html3120"
+  HREF="node28.html#SECTION000515300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html3121"
+  HREF="node28.html#SECTION000515400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html3122"
+  HREF="node28.html#SECTION000515500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html3123"
+  HREF="node28.html#SECTION000515600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H2><A NAME="SECTION000515000000000000000"></A>
+<A NAME="cmd:cwt1dt"></A>
+<BR>
+<FONT COLOR="#ff0000">cwt1dt</FONT>
+</H2>
+
+<P>
+1D+T continuous wavelet transform
+
+<P>
+
+<H3><A NAME="SECTION000515100000000000000"></A>
+<A NAME="cmd:cwt1dt:Syn"></A>
+<BR>
+<FONT COLOR="#000080">Syntax</FONT>
+</H3>
+
+<P>
+out = cwt1dt( fsig, wavname, scales, velos [,WaveletParameter] ...
+              [,'Time',TimeValue] ) 
+
+<P>
+out = cwt1dt( fsig, wavname, scales, velos [,'WaveletOptionName', ...
+              WaveletOptionValue][,'Time',TimeValue] )
+
+<P>
+
+<H3><A NAME="SECTION000515200000000000000"></A>
+<A NAME="cmd:cwt1dt:Des"></A>
+<BR>
+<FONT COLOR="#000080">Description</FONT>
+</H3>
+
+<P>
+<TT>cwt1dt</TT> computes and returns the 1D + T continuous wavelet
+transform of a 1D+T signal.  The wavelet may be chosen among the one
+defined in subdirectory 'wave_defs' (see the README to write your own
+wavelet)
+
+<P>
+
+<H4><A NAME="SECTION000515210000000000000"></A>
+<A NAME="cmd:cwt1dt:InpD"></A>
+<BR>
+<FONT COLOR="#000080">Input Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>fsig</STRONG></DT>
+<DD>[CPLX MATRIX]: the 2D Fourier transform of the 1D+T
+signal <TT>sig</TT> computed with fft2.  
+
+<P>
+Be Careful: The time index of <TT>sig</TT> varies along the first
+dimension (columnwise/vertically), and spatial index is along the second
+dimension (rowise/horizontally). 
+
+<P>
+</DD>
+<DT><STRONG>wavname</STRONG></DT>
+<DD>[STRING]: the name of the wavelet
+
+<P>
+</DD>
+<DT><STRONG>scales, velos</STRONG></DT>
+<DD>[VECTOR]: the scales and the velocities of the
+   transform
+
+<P>
+</DD>
+<DT><STRONG>WaveletParameter</STRONG></DT>
+<DD>[MISC]: one wavelet parameter. Its type
+depends on the wavelet. Refer to the corresponding M-file
+(inside 'wave_defs') for a description of the available parameters;
+
+<P>
+</DD>
+<DT><STRONG>WaveletOptionName, WaveletOptionValue</STRONG></DT>
+<DD>[STRING, MISC]:
+Another way of writing wavelet parameters.  The wavelet parameter
+name (a string) is followed by its value. See the corresponding
+wavelet M-file (inside wave_defs) for a description of the
+parameter, or just type the name of the wavelet with '[]' as argument
+on the Matlab command line.
+
+<P>
+</DD>
+<DT><STRONG>TimeValue</STRONG></DT>
+<DD>[INTEGER]: The wavelet transform is only computed for
+this Time i.e. frame number 
+
+<P>
+</DD>
+</DL>
+
+<P>
+
+<H4><A NAME="SECTION000515220000000000000"></A>
+<A NAME="cmd:cwt1dt:OutD"></A>
+<BR>
+<FONT COLOR="#000080">Output Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT></DT>
+<DD>out [STRUCT]: the output of the transform. A structured
+  data with the following fields:
+  
+<UL>
+<LI><TT>out.data</TT> [3D or 4D MATRIX]: wavelet coefficients
+</LI>
+<LI><TT>out.type</TT> [STRING] : transform type ('cwt1dt')
+</LI>
+<LI><TT>out.wav</TT> [STRING] : name of the wavelet
+</LI>
+<LI><TT>out.para</TT> [MATRIX] : extra parameters given to 
+     <TT>cwt1dt</TT>
+</LI>
+<LI><TT>out.sc</TT> [REAL VECTOR] : scales of the wavelet transform
+</LI>
+<LI><TT>out.vel</TT> [REAL VECTOR] : velocity
+</LI>
+<LI><TT>out.ftime</TT> [VECTOR] : this field exists only if the
+    optional argument 'Time' is specified.  Then it is equal to the
+    <TT>TimeValue</TT><SUP>th</SUP> frame of the signal in the time domain.
+  
+</LI>
+</UL>
+</DD>
+</DL>
+
+<P>
+
+<H3><A NAME="SECTION000515300000000000000"></A>
+<A NAME="cmd:cwt1dt:Exa"></A>
+<BR>
+<FONT COLOR="#000080">Example(s)</FONT>
+</H3>
+
+<P>
+<PRE>
+%% load the 3 moving Gaussians sample.
+&gt;&gt; mat = movgauss; 
+
+%% Computes the CWT1DT of this signal.
+&gt;&gt; wav = cwt1dt(fft2(mat),'morlet',4,vect(-2,2,128),'Time',10);
+
+%% Display at time 10 the velocity-position representation of the CWT.
+&gt;&gt; yashow(wav);
+</PRE>
+
+<P>
+
+<H3><A NAME="SECTION000515400000000000000"></A>
+<A NAME="cmd:cwt1dt:Ref"></A>
+<BR>
+<FONT COLOR="#000080">References</FONT>
+</H3>
+
+<P>
+[1]: "Spatio-Temporal Wavelet Transform for Motion Tracking", 
+J.-P. Leduc, F. Mujica, R. Murenzi, and M. J. T. Smith, 
+presented in ICASP'97, Munich, Germany, Apr. 1997
+
+<P>
+
+<H3><A NAME="SECTION000515500000000000000"></A>
+<A NAME="cmd:cwt1dt:See"></A>
+<BR>
+<FONT COLOR="#000080">See Also</FONT>
+</H3>
+
+<P>
+<A HREF="#cmd:cwt1dt">cwt1dt</A>, <A HREF="node86.html#cmd:mexican1dt">mexican1dt</A>, <A HREF="node95.html#cmd:morlet1dt">morlet1dt</A>, <A HREF="node99.html#cmd:movgauss">movgauss</A>, <A HREF="node142.html#cmd:yashow">yashow</A>, <A HREF="node145.html#cmd:yashow_cwt1dt">yashow_cwt1dt</A>
+
+<P>
+
+<H3><A NAME="SECTION000515600000000000000">
+<FONT COLOR="#000080">Location</FONT></A>
+</H3>
+continuous/1dt/cwt1dt.m
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html3114"
+  HREF="node29.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html3110"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html3104"
+  HREF="node27.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html3112"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html3115"
+  HREF="node29.html">cwt2d</A>
+<B> Up:</B> <A NAME="tex2html3111"
+  HREF="node13.html">The commands in alphabetical</A>
+<B> Previous:</B> <A NAME="tex2html3105"
+  HREF="node27.html">cwt1d</A>
+ &nbsp; <B>  <A NAME="tex2html3113"
+  HREF="node1.html">Contents</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+<yawtb-devel@sourceforge.net>
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,188 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>theL</TITLE>
+<META NAME="description" CONTENT="theL">
+<META NAME="keywords" CONTENT="YAWTBReferenceManual">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="YAWTBReferenceManual.css">
+
+<LINK REL="next" HREF="node122.html">
+<LINK REL="previous" HREF="node120.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node122.html">
+</HEAD>
+
+<BODY  bgcolor="#ffffff">
+<!--Navigation Panel-->
+<A NAME="tex2html4964"
+  HREF="node122.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html4960"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html4954"
+  HREF="node120.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html4962"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html4965"
+  HREF="node122.html">thedisk</A>
+<B> Up:</B> <A NAME="tex2html4961"
+  HREF="node13.html">The commands in alphabetical</A>
+<B> Previous:</B> <A NAME="tex2html4955"
+  HREF="node120.html">the3dL</A>
+ &nbsp; <B>  <A NAME="tex2html4963"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html4966"
+  HREF="node121.html#SECTION0005108100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html4967"
+  HREF="node121.html#SECTION0005108200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html4968"
+  HREF="node121.html#SECTION0005108210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html4969"
+  HREF="node121.html#SECTION0005108220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<BR>
+<LI><A NAME="tex2html4970"
+  HREF="node121.html#SECTION0005108300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html4971"
+  HREF="node121.html#SECTION0005108400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html4972"
+  HREF="node121.html#SECTION0005108500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html4973"
+  HREF="node121.html#SECTION0005108600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H2><A NAME="SECTION0005108000000000000000"></A>
+<A NAME="cmd:theL"></A>
+<BR>
+<FONT COLOR="#ff0000">theL</FONT>
+</H2>
+
+<P>
+A 2D academic example: the letter L in a NxN matrix
+
+<P>
+
+<H3><A NAME="SECTION0005108100000000000000"></A>
+<A NAME="cmd:theL:Syn"></A>
+<BR>
+<FONT COLOR="#000080">Syntax</FONT>
+</H3>
+
+<P>
+out = theL([N])
+
+<P>
+
+<H3><A NAME="SECTION0005108200000000000000"></A>
+<A NAME="cmd:theL:Des"></A>
+<BR>
+<FONT COLOR="#000080">Description</FONT>
+</H3>
+
+<P>
+Return a binary square matrix of N<TT>x</TT>N size with the letter L inside.
+
+<P>
+
+<H4><A NAME="SECTION0005108210000000000000"></A>
+<A NAME="cmd:theL:InpD"></A>
+<BR>
+<FONT COLOR="#000080">Input Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>N</STRONG></DT>
+<DD>[INTEGER] the width of the returned square matrix
+(default 64)
+
+<P>
+</DD>
+</DL> 
+
+<P>
+
+<H4><A NAME="SECTION0005108220000000000000"></A>
+<A NAME="cmd:theL:OutD"></A>
+<BR>
+<FONT COLOR="#000080">Output Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>out</STRONG></DT>
+<DD>[BINARY MATRIX] the resulting matrix.
+</DD>
+</DL> 
+
+<P>
+
+<H3><A NAME="SECTION0005108300000000000000"></A>
+<A NAME="cmd:theL:Exa"></A>
+<BR>
+<FONT COLOR="#000080">Example(s)</FONT>
+</H3>
+
+<P>
+<PRE>
+&gt;&gt; mat = theL;
+&gt;&gt; imagesc(theL);
+&gt;&gt; colormap(gray);
+</PRE>
+
+<P>
+
+<H3><A NAME="SECTION0005108400000000000000"></A>
+<A NAME="cmd:theL:Ref"></A>
+<BR>
+<FONT COLOR="#000080">References</FONT>
+</H3>
+
+<P>
+
+<H3><A NAME="SECTION0005108500000000000000"></A>
+<A NAME="cmd:theL:See"></A>
+<BR>
+<FONT COLOR="#000080">See Also</FONT>
+</H3>
+
+<P>
+
+<H3><A NAME="SECTION0005108600000000000000">
+<FONT COLOR="#000080">Location</FONT></A>
+</H3>
+sample/2d/theL.m
+
+<P>
+<BR><HR>
+<ADDRESS>
+<yawtb-devel@sourceforge.net>
+</ADDRESS>
+</BODY>
+</HTML>

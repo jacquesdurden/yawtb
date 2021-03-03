@@ -1,0 +1,235 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Discrete Wavelet Transform</TITLE>
+<META NAME="description" CONTENT="Discrete Wavelet Transform">
+<META NAME="keywords" CONTENT="YAWTBReferenceManual">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="YAWTBReferenceManual.css">
+
+<LINK REL="next" HREF="node9.html">
+<LINK REL="previous" HREF="node7.html">
+<LINK REL="up" HREF="node6.html">
+<LINK REL="next" HREF="node9.html">
+</HEAD>
+
+<BODY  bgcolor="#ffffff">
+<!--Navigation Panel-->
+<A NAME="tex2html1471"
+  HREF="node9.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html1467"
+  HREF="node6.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html1461"
+  HREF="node7.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html1469"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html1472"
+  HREF="node9.html">Interfaces</A>
+<B> Up:</B> <A NAME="tex2html1468"
+  HREF="node6.html">The commands by category</A>
+<B> Previous:</B> <A NAME="tex2html1462"
+  HREF="node7.html">Contiuous Wavelet Transform</A>
+ &nbsp; <B>  <A NAME="tex2html1470"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html1473"
+  HREF="node8.html#SECTION00042100000000000000">Frames 2D</A>
+<LI><A NAME="tex2html1474"
+  HREF="node8.html#SECTION00042200000000000000">Spherical Frames</A>
+<LI><A NAME="tex2html1475"
+  HREF="node8.html#SECTION00042300000000000000">Packet</A>
+<UL>
+<LI><A NAME="tex2html1476"
+  HREF="node8.html#SECTION00042310000000000000">2d</A>
+</UL></UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H2><A NAME="SECTION00042000000000000000">
+Discrete Wavelet Transform</A>
+</H2>
+
+<P>
+
+<H3><A NAME="SECTION00042100000000000000">
+Frames 2D</A>
+</H3>
+
+<P>
+<DIV ALIGN="CENTER">
+<TABLE CELLPADDING=3 BORDER="1">
+<TR><TD ALIGN="CENTER" COLSPAN=1>Command</TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=350>Description</TD>
+</TR>
+<TR><TD ALIGN="CENTER" COLSPAN=1><A HREF="node46.html#cmd:fwt2d">fwt2d</A></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=350>2D framed wavelet transform</TD>
+</TR>
+<TR><TD ALIGN="CENTER" COLSPAN=1><A HREF="node47.html#cmd:fwt2d_allwav">fwt2d_allwav</A></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=350>&nbsp;</TD>
+</TR>
+<TR><TD ALIGN="CENTER" COLSPAN=1><A HREF="node48.html#cmd:fwt2d_app">fwt2d_app</A></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=350>&nbsp;</TD>
+</TR>
+<TR><TD ALIGN="CENTER" COLSPAN=1><A HREF="node49.html#cmd:fwt2d_app_filter">fwt2d_app_filter</A></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=350>&nbsp;</TD>
+</TR>
+<TR><TD ALIGN="CENTER" COLSPAN=1><A HREF="node50.html#cmd:fwt2d_dapp_filter">fwt2d_dapp_filter</A></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=350>&nbsp;</TD>
+</TR>
+<TR><TD ALIGN="CENTER" COLSPAN=1><A HREF="#cmd:fwt2d_dhigh_filter">fwt2d_dhigh_filter</A></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=350>&nbsp;</TD>
+</TR>
+<TR><TD ALIGN="CENTER" COLSPAN=1><A HREF="node52.html#cmd:fwt2d_dwav_filter">fwt2d_dwav_filter</A></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=350>&nbsp;</TD>
+</TR>
+<TR><TD ALIGN="CENTER" COLSPAN=1><A HREF="node53.html#cmd:fwt2d_high">fwt2d_high</A></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=350>&nbsp;</TD>
+</TR>
+<TR><TD ALIGN="CENTER" COLSPAN=1><A HREF="node54.html#cmd:fwt2d_high_filter">fwt2d_high_filter</A></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=350>&nbsp;</TD>
+</TR>
+<TR><TD ALIGN="CENTER" COLSPAN=1><A HREF="node55.html#cmd:fwt2d_init">fwt2d_init</A></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=350>&nbsp;</TD>
+</TR>
+<TR><TD ALIGN="CENTER" COLSPAN=1><A HREF="node57.html#cmd:fwt2d_thresh">fwt2d_thresh</A></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=350>&nbsp;</TD>
+</TR>
+<TR><TD ALIGN="CENTER" COLSPAN=1><A HREF="node58.html#cmd:fwt2d_wav">fwt2d_wav</A></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=350>&nbsp;</TD>
+</TR>
+<TR><TD ALIGN="CENTER" COLSPAN=1><A HREF="node59.html#cmd:fwt2d_wav_filter">fwt2d_wav_filter</A></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=350>&nbsp;</TD>
+</TR>
+<TR><TD ALIGN="CENTER" COLSPAN=1><A HREF="node73.html#cmd:ifwt2d">ifwt2d</A></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=350>2D inverse framed wavelet transform</TD>
+</TR>
+<TR><TD ALIGN="CENTER" COLSPAN=1><A HREF="node74.html#cmd:ifwt2d_app">ifwt2d_app</A></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=350>&nbsp;</TD>
+</TR>
+<TR><TD ALIGN="CENTER" COLSPAN=1><A HREF="node75.html#cmd:ifwt2d_high">ifwt2d_high</A></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=350>&nbsp;</TD>
+</TR>
+<TR><TD ALIGN="CENTER" COLSPAN=1><A HREF="node76.html#cmd:ifwt2d_wav">ifwt2d_wav</A></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=350>&nbsp;</TD>
+</TR>
+</TABLE>
+</DIV>
+
+<P>
+
+<H3><A NAME="SECTION00042200000000000000">
+Spherical Frames</A>
+</H3>
+
+<P>
+<DIV ALIGN="CENTER">
+<TABLE CELLPADDING=3 BORDER="1">
+<TR><TD ALIGN="CENTER" COLSPAN=1>Command</TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=350>Description</TD>
+</TR>
+<TR><TD ALIGN="CENTER" COLSPAN=1><A HREF="node60.html#cmd:fwtsph">fwtsph</A></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=350>Framed Wavelet Transforn on the sphere</TD>
+</TR>
+<TR><TD ALIGN="CENTER" COLSPAN=1><A HREF="node77.html#cmd:ifwtsph">ifwtsph</A></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=350>Inverse Framed Wavelet Transform approximation on the sphere</TD>
+</TR>
+<TR><TD ALIGN="CENTER" COLSPAN=1><A HREF="node115.html#cmd:sphcg">sphcg</A></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=350>Spherical Conjugate Gradient Reconstruction</TD>
+</TR>
+<TR><TD ALIGN="CENTER" COLSPAN=1><A HREF="node117.html#cmd:sphrichardson">sphrichardson</A></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=350>&nbsp;</TD>
+</TR>
+</TABLE>
+</DIV>
+
+<P>
+
+<H3><A NAME="SECTION00042300000000000000">
+Packet</A>
+</H3>
+
+<P>
+
+<H4><A NAME="SECTION00042310000000000000">
+2d</A>
+</H4>
+
+<P>
+<DIV ALIGN="CENTER">
+<TABLE CELLPADDING=3 BORDER="1">
+<TR><TD ALIGN="CENTER" COLSPAN=1>Command</TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=350>Description</TD>
+</TR>
+<TR><TD ALIGN="CENTER" COLSPAN=1><A HREF="node82.html#cmd:iwpck2d">iwpck2d</A></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=350>Compute the reconstruction of the wavelet packets transform</TD>
+</TR>
+<TR><TD ALIGN="CENTER" COLSPAN=1><A HREF="node104.html#cmd:phin">phin</A></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=350>The scaling function associated to the pseudo-diff operator</TD>
+</TR>
+<TR><TD ALIGN="CENTER" COLSPAN=1><A HREF="node105.html#cmd:pmexican2d">pmexican2d</A></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=350>Return the 2D mexican wavelet or scaling function packets</TD>
+</TR>
+<TR><TD ALIGN="CENTER" COLSPAN=1><A HREF="node106.html#cmd:pseudiff">pseudiff</A></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=350>Return the 2D pseudo differential operator <I>k</I><SUP>n</SUP> wavelet</TD>
+</TR>
+<TR><TD ALIGN="CENTER" COLSPAN=1><A HREF="node126.html#cmd:wpck2d">wpck2d</A></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=350>Compute the packet wavelet transform (details and approximation)</TD>
+</TR>
+<TR><TD ALIGN="CENTER" COLSPAN=1><A HREF="node154.html#cmd:yashow_wpck2d">yashow_wpck2d</A></TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=350>Display the output of cwt2d. Automatically called by yashow!</TD>
+</TR>
+</TABLE>
+</DIV>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1471"
+  HREF="node9.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html1467"
+  HREF="node6.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html1461"
+  HREF="node7.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html1469"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html1472"
+  HREF="node9.html">Interfaces</A>
+<B> Up:</B> <A NAME="tex2html1468"
+  HREF="node6.html">The commands by category</A>
+<B> Previous:</B> <A NAME="tex2html1462"
+  HREF="node7.html">Contiuous Wavelet Transform</A>
+ &nbsp; <B>  <A NAME="tex2html1470"
+  HREF="node1.html">Contents</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+<yawtb-devel@sourceforge.net>
+</ADDRESS>
+</BODY>
+</HTML>

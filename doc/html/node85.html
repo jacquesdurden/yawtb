@@ -1,0 +1,233 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>lmshape</TITLE>
+<META NAME="description" CONTENT="lmshape">
+<META NAME="keywords" CONTENT="YAWTBReferenceManual">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="YAWTBReferenceManual.css">
+
+<LINK REL="next" HREF="node86.html">
+<LINK REL="previous" HREF="node84.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node86.html">
+</HEAD>
+
+<BODY  bgcolor="#ffffff">
+<!--Navigation Panel-->
+<A NAME="tex2html4251"
+  HREF="node86.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html4247"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html4241"
+  HREF="node84.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html4249"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html4252"
+  HREF="node86.html">mexican1dt</A>
+<B> Up:</B> <A NAME="tex2html4248"
+  HREF="node13.html">The commands in alphabetical</A>
+<B> Previous:</B> <A NAME="tex2html4242"
+  HREF="node84.html">list_elem</A>
+ &nbsp; <B>  <A NAME="tex2html4250"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html4253"
+  HREF="node85.html#SECTION000572100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html4254"
+  HREF="node85.html#SECTION000572200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html4255"
+  HREF="node85.html#SECTION000572210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html4256"
+  HREF="node85.html#SECTION000572220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<BR>
+<LI><A NAME="tex2html4257"
+  HREF="node85.html#SECTION000572300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html4258"
+  HREF="node85.html#SECTION000572400000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html4259"
+  HREF="node85.html#SECTION000572500000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H2><A NAME="SECTION000572000000000000000"></A>
+<A NAME="cmd:lmshape"></A>
+<BR>
+<FONT COLOR="#ff0000">lmshape</FONT>
+</H2>
+
+<P>
+Reshape the output of fst in a l-m-readable matrix
+
+<P>
+
+<H3><A NAME="SECTION000572100000000000000"></A>
+<A NAME="cmd:lmshape:Syn"></A>
+<BR>
+<FONT COLOR="#000080">Syntax</FONT>
+</H3>
+
+<P>
+[lmcoeffs] = lmshape(coeffs)
+
+<P>
+
+<H3><A NAME="SECTION000572200000000000000"></A>
+<A NAME="cmd:lmshape:Des"></A>
+<BR>
+<FONT COLOR="#000080">Description</FONT>
+</H3>
+
+<P>
+Reshape the B*B matrix output of the fast spherical transform
+<TT>fst</TT> in a (2B-1)*B size "l-m-readable" matrix.
+
+<P>
+
+<H4><A NAME="SECTION000572210000000000000"></A>
+<A NAME="cmd:lmshape:InpD"></A>
+<BR>
+<FONT COLOR="#000080">Input Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>coeffs</STRONG></DT>
+<DD>[COMPLEX MATRIX]: The spherical harmonic
+coefficients. Those are defined in a matrix of size B*B (with B
+define above). This matrix is formed by the concataining of the
+coefficents C(m,l) (| <I>m</I>| <IMG
+ WIDTH="18" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img13.png"
+ ALT="$ \leq$"> <I>l</I>) in the following order:
+  C(0,0) C(0,1) C(0,2)  ...                 ... C(0,B-1)
+         C(1,1) C(1,2)  ...                 ... C(1,B-1)
+         etc.
+                                  C(B-2,B-2)    C(B-2,B-1)
+		                                  C(B-1,B-1)
+			                          C(-(B-1),B-1)
+		                    C(-(B-2),B-2) C(-(B-2),B-1)
+	  etc.
+	          C(-2,2) ...                 ... C(-2,B-1)
+	  C(-1,1) C(-1,2) ...                 ... C(-1,B-1)
+
+<P>
+This only requires an array of size (B*B) but is very difficult
+  to read. 
+</DD>
+</DL> 
+
+<P>
+
+<H4><A NAME="SECTION000572220000000000000"></A>
+<A NAME="cmd:lmshape:OutD"></A>
+<BR>
+<FONT COLOR="#000080">Output Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>lmcoeffs</STRONG></DT>
+<DD>[COMPLEX MATRIX]: matrix of size (2*B-1)*B
+in which the coefficient C(m,l) are organized as follow
+  C(0,0) C(0,1) C(0,2)  ...                 ... C(0,B-1)
+  0      C(1,1) C(1,2)  ...                 ... C(1,B-1)
+  ...           ...                         ... C(.,B-1)    
+  0      ...                  0   C(B-2,B-2)    C(B-2,B-1)
+  0 	   ...                      0             C(B-1,B-1)
+  0   		            0             C(-(B-1),B-1)
+  0		                0   C(-(B-2),B-2) C(-(B-2),B-1)
+  ...           ...                         ... C(-.,B-1) 	
+  0     0       C(-2,2) ...                 ... C(-2,B-1)
+  0	  C(-1,1) C(-1,2) ...                 ... C(-1,B-1)
+which is more readable when visualize through yashow(ncoeff) for
+instance.
+</DD>
+</DL> 
+
+<P>
+
+<H3><A NAME="SECTION000572300000000000000"></A>
+<A NAME="cmd:lmshape:Exa"></A>
+<BR>
+<FONT COLOR="#000080">Example(s)</FONT>
+</H3>
+
+<P>
+<PRE>
+&gt;&gt; yademo fst %% Contains a lmshape use
+</PRE>
+
+<P>
+
+<H3><A NAME="SECTION000572400000000000000"></A>
+<A NAME="cmd:lmshape:See"></A>
+<BR>
+<FONT COLOR="#000080">See Also</FONT>
+</H3>
+
+<P>
+<A HREF="node24.html#cmd:convsph">convsph</A>, <A HREF="node25.html#cmd:convsph_semi">convsph_semi</A>, <A HREF="node45.html#cmd:fst">fst</A>, <A HREF="node61.html#cmd:fzt">fzt</A>, <A HREF="node72.html#cmd:ifst">ifst</A>, <A HREF="node72.html#cmd:ifst">ifst</A>, <A HREF="node78.html#cmd:ilmshape">ilmshape</A>
+
+<P>
+
+<H3><A NAME="SECTION000572500000000000000">
+<FONT COLOR="#000080">Location</FONT></A>
+</H3>
+interfaces/spharmonickit/lmshape.m
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html4251"
+  HREF="node86.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html4247"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html4241"
+  HREF="node84.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html4249"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html4252"
+  HREF="node86.html">mexican1dt</A>
+<B> Up:</B> <A NAME="tex2html4248"
+  HREF="node13.html">The commands in alphabetical</A>
+<B> Previous:</B> <A NAME="tex2html4242"
+  HREF="node84.html">list_elem</A>
+ &nbsp; <B>  <A NAME="tex2html4250"
+  HREF="node1.html">Contents</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+<yawtb-devel@sourceforge.net>
+</ADDRESS>
+</BODY>
+</HTML>

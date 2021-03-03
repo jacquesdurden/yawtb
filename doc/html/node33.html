@@ -1,0 +1,206 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>dgauss1d</TITLE>
+<META NAME="description" CONTENT="dgauss1d">
+<META NAME="keywords" CONTENT="YAWTBReferenceManual">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="YAWTBReferenceManual.css">
+
+<LINK REL="next" HREF="node34.html">
+<LINK REL="previous" HREF="node32.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node34.html">
+</HEAD>
+
+<BODY  bgcolor="#ffffff">
+<!--Navigation Panel-->
+<A NAME="tex2html3214"
+  HREF="node34.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html3210"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html3204"
+  HREF="node32.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html3212"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html3215"
+  HREF="node34.html">dog2d</A>
+<B> Up:</B> <A NAME="tex2html3211"
+  HREF="node13.html">The commands in alphabetical</A>
+<B> Previous:</B> <A NAME="tex2html3205"
+  HREF="node32.html">dergauss2d</A>
+ &nbsp; <B>  <A NAME="tex2html3213"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html3216"
+  HREF="node33.html#SECTION000520100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html3217"
+  HREF="node33.html#SECTION000520200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html3218"
+  HREF="node33.html#SECTION000520210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html3219"
+  HREF="node33.html#SECTION000520220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<BR>
+<LI><A NAME="tex2html3220"
+  HREF="node33.html#SECTION000520300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html3221"
+  HREF="node33.html#SECTION000520400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html3222"
+  HREF="node33.html#SECTION000520500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html3223"
+  HREF="node33.html#SECTION000520600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H2><A NAME="SECTION000520000000000000000"></A>
+<A NAME="cmd:dgauss1d"></A>
+<BR>
+<FONT COLOR="#ff0000">dgauss1d</FONT>
+</H2>
+
+<P>
+Compute the n order derivative of Gaussian in frequency
+
+<P>
+
+<H3><A NAME="SECTION000520100000000000000"></A>
+<A NAME="cmd:dgauss1d:Syn"></A>
+<BR>
+<FONT COLOR="#000080">Syntax</FONT>
+</H3>
+
+<P>
+[out] = dgauss1d(k,order,sigma)
+
+<P>
+
+<H3><A NAME="SECTION000520200000000000000"></A>
+<A NAME="cmd:dgauss1d:Des"></A>
+<BR>
+<FONT COLOR="#000080">Description</FONT>
+</H3>
+
+<P>
+This function computes the n order derivative of Gaussian in frequency.
+That is, the wavelet given by
+<PRE>
+  PSIHAT (k) = - (i*k).^order .* exp( - (sigma*k).^2 / 2 )
+</PRE>
+where PSIHAT is the Fourier transform of PSI;
+
+<P>
+This wavelet depends of two parameters: order, sigma. 
+This function is used by the cwt1d routine which computes
+continuous wavelet transform in 1D.
+
+<P>
+
+<H4><A NAME="SECTION000520210000000000000"></A>
+<A NAME="cmd:dgauss1d:InpD"></A>
+<BR>
+<FONT COLOR="#000080">Input Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>k</STRONG></DT>
+<DD>[REAL VECTOR]: The frequency vector.  
+
+<P>
+</DD>
+<DT><STRONG>order, sigma</STRONG></DT>
+<DD>[REAL SCALARS]: The wavelet
+parameters.
+
+<P>
+</DD>
+</DL> 
+
+<P>
+
+<H4><A NAME="SECTION000520220000000000000"></A>
+<A NAME="cmd:dgauss1d:OutD"></A>
+<BR>
+<FONT COLOR="#000080">Output Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>out</STRONG></DT>
+<DD>[REAL MATRIX]: The wavelet in frequency. 
+</DD>
+</DL> 
+
+<P>
+
+<H3><A NAME="SECTION000520300000000000000"></A>
+<A NAME="cmd:dgauss1d:Exa"></A>
+<BR>
+<FONT COLOR="#000080">Example(s)</FONT>
+</H3>
+
+<P>
+<PRE>
+&gt;&gt; k = fftshift(yapuls(128));
+&gt;&gt; wav = dgauss1d(k,2,1);
+&gt;&gt; plot(k,-wav)
+</PRE>
+
+<P>
+
+<H3><A NAME="SECTION000520400000000000000"></A>
+<A NAME="cmd:dgauss1d:Ref"></A>
+<BR>
+<FONT COLOR="#000080">References</FONT>
+</H3>
+
+<P>
+
+<H3><A NAME="SECTION000520500000000000000"></A>
+<A NAME="cmd:dgauss1d:See"></A>
+<BR>
+<FONT COLOR="#000080">See Also</FONT>
+</H3>
+
+<P>
+<A HREF="node27.html#cmd:cwt1d">cwt1d</A>, <A HREF="node28.html#cmd:cwt1dt">cwt1dt</A>, meshgrid, <A HREF="node144.html#cmd:yashow_cwt1d">yashow_cwt1d</A>, <A HREF="node145.html#cmd:yashow_cwt1dt">yashow_cwt1dt</A>
+
+<P>
+
+<H3><A NAME="SECTION000520600000000000000">
+<FONT COLOR="#000080">Location</FONT></A>
+</H3>
+continuous/1d/wave_defs/dgauss1d.m
+
+<P>
+<BR><HR>
+<ADDRESS>
+<yawtb-devel@sourceforge.net>
+</ADDRESS>
+</BODY>
+</HTML>

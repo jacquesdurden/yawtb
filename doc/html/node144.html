@@ -1,0 +1,198 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>yashow_cwt1d</TITLE>
+<META NAME="description" CONTENT="yashow_cwt1d">
+<META NAME="keywords" CONTENT="YAWTBReferenceManual">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="YAWTBReferenceManual.css">
+
+<LINK REL="next" HREF="node145.html">
+<LINK REL="previous" HREF="node143.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node145.html">
+</HEAD>
+
+<BODY  bgcolor="#ffffff">
+<!--Navigation Panel-->
+<A NAME="tex2html5401"
+  HREF="node145.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html5397"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html5391"
+  HREF="node143.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html5399"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html5402"
+  HREF="node145.html">yashow_cwt1dt</A>
+<B> Up:</B> <A NAME="tex2html5398"
+  HREF="node13.html">The commands in alphabetical</A>
+<B> Previous:</B> <A NAME="tex2html5392"
+  HREF="node143.html">yashow_cgt1d</A>
+ &nbsp; <B>  <A NAME="tex2html5400"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html5403"
+  HREF="node144.html#SECTION0005131100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html5404"
+  HREF="node144.html#SECTION0005131200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html5405"
+  HREF="node144.html#SECTION0005131210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html5406"
+  HREF="node144.html#SECTION0005131220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<BR>
+<LI><A NAME="tex2html5407"
+  HREF="node144.html#SECTION0005131300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html5408"
+  HREF="node144.html#SECTION0005131400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html5409"
+  HREF="node144.html#SECTION0005131500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html5410"
+  HREF="node144.html#SECTION0005131600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H2><A NAME="SECTION0005131000000000000000"></A>
+<A NAME="cmd:yashow_cwt1d"></A>
+<BR>
+<FONT COLOR="#ff0000">yashow_cwt1d</FONT>
+</H2>
+
+<P>
+Display the result of <TT>cwt1d</TT>. Automatically called by
+<TT>yashow</TT>!
+
+<P>
+
+<H3><A NAME="SECTION0005131100000000000000"></A>
+<A NAME="cmd:yashow_cwt1d:Syn"></A>
+<BR>
+<FONT COLOR="#000080">Syntax</FONT>
+</H3>
+
+<P>
+cwt1d_yashow(yawres[,'thresh',thresh] [,'edgeeffect'])
+
+<P>
+
+<H3><A NAME="SECTION0005131200000000000000"></A>
+<A NAME="cmd:yashow_cwt1d:Des"></A>
+<BR>
+<FONT COLOR="#000080">Description</FONT>
+</H3>
+
+<P>
+This function displays the result of the <TT>cwt1d</TT> function. It is
+automatically called by <TT>yashow</TT> with respect to the type of
+<TT>yawres</TT>, that is, the name of <TT>yawres.type</TT>. 
+
+<P>
+
+<H4><A NAME="SECTION0005131210000000000000"></A>
+<A NAME="cmd:yashow_cwt1d:InpD"></A>
+<BR>
+<FONT COLOR="#000080">Input Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>yawres</STRONG></DT>
+<DD>[YAWTB OBJECT]: the input structure coming from
+<TT>cwt1d</TT>.
+
+<P>
+</DD>
+<DT><STRONG>thresh</STRONG></DT>
+<DD>[REAL SCALAR <IMG
+ WIDTH="16" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img18.png"
+ ALT="$ \in$"> [0, 1]]: the thresholding of the displayed
+matrix. Default value is 0.05 that is 5%.
+</DD>
+</DL> 
+
+<P>
+['edgeeffect'] [BOOL]: display the edge effects on the cwt.
+
+<P>
+
+<H4><A NAME="SECTION0005131220000000000000"></A>
+<A NAME="cmd:yashow_cwt1d:OutD"></A>
+<BR>
+<FONT COLOR="#000080">Output Data</FONT>
+</H4>
+
+<P>
+
+<H3><A NAME="SECTION0005131300000000000000"></A>
+<A NAME="cmd:yashow_cwt1d:Exa"></A>
+<BR>
+<FONT COLOR="#000080">Example(s)</FONT>
+</H3>
+
+<P>
+<PRE> 
+&gt;&gt; sig = yachirp;
+&gt;&gt; sc = vect(4, 50, 128, 'log');
+&gt;&gt; wav = cwt1d(fft(sig), 'morlet', sc);
+&gt;&gt; yashow(wav, 'mode', 'angle');
+</PRE> 
+
+<P>
+
+<H3><A NAME="SECTION0005131400000000000000"></A>
+<A NAME="cmd:yashow_cwt1d:Ref"></A>
+<BR>
+<FONT COLOR="#000080">References</FONT>
+</H3>
+
+<P>
+
+<H3><A NAME="SECTION0005131500000000000000"></A>
+<A NAME="cmd:yashow_cwt1d:See"></A>
+<BR>
+<FONT COLOR="#000080">See Also</FONT>
+</H3>
+
+<P>
+<A HREF="node27.html#cmd:cwt1d">cwt1d</A>, <A HREF="node33.html#cmd:dgauss1d">dgauss1d</A>, <A HREF="node94.html#cmd:morlet1d">morlet1d</A>, <A HREF="node112.html#cmd:sdog1d">sdog1d</A>, <A HREF="node142.html#cmd:yashow">yashow</A>
+
+<P>
+
+<H3><A NAME="SECTION0005131600000000000000">
+<FONT COLOR="#000080">Location</FONT></A>
+</H3>
+continuous/1d/yashow_cwt1d.m
+
+<P>
+<BR><HR>
+<ADDRESS>
+<yawtb-devel@sourceforge.net>
+</ADDRESS>
+</BODY>
+</HTML>

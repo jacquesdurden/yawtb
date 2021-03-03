@@ -1,0 +1,237 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>yapbar</TITLE>
+<META NAME="description" CONTENT="yapbar">
+<META NAME="keywords" CONTENT="YAWTBReferenceManual">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="YAWTBReferenceManual.css">
+
+<LINK REL="next" HREF="node138.html">
+<LINK REL="previous" HREF="node136.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node138.html">
+</HEAD>
+
+<BODY  bgcolor="#ffffff">
+<!--Navigation Panel-->
+<A NAME="tex2html5266"
+  HREF="node138.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html5262"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html5256"
+  HREF="node136.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html5264"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html5267"
+  HREF="node138.html">yapsnr</A>
+<B> Up:</B> <A NAME="tex2html5263"
+  HREF="node13.html">The commands in alphabetical</A>
+<B> Previous:</B> <A NAME="tex2html5257"
+  HREF="node136.html">yamse</A>
+ &nbsp; <B>  <A NAME="tex2html5265"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html5268"
+  HREF="node137.html#SECTION0005124100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html5269"
+  HREF="node137.html#SECTION0005124200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html5270"
+  HREF="node137.html#SECTION0005124210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html5271"
+  HREF="node137.html#SECTION0005124220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<BR>
+<LI><A NAME="tex2html5272"
+  HREF="node137.html#SECTION0005124300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html5273"
+  HREF="node137.html#SECTION0005124400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html5274"
+  HREF="node137.html#SECTION0005124500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html5275"
+  HREF="node137.html#SECTION0005124600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H2><A NAME="SECTION0005124000000000000000"></A>
+<A NAME="cmd:yapbar"></A>
+<BR>
+<FONT COLOR="#ff0000">yapbar</FONT>
+</H2>
+
+<P>
+This function create a figure with a progress bar.
+
+<P>
+
+<H3><A NAME="SECTION0005124100000000000000"></A>
+<A NAME="cmd:yapbar:Syn"></A>
+<BR>
+<FONT COLOR="#000080">Syntax</FONT>
+</H3>
+
+<P>
+oyapbar = yapbar([], lim )
+oyapbar = yapbar(oyapbar, iter )
+oyapbar = yapbar(oyapbar, 'Close');
+
+<P>
+
+<H3><A NAME="SECTION0005124200000000000000"></A>
+<A NAME="cmd:yapbar:Des"></A>
+<BR>
+<FONT COLOR="#000080">Description</FONT>
+</H3>
+
+<P>
+This function create a progress bar inside a figure. This is
+useful inside long computatino program.
+
+<P>
+
+<H4><A NAME="SECTION0005124210000000000000"></A>
+<A NAME="cmd:yapbar:InpD"></A>
+<BR>
+<FONT COLOR="#000080">Input Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>oyapbar</STRONG></DT>
+<DD>[STRUCT]: progress bar object returned by the
+initialization with oyapbar set to [].
+</DD>
+<DT><STRONG>lim</STRONG></DT>
+<DD>[INTEGER]: the limit of the progress bar.
+</DD>
+<DT><STRONG>iter</STRONG></DT>
+<DD>[INTEGER| '++' | '-']: the iterator. In its
+numerical form, it must be greater than 0 and lesser than the
+original lim.
+</DD>
+<DT><STRONG>'Close'</STRONG></DT>
+<DD>[BOOLEAN]: tell to yapbar to close the progress bar
+and set oyapbar to [].
+</DD>
+</DL> 
+
+<P>
+
+<H4><A NAME="SECTION0005124220000000000000"></A>
+<A NAME="cmd:yapbar:OutD"></A>
+<BR>
+<FONT COLOR="#000080">Output Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>oyapbar</STRONG></DT>
+<DD>[STRUCT]: the progress bar object.
+</DD>
+</DL> 
+
+<P>
+
+<H3><A NAME="SECTION0005124300000000000000"></A>
+<A NAME="cmd:yapbar:Exa"></A>
+<BR>
+<FONT COLOR="#000080">Example(s)</FONT>
+</H3>
+
+<P>
+Initialization of the yapbar object (10 is the number of steps):
+<PRE>
+&gt;&gt; oyap = yapbar([],10);
+</PRE>
+
+<P>
+Progression of the yapbar:
+<PRE>
+&gt;&gt; for k=1:10, ...
+   oyap = yapbar(oyap,'++'); ...
+   end
+</PRE>
+
+<P>
+Closing of this yapbar:
+<PRE>
+&gt;&gt; oyap = yapbar(oyap,'close');
+</PRE>
+
+<P>
+
+<H3><A NAME="SECTION0005124400000000000000"></A>
+<A NAME="cmd:yapbar:Ref"></A>
+<BR>
+<FONT COLOR="#000080">References</FONT>
+</H3>
+
+<P>
+
+<H3><A NAME="SECTION0005124500000000000000"></A>
+<A NAME="cmd:yapbar:See"></A>
+<BR>
+<FONT COLOR="#000080">See Also</FONT>
+</H3>
+
+<P>
+
+<H3><A NAME="SECTION0005124600000000000000">
+<FONT COLOR="#000080">Location</FONT></A>
+</H3>
+tools/display/yapbar.m
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html5266"
+  HREF="node138.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html5262"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html5256"
+  HREF="node136.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html5264"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html5267"
+  HREF="node138.html">yapsnr</A>
+<B> Up:</B> <A NAME="tex2html5263"
+  HREF="node13.html">The commands in alphabetical</A>
+<B> Previous:</B> <A NAME="tex2html5257"
+  HREF="node136.html">yamse</A>
+ &nbsp; <B>  <A NAME="tex2html5265"
+  HREF="node1.html">Contents</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+<yawtb-devel@sourceforge.net>
+</ADDRESS>
+</BODY>
+</HTML>

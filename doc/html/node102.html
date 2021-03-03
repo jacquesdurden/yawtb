@@ -1,0 +1,186 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>pgmread</TITLE>
+<META NAME="description" CONTENT="pgmread">
+<META NAME="keywords" CONTENT="YAWTBReferenceManual">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="YAWTBReferenceManual.css">
+
+<LINK REL="next" HREF="node103.html">
+<LINK REL="previous" HREF="node101.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node103.html">
+</HEAD>
+
+<BODY  bgcolor="#ffffff">
+<!--Navigation Panel-->
+<A NAME="tex2html4590"
+  HREF="node103.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html4586"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html4580"
+  HREF="node101.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html4588"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html4591"
+  HREF="node103.html">pgmwrite</A>
+<B> Up:</B> <A NAME="tex2html4587"
+  HREF="node13.html">The commands in alphabetical</A>
+<B> Previous:</B> <A NAME="tex2html4581"
+  HREF="node101.html">pethat2d</A>
+ &nbsp; <B>  <A NAME="tex2html4589"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html4592"
+  HREF="node102.html#SECTION000589100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html4593"
+  HREF="node102.html#SECTION000589200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html4594"
+  HREF="node102.html#SECTION000589210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html4595"
+  HREF="node102.html#SECTION000589220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<BR>
+<LI><A NAME="tex2html4596"
+  HREF="node102.html#SECTION000589300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html4597"
+  HREF="node102.html#SECTION000589400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html4598"
+  HREF="node102.html#SECTION000589500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html4599"
+  HREF="node102.html#SECTION000589600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H2><A NAME="SECTION000589000000000000000"></A>
+<A NAME="cmd:pgmread"></A>
+<BR>
+<FONT COLOR="#ff0000">pgmread</FONT>
+</H2>
+
+<P>
+Read an image in the raw PGM format (8bits).
+
+<P>
+
+<H3><A NAME="SECTION000589100000000000000"></A>
+<A NAME="cmd:pgmread:Syn"></A>
+<BR>
+<FONT COLOR="#000080">Syntax</FONT>
+</H3>
+
+<P>
+[mat] = pgmread(fname)
+
+<P>
+
+<H3><A NAME="SECTION000589200000000000000"></A>
+<A NAME="cmd:pgmread:Des"></A>
+<BR>
+<FONT COLOR="#000080">Description</FONT>
+</H3>
+
+<P>
+
+<H4><A NAME="SECTION000589210000000000000"></A>
+<A NAME="cmd:pgmread:InpD"></A>
+<BR>
+<FONT COLOR="#000080">Input Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>fname</STRONG></DT>
+<DD>[STRING]: the name of the file to read. 
+</DD>
+</DL> 
+
+<P>
+
+<H4><A NAME="SECTION000589220000000000000"></A>
+<A NAME="cmd:pgmread:OutD"></A>
+<BR>
+<FONT COLOR="#000080">Output Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>out</STRONG></DT>
+<DD>[ARRAY]: a matrix containing the image.
+</DD>
+</DL> 
+
+<P>
+
+<H3><A NAME="SECTION000589300000000000000"></A>
+<A NAME="cmd:pgmread:Exa"></A>
+<BR>
+<FONT COLOR="#000080">Example(s)</FONT>
+</H3>
+
+<P>
+<PRE>
+&gt;&gt;
+</PRE>
+
+<P>
+
+<H3><A NAME="SECTION000589400000000000000"></A>
+<A NAME="cmd:pgmread:Ref"></A>
+<BR>
+<FONT COLOR="#000080">References</FONT>
+</H3>
+
+<P>
+Matthew Dailey's readpgm.m file (see http://ai.ucsd.edu/Tutorial/matlab.html)
+
+<P>
+
+<H3><A NAME="SECTION000589500000000000000"></A>
+<A NAME="cmd:pgmread:See"></A>
+<BR>
+<FONT COLOR="#000080">See Also</FONT>
+</H3>
+
+<P>
+<A HREF="node103.html#cmd:pgmwrite">pgmwrite</A>
+
+<P>
+
+<H3><A NAME="SECTION000589600000000000000">
+<FONT COLOR="#000080">Location</FONT></A>
+</H3>
+tools/io/pgmread.m
+
+<P>
+<BR><HR>
+<ADDRESS>
+<yawtb-devel@sourceforge.net>
+</ADDRESS>
+</BODY>
+</HTML>

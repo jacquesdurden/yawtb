@@ -1,0 +1,280 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>cgt1d</TITLE>
+<META NAME="description" CONTENT="cgt1d">
+<META NAME="keywords" CONTENT="YAWTBReferenceManual">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="YAWTBReferenceManual.css">
+
+<LINK REL="next" HREF="node24.html">
+<LINK REL="previous" HREF="node22.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node24.html">
+</HEAD>
+
+<BODY  bgcolor="#ffffff">
+<!--Navigation Panel-->
+<A NAME="tex2html3014"
+  HREF="node24.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html3010"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html3004"
+  HREF="node22.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html3012"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html3015"
+  HREF="node24.html">convsph</A>
+<B> Up:</B> <A NAME="tex2html3011"
+  HREF="node13.html">The commands in alphabetical</A>
+<B> Previous:</B> <A NAME="tex2html3005"
+  HREF="node22.html">cauchy2d_wav</A>
+ &nbsp; <B>  <A NAME="tex2html3013"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html3016"
+  HREF="node23.html#SECTION000510100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html3017"
+  HREF="node23.html#SECTION000510200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html3018"
+  HREF="node23.html#SECTION000510210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html3019"
+  HREF="node23.html#SECTION000510220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<BR>
+<LI><A NAME="tex2html3020"
+  HREF="node23.html#SECTION000510300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html3021"
+  HREF="node23.html#SECTION000510400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html3022"
+  HREF="node23.html#SECTION000510500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html3023"
+  HREF="node23.html#SECTION000510600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H2><A NAME="SECTION000510000000000000000"></A>
+<A NAME="cmd:cgt1d"></A>
+<BR>
+<FONT COLOR="#ff0000">cgt1d</FONT>
+</H2>
+
+<P>
+1D continuous Gabor transform 
+
+<P>
+
+<H3><A NAME="SECTION000510100000000000000"></A>
+<A NAME="cmd:cgt1d:Syn"></A>
+<BR>
+<FONT COLOR="#000080">Syntax</FONT>
+</H3>
+
+<P>
+out = cgt1d(fsig, freqs [,'Sigma', sigma] ...
+		[, 'Window', winname ...
+			[,WindowParameter] ] )
+
+<P>
+out = cgt1d(fsig, freqs [,'Sigma', sigma] ...
+		[, 'Window', winname ...
+			['WindowOptionName', WindowOptionValue] ] )
+
+<P>
+
+<H3><A NAME="SECTION000510200000000000000"></A>
+<A NAME="cmd:cgt1d:Des"></A>
+<BR>
+<FONT COLOR="#000080">Description</FONT>
+</H3>
+
+<P>
+<TT>cgt1d</TT> computes the Continuous Gabor Transform (or
+Windowed Fourier Transform) of a signal.
+The window used is the Gaussian window but this can be modified
+with the option 'Window' followed by the name of the desired window.
+This one must correspond to a mfile defined in the subdirectory 
+'win_defs'.
+
+<P>
+
+<H4><A NAME="SECTION000510210000000000000"></A>
+<A NAME="cmd:cgt1d:InpD"></A>
+<BR>
+<FONT COLOR="#000080">Input Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>fsig</STRONG></DT>
+<DD>[CPLX VECTOR]: the Fourier transform of the input
+signal;
+
+<P>
+</DD>
+<DT><STRONG>freqs</STRONG></DT>
+<DD>[REAL VECTOR]: the frequencies of the transform;
+
+<P>
+</DD>
+<DT><STRONG>sigma</STRONG></DT>
+<DD>[REAL]: the size of the window;
+
+<P>
+</DD>
+<DT><STRONG>winame</STRONG></DT>
+<DD>[STRING]: the name of the window to use if the
+gaussian is not wanted.
+
+<P>
+</DD>
+<DT><STRONG>WindowParameter</STRONG></DT>
+<DD>[MISC]: one window parameter. Its type
+depends on the window.  Refer to the corresponding M-file
+(inside 'win_defs') for a description of the available
+parameters;
+
+<P>
+</DD>
+<DT><STRONG>WindowOptionName, WindowOptionValue</STRONG></DT>
+<DD>[STRING, MISC]:
+Another way of writing window parameters. The window parameter
+name (a string) is followed by its value. 
+See the corresponding window M-file (inside 'win_defs') 
+for a description of the parameter or just type the name of the
+window with [] as argument on the Matlab command line;
+
+<P>
+</DD>
+</DL> 
+
+<P>
+
+<H4><A NAME="SECTION000510220000000000000"></A>
+<A NAME="cmd:cgt1d:OutD"></A>
+<BR>
+<FONT COLOR="#000080">Output Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>out</STRONG></DT>
+<DD>[STRUCT]: the output of the transform. It is a structure
+  with the following fields:
+  
+<UL>
+<LI><TT>out.data</TT> [MATRIX] : the Gabor coefficients
+</LI>
+<LI><TT>out.type</TT> (the type of the gabor transform)
+</LI>
+<LI><TT>out.win</TT> [STRING] : the window name
+</LI>
+<LI><TT>out.para</TT> [STRUCT] : the extra parameters given to cgt1d
+</LI>
+<LI><TT>out.freqs</TT> [VECTOR]: the frequencies
+</LI>
+<LI><TT>out.fsig</TT> [VECTOR]: the Fourier transform of the 
+         input signal
+  
+</LI>
+</UL>
+</DD>
+</DL> 
+
+<P>
+
+<H3><A NAME="SECTION000510300000000000000"></A>
+<A NAME="cmd:cgt1d:Exa"></A>
+<BR>
+<FONT COLOR="#000080">Example(s)</FONT>
+</H3>
+
+<P>
+<PRE>
+&gt;&gt; load superpos
+&gt;&gt; fsig = fft(sig);
+&gt;&gt; freqs = 0.005: (0.12 - 0.005)/127: 0.12;
+&gt;&gt; wsig = cgt1d(fsig, freqs, 'sigma', 50);
+&gt;&gt; yashow(wsig);
+</PRE>
+
+<P>
+
+<H3><A NAME="SECTION000510400000000000000"></A>
+<A NAME="cmd:cgt1d:Ref"></A>
+<BR>
+<FONT COLOR="#000080">References</FONT>
+</H3>
+
+<P>
+
+<H3><A NAME="SECTION000510500000000000000"></A>
+<A NAME="cmd:cgt1d:See"></A>
+<BR>
+<FONT COLOR="#000080">See Also</FONT>
+</H3>
+
+<P>
+<A HREF="#cmd:cgt1d">cgt1d</A>, <A HREF="node27.html#cmd:cwt1d">cwt1d</A>, <A HREF="node65.html#cmd:gauss1d">gauss1d</A>, <A HREF="node142.html#cmd:yashow">yashow</A>
+
+<P>
+
+<H3><A NAME="SECTION000510600000000000000">
+<FONT COLOR="#000080">Location</FONT></A>
+</H3>
+continuous/1d/cgt1d.m
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html3014"
+  HREF="node24.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html3010"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html3004"
+  HREF="node22.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html3012"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html3015"
+  HREF="node24.html">convsph</A>
+<B> Up:</B> <A NAME="tex2html3011"
+  HREF="node13.html">The commands in alphabetical</A>
+<B> Previous:</B> <A NAME="tex2html3005"
+  HREF="node22.html">cauchy2d_wav</A>
+ &nbsp; <B>  <A NAME="tex2html3013"
+  HREF="node1.html">Contents</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+<yawtb-devel@sourceforge.net>
+</ADDRESS>
+</BODY>
+</HTML>

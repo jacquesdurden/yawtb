@@ -1,0 +1,206 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>sdog1d</TITLE>
+<META NAME="description" CONTENT="sdog1d">
+<META NAME="keywords" CONTENT="YAWTBReferenceManual">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="YAWTBReferenceManual.css">
+
+<LINK REL="next" HREF="node113.html">
+<LINK REL="previous" HREF="node111.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node113.html">
+</HEAD>
+
+<BODY  bgcolor="#ffffff">
+<!--Navigation Panel-->
+<A NAME="tex2html4788"
+  HREF="node113.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html4784"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html4778"
+  HREF="node111.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html4786"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html4789"
+  HREF="node113.html">sdog2d</A>
+<B> Up:</B> <A NAME="tex2html4785"
+  HREF="node13.html">The commands in alphabetical</A>
+<B> Previous:</B> <A NAME="tex2html4779"
+  HREF="node111.html">sarcwt2d</A>
+ &nbsp; <B>  <A NAME="tex2html4787"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html4790"
+  HREF="node112.html#SECTION000599100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html4791"
+  HREF="node112.html#SECTION000599200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html4792"
+  HREF="node112.html#SECTION000599210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html4793"
+  HREF="node112.html#SECTION000599220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<BR>
+<LI><A NAME="tex2html4794"
+  HREF="node112.html#SECTION000599300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html4795"
+  HREF="node112.html#SECTION000599400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html4796"
+  HREF="node112.html#SECTION000599500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html4797"
+  HREF="node112.html#SECTION000599600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H2><A NAME="SECTION000599000000000000000"></A>
+<A NAME="cmd:sdog1d"></A>
+<BR>
+<FONT COLOR="#ff0000">sdog1d</FONT>
+</H2>
+
+<P>
+1D Scaling Difference Of Gaussian wavelet in the frequency domain
+
+<P>
+
+<H3><A NAME="SECTION000599100000000000000"></A>
+<A NAME="cmd:sdog1d:Syn"></A>
+<BR>
+<FONT COLOR="#000080">Syntax</FONT>
+</H3>
+
+<P>
+[out] = sdog1d(k,alpha)
+
+<P>
+
+<H3><A NAME="SECTION000599200000000000000"></A>
+<A NAME="cmd:sdog1d:Des"></A>
+<BR>
+<FONT COLOR="#000080">Description</FONT>
+</H3>
+
+<P>
+This function returns <TT>out</TT> the 1D Scaling Difference Of Gaussian
+wavelet in the frequency domain defined in that domain by:
+<PRE>
+  out = exp( - k.^2 ) - exp ( - alpha^2 * k.^2)
+</PRE>
+
+<P>
+
+<H4><A NAME="SECTION000599210000000000000"></A>
+<A NAME="cmd:sdog1d:InpD"></A>
+<BR>
+<FONT COLOR="#000080">Input Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>k</STRONG></DT>
+<DD>[REAL MATRIX]: The frequency. You can use the YAWT<SMALL>B</SMALL>
+function <TT>vect</TT> to create it (see example below).
+
+<P>
+</DD>
+<DT><STRONG>alpha</STRONG></DT>
+<DD>[REAL SCALAR]: The wavelet parameter.
+</DD>
+</DL> 
+
+<P>
+
+<H4><A NAME="SECTION000599220000000000000"></A>
+<A NAME="cmd:sdog1d:OutD"></A>
+<BR>
+<FONT COLOR="#000080">Output Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>out</STRONG></DT>
+<DD>[REAL MATRIX]: The wavelet in frequency.
+</DD>
+</DL> 
+
+<P>
+
+<H3><A NAME="SECTION000599300000000000000"></A>
+<A NAME="cmd:sdog1d:Exa"></A>
+<BR>
+<FONT COLOR="#000080">Example(s)</FONT>
+</H3>
+
+<P>
+<PRE>
+&gt;&gt; step = 2*pi/128;
+&gt;&gt; k = -pi : step : (pi-step);
+&gt;&gt; wav = sdog1d(freqs,6);
+&gt;&gt; plot(k,wav);
+</PRE>
+
+<P>
+Note that the two first lines are implemented by the YAWT<SMALL>B</SMALL>
+<TT>vect</TT> function:
+<PRE>
+&gt;&gt; k = vect(-pi,pi,128,'open');
+</PRE>
+
+<P>
+
+<H3><A NAME="SECTION000599400000000000000"></A>
+<A NAME="cmd:sdog1d:Ref"></A>
+<BR>
+<FONT COLOR="#000080">References</FONT>
+</H3>
+
+<P>
+
+<H3><A NAME="SECTION000599500000000000000"></A>
+<A NAME="cmd:sdog1d:See"></A>
+<BR>
+<FONT COLOR="#000080">See Also</FONT>
+</H3>
+
+<P>
+<A HREF="node27.html#cmd:cwt1d">cwt1d</A>, <A HREF="node33.html#cmd:dgauss1d">dgauss1d</A>, <A HREF="node94.html#cmd:morlet1d">morlet1d</A>, <A HREF="#cmd:sdog1d">sdog1d</A>, <A HREF="node123.html#cmd:vect">vect</A>
+
+<P>
+
+<H3><A NAME="SECTION000599600000000000000">
+<FONT COLOR="#000080">Location</FONT></A>
+</H3>
+continuous/1d/wave_defs/sdog1d.m
+
+<P>
+<BR><HR>
+<ADDRESS>
+<yawtb-devel@sourceforge.net>
+</ADDRESS>
+</BODY>
+</HTML>

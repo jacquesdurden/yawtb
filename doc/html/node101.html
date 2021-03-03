@@ -1,0 +1,242 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>pethat2d</TITLE>
+<META NAME="description" CONTENT="pethat2d">
+<META NAME="keywords" CONTENT="YAWTBReferenceManual">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="YAWTBReferenceManual.css">
+
+<LINK REL="next" HREF="node102.html">
+<LINK REL="previous" HREF="node100.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node102.html">
+</HEAD>
+
+<BODY  bgcolor="#ffffff">
+<!--Navigation Panel-->
+<A NAME="tex2html4570"
+  HREF="node102.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html4566"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html4560"
+  HREF="node100.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html4568"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html4571"
+  HREF="node102.html">pgmread</A>
+<B> Up:</B> <A NAME="tex2html4567"
+  HREF="node13.html">The commands in alphabetical</A>
+<B> Previous:</B> <A NAME="tex2html4561"
+  HREF="node100.html">normopts</A>
+ &nbsp; <B>  <A NAME="tex2html4569"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html4572"
+  HREF="node101.html#SECTION000588100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html4573"
+  HREF="node101.html#SECTION000588200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html4574"
+  HREF="node101.html#SECTION000588210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html4575"
+  HREF="node101.html#SECTION000588220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<BR>
+<LI><A NAME="tex2html4576"
+  HREF="node101.html#SECTION000588300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html4577"
+  HREF="node101.html#SECTION000588400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html4578"
+  HREF="node101.html#SECTION000588500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html4579"
+  HREF="node101.html#SECTION000588600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H2><A NAME="SECTION000588000000000000000"></A>
+<A NAME="cmd:pethat2d"></A>
+<BR>
+<FONT COLOR="#ff0000">pethat2d</FONT>
+</H2>
+
+<P>
+Compute the 2D Pet Hat wavelet in frequency plane
+
+<P>
+
+<H3><A NAME="SECTION000588100000000000000"></A>
+<A NAME="cmd:pethat2d:Syn"></A>
+<BR>
+<FONT COLOR="#000080">Syntax</FONT>
+</H3>
+
+<P>
+[out] = pethat2d(kx,ky)
+
+<P>
+
+<H3><A NAME="SECTION000588200000000000000"></A>
+<A NAME="cmd:pethat2d:Des"></A>
+<BR>
+<FONT COLOR="#000080">Description</FONT>
+</H3>
+
+<P>
+This function computes the Aurell's 2D Pet Hat wavelet in frequency plane.
+That is, the wavelet given by
+<PRE>
+                   _
+                  |   - cos^2(pi/2 * log2( |K| / 2^0.5 ) )
+PSIHAT (kx,ky) = &lt;                if 1/2^0.5 &lt;= |K| &lt; 2*2^0.5
+                  |   0           elsewhere
+                  `-
+</PRE>
+where PSIHAT is the Fourier transform of PSI;
+<PRE>
+      K = (kx,ky);
+</PRE>
+
+<P>
+Notice that we have scaled this wavelet from this original
+formulation to share the same maximum than the Mexican Hat (in
+<!-- MATH
+ $|K|=2^{0.5}$
+ -->
+| <I>K</I>| = 2<SUP>0.5</SUP>)
+
+<P>
+
+<H4><A NAME="SECTION000588210000000000000"></A>
+<A NAME="cmd:pethat2d:InpD"></A>
+<BR>
+<FONT COLOR="#000080">Input Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>kx, ky</STRONG></DT>
+<DD>[REAL MATRICES]: The frequency plane. Use meshgrid
+to create it. 
+
+<P>
+</DD>
+</DL> 
+
+<P>
+
+<H4><A NAME="SECTION000588220000000000000"></A>
+<A NAME="cmd:pethat2d:OutD"></A>
+<BR>
+<FONT COLOR="#000080">Output Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>out</STRONG></DT>
+<DD>[REAL MATRIX]: The wavelet in frequency plane. 
+</DD>
+</DL> 
+
+<P>
+
+<H3><A NAME="SECTION000588300000000000000"></A>
+<A NAME="cmd:pethat2d:Exa"></A>
+<BR>
+<FONT COLOR="#000080">Example(s)</FONT>
+</H3>
+
+<P>
+<PRE>
+&gt;&gt; step = 2*pi/128;
+&gt;&gt; [kx,ky] = meshgrid( -pi : step : (pi-step) );
+&gt;&gt; wav = pethat2d(kx,ky,6,1);
+&gt;&gt; imagesc(wav);
+</PRE>
+
+<P>
+
+<H3><A NAME="SECTION000588400000000000000"></A>
+<A NAME="cmd:pethat2d:Ref"></A>
+<BR>
+<FONT COLOR="#000080">References</FONT>
+</H3>
+
+<P>
+P. Frick and Al., "Scaling and Correlation Analysis of Galactic
+Images", arXiv:astro-ph/0109017 v1, 3 Sep 2001
+
+<P>
+E. Aurell and Al, 1994, Physica D, 72, 95
+
+<P>
+
+<H3><A NAME="SECTION000588500000000000000"></A>
+<A NAME="cmd:pethat2d:See"></A>
+<BR>
+<FONT COLOR="#000080">See Also</FONT>
+</H3>
+
+<P>
+<A HREF="node29.html#cmd:cwt2d">cwt2d</A>, meshgrid, <A HREF="node110.html#cmd:samcwt2d">samcwt2d</A>, <A HREF="node111.html#cmd:sarcwt2d">sarcwt2d</A>, <A HREF="node146.html#cmd:yashow_cwt2d">yashow_cwt2d</A>, <A HREF="node150.html#cmd:yashow_samcwt2d">yashow_samcwt2d</A>
+
+<P>
+
+<H3><A NAME="SECTION000588600000000000000">
+<FONT COLOR="#000080">Location</FONT></A>
+</H3>
+continuous/2d/wave_defs/pethat2d.m
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html4570"
+  HREF="node102.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html4566"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html4560"
+  HREF="node100.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html4568"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html4571"
+  HREF="node102.html">pgmread</A>
+<B> Up:</B> <A NAME="tex2html4567"
+  HREF="node13.html">The commands in alphabetical</A>
+<B> Previous:</B> <A NAME="tex2html4561"
+  HREF="node100.html">normopts</A>
+ &nbsp; <B>  <A NAME="tex2html4569"
+  HREF="node1.html">Contents</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+<yawtb-devel@sourceforge.net>
+</ADDRESS>
+</BODY>
+</HTML>

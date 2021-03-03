@@ -1,0 +1,245 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>pseudiff</TITLE>
+<META NAME="description" CONTENT="pseudiff">
+<META NAME="keywords" CONTENT="YAWTBReferenceManual">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="YAWTBReferenceManual.css">
+
+<LINK REL="next" HREF="node107.html">
+<LINK REL="previous" HREF="node105.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node107.html">
+</HEAD>
+
+<BODY  bgcolor="#ffffff">
+<!--Navigation Panel-->
+<A NAME="tex2html4670"
+  HREF="node107.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html4666"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html4660"
+  HREF="node105.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html4668"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html4671"
+  HREF="node107.html">regrep</A>
+<B> Up:</B> <A NAME="tex2html4667"
+  HREF="node13.html">The commands in alphabetical</A>
+<B> Previous:</B> <A NAME="tex2html4661"
+  HREF="node105.html">pmexican2d</A>
+ &nbsp; <B>  <A NAME="tex2html4669"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html4672"
+  HREF="node106.html#SECTION000593100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html4673"
+  HREF="node106.html#SECTION000593200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html4674"
+  HREF="node106.html#SECTION000593210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html4675"
+  HREF="node106.html#SECTION000593220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<BR>
+<LI><A NAME="tex2html4676"
+  HREF="node106.html#SECTION000593300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html4677"
+  HREF="node106.html#SECTION000593400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html4678"
+  HREF="node106.html#SECTION000593500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html4679"
+  HREF="node106.html#SECTION000593600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H2><A NAME="SECTION000593000000000000000"></A>
+<A NAME="cmd:pseudiff"></A>
+<BR>
+<FONT COLOR="#ff0000">pseudiff</FONT>
+</H2>
+
+<P>
+Return the 2D pseudo differential operator <I>k</I><SUP>n</SUP> wavelet
+
+<P>
+
+<H3><A NAME="SECTION000593100000000000000"></A>
+<A NAME="cmd:pseudiff:Syn"></A>
+<BR>
+<FONT COLOR="#000080">Syntax</FONT>
+</H3>
+
+<P>
+out = pseudiff(kx, ky, mode [, alpha])
+
+<P>
+
+<H3><A NAME="SECTION000593200000000000000"></A>
+<A NAME="cmd:pseudiff:Des"></A>
+<BR>
+<FONT COLOR="#000080">Description</FONT>
+</H3>
+
+<P>
+Return the 2D pseudiff wavelet or scaling function packets
+based on the recursive filter
+<PRE>
+  phi_n(k) = 0.5*k^(n-2) + 0.5*(n-2)*phi_(n-2)(k)
+</PRE>
+(implemented in phin.m)
+So, the wavelet packet is
+<PRE>
+  wpck = \sqrt(phi_n(k) - phi_n(alpha*k))
+</PRE>
+and the scaling function
+<PRE>
+  wphi = \sqrt(phi_n(k))
+</PRE>
+
+<P>
+
+<H4><A NAME="SECTION000593210000000000000"></A>
+<A NAME="cmd:pseudiff:InpD"></A>
+<BR>
+<FONT COLOR="#000080">Input Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>kx, ky</STRONG></DT>
+<DD>[REAL MATRIX] the frequency plane
+
+<P>
+</DD>
+<DT><STRONG>mode</STRONG></DT>
+<DD>['infinit'|'scaling'|'wavelet'|'dscaling'|'dwavelet']:
+specify the function to return through out. So, you can have the
+integrated scaling function ('scaling'), the wavelet packet
+('wavelet'), the duals of these (respectively 'dscaling' and
+'dwavelet') useful for the reconstruction, and finally the
+infinitesimal wavelet ('infinit'), that is the 2D mexican hat.
+
+<P>
+</DD>
+<DT><STRONG>alpha</STRONG></DT>
+<DD>[REAL]: the scale ratio defining the packet wavelet.
+
+<P>
+</DD>
+<DT><STRONG>n</STRONG></DT>
+<DD>[INTEGER]: the order of the pseudiff wavelet packet.
+
+<P>
+</DD>
+</DL> 
+
+<P>
+
+<H4><A NAME="SECTION000593220000000000000"></A>
+<A NAME="cmd:pseudiff:OutD"></A>
+<BR>
+<FONT COLOR="#000080">Output Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>out</STRONG></DT>
+<DD>The frequency mask of the returned function.
+
+<P>
+</DD>
+</DL> 
+
+<P>
+
+<H3><A NAME="SECTION000593300000000000000"></A>
+<A NAME="cmd:pseudiff:Exa"></A>
+<BR>
+<FONT COLOR="#000080">Example(s)</FONT>
+</H3>
+
+<P>
+
+<H3><A NAME="SECTION000593400000000000000"></A>
+<A NAME="cmd:pseudiff:Ref"></A>
+<BR>
+<FONT COLOR="#000080">References</FONT>
+</H3>
+
+<P>
+P. Vandergheynst, "Ondelettes directionnelles et Ondelettes sur la
+Sphère", PhD Thesis, Louvain-la-Neuve, 1998.
+
+<P>
+
+<H3><A NAME="SECTION000593500000000000000"></A>
+<A NAME="cmd:pseudiff:See"></A>
+<BR>
+<FONT COLOR="#000080">See Also</FONT>
+</H3>
+
+<P>
+gaussian2d, <A HREF="node82.html#cmd:iwpck2d">iwpck2d</A>, <A HREF="node87.html#cmd:mexican2d">mexican2d</A>, <A HREF="node88.html#cmd:mexican2d_ctr">mexican2d_ctr</A>, <A HREF="node104.html#cmd:phin">phin</A>, <A HREF="node105.html#cmd:pmexican2d">pmexican2d</A>, <A HREF="node126.html#cmd:wpck2d">wpck2d</A>, <A HREF="node154.html#cmd:yashow_wpck2d">yashow_wpck2d</A>
+
+<P>
+
+<H3><A NAME="SECTION000593600000000000000">
+<FONT COLOR="#000080">Location</FONT></A>
+</H3>
+discrete/packet/2d/wpck_defs/pseudiff.m
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html4670"
+  HREF="node107.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html4666"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html4660"
+  HREF="node105.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html4668"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html4671"
+  HREF="node107.html">regrep</A>
+<B> Up:</B> <A NAME="tex2html4667"
+  HREF="node13.html">The commands in alphabetical</A>
+<B> Previous:</B> <A NAME="tex2html4661"
+  HREF="node105.html">pmexican2d</A>
+ &nbsp; <B>  <A NAME="tex2html4669"
+  HREF="node1.html">Contents</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+<yawtb-devel@sourceforge.net>
+</ADDRESS>
+</BODY>
+</HTML>

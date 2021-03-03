@@ -1,0 +1,263 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>yamax</TITLE>
+<META NAME="description" CONTENT="yamax">
+<META NAME="keywords" CONTENT="YAWTBReferenceManual">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="YAWTBReferenceManual.css">
+
+<LINK REL="next" HREF="node136.html">
+<LINK REL="previous" HREF="node134.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node136.html">
+</HEAD>
+
+<BODY  bgcolor="#ffffff">
+<!--Navigation Panel-->
+<A NAME="tex2html5228"
+  HREF="node136.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html5224"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html5218"
+  HREF="node134.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html5226"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html5229"
+  HREF="node136.html">yamse</A>
+<B> Up:</B> <A NAME="tex2html5225"
+  HREF="node13.html">The commands in alphabetical</A>
+<B> Previous:</B> <A NAME="tex2html5219"
+  HREF="node134.html">yamake</A>
+ &nbsp; <B>  <A NAME="tex2html5227"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html5230"
+  HREF="node135.html#SECTION0005122100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html5231"
+  HREF="node135.html#SECTION0005122200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html5232"
+  HREF="node135.html#SECTION0005122210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html5233"
+  HREF="node135.html#SECTION0005122220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<BR>
+<LI><A NAME="tex2html5234"
+  HREF="node135.html#SECTION0005122300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html5235"
+  HREF="node135.html#SECTION0005122400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html5236"
+  HREF="node135.html#SECTION0005122500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html5237"
+  HREF="node135.html#SECTION0005122600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H2><A NAME="SECTION0005122000000000000000"></A>
+<A NAME="cmd:yamax"></A>
+<BR>
+<FONT COLOR="#ff0000">yamax</FONT>
+</H2>
+
+<P>
+Determines the regional maxima of a real matrix 
+
+<P>
+
+<H3><A NAME="SECTION0005122100000000000000"></A>
+<A NAME="cmd:yamax:Syn"></A>
+<BR>
+<FONT COLOR="#000080">Syntax</FONT>
+</H3>
+
+<P>
+[out] = yamax(mat ['connect',connexion] [,'pos'] [,'thresh',T] ['dir',angle])
+
+<P>
+
+<H3><A NAME="SECTION0005122200000000000000"></A>
+<A NAME="cmd:yamax:Des"></A>
+<BR>
+<FONT COLOR="#000080">Description</FONT>
+</H3>
+
+<P>
+This function determines the local maxima of the real matrix
+'mat' with a specified pixel connection (4 or 8 neighbours).
+
+<P>
+
+<H4><A NAME="SECTION0005122210000000000000"></A>
+<A NAME="cmd:yamax:InpD"></A>
+<BR>
+<FONT COLOR="#000080">Input Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>mat</STRONG></DT>
+<DD>[REAL MATRIX]: the input matrix;
+
+<P>
+</DD>
+<DT><STRONG>connexion</STRONG></DT>
+<DD>[INTEGER]: the connection to use: 4 or 8.
+
+<P>
+</DD>
+<DT><STRONG>'pos'</STRONG></DT>
+<DD>[BOOLEAN]: tell to yamax to give the list of
+the row and column positions of the maxima as result.
+
+<P>
+</DD>
+<DT><STRONG>'strict'</STRONG></DT>
+<DD>[BOOLEAN]: if you want the strict maximums, that is, 
+strictly greater than their neighbours.
+
+<P>
+</DD>
+<DT><STRONG>T</STRONG></DT>
+<DD>[REAL]: a threshold between 0 and 1 for the maxima
+detection. Only maxima greater than minmat + T*(maxmat - minmat)
+are conserved.
+
+<P>
+</DD>
+<DT><STRONG>angle</STRONG></DT>
+<DD>[REAL|REAL MATRIX]: determine the maxima of mat in
+the direction angle. This angle is either a scalar, or a matrix
+giving one angle for each element of mat. In the two cases, each
+element of angle must be inside the interval [-pi/2 pi/2].
+
+<P>
+</DD>
+</DL> 
+
+<P>
+
+<H4><A NAME="SECTION0005122220000000000000"></A>
+<A NAME="cmd:yamax:OutD"></A>
+<BR>
+<FONT COLOR="#000080">Output Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>out</STRONG></DT>
+<DD>[MISC]: 
+If 'pos' is not specified, out is a binary matrix with 1 on
+maxima and 0 elsewhere.
+If 'pos' is specified, out is a struct array, with fields
+<DL>
+<DT><STRONG>out.i</STRONG></DT>
+<DD>the row positions of the maxima;
+</DD>
+<DT><STRONG>out.j</STRONG></DT>
+<DD>the column positions of the maxima;
+</DD>
+<DT><STRONG>out.lin</STRONG></DT>
+<DD>the positions in a linear mode such that,
+mat(out.lin) gives all the maxima of mat.
+</DD>
+</DL>
+</DD>
+</DL> 
+
+<P>
+
+<H3><A NAME="SECTION0005122300000000000000"></A>
+<A NAME="cmd:yamax:Exa"></A>
+<BR>
+<FONT COLOR="#000080">Example(s)</FONT>
+</H3>
+
+<P>
+The center of a Gaussian
+<PRE>
+&gt;&gt; [x,y]=meshgrid(vect(-1,1,5));
+&gt;&gt; g=exp(-x.^2-y.^2);
+&gt;&gt; yamax(g)
+</PRE>
+
+<P>
+Maxima of this Gaussian in the directions of 0 and pi/4 radian
+<PRE>
+&gt;&gt; yamax(g,'dir',0)
+&gt;&gt; yamax(g,'dir',pi/4)
+</PRE>
+<H3><A NAME="SECTION0005122400000000000000"></A>
+<A NAME="cmd:yamax:Ref"></A>
+<BR>
+<FONT COLOR="#000080">References</FONT>
+</H3>
+
+<P>
+
+<H3><A NAME="SECTION0005122500000000000000"></A>
+<A NAME="cmd:yamax:See"></A>
+<BR>
+<FONT COLOR="#000080">See Also</FONT>
+</H3>
+
+<P>
+
+<H3><A NAME="SECTION0005122600000000000000">
+<FONT COLOR="#000080">Location</FONT></A>
+</H3>
+tools/misc/yamax.m
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html5228"
+  HREF="node136.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html5224"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html5218"
+  HREF="node134.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html5226"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html5229"
+  HREF="node136.html">yamse</A>
+<B> Up:</B> <A NAME="tex2html5225"
+  HREF="node13.html">The commands in alphabetical</A>
+<B> Previous:</B> <A NAME="tex2html5219"
+  HREF="node134.html">yamake</A>
+ &nbsp; <B>  <A NAME="tex2html5227"
+  HREF="node1.html">Contents</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+<yawtb-devel@sourceforge.net>
+</ADDRESS>
+</BODY>
+</HTML>

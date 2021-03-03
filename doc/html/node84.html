@@ -1,0 +1,185 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>list_elem</TITLE>
+<META NAME="description" CONTENT="list_elem">
+<META NAME="keywords" CONTENT="YAWTBReferenceManual">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="YAWTBReferenceManual.css">
+
+<LINK REL="next" HREF="node85.html">
+<LINK REL="previous" HREF="node83.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node85.html">
+</HEAD>
+
+<BODY  bgcolor="#ffffff">
+<!--Navigation Panel-->
+<A NAME="tex2html4231"
+  HREF="node85.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html4227"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html4221"
+  HREF="node83.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html4229"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html4232"
+  HREF="node85.html">lmshape</A>
+<B> Up:</B> <A NAME="tex2html4228"
+  HREF="node13.html">The commands in alphabetical</A>
+<B> Previous:</B> <A NAME="tex2html4222"
+  HREF="node83.html">linearchirp</A>
+ &nbsp; <B>  <A NAME="tex2html4230"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html4233"
+  HREF="node84.html#SECTION000571100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html4234"
+  HREF="node84.html#SECTION000571200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html4235"
+  HREF="node84.html#SECTION000571210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html4236"
+  HREF="node84.html#SECTION000571220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<BR>
+<LI><A NAME="tex2html4237"
+  HREF="node84.html#SECTION000571300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html4238"
+  HREF="node84.html#SECTION000571400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html4239"
+  HREF="node84.html#SECTION000571500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html4240"
+  HREF="node84.html#SECTION000571600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H2><A NAME="SECTION000571000000000000000"></A>
+<A NAME="cmd:list_elem"></A>
+<BR>
+<FONT COLOR="#ff0000">list_elem</FONT>
+</H2>
+
+<P>
+Return the <I>k</I>-th element of rec if it exists.
+
+<P>
+
+<H3><A NAME="SECTION000571100000000000000"></A>
+<A NAME="cmd:list_elem:Syn"></A>
+<BR>
+<FONT COLOR="#000080">Syntax</FONT>
+</H3>
+
+<P>
+out = list_elem(rec,k,def)
+
+<P>
+
+<H3><A NAME="SECTION000571200000000000000"></A>
+<A NAME="cmd:list_elem:Des"></A>
+<BR>
+<FONT COLOR="#000080">Description</FONT>
+</H3>
+
+<P>
+Return the <I>k</I>-th element of rec if exists. If not, default value
+def is returned. 
+
+<P>
+
+<H4><A NAME="SECTION000571210000000000000"></A>
+<A NAME="cmd:list_elem:InpD"></A>
+<BR>
+<FONT COLOR="#000080">Input Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>rec</STRONG></DT>
+<DD>[LIST] the input list;
+</DD>
+<DT><STRONG>k</STRONG></DT>
+<DD>[INTEGER] the element index;
+</DD>
+<DT><STRONG>def</STRONG></DT>
+<DD>[MISC] default value.
+</DD>
+</DL> 
+
+<P>
+
+<H4><A NAME="SECTION000571220000000000000"></A>
+<A NAME="cmd:list_elem:OutD"></A>
+<BR>
+<FONT COLOR="#000080">Output Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>out</STRONG></DT>
+<DD>the <I>k</I>-th element.
+</DD>
+</DL> 
+
+<P>
+
+<H3><A NAME="SECTION000571300000000000000"></A>
+<A NAME="cmd:list_elem:Exa"></A>
+<BR>
+<FONT COLOR="#000080">Example(s)</FONT>
+</H3>
+
+<P>
+
+<H3><A NAME="SECTION000571400000000000000"></A>
+<A NAME="cmd:list_elem:Ref"></A>
+<BR>
+<FONT COLOR="#000080">References</FONT>
+</H3>
+
+<P>
+
+<H3><A NAME="SECTION000571500000000000000"></A>
+<A NAME="cmd:list_elem:See"></A>
+<BR>
+<FONT COLOR="#000080">See Also</FONT>
+</H3>
+
+<P>
+
+<H3><A NAME="SECTION000571600000000000000">
+<FONT COLOR="#000080">Location</FONT></A>
+</H3>
+tools/misc/list_elem.m
+
+<P>
+<BR><HR>
+<ADDRESS>
+<yawtb-devel@sourceforge.net>
+</ADDRESS>
+</BODY>
+</HTML>

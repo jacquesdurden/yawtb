@@ -1,0 +1,214 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Writing the Matlab headers</TITLE>
+<META NAME="description" CONTENT="Writing the Matlab headers">
+<META NAME="keywords" CONTENT="YAWTBReferenceManual">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="YAWTBReferenceManual.css">
+
+<LINK REL="next" HREF="node5.html">
+<LINK REL="previous" HREF="node3.html">
+<LINK REL="up" HREF="node3.html">
+<LINK REL="next" HREF="node5.html">
+</HEAD>
+
+<BODY  bgcolor="#ffffff">
+<!--Navigation Panel-->
+<A NAME="tex2html1404"
+  HREF="node5.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html1400"
+  HREF="node3.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html1394"
+  HREF="node3.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html1402"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html1405"
+  HREF="node5.html">TODO</A>
+<B> Up:</B> <A NAME="tex2html1401"
+  HREF="node3.html">How to contribute ?</A>
+<B> Previous:</B> <A NAME="tex2html1395"
+  HREF="node3.html">How to contribute ?</A>
+ &nbsp; <B>  <A NAME="tex2html1403"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00031000000000000000"></A>
+<A NAME="sec:WriMatHea"></A>
+<BR>
+Writing the Matlab headers
+</H2>
+
+<P>
+
+<UL>
+<LI>First of all, you should use the template that you will find in
+<BR>  <TT>tools/devel/xemacs_macro/mfile_header_part.txt</TT>.
+</LI>
+<LI>A <code>\YAWTB</code> command exist to denote the YAWT<SMALL>B</SMALL> toolbox
+</LI>
+<LI>Short description are better.  We do not need to say the one function
+  compute or return something.  For example,
+  
+<UL>
+<LI>cwt1d: 1D continuous wavelet transform
+</LI>
+<LI>gauss1d: 1D Gaussian wavelet in the frequency domain
+  
+</LI>
+</UL>
+</LI>
+<LI>Some commands need and underscore _.  In L<SUP><SMALL>A</SMALL></SUP>T<SMALL>E</SMALL>X the <code>_</code> has a
+  special meaning.  Protect this character.
+</LI>
+<LI>Use <code>\libfun{function}</code> if you means the function
+  <TT>function</TT>
+</LI>
+<LI>Use <code>\libvar{variable}</code> if you means the variable <TT>variable</TT>
+</LI>
+<LI>In ths Sections ``Input Data'' and ``Output Data'' we indicate the
+  type of the variable.  We already use the following types:
+  
+<UL>
+<LI>BOOLEAN : A real number with two possible values 0 or 1
+</LI>
+<LI>COMPLEX MATRIX
+</LI>
+<LI>CPLX a complex
+</LI>
+<LI>CPLX MATRIX
+</LI>
+<LI>CPLX VECTOR a vector of complexes
+</LI>
+<LI>MATRIX : the matrix may be real or complex
+</LI>
+<LI>MISC when the type depends on the context
+</LI>
+<LI>REAL
+</LI>
+<LI>REAL SCALAR
+</LI>
+<LI>REAL MATRIX
+</LI>
+<LI>REAL VECTOR
+</LI>
+<LI>SCALAR : real or complex scalar
+</LI>
+<LI>STRING
+</LI>
+<LI>STRUCT a <A NAME="tex2html10"
+  HREF="http://www.mathworks.com">Matlab</A>structure
+</LI>
+<LI>VECTOR
+</LI>
+<LI>YAWTB OBJECT a structure that stores the output of functions like
+
+<TT>cwt1d</TT>
+  
+</LI>
+</UL>
+  Some are redundant.  I guess that some should be considered as obsolete.
+</LI>
+<LI>The environments 
+<PRE>
+</PRE> or
+<PRE>
+      ...
+</PRE> 
+   enable you to include different comments in the printed and htmlize
+   versions.
+</LI>
+<LI>Each function will get its own label during processing the doc.  This
+   label is build with the string <TT>cmd:</TT> followed by the name of the
+   Matlab function.  For example the label of the <TT>cauchy2d</TT> command is
+   <TT>cmd:cauchy2d</TT>.  Even the subsections of each command have their
+   own labels.  So you can reference the functions with the command
+   <TT>
+<BR>
+htmlref</TT>.  This command has two mandatory argument, the text
+   that will appeak as a link and the reference of the link.
+</LI>
+<LI>Fill in the ``See Also'' sections with Perl regular expression
+   separated by spaces.  The regular expression should match the name of
+   files (without the Matlab extension) in the tree of the toolbox on a Unix
+   machine.  Those regular will be expanded accordingly by a Perl script.
+
+<P>
+For example, if you wish to add the function cwt2d, you may add
+   <TT><IMG
+ WIDTH="6" HEIGHT="21" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.png"
+ ALT="$ \hat{{ }}$">cwt2d$</TT> or <TT><IMG
+ WIDTH="6" HEIGHT="21" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.png"
+ ALT="$ \hat{{ }}$">continuous/.*/cwt2d$</TT>.  If
+   you wish to add all the functions under the continuous directory, type
+   <TT><IMG
+ WIDTH="6" HEIGHT="21" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.png"
+ ALT="$ \hat{{ }}$">continuous/.*</TT>.
+
+<P>
+If the regular expression does not match any name in the YAWT<SMALL>B</SMALL> tree, then
+   the leading <IMG
+ WIDTH="6" HEIGHT="21" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.png"
+ ALT="$ \hat{{ }}$"> (if any) and the terminated $ (if any) of the expression
+   are removed.  The remaining expression is added to the list of files.  So
+   you may add the <TT>fft</TT> command by typing <TT><IMG
+ WIDTH="6" HEIGHT="21" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.png"
+ ALT="$ \hat{{ }}$">fft$</TT>.
+
+<P>
+</LI>
+</UL>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1404"
+  HREF="node5.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html1400"
+  HREF="node3.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html1394"
+  HREF="node3.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html1402"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html1405"
+  HREF="node5.html">TODO</A>
+<B> Up:</B> <A NAME="tex2html1401"
+  HREF="node3.html">How to contribute ?</A>
+<B> Previous:</B> <A NAME="tex2html1395"
+  HREF="node3.html">How to contribute ?</A>
+ &nbsp; <B>  <A NAME="tex2html1403"
+  HREF="node1.html">Contents</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+<yawtb-devel@sourceforge.net>
+</ADDRESS>
+</BODY>
+</HTML>

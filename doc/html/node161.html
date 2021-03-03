@@ -1,0 +1,209 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>yawopts</TITLE>
+<META NAME="description" CONTENT="yawopts">
+<META NAME="keywords" CONTENT="YAWTBReferenceManual">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="YAWTBReferenceManual.css">
+
+<LINK REL="next" HREF="node162.html">
+<LINK REL="previous" HREF="node160.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node162.html">
+</HEAD>
+
+<BODY  bgcolor="#ffffff">
+<!--Navigation Panel-->
+<A NAME="tex2html5737"
+  HREF="node162.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html5733"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html5727"
+  HREF="node160.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html5735"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html5738"
+  HREF="node162.html">yawtbprefs</A>
+<B> Up:</B> <A NAME="tex2html5734"
+  HREF="node13.html">The commands in alphabetical</A>
+<B> Previous:</B> <A NAME="tex2html5728"
+  HREF="node160.html">yathresh</A>
+ &nbsp; <B>  <A NAME="tex2html5736"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html5739"
+  HREF="node161.html#SECTION0005148100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html5740"
+  HREF="node161.html#SECTION0005148200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html5741"
+  HREF="node161.html#SECTION0005148210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html5742"
+  HREF="node161.html#SECTION0005148220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<BR>
+<LI><A NAME="tex2html5743"
+  HREF="node161.html#SECTION0005148300000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html5744"
+  HREF="node161.html#SECTION0005148400000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H2><A NAME="SECTION0005148000000000000000"></A>
+<A NAME="cmd:yawopts"></A>
+<BR>
+<FONT COLOR="#ff0000">yawopts</FONT>
+</H2>
+
+<P>
+Return the options to give to a yawtb mfile (internal use)
+
+<P>
+
+<H3><A NAME="SECTION0005148100000000000000"></A>
+<A NAME="cmd:yawopts:Syn"></A>
+<BR>
+<FONT COLOR="#000080">Syntax</FONT>
+</H3>
+
+<P>
+opts = yawopt(listopts,funcname)
+
+<P>
+
+<H3><A NAME="SECTION0005148200000000000000"></A>
+<A NAME="cmd:yawopts:Des"></A>
+<BR>
+<FONT COLOR="#000080">Description</FONT>
+</H3>
+
+<P>
+Return the options to give to a yawtb mfile (internal use) by
+comparing a list of parameters given in the list
+<TT>listopts</TT> with the default values returned by the
+'funcname([])'.
+
+<P>
+The syntax of <TT>listopts</TT> is 
+   'name_1', value_1, 'name_2', value_2, ...
+The syntax of the list returned by 'funcname([])' is the same with
+the following particularities:
+
+<UL>
+<LI>if a 'value_j' is a string  '*name_l', it mean that this
+value is by default equal to this of 'name_l';
+</LI>
+<LI>if 'value_j' is a string identical to 'name_j', it means
+that 'name_j' is a boolean flag which is absent by default.
+</LI>
+</UL>
+
+<P>
+
+<H4><A NAME="SECTION0005148210000000000000"></A>
+<A NAME="cmd:yawopts:InpD"></A>
+<BR>
+<FONT COLOR="#000080">Input Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>listopts</STRONG></DT>
+<DD>[CELL]: the list os the user parameter;
+</DD>
+<DT><STRONG>funcname</STRONG></DT>
+<DD>[STRING]: the name of the function to test.
+</DD>
+</DL> 
+
+<P>
+
+<H4><A NAME="SECTION0005148220000000000000"></A>
+<A NAME="cmd:yawopts:OutD"></A>
+<BR>
+<FONT COLOR="#000080">Output Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>opts</STRONG></DT>
+<DD>[CELL]: the list of argument for funcname;
+</DD>
+<DT><STRONG>listopts</STRONG></DT>
+<DD>[CELL]: the input <TT>listopts</TT> without the
+parameter of the function funcname.
+</DD>
+</DL> 
+
+<P>
+
+<H3><A NAME="SECTION0005148300000000000000"></A>
+<A NAME="cmd:yawopts:See"></A>
+<BR>
+<FONT COLOR="#000080">See Also</FONT>
+</H3>
+
+<P>
+<A HREF="node69.html#cmd:getopts">getopts</A>
+
+<P>
+
+<H3><A NAME="SECTION0005148400000000000000">
+<FONT COLOR="#000080">Location</FONT></A>
+</H3>
+tools/misc/yawopts.m
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html5737"
+  HREF="node162.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html5733"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html5727"
+  HREF="node160.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html5735"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html5738"
+  HREF="node162.html">yawtbprefs</A>
+<B> Up:</B> <A NAME="tex2html5734"
+  HREF="node13.html">The commands in alphabetical</A>
+<B> Previous:</B> <A NAME="tex2html5728"
+  HREF="node160.html">yathresh</A>
+ &nbsp; <B>  <A NAME="tex2html5736"
+  HREF="node1.html">Contents</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+<yawtb-devel@sourceforge.net>
+</ADDRESS>
+</BODY>
+</HTML>

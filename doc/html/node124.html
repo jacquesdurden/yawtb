@@ -1,0 +1,171 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>whatin</TITLE>
+<META NAME="description" CONTENT="whatin">
+<META NAME="keywords" CONTENT="YAWTBReferenceManual">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="YAWTBReferenceManual.css">
+
+<LINK REL="next" HREF="node125.html">
+<LINK REL="previous" HREF="node123.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node125.html">
+</HEAD>
+
+<BODY  bgcolor="#ffffff">
+<!--Navigation Panel-->
+<A NAME="tex2html5024"
+  HREF="node125.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html5020"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html5014"
+  HREF="node123.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html5022"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html5025"
+  HREF="node125.html">wheel2d</A>
+<B> Up:</B> <A NAME="tex2html5021"
+  HREF="node13.html">The commands in alphabetical</A>
+<B> Previous:</B> <A NAME="tex2html5015"
+  HREF="node123.html">vect</A>
+ &nbsp; <B>  <A NAME="tex2html5023"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html5026"
+  HREF="node124.html#SECTION0005111100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html5027"
+  HREF="node124.html#SECTION0005111200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html5028"
+  HREF="node124.html#SECTION0005111210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+</UL>
+<BR>
+<LI><A NAME="tex2html5029"
+  HREF="node124.html#SECTION0005111300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html5030"
+  HREF="node124.html#SECTION0005111400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html5031"
+  HREF="node124.html#SECTION0005111500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html5032"
+  HREF="node124.html#SECTION0005111600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H2><A NAME="SECTION0005111000000000000000"></A>
+<A NAME="cmd:whatin"></A>
+<BR>
+<FONT COLOR="#ff0000">whatin</FONT>
+</H2>
+
+<P>
+Return information about a matrix
+
+<P>
+
+<H3><A NAME="SECTION0005111100000000000000"></A>
+<A NAME="cmd:whatin:Syn"></A>
+<BR>
+<FONT COLOR="#000080">Syntax</FONT>
+</H3>
+
+<P>
+whatin mat
+whatin(mat)
+
+<P>
+
+<H3><A NAME="SECTION0005111200000000000000"></A>
+<A NAME="cmd:whatin:Des"></A>
+<BR>
+<FONT COLOR="#000080">Description</FONT>
+</H3>
+
+<P>
+Return the major information of a matrix mat.
+
+<P>
+
+<H4><A NAME="SECTION0005111210000000000000"></A>
+<A NAME="cmd:whatin:InpD"></A>
+<BR>
+<FONT COLOR="#000080">Input Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>mat</STRONG></DT>
+<DD>[MATRIX|STRING]: the input matrix or its name in the
+matlab workspace. 
+Note:
+Don't use a name of variable inside a mfile because 'whatin' 
+looks for the variable in the 'base' workspace.
+</DD>
+</DL> 
+
+<P>
+
+<H3><A NAME="SECTION0005111300000000000000"></A>
+<A NAME="cmd:whatin:Exa"></A>
+<BR>
+<FONT COLOR="#000080">Example(s)</FONT>
+</H3>
+
+<P>
+<PRE>
+&gt;&gt; whatin(rand(5,5) + i*rand(5,5))
+</PRE>
+
+<P>
+
+<H3><A NAME="SECTION0005111400000000000000"></A>
+<A NAME="cmd:whatin:Ref"></A>
+<BR>
+<FONT COLOR="#000080">References</FONT>
+</H3>
+
+<P>
+
+<H3><A NAME="SECTION0005111500000000000000"></A>
+<A NAME="cmd:whatin:See"></A>
+<BR>
+<FONT COLOR="#000080">See Also</FONT>
+</H3>
+
+<P>
+
+<H3><A NAME="SECTION0005111600000000000000">
+<FONT COLOR="#000080">Location</FONT></A>
+</H3>
+tools/misc/whatin.m
+
+<P>
+<BR><HR>
+<ADDRESS>
+<yawtb-devel@sourceforge.net>
+</ADDRESS>
+</BODY>
+</HTML>

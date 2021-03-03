@@ -1,0 +1,296 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>fzt</TITLE>
+<META NAME="description" CONTENT="fzt">
+<META NAME="keywords" CONTENT="YAWTBReferenceManual">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="YAWTBReferenceManual.css">
+
+<LINK REL="next" HREF="node62.html">
+<LINK REL="previous" HREF="node60.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node62.html">
+</HEAD>
+
+<BODY  bgcolor="#ffffff">
+<!--Navigation Panel-->
+<A NAME="tex2html3774"
+  HREF="node62.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html3770"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html3764"
+  HREF="node60.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html3772"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html3775"
+  HREF="node62.html">gabor2d</A>
+<B> Up:</B> <A NAME="tex2html3771"
+  HREF="node13.html">The commands in alphabetical</A>
+<B> Previous:</B> <A NAME="tex2html3765"
+  HREF="node60.html">fwtsph</A>
+ &nbsp; <B>  <A NAME="tex2html3773"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html3776"
+  HREF="node61.html#SECTION000548100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html3777"
+  HREF="node61.html#SECTION000548200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html3778"
+  HREF="node61.html#SECTION000548210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html3779"
+  HREF="node61.html#SECTION000548220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<BR>
+<LI><A NAME="tex2html3780"
+  HREF="node61.html#SECTION000548300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html3781"
+  HREF="node61.html#SECTION000548400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html3782"
+  HREF="node61.html#SECTION000548500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html3783"
+  HREF="node61.html#SECTION000548600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H2><A NAME="SECTION000548000000000000000"></A>
+<A NAME="cmd:fzt"></A>
+<BR>
+<FONT COLOR="#ff0000">fzt</FONT>
+</H2>
+
+<P>
+Fast spherical harmonic transform
+
+<P>
+
+<H3><A NAME="SECTION000548100000000000000"></A>
+<A NAME="cmd:fzt:Syn"></A>
+<BR>
+<FONT COLOR="#000080">Syntax</FONT>
+</H3>
+
+<P>
+coeffs = fzt(data)
+
+<P>
+
+<H3><A NAME="SECTION000548200000000000000"></A>
+<A NAME="cmd:fzt:Des"></A>
+<BR>
+<FONT COLOR="#000080">Description</FONT>
+</H3>
+
+<P>
+This mex file computes a fast spherical zonal (harmonic) transform of the
+spherical data <TT>data</TT> assuming it zonal, i.e. invariant
+under rotation around the north pole, and defined on a spherical
+grid 2B*2B where B is the frequency bandwidth of the data.
+
+<P>
+To perform this zonal transform, <TT>fzt</TT> program
+uses the C functions of the (GPL) SpharmonicKit [1] based on the
+work of Driscoll, Healy and Rockmore [2] about fast spherical
+transforms.
+
+<P>
+
+<H4><A NAME="SECTION000548210000000000000"></A>
+<A NAME="cmd:fzt:InpD"></A>
+<BR>
+<FONT COLOR="#000080">Input Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>data</STRONG></DT>
+<DD>[REAL MATRIX]: The spherical data described on a
+equi-angular (2B*2B) spherical grid 
+             <!-- MATH
+ $(\theta_i,\phi_j)$
+ -->
+(<IMG
+ WIDTH="18" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.png"
+ ALT="$ \theta_{i}^{}$">,<IMG
+ WIDTH="22" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img10.png"
+ ALT="$ \phi_{j}^{}$">) 
+with <!-- MATH
+ $\phi_j=j\frac{2\pi}{2B}$
+ -->
+<IMG
+ WIDTH="22" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img10.png"
+ ALT="$ \phi_{j}^{}$"> = <I>j</I><IMG
+ WIDTH="25" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img11.png"
+ ALT="$ {\frac{{2\pi}}{{2B}}}$"> (<I>j</I> = 0..2<I>B</I> - 1) and
+<!-- MATH
+ $\theta_i=(2i+1)\frac{\pi}{2B}$
+ -->
+<IMG
+ WIDTH="18" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.png"
+ ALT="$ \theta_{i}^{}$"> = (2<I>i</I> + 1)<IMG
+ WIDTH="25" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img12.png"
+ ALT="$ {\frac{{\pi}}{{2B}}}$"> (<I>i</I> = 0..2<I>B</I> - 1).
+
+<P>
+Notice that <I>B</I> must be a power of 2. 
+
+<P>
+The fact that data are zonal suppose that there is no dependence
+in phi.
+
+<P>
+</DD>
+</DL>
+
+<P>
+
+<H4><A NAME="SECTION000548220000000000000"></A>
+<A NAME="cmd:fzt:OutD"></A>
+<BR>
+<FONT COLOR="#000080">Output Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>coeff</STRONG></DT>
+<DD>[COMPLEX MATRIX]: The spherical harmonic
+coefficients. Those are defined in a matrix of size B*B (with B
+define above). This matrix is formed by the concataining of the
+coefficents C(m,l) (| <I>m</I>| <IMG
+ WIDTH="18" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img13.png"
+ ALT="$ \leq$"> <I>l</I>) in the following order:
+  C(0,0) C(0,1) C(0,2)  ...                 ... C(0,B-1)
+         C(1,1) C(1,2)  ...                 ... C(1,B-1)
+         etc.
+                                  C(B-2,B-2)    C(B-2,B-1)
+		                                  C(B-1,B-1)
+			                          C(-(B-1),B-1)
+		                    C(-(B-2),B-2) C(-(B-2),B-1)
+	  etc.
+	          C(-2,2) ...                 ... C(-2,B-1)
+	  C(-1,1) C(-1,2) ...                 ... C(-1,B-1)
+
+<P>
+This only requires an array of size (B*B).  Use lmshape to turn
+  this representation in a more human readable form. ilmshape may
+  next come back to the original representation. 
+
+<P>
+</DD>
+</DL> 
+
+<P>
+
+<H3><A NAME="SECTION000548300000000000000"></A>
+<A NAME="cmd:fzt:Exa"></A>
+<BR>
+<FONT COLOR="#000080">Example(s)</FONT>
+</H3>
+
+<P>
+<PRE>
+&gt;&gt; [phi,theta] = sphgrid(2*128);
+&gt;&gt; mat = exp(-(tan(theta/2)/0.1).^2);
+&gt;&gt; fmat = fzt(mat);
+&gt;&gt; figure; yashow(fmat);
+&gt;&gt; l=0:127; figure; plot(l,fmat(1,:));
+</PRE>
+
+<P>
+
+<H3><A NAME="SECTION000548400000000000000"></A>
+<A NAME="cmd:fzt:Ref"></A>
+<BR>
+<FONT COLOR="#000080">References</FONT>
+</H3>
+
+<P>
+[1] SpharmonicKit: http://www.cs.dartmouth.edu/&nbsp;geelong/sphere/. 
+Developed by Sean Moore, Dennis Healy, Dan Rockmore, Peter
+Kostelec.
+
+<P>
+[2] D. Healy Jr., D. Rockmore, P. Kostelec and S. Moore, 
+"FFTs for the 2-Sphere - Improvements and Variations", 
+Journal of Fourier Analysis and Applications, 9:4 (2003), 
+pp. 341 - 385. 
+
+<P>
+
+<H3><A NAME="SECTION000548500000000000000"></A>
+<A NAME="cmd:fzt:See"></A>
+<BR>
+<FONT COLOR="#000080">See Also</FONT>
+</H3>
+
+<P>
+<A HREF="node24.html#cmd:convsph">convsph</A>, <A HREF="node25.html#cmd:convsph_semi">convsph_semi</A>, <A HREF="node45.html#cmd:fst">fst</A>, <A HREF="node72.html#cmd:ifst">ifst</A>, <A HREF="node72.html#cmd:ifst">ifst</A>, <A HREF="node78.html#cmd:ilmshape">ilmshape</A>, <A HREF="node78.html#cmd:ilmshape">ilmshape</A>, <A HREF="node85.html#cmd:lmshape">lmshape</A>
+
+<P>
+
+<H3><A NAME="SECTION000548600000000000000">
+<FONT COLOR="#000080">Location</FONT></A>
+</H3>
+interfaces/spharmonickit/fzt.m
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html3774"
+  HREF="node62.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html3770"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html3764"
+  HREF="node60.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html3772"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html3775"
+  HREF="node62.html">gabor2d</A>
+<B> Up:</B> <A NAME="tex2html3771"
+  HREF="node13.html">The commands in alphabetical</A>
+<B> Previous:</B> <A NAME="tex2html3765"
+  HREF="node60.html">fwtsph</A>
+ &nbsp; <B>  <A NAME="tex2html3773"
+  HREF="node1.html">Contents</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+<yawtb-devel@sourceforge.net>
+</ADDRESS>
+</BODY>
+</HTML>

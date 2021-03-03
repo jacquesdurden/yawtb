@@ -1,0 +1,196 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>phin</TITLE>
+<META NAME="description" CONTENT="phin">
+<META NAME="keywords" CONTENT="YAWTBReferenceManual">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="YAWTBReferenceManual.css">
+
+<LINK REL="next" HREF="node105.html">
+<LINK REL="previous" HREF="node103.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node105.html">
+</HEAD>
+
+<BODY  bgcolor="#ffffff">
+<!--Navigation Panel-->
+<A NAME="tex2html4630"
+  HREF="node105.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html4626"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html4620"
+  HREF="node103.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html4628"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html4631"
+  HREF="node105.html">pmexican2d</A>
+<B> Up:</B> <A NAME="tex2html4627"
+  HREF="node13.html">The commands in alphabetical</A>
+<B> Previous:</B> <A NAME="tex2html4621"
+  HREF="node103.html">pgmwrite</A>
+ &nbsp; <B>  <A NAME="tex2html4629"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html4632"
+  HREF="node104.html#SECTION000591100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html4633"
+  HREF="node104.html#SECTION000591200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html4634"
+  HREF="node104.html#SECTION000591210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html4635"
+  HREF="node104.html#SECTION000591220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<BR>
+<LI><A NAME="tex2html4636"
+  HREF="node104.html#SECTION000591300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html4637"
+  HREF="node104.html#SECTION000591400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html4638"
+  HREF="node104.html#SECTION000591500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html4639"
+  HREF="node104.html#SECTION000591600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H2><A NAME="SECTION000591000000000000000"></A>
+<A NAME="cmd:phin"></A>
+<BR>
+<FONT COLOR="#ff0000">phin</FONT>
+</H2>
+
+<P>
+The scaling function associated to the pseudo-diff operator
+
+<P>
+
+<H3><A NAME="SECTION000591100000000000000"></A>
+<A NAME="cmd:phin:Syn"></A>
+<BR>
+<FONT COLOR="#000080">Syntax</FONT>
+</H3>
+
+<P>
+[out] = phin(k,n)
+
+<P>
+
+<H3><A NAME="SECTION000591200000000000000"></A>
+<A NAME="cmd:phin:Des"></A>
+<BR>
+<FONT COLOR="#000080">Description</FONT>
+</H3>
+
+<P>
+this function computes the scaling function
+associated to the pseudo-diff operator k<SUP>n</SUP>, n<IMG
+ WIDTH="18" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img17.png"
+ ALT="$ \geq$"> 2
+using the recursion formula:
+<PRE>
+  phi_n(k) = 0.5*k^(n-2) + 0.5*(n-2)*phi_(n-2)(k)
+</PRE>
+
+<P>
+
+<H4><A NAME="SECTION000591210000000000000"></A>
+<A NAME="cmd:phin:InpD"></A>
+<BR>
+<FONT COLOR="#000080">Input Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>k</STRONG></DT>
+<DD>[REAL MATRIX]: The radial frequency
+
+<P>
+</DD>
+<DT><STRONG>n</STRONG></DT>
+<DD>[INTEGER]: The order of the function (see formula above)
+
+<P>
+</DD>
+</DL> 
+
+<P>
+
+<H4><A NAME="SECTION000591220000000000000"></A>
+<A NAME="cmd:phin:OutD"></A>
+<BR>
+<FONT COLOR="#000080">Output Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>out</STRONG></DT>
+<DD>[REAL MATRIX]: the resulting function
+</DD>
+</DL> 
+
+<P>
+
+<H3><A NAME="SECTION000591300000000000000"></A>
+<A NAME="cmd:phin:Exa"></A>
+<BR>
+<FONT COLOR="#000080">Example(s)</FONT>
+</H3>
+
+<P>
+
+<H3><A NAME="SECTION000591400000000000000"></A>
+<A NAME="cmd:phin:Ref"></A>
+<BR>
+<FONT COLOR="#000080">References</FONT>
+</H3>
+
+<P>
+
+<H3><A NAME="SECTION000591500000000000000"></A>
+<A NAME="cmd:phin:See"></A>
+<BR>
+<FONT COLOR="#000080">See Also</FONT>
+</H3>
+
+<P>
+<A HREF="node82.html#cmd:iwpck2d">iwpck2d</A>, pseudiff,, <A HREF="node126.html#cmd:wpck2d">wpck2d</A>, <A HREF="node154.html#cmd:yashow_wpck2d">yashow_wpck2d</A>
+
+<P>
+
+<H3><A NAME="SECTION000591600000000000000">
+<FONT COLOR="#000080">Location</FONT></A>
+</H3>
+discrete/packet/2d/wpck_defs/phin.m
+
+<P>
+<BR><HR>
+<ADDRESS>
+<yawtb-devel@sourceforge.net>
+</ADDRESS>
+</BODY>
+</HTML>

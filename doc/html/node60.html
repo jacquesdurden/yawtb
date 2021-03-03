@@ -1,0 +1,321 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>fwtsph</TITLE>
+<META NAME="description" CONTENT="fwtsph">
+<META NAME="keywords" CONTENT="YAWTBReferenceManual">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="YAWTBReferenceManual.css">
+
+<LINK REL="next" HREF="node61.html">
+<LINK REL="previous" HREF="node59.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node61.html">
+</HEAD>
+
+<BODY  bgcolor="#ffffff">
+<!--Navigation Panel-->
+<A NAME="tex2html3754"
+  HREF="node61.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html3750"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html3744"
+  HREF="node59.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html3752"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html3755"
+  HREF="node61.html">fzt</A>
+<B> Up:</B> <A NAME="tex2html3751"
+  HREF="node13.html">The commands in alphabetical</A>
+<B> Previous:</B> <A NAME="tex2html3745"
+  HREF="node59.html">fwt2d_wav_filter</A>
+ &nbsp; <B>  <A NAME="tex2html3753"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html3756"
+  HREF="node60.html#SECTION000547100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html3757"
+  HREF="node60.html#SECTION000547200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html3758"
+  HREF="node60.html#SECTION000547210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html3759"
+  HREF="node60.html#SECTION000547220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<BR>
+<LI><A NAME="tex2html3760"
+  HREF="node60.html#SECTION000547300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html3761"
+  HREF="node60.html#SECTION000547400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html3762"
+  HREF="node60.html#SECTION000547500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html3763"
+  HREF="node60.html#SECTION000547600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H2><A NAME="SECTION000547000000000000000"></A>
+<A NAME="cmd:fwtsph"></A>
+<BR>
+<FONT COLOR="#ff0000">fwtsph</FONT>
+</H2>
+
+<P>
+Framed Wavelet Transforn on the sphere
+
+<P>
+
+<H3><A NAME="SECTION000547100000000000000"></A>
+<A NAME="cmd:fwtsph:Syn"></A>
+<BR>
+<FONT COLOR="#000080">Syntax</FONT>
+</H3>
+
+<P>
+out = fwtsph( mat, wavname, ...
+             [,'WaveletOptionName', WaveletOptionValue], ...
+             [,'a0', a0], [,'tg'], [,'voice', voice]);
+
+<P>
+
+<H3><A NAME="SECTION000547200000000000000"></A>
+<A NAME="cmd:fwtsph:Des"></A>
+<BR>
+<FONT COLOR="#000080">Description</FONT>
+</H3>
+
+<P>
+
+<H4><A NAME="SECTION000547210000000000000"></A>
+<A NAME="cmd:fwtsph:InpD"></A>
+<BR>
+<FONT COLOR="#000080">Input Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>mat</STRONG></DT>
+<DD>[REAL MATRIX]: The spherical signal on an equiangular
+spherical grid. Its size must be <!-- MATH
+ $2^M+1 x 2^N$
+ -->
+2<SUP>M</SUP> +1<I>x</I>2<SUP>N</SUP> with <I>M</I> and <I>N</I> positive integer.
+
+<P>
+</DD>
+<DT><STRONG>wavname</STRONG></DT>
+<DD>[STRING]: The name of the spherical wavelet (for
+instance 'dog').
+
+<P>
+</DD>
+<DT><STRONG>WaveletOptionName, WaveletOptionValue</STRONG></DT>
+<DD>[STRING, MISC]:
+The wavelet parameter name (a string) is followed by its value. See the corresponding
+wavelet mfile (inside continuous/sphere/wav_defs) to know the
+parameters to enter.
+
+<P>
+</DD>
+<DT><STRONG>a0</STRONG></DT>
+<DD>[REAL]: the scale to start de scale sequence according
+to the rule selected ('tangential' or 'dyadic'). Default value: <I>a</I><SUB>0</SUB> = 4.
+
+<P>
+</DD>
+<DT><STRONG>tg</STRONG></DT>
+<DD>[BOOL]: Use a tangential scale sequence, that is 
+<!-- MATH
+ $a_j = a_0 tan((\pi/4) 2^{-j})$
+ -->
+<I>a</I><SUB>j</SUB> = <I>a</I><SUB>0</SUB><I>tan</I>((<IMG
+ WIDTH="15" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img16.png"
+ ALT="$ \pi$">/4)2<SUP>-j</SUP>), instead of the default dyadic one, i.e.
+<!-- MATH
+ $a_j = a_0 2^{-j}$
+ -->
+<I>a</I><SUB>j</SUB> = <I>a</I><SUB>0</SUB>2<SUP>-j</SUP>
+
+<P>
+</DD>
+<DT><STRONG>voice</STRONG></DT>
+<DD>[INT]: Number of voice in each scale octave. Default
+value: 1.
+
+<P>
+</DD>
+</DL> 
+
+<P>
+
+<H4><A NAME="SECTION000547220000000000000"></A>
+<A NAME="cmd:fwtsph:OutD"></A>
+<BR>
+<FONT COLOR="#000080">Output Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>out</STRONG></DT>
+<DD>[SRUCT]: Structure containing the frame
+coefficients. Imortant fields are:
+<DL>
+<DT><STRONG>out.img</STRONG></DT>
+<DD>[REAL MATRIX]: the orignal matrix;
+  
+</DD>
+<DT><STRONG>out.wavname</STRONG></DT>
+<DD>[STRING]: the name of wavelet;
+  
+</DD>
+<DT><STRONG>out.wavopts</STRONG></DT>
+<DD>[MISC]: the parameters of the wavelet;
+  
+</DD>
+<DT><STRONG>out.J</STRONG></DT>
+<DD>[INT]: the number of scale equals to <I>M</I> - 1;
+  
+</DD>
+<DT><STRONG>out.jv</STRONG></DT>
+<DD>[INT VECTOR]: scale index; 
+  
+</DD>
+<DT><STRONG>out.a0</STRONG></DT>
+<DD>[REAL]: the initial scale where the scale sequence is starded;
+  
+</DD>
+<DT><STRONG>out.a</STRONG></DT>
+<DD>[REAL VECTOR]: the scale sequence;
+  
+</DD>
+<DT><STRONG>out.nth</STRONG></DT>
+<DD>[INT]: number of theta values in the spherical grid;
+  
+</DD>
+<DT><STRONG>out.nph</STRONG></DT>
+<DD>[INT]: number of phi values in the spherical grid;
+  
+</DD>
+<DT><STRONG>out.lth</STRONG></DT>
+<DD>[INT]: log2(out.nth -1);
+  
+</DD>
+<DT><STRONG>out.lph</STRONG></DT>
+<DD>[INT]: log2(out.nph);
+  
+</DD>
+<DT><STRONG>out.th_step</STRONG></DT>
+<DD>[INT VECTOR]: number of points between two adjacent
+  theta angles in function of scale;
+  
+</DD>
+<DT><STRONG>out.ph_step</STRONG></DT>
+<DD>[INT VECTOR]: number of points between two adjacent
+  phi angles in function of scale;
+</DD>
+</DL>
+
+<P>
+</DD>
+</DL> 
+
+<P>
+
+<H3><A NAME="SECTION000547300000000000000"></A>
+<A NAME="cmd:fwtsph:Exa"></A>
+<BR>
+<FONT COLOR="#000080">Example(s)</FONT>
+</H3>
+
+<P>
+<PRE>
+&gt;&gt; load world
+&gt;&gt; yashow(mat,'spheric','fig',1);
+&gt;&gt; wav=fwtsph(mat,'dog'); %% It's time to drink a cup of coffee!
+&gt;&gt; yashow(wav.data{1},'spheric','fig',2);
+&gt;&gt; yashow(wav.data{2},'spheric','fig',3);
+&gt;&gt; yashow(wav.data{3},'spheric','fig',4);
+&gt;&gt; yashow(wav.data{4},'spheric','fig',5);
+&gt;&gt; yashow(wav.data{5},'spheric','fig',6);
+&gt;&gt; yashow(wav.data{6},'spheric','fig',7);
+&gt;&gt; yashow(wav.data{7},'spheric','fig',8);
+&gt;&gt; yashow(wav.data{8},'spheric','fig',9);
+</PRE>
+
+<P>
+
+<H3><A NAME="SECTION000547400000000000000"></A>
+<A NAME="cmd:fwtsph:Ref"></A>
+<BR>
+<FONT COLOR="#000080">References</FONT>
+</H3>
+
+<P>
+
+<H3><A NAME="SECTION000547500000000000000"></A>
+<A NAME="cmd:fwtsph:See"></A>
+<BR>
+<FONT COLOR="#000080">See Also</FONT>
+</H3>
+
+<P>
+
+<H3><A NAME="SECTION000547600000000000000">
+<FONT COLOR="#000080">Location</FONT></A>
+</H3>
+discrete/frames/sphere/fwtsph.m
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html3754"
+  HREF="node61.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html3750"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html3744"
+  HREF="node59.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html3752"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html3755"
+  HREF="node61.html">fzt</A>
+<B> Up:</B> <A NAME="tex2html3751"
+  HREF="node13.html">The commands in alphabetical</A>
+<B> Previous:</B> <A NAME="tex2html3745"
+  HREF="node59.html">fwt2d_wav_filter</A>
+ &nbsp; <B>  <A NAME="tex2html3753"
+  HREF="node1.html">Contents</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+<yawtb-devel@sourceforge.net>
+</ADDRESS>
+</BODY>
+</HTML>

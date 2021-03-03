@@ -1,0 +1,197 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>yathresh</TITLE>
+<META NAME="description" CONTENT="yathresh">
+<META NAME="keywords" CONTENT="YAWTBReferenceManual">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="YAWTBReferenceManual.css">
+
+<LINK REL="next" HREF="node161.html">
+<LINK REL="previous" HREF="node159.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node161.html">
+</HEAD>
+
+<BODY  bgcolor="#ffffff">
+<!--Navigation Panel-->
+<A NAME="tex2html5717"
+  HREF="node161.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html5713"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html5707"
+  HREF="node159.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html5715"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html5718"
+  HREF="node161.html">yawopts</A>
+<B> Up:</B> <A NAME="tex2html5714"
+  HREF="node13.html">The commands in alphabetical</A>
+<B> Previous:</B> <A NAME="tex2html5708"
+  HREF="node159.html">yastrfind</A>
+ &nbsp; <B>  <A NAME="tex2html5716"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html5719"
+  HREF="node160.html#SECTION0005147100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html5720"
+  HREF="node160.html#SECTION0005147200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html5721"
+  HREF="node160.html#SECTION0005147210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html5722"
+  HREF="node160.html#SECTION0005147220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<BR>
+<LI><A NAME="tex2html5723"
+  HREF="node160.html#SECTION0005147300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html5724"
+  HREF="node160.html#SECTION0005147400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html5725"
+  HREF="node160.html#SECTION0005147500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html5726"
+  HREF="node160.html#SECTION0005147600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H2><A NAME="SECTION0005147000000000000000"></A>
+<A NAME="cmd:yathresh"></A>
+<BR>
+<FONT COLOR="#ff0000">yathresh</FONT>
+</H2>
+
+<P>
+Hardly threshold a matrix.
+
+<P>
+
+<H3><A NAME="SECTION0005147100000000000000"></A>
+<A NAME="cmd:yathresh:Syn"></A>
+<BR>
+<FONT COLOR="#000080">Syntax</FONT>
+</H3>
+
+<P>
+[out] = yathresh(mat,level,['absolute'])
+
+<P>
+
+<H3><A NAME="SECTION0005147200000000000000"></A>
+<A NAME="cmd:yathresh:Des"></A>
+<BR>
+<FONT COLOR="#000080">Description</FONT>
+</H3>
+
+<P>
+Return the matrix 'mat' hard thresholded by 'level'. This level
+can be realtive (in percent of maximum) or absolute. 
+
+<P>
+
+<H4><A NAME="SECTION0005147210000000000000"></A>
+<A NAME="cmd:yathresh:InpD"></A>
+<BR>
+<FONT COLOR="#000080">Input Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>mat</STRONG></DT>
+<DD>[MATRIX]: the input matrix;
+
+<P>
+</DD>
+<DT><STRONG>level</STRONG></DT>
+<DD>[REAL]: the level of thresholding. If relative,
+<TT>level</TT> is 0&lt;level&lt;1, with 0 and 1 corresponding
+respectively to 0% and 1% of thresholding. If absolute,
+<TT>level</TT> is considered as a value.
+
+<P>
+</DD>
+</DL> 
+
+<P>
+
+<H4><A NAME="SECTION0005147220000000000000"></A>
+<A NAME="cmd:yathresh:OutD"></A>
+<BR>
+<FONT COLOR="#000080">Output Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>out</STRONG></DT>
+<DD>[MATRIX]: the thresholded matrix.
+</DD>
+</DL> 
+
+<P>
+
+<H3><A NAME="SECTION0005147300000000000000"></A>
+<A NAME="cmd:yathresh:Exa"></A>
+<BR>
+<FONT COLOR="#000080">Example(s)</FONT>
+</H3>
+
+<P>
+<PRE>
+&gt;&gt; mat = rand(100,100);
+&gt;&gt; nmat = yathresh(mat,0.5);
+&gt;&gt; figure; imagesc(mat);
+&gt;&gt; figure; imagesc(nmat);
+</PRE>
+
+<P>
+
+<H3><A NAME="SECTION0005147400000000000000"></A>
+<A NAME="cmd:yathresh:Ref"></A>
+<BR>
+<FONT COLOR="#000080">References</FONT>
+</H3>
+
+<P>
+
+<H3><A NAME="SECTION0005147500000000000000"></A>
+<A NAME="cmd:yathresh:See"></A>
+<BR>
+<FONT COLOR="#000080">See Also</FONT>
+</H3>
+
+<P>
+
+<H3><A NAME="SECTION0005147600000000000000">
+<FONT COLOR="#000080">Location</FONT></A>
+</H3>
+tools/misc/yathresh.m
+
+<P>
+<BR><HR>
+<ADDRESS>
+<yawtb-devel@sourceforge.net>
+</ADDRESS>
+</BODY>
+</HTML>

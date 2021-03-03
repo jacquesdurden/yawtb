@@ -1,0 +1,244 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>dogsph</TITLE>
+<META NAME="description" CONTENT="dogsph">
+<META NAME="keywords" CONTENT="YAWTBReferenceManual">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="YAWTBReferenceManual.css">
+
+<LINK REL="next" HREF="node36.html">
+<LINK REL="previous" HREF="node34.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node36.html">
+</HEAD>
+
+<BODY  bgcolor="#ffffff">
+<!--Navigation Panel-->
+<A NAME="tex2html3254"
+  HREF="node36.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html3250"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html3244"
+  HREF="node34.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html3252"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html3255"
+  HREF="node36.html">endstop1</A>
+<B> Up:</B> <A NAME="tex2html3251"
+  HREF="node13.html">The commands in alphabetical</A>
+<B> Previous:</B> <A NAME="tex2html3245"
+  HREF="node34.html">dog2d</A>
+ &nbsp; <B>  <A NAME="tex2html3253"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html3256"
+  HREF="node35.html#SECTION000522100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html3257"
+  HREF="node35.html#SECTION000522200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html3258"
+  HREF="node35.html#SECTION000522210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html3259"
+  HREF="node35.html#SECTION000522220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<BR>
+<LI><A NAME="tex2html3260"
+  HREF="node35.html#SECTION000522300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html3261"
+  HREF="node35.html#SECTION000522400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html3262"
+  HREF="node35.html#SECTION000522500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html3263"
+  HREF="node35.html#SECTION000522600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H2><A NAME="SECTION000522000000000000000"></A>
+<A NAME="cmd:dogsph"></A>
+<BR>
+<FONT COLOR="#ff0000">dogsph</FONT>
+</H2>
+
+<P>
+Spherical Difference Of Gaussians (DOG) wavelet
+
+<P>
+
+<H3><A NAME="SECTION000522100000000000000"></A>
+<A NAME="cmd:dogsph:Syn"></A>
+<BR>
+<FONT COLOR="#000080">Syntax</FONT>
+</H3>
+
+<P>
+[out] = dogsph(X,Y,Z,x,y,z,sc,ang,alpha)
+
+<P>
+
+<H3><A NAME="SECTION000522200000000000000"></A>
+<A NAME="cmd:dogsph:Des"></A>
+<BR>
+<FONT COLOR="#000080">Description</FONT>
+</H3>
+
+<P>
+This function returns the DOG (Difference Of Gaussians) wavelet [1] which
+is given by:
+<PRE>
+   Psi_a(theta,phi) =   
+      lambda(theta,a)^0.5 * exp(- tan(theta/2)^2/a^2 )
+                 -  1/alf * lambda(theta,a*alf)^0.5 * exp(- tan(theta/2)^2/(a*alf)^2 )
+
+                                4 * a^2
+where lambda =     -----------------------------------
+                   ( (a^2-1)*cos(theta) +  (a^2+1) )^2.
+</PRE>
+This function is implemented in C.
+
+<P>
+
+<H4><A NAME="SECTION000522210000000000000"></A>
+<A NAME="cmd:dogsph:InpD"></A>
+<BR>
+<FONT COLOR="#000080">Input Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>X, Y, Z</STRONG></DT>
+<DD>[MATRICES]: 3D coordinates of a regular
+spherical grid on an unit sphere ;
+
+<P>
+</DD>
+<DT><STRONG>x,y,z</STRONG></DT>
+<DD>[SCALARS]: 3D coordinates of the wavelet
+center on the sphere
+
+<P>
+</DD>
+<DT><STRONG>sc,ang</STRONG></DT>
+<DD>[SCALARS]: Scale and angle of the wavelet. For the zonal DOG
+wavelet, the angle has no influence 
+
+<P>
+</DD>
+<DT><STRONG>alpha</STRONG></DT>
+<DD>[DOUBLE SCALAR]: Scale interval between the two
+Gaussians that define the wavelet.
+</DD>
+</DL>
+
+<P>
+
+<H4><A NAME="SECTION000522220000000000000"></A>
+<A NAME="cmd:dogsph:OutD"></A>
+<BR>
+<FONT COLOR="#000080">Output Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>out</STRONG></DT>
+<DD>[DOUBLE MATRIX]: Wavelet on a spherical grid.
+</DD>
+</DL> 
+
+<P>
+
+<H3><A NAME="SECTION000522300000000000000"></A>
+<A NAME="cmd:dogsph:Exa"></A>
+<BR>
+<FONT COLOR="#000080">Example(s)</FONT>
+</H3>
+
+<P>
+
+<H3><A NAME="SECTION000522400000000000000"></A>
+<A NAME="cmd:dogsph:Ref"></A>
+<BR>
+<FONT COLOR="#000080">References</FONT>
+</H3>
+
+<P>
+[1] : "Ondelettes directionnelles et ondelettes sur la
+       sphère", P. Vandergheynst, Thèse, Université Catholique
+       de Louvain, 1998  
+
+<P>
+[2] : Jean-Pierre Antoine, L. Jacques and P. Vandergheynst, 
+      Wavelets on the sphere : Implementation and approximations.
+      submit to Applied and Computational Harmonic Analysis (2001)
+
+<P>
+
+<H3><A NAME="SECTION000522500000000000000"></A>
+<A NAME="cmd:dogsph:See"></A>
+<BR>
+<FONT COLOR="#000080">See Also</FONT>
+</H3>
+
+<P>
+<A HREF="node31.html#cmd:cwtsph">cwtsph</A>, <A HREF="#cmd:dogsph">dogsph</A>, <A HREF="node42.html#cmd:fcwtsph">fcwtsph</A>, <A HREF="node98.html#cmd:morletsph">morletsph</A>, <A HREF="node142.html#cmd:yashow">yashow</A>, <A HREF="node148.html#cmd:yashow_cwtsph">yashow_cwtsph</A>
+
+<P>
+
+<H3><A NAME="SECTION000522600000000000000">
+<FONT COLOR="#000080">Location</FONT></A>
+</H3>
+continuous/sphere/wave_defs/dogsph.m
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html3254"
+  HREF="node36.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html3250"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html3244"
+  HREF="node34.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html3252"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html3255"
+  HREF="node36.html">endstop1</A>
+<B> Up:</B> <A NAME="tex2html3251"
+  HREF="node13.html">The commands in alphabetical</A>
+<B> Previous:</B> <A NAME="tex2html3245"
+  HREF="node34.html">dog2d</A>
+ &nbsp; <B>  <A NAME="tex2html3253"
+  HREF="node1.html">Contents</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+<yawtb-devel@sourceforge.net>
+</ADDRESS>
+</BODY>
+</HTML>

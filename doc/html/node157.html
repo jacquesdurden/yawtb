@@ -1,0 +1,202 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>yaspline</TITLE>
+<META NAME="description" CONTENT="yaspline">
+<META NAME="keywords" CONTENT="YAWTBReferenceManual">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="YAWTBReferenceManual.css">
+
+<LINK REL="next" HREF="node158.html">
+<LINK REL="previous" HREF="node156.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node158.html">
+</HEAD>
+
+<BODY  bgcolor="#ffffff">
+<!--Navigation Panel-->
+<A NAME="tex2html5659"
+  HREF="node158.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html5655"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html5649"
+  HREF="node156.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html5657"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html5660"
+  HREF="node158.html">yasthresh</A>
+<B> Up:</B> <A NAME="tex2html5656"
+  HREF="node13.html">The commands in alphabetical</A>
+<B> Previous:</B> <A NAME="tex2html5650"
+  HREF="node156.html">yaspharm</A>
+ &nbsp; <B>  <A NAME="tex2html5658"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html5661"
+  HREF="node157.html#SECTION0005144100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html5662"
+  HREF="node157.html#SECTION0005144200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html5663"
+  HREF="node157.html#SECTION0005144210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html5664"
+  HREF="node157.html#SECTION0005144220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<BR>
+<LI><A NAME="tex2html5665"
+  HREF="node157.html#SECTION0005144300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html5666"
+  HREF="node157.html#SECTION0005144400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html5667"
+  HREF="node157.html#SECTION0005144500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html5668"
+  HREF="node157.html#SECTION0005144600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H2><A NAME="SECTION0005144000000000000000"></A>
+<A NAME="cmd:yaspline"></A>
+<BR>
+<FONT COLOR="#ff0000">yaspline</FONT>
+</H2>
+
+<P>
+Yet another cardinal B-spline computation
+
+<P>
+
+<H3><A NAME="SECTION0005144100000000000000"></A>
+<A NAME="cmd:yaspline:Syn"></A>
+<BR>
+<FONT COLOR="#000080">Syntax</FONT>
+</H3>
+
+<P>
+out = yaspline(x, m)
+
+<P>
+
+<H3><A NAME="SECTION0005144200000000000000"></A>
+<A NAME="cmd:yaspline:Des"></A>
+<BR>
+<FONT COLOR="#000080">Description</FONT>
+</H3>
+
+<P>
+Compute the cardinal B-spline of order <TT>m</TT> with the
+recurrence formula
+    <!-- MATH
+ $N(x,m) = x * N(x, m-1) + (m - x)*N(x-1, m-1)$
+ -->
+<I>N</I>(<I>x</I>, <I>m</I>) = <I>x</I>*<I>N</I>(<I>x</I>, <I>m</I> - 1) + (<I>m</I> - <I>x</I>)*<I>N</I>(<I>x</I> - 1, <I>m</I> - 1)
+
+<P>
+N(x,0) = 1 if x in [-1/2,1/2[
+             0 elsewhere
+
+<P>
+Notice that yaspline recenters the resulting spline onto 0
+instead of (m+1)/2.
+
+<P>
+
+<H4><A NAME="SECTION0005144210000000000000"></A>
+<A NAME="cmd:yaspline:InpD"></A>
+<BR>
+<FONT COLOR="#000080">Input Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>x</STRONG></DT>
+<DD>[REAL VECTOR]: the vector of positions;
+</DD>
+<DT><STRONG>m</STRONG></DT>
+<DD>[INTEGER]: the order of the spline (default: 2).
+</DD>
+</DL> 
+
+<P>
+
+<H4><A NAME="SECTION0005144220000000000000"></A>
+<A NAME="cmd:yaspline:OutD"></A>
+<BR>
+<FONT COLOR="#000080">Output Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>out</STRONG></DT>
+<DD>[REAL VECTOR]: the resulting spline
+</DD>
+</DL> 
+
+<P>
+
+<H3><A NAME="SECTION0005144300000000000000"></A>
+<A NAME="cmd:yaspline:Exa"></A>
+<BR>
+<FONT COLOR="#000080">Example(s)</FONT>
+</H3>
+
+<P>
+<PRE>
+&gt;&gt; plot( yaspline(vect(-5,5,128), 6) );
+</PRE>
+
+<P>
+
+<H3><A NAME="SECTION0005144400000000000000"></A>
+<A NAME="cmd:yaspline:Ref"></A>
+<BR>
+<FONT COLOR="#000080">References</FONT>
+</H3>
+
+<P>
+Unser &amp; al.
+
+<P>
+
+<H3><A NAME="SECTION0005144500000000000000"></A>
+<A NAME="cmd:yaspline:See"></A>
+<BR>
+<FONT COLOR="#000080">See Also</FONT>
+</H3>
+
+<P>
+
+<H3><A NAME="SECTION0005144600000000000000">
+<FONT COLOR="#000080">Location</FONT></A>
+</H3>
+tools/misc/yaspline.m
+
+<P>
+<BR><HR>
+<ADDRESS>
+<yawtb-devel@sourceforge.net>
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,249 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>esmex2d</TITLE>
+<META NAME="description" CONTENT="esmex2d">
+<META NAME="keywords" CONTENT="YAWTBReferenceManual">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="YAWTBReferenceManual.css">
+
+<LINK REL="next" HREF="node41.html">
+<LINK REL="previous" HREF="node39.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node41.html">
+</HEAD>
+
+<BODY  bgcolor="#ffffff">
+<!--Navigation Panel-->
+<A NAME="tex2html3354"
+  HREF="node41.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html3350"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html3344"
+  HREF="node39.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html3352"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html3355"
+  HREF="node41.html">estimnoise2d</A>
+<B> Up:</B> <A NAME="tex2html3351"
+  HREF="node13.html">The commands in alphabetical</A>
+<B> Previous:</B> <A NAME="tex2html3345"
+  HREF="node39.html">es2morlet2d</A>
+ &nbsp; <B>  <A NAME="tex2html3353"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html3356"
+  HREF="node40.html#SECTION000527100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html3357"
+  HREF="node40.html#SECTION000527200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html3358"
+  HREF="node40.html#SECTION000527210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html3359"
+  HREF="node40.html#SECTION000527220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<BR>
+<LI><A NAME="tex2html3360"
+  HREF="node40.html#SECTION000527300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html3361"
+  HREF="node40.html#SECTION000527400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html3362"
+  HREF="node40.html#SECTION000527500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html3363"
+  HREF="node40.html#SECTION000527600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H2><A NAME="SECTION000527000000000000000"></A>
+<A NAME="cmd:esmex2d"></A>
+<BR>
+<FONT COLOR="#ff0000">esmex2d</FONT>
+</H2>
+
+<P>
+Compute the endstop 2D Mexican Wavelet in frequency plane
+
+<P>
+
+<H3><A NAME="SECTION000527100000000000000"></A>
+<A NAME="cmd:esmex2d:Syn"></A>
+<BR>
+<FONT COLOR="#000080">Syntax</FONT>
+</H3>
+
+<P>
+[out] = esmex2d(kx,ky,sigma,epsilon)
+
+<P>
+
+<H3><A NAME="SECTION000527200000000000000"></A>
+<A NAME="cmd:esmex2d:Des"></A>
+<BR>
+<FONT COLOR="#000080">Description</FONT>
+</H3>
+
+<P>
+This function computes the 2D Mexican wavelet in frequency plane.
+That is, the wavelet given by
+<PRE>
+  PSIHAT (kx,ky) = |K|^2 * exp( - (sigma*K)^2 / 2 )
+                   * A * exp(- A^2 / (2 epsilon^2) );
+</PRE>
+where, 
+
+<UL>
+<LI>PSIHAT is the Fourier transform of PSI;
+</LI>
+<LI><!-- MATH
+ $K = (kx,ky)$
+ -->
+<I>K</I> = (<I>kx</I>, <I>ky</I>);
+</LI>
+<LI><I>A</I> =arg(<I>K</I>) =atan(<I>ky</I>/<I>kx</I>);
+</LI>
+<LI>epsilon is the inverse of the angular selectivity of PSI.
+</LI>
+</UL>
+
+<P>
+This wavelet depends on two parameters: sigma, epsilon. These are
+respectively the radial spread and the angular selectivity.
+
+<P>
+This function is used by the cwt2d routine which computes
+continuous wavelet transform in 2D.
+
+<P>
+
+<H4><A NAME="SECTION000527210000000000000"></A>
+<A NAME="cmd:esmex2d:InpD"></A>
+<BR>
+<FONT COLOR="#000080">Input Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>kx, ky</STRONG></DT>
+<DD>[REAL MATRICES]: The frequency plane. Use meshgrid
+to create it. 
+
+<P>
+</DD>
+<DT><STRONG>sigma, epsilon</STRONG></DT>
+<DD>[REAL SCALARS]: The wavelet
+parameters. By default, sigmax = sigmay = sigma (isotropic case).
+
+<P>
+</DD>
+</DL> 
+
+<P>
+
+<H4><A NAME="SECTION000527220000000000000"></A>
+<A NAME="cmd:esmex2d:OutD"></A>
+<BR>
+<FONT COLOR="#000080">Output Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>out</STRONG></DT>
+<DD>[REAL MATRIX]: The wavelet in frequency plane. 
+</DD>
+</DL> 
+
+<P>
+
+<H3><A NAME="SECTION000527300000000000000"></A>
+<A NAME="cmd:esmex2d:Exa"></A>
+<BR>
+<FONT COLOR="#000080">Example(s)</FONT>
+</H3>
+
+<P>
+<PRE>
+&gt;&gt; step = 2*pi/128;
+&gt;&gt; [kx,ky] = meshgrid( -pi : step : (pi-step) );
+&gt;&gt; wav = esmex2d(kx,ky,1,2);
+&gt;&gt; yashow(wav);
+</PRE>
+
+<P>
+
+<H3><A NAME="SECTION000527400000000000000"></A>
+<A NAME="cmd:esmex2d:Ref"></A>
+<BR>
+<FONT COLOR="#000080">References</FONT>
+</H3>
+
+<P>
+
+<H3><A NAME="SECTION000527500000000000000"></A>
+<A NAME="cmd:esmex2d:See"></A>
+<BR>
+<FONT COLOR="#000080">See Also</FONT>
+</H3>
+
+<P>
+<A HREF="node29.html#cmd:cwt2d">cwt2d</A>, meshgrid, <A HREF="node110.html#cmd:samcwt2d">samcwt2d</A>, <A HREF="node111.html#cmd:sarcwt2d">sarcwt2d</A>, <A HREF="node146.html#cmd:yashow_cwt2d">yashow_cwt2d</A>, <A HREF="node150.html#cmd:yashow_samcwt2d">yashow_samcwt2d</A>
+
+<P>
+
+<H3><A NAME="SECTION000527600000000000000">
+<FONT COLOR="#000080">Location</FONT></A>
+</H3>
+continuous/2d/wave_defs/esmex2d.m
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html3354"
+  HREF="node41.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html3350"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html3344"
+  HREF="node39.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html3352"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html3355"
+  HREF="node41.html">estimnoise2d</A>
+<B> Up:</B> <A NAME="tex2html3351"
+  HREF="node13.html">The commands in alphabetical</A>
+<B> Previous:</B> <A NAME="tex2html3345"
+  HREF="node39.html">es2morlet2d</A>
+ &nbsp; <B>  <A NAME="tex2html3353"
+  HREF="node1.html">Contents</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+<yawtb-devel@sourceforge.net>
+</ADDRESS>
+</BODY>
+</HTML>

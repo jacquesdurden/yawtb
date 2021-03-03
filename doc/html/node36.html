@@ -1,0 +1,241 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>endstop1</TITLE>
+<META NAME="description" CONTENT="endstop1">
+<META NAME="keywords" CONTENT="YAWTBReferenceManual">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="YAWTBReferenceManual.css">
+
+<LINK REL="next" HREF="node37.html">
+<LINK REL="previous" HREF="node35.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node37.html">
+</HEAD>
+
+<BODY  bgcolor="#ffffff">
+<!--Navigation Panel-->
+<A NAME="tex2html3274"
+  HREF="node37.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html3270"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html3264"
+  HREF="node35.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html3272"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html3275"
+  HREF="node37.html">endstop2</A>
+<B> Up:</B> <A NAME="tex2html3271"
+  HREF="node13.html">The commands in alphabetical</A>
+<B> Previous:</B> <A NAME="tex2html3265"
+  HREF="node35.html">dogsph</A>
+ &nbsp; <B>  <A NAME="tex2html3273"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html3276"
+  HREF="node36.html#SECTION000523100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html3277"
+  HREF="node36.html#SECTION000523200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html3278"
+  HREF="node36.html#SECTION000523210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html3279"
+  HREF="node36.html#SECTION000523220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<BR>
+<LI><A NAME="tex2html3280"
+  HREF="node36.html#SECTION000523300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html3281"
+  HREF="node36.html#SECTION000523400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html3282"
+  HREF="node36.html#SECTION000523500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html3283"
+  HREF="node36.html#SECTION000523600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H2><A NAME="SECTION000523000000000000000"></A>
+<A NAME="cmd:endstop1"></A>
+<BR>
+<FONT COLOR="#ff0000">endstop1</FONT>
+</H2>
+
+<P>
+Compute the single 2D EndStop Wavelet in frequency plane
+
+<P>
+
+<H3><A NAME="SECTION000523100000000000000"></A>
+<A NAME="cmd:endstop1:Syn"></A>
+<BR>
+<FONT COLOR="#000080">Syntax</FONT>
+</H3>
+
+<P>
+[out] = endstop1(kx,ky,k_0,sigma)
+
+<P>
+
+<H3><A NAME="SECTION000523200000000000000"></A>
+<A NAME="cmd:endstop1:Des"></A>
+<BR>
+<FONT COLOR="#000080">Description</FONT>
+</H3>
+
+<P>
+This function computes the single 2D EndStop wavelet in frequency plane.
+This wavelet is by the derivation according to y of the Morlet
+wavelet of main frequency vector (k0,0).
+<PRE>
+  PSIHAT (kx,ky) = 
+     (i*ky) * exp( - sigma^2 * ( (kx-k_0).^2 + (ky/epsilon).^2 ) / 2)
+</PRE>
+where PSIHAT is the Fourier transform of PSI.
+
+<P>
+This wavelet depends of two parameters: k_0 and sigma.
+This function is used by the cwt2d routine which computes
+continuous wavelet transform in 2D.
+
+<P>
+
+<H4><A NAME="SECTION000523210000000000000"></A>
+<A NAME="cmd:endstop1:InpD"></A>
+<BR>
+<FONT COLOR="#000080">Input Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>kx,ky</STRONG></DT>
+<DD>[REAL MATRICES]: The frequency plane. Use meshgrid
+to create it. 
+
+<P>
+</DD>
+<DT><STRONG>sigma</STRONG></DT>
+<DD>[REAL SCALAR]: The wavelet spread factor. 
+
+<P>
+</DD>
+<DT><STRONG>epsilon</STRONG></DT>
+<DD>[REAL SCALAR]: The wavelet anisotropy factor. 
+
+<P>
+</DD>
+</DL> 
+
+<P>
+
+<H4><A NAME="SECTION000523220000000000000"></A>
+<A NAME="cmd:endstop1:OutD"></A>
+<BR>
+<FONT COLOR="#000080">Output Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>out</STRONG></DT>
+<DD>[REAL MATRIX]: The wavelet in frequency plane. 
+</DD>
+</DL> 
+
+<P>
+
+<H3><A NAME="SECTION000523300000000000000"></A>
+<A NAME="cmd:endstop1:Exa"></A>
+<BR>
+<FONT COLOR="#000080">Example(s)</FONT>
+</H3>
+
+<P>
+<PRE>
+&gt;&gt; step = 2*pi/128;
+&gt;&gt; [kx,ky] = meshgrid( -pi : step : (pi-step) );
+&gt;&gt; wav = endstop1(3*kx,3*ky,6,1,1);
+&gt;&gt; yashow(wav);
+</PRE>
+
+<P>
+
+<H3><A NAME="SECTION000523400000000000000"></A>
+<A NAME="cmd:endstop1:Ref"></A>
+<BR>
+<FONT COLOR="#000080">References</FONT>
+</H3>
+
+<P>
+[1] Sushil Kumar BHATTACHARJEE, "A Computational Approach to
+Image Retrieval", PhD Thesis, EPFL, Lausanne, 1999.
+
+<P>
+
+<H3><A NAME="SECTION000523500000000000000"></A>
+<A NAME="cmd:endstop1:See"></A>
+<BR>
+<FONT COLOR="#000080">See Also</FONT>
+</H3>
+
+<P>
+<A HREF="node29.html#cmd:cwt2d">cwt2d</A>, <A HREF="node37.html#cmd:endstop2">endstop2</A>, meshgrid, <A HREF="node110.html#cmd:samcwt2d">samcwt2d</A>, <A HREF="node111.html#cmd:sarcwt2d">sarcwt2d</A>, <A HREF="node146.html#cmd:yashow_cwt2d">yashow_cwt2d</A>, <A HREF="node150.html#cmd:yashow_samcwt2d">yashow_samcwt2d</A>
+
+<P>
+
+<H3><A NAME="SECTION000523600000000000000">
+<FONT COLOR="#000080">Location</FONT></A>
+</H3>
+continuous/2d/wave_defs/endstop1.m
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html3274"
+  HREF="node37.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html3270"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html3264"
+  HREF="node35.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html3272"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html3275"
+  HREF="node37.html">endstop2</A>
+<B> Up:</B> <A NAME="tex2html3271"
+  HREF="node13.html">The commands in alphabetical</A>
+<B> Previous:</B> <A NAME="tex2html3265"
+  HREF="node35.html">dogsph</A>
+ &nbsp; <B>  <A NAME="tex2html3273"
+  HREF="node1.html">Contents</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+<yawtb-devel@sourceforge.net>
+</ADDRESS>
+</BODY>
+</HTML>

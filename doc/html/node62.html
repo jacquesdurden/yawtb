@@ -1,0 +1,229 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>gabor2d</TITLE>
+<META NAME="description" CONTENT="gabor2d">
+<META NAME="keywords" CONTENT="YAWTBReferenceManual">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="YAWTBReferenceManual.css">
+
+<LINK REL="next" HREF="node63.html">
+<LINK REL="previous" HREF="node61.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node63.html">
+</HEAD>
+
+<BODY  bgcolor="#ffffff">
+<!--Navigation Panel-->
+<A NAME="tex2html3794"
+  HREF="node63.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html3790"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html3784"
+  HREF="node61.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html3792"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html3795"
+  HREF="node63.html">gabor2d_app</A>
+<B> Up:</B> <A NAME="tex2html3791"
+  HREF="node13.html">The commands in alphabetical</A>
+<B> Previous:</B> <A NAME="tex2html3785"
+  HREF="node61.html">fzt</A>
+ &nbsp; <B>  <A NAME="tex2html3793"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html3796"
+  HREF="node62.html#SECTION000549100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html3797"
+  HREF="node62.html#SECTION000549200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html3798"
+  HREF="node62.html#SECTION000549210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html3799"
+  HREF="node62.html#SECTION000549220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<BR>
+<LI><A NAME="tex2html3800"
+  HREF="node62.html#SECTION000549300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html3801"
+  HREF="node62.html#SECTION000549400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html3802"
+  HREF="node62.html#SECTION000549500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html3803"
+  HREF="node62.html#SECTION000549600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H2><A NAME="SECTION000549000000000000000"></A>
+<A NAME="cmd:gabor2d"></A>
+<BR>
+<FONT COLOR="#ff0000">gabor2d</FONT>
+</H2>
+
+<P>
+Compute the 2D Gabor Wavelet in frequency plane
+
+<P>
+
+<H3><A NAME="SECTION000549100000000000000"></A>
+<A NAME="cmd:gabor2d:Syn"></A>
+<BR>
+<FONT COLOR="#000080">Syntax</FONT>
+</H3>
+
+<P>
+[out] = gabor2d(kx,ky,k_0,sigma)
+
+<P>
+
+<H3><A NAME="SECTION000549200000000000000"></A>
+<A NAME="cmd:gabor2d:Des"></A>
+<BR>
+<FONT COLOR="#000080">Description</FONT>
+</H3>
+
+<P>
+This function computes the 2D Gabor wavelet in frequency plane.
+This wavelet is identical to the 2D Morlet wavelet (see morlet2d.m),
+that is, the wavelet given by
+<PRE>
+  PSIHAT (kx,ky) = exp( - sigma^2 * ( (kx - k0).^2 + ky.^2 ) / 2)
+</PRE>
+where PSIHAT is the Fourier transform of PSI.
+This wavelet depends of two parameters: k0 and sigma.
+It is not truly admissible but for sigma*K_0&gt;5.5, it is
+considered numerically admissible.
+This function is used by the cwt2d routine which compute
+continuous wavelet transform in 2D.
+
+<P>
+
+<H4><A NAME="SECTION000549210000000000000"></A>
+<A NAME="cmd:gabor2d:InpD"></A>
+<BR>
+<FONT COLOR="#000080">Input Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>kx, ky</STRONG></DT>
+<DD>[REAL MATRICES]: The frequency plane. Use meshgrid
+to create it. 
+
+<P>
+</DD>
+<DT><STRONG>k_0, sigma</STRONG></DT>
+<DD>[REAL SCALARS]: The wavelet parameters. 
+</DD>
+</DL> 
+
+<P>
+
+<H4><A NAME="SECTION000549220000000000000"></A>
+<A NAME="cmd:gabor2d:OutD"></A>
+<BR>
+<FONT COLOR="#000080">Output Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>out</STRONG></DT>
+<DD>[REAL MATRIX]: The wavelet in frequency plane. 
+</DD>
+</DL> 
+
+<P>
+
+<H3><A NAME="SECTION000549300000000000000"></A>
+<A NAME="cmd:gabor2d:Exa"></A>
+<BR>
+<FONT COLOR="#000080">Example(s)</FONT>
+</H3>
+
+<P>
+<PRE>
+&gt;&gt; step = 2*pi/128;
+&gt;&gt; [kx,ky] = meshgrid( -pi : step : (pi-step) );
+&gt;&gt; wav = gabor2d(kx,ky,6,1);
+&gt;&gt; imagesc(wav);
+</PRE>
+
+<P>
+
+<H3><A NAME="SECTION000549400000000000000"></A>
+<A NAME="cmd:gabor2d:Ref"></A>
+<BR>
+<FONT COLOR="#000080">References</FONT>
+</H3>
+
+<P>
+
+<H3><A NAME="SECTION000549500000000000000"></A>
+<A NAME="cmd:gabor2d:See"></A>
+<BR>
+<FONT COLOR="#000080">See Also</FONT>
+</H3>
+
+<P>
+<A HREF="node29.html#cmd:cwt2d">cwt2d</A>, <A HREF="node39.html#cmd:es2morlet2d">es2morlet2d</A>, meshgrid, <A HREF="node96.html#cmd:morlet2d">morlet2d</A>, <A HREF="node109.html#cmd:rmorlet2d">rmorlet2d</A>, <A HREF="node110.html#cmd:samcwt2d">samcwt2d</A>, <A HREF="node111.html#cmd:sarcwt2d">sarcwt2d</A>, <A HREF="node146.html#cmd:yashow_cwt2d">yashow_cwt2d</A>, <A HREF="node150.html#cmd:yashow_samcwt2d">yashow_samcwt2d</A>
+
+<P>
+
+<H3><A NAME="SECTION000549600000000000000">
+<FONT COLOR="#000080">Location</FONT></A>
+</H3>
+continuous/2d/wave_defs/gabor2d.m
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html3794"
+  HREF="node63.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html3790"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html3784"
+  HREF="node61.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html3792"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html3795"
+  HREF="node63.html">gabor2d_app</A>
+<B> Up:</B> <A NAME="tex2html3791"
+  HREF="node13.html">The commands in alphabetical</A>
+<B> Previous:</B> <A NAME="tex2html3785"
+  HREF="node61.html">fzt</A>
+ &nbsp; <B>  <A NAME="tex2html3793"
+  HREF="node1.html">Contents</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+<yawtb-devel@sourceforge.net>
+</ADDRESS>
+</BODY>
+</HTML>

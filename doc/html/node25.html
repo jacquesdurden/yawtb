@@ -1,0 +1,314 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>convsph_semi</TITLE>
+<META NAME="description" CONTENT="convsph_semi">
+<META NAME="keywords" CONTENT="YAWTBReferenceManual">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="YAWTBReferenceManual.css">
+
+<LINK REL="next" HREF="node26.html">
+<LINK REL="previous" HREF="node24.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node26.html">
+</HEAD>
+
+<BODY  bgcolor="#ffffff">
+<!--Navigation Panel-->
+<A NAME="tex2html3054"
+  HREF="node26.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html3050"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html3044"
+  HREF="node24.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html3052"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html3055"
+  HREF="node26.html">cube</A>
+<B> Up:</B> <A NAME="tex2html3051"
+  HREF="node13.html">The commands in alphabetical</A>
+<B> Previous:</B> <A NAME="tex2html3045"
+  HREF="node24.html">convsph</A>
+ &nbsp; <B>  <A NAME="tex2html3053"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html3056"
+  HREF="node25.html#SECTION000512100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html3057"
+  HREF="node25.html#SECTION000512200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html3058"
+  HREF="node25.html#SECTION000512210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html3059"
+  HREF="node25.html#SECTION000512220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<BR>
+<LI><A NAME="tex2html3060"
+  HREF="node25.html#SECTION000512300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html3061"
+  HREF="node25.html#SECTION000512400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html3062"
+  HREF="node25.html#SECTION000512500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html3063"
+  HREF="node25.html#SECTION000512600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H2><A NAME="SECTION000512000000000000000"></A>
+<A NAME="cmd:convsph_semi"></A>
+<BR>
+<FONT COLOR="#ff0000">convsph_semi</FONT>
+</H2>
+
+<P>
+Fast spherical convolution for bandwidth &lt; 64
+
+<P>
+
+<H3><A NAME="SECTION000512100000000000000"></A>
+<A NAME="cmd:convsph_semi:Syn"></A>
+<BR>
+<FONT COLOR="#000080">Syntax</FONT>
+</H3>
+
+<P>
+out = convsph_semi(data, filter)
+
+<P>
+
+<H3><A NAME="SECTION000512200000000000000"></A>
+<A NAME="cmd:convsph_semi:Des"></A>
+<BR>
+<FONT COLOR="#000080">Description</FONT>
+</H3>
+
+<P>
+This mex file computes a fast spherical convolution of spherical
+data <TT>data</TT> of bandwith &lt; 64 (i.e. on grid of size lesser
+than 128) with the zonal filter <TT>filter</TT> using
+the classical spherical convolution theorem 
+
+<P>
+<!-- MATH
+ $\hat{c}(l,m)=\frac{4\pi}{2l+1}\hat{f}(l,m)\hat{h}(l,0)$
+ -->
+<IMG
+ WIDTH="12" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img4.png"
+ ALT="$ \hat{{c}}$">(<I>l</I>, <I>m</I>) = <IMG
+ WIDTH="36" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.png"
+ ALT="$ {\frac{{4\pi}}{{2l+1}}}$"><IMG
+ WIDTH="15" HEIGHT="45" ALIGN="MIDDLE" BORDER="0"
+ SRC="img6.png"
+ ALT="$ \hat{{f}}$">(<I>l</I>, <I>m</I>)<IMG
+ WIDTH="14" HEIGHT="22" ALIGN="BOTTOM" BORDER="0"
+ SRC="img7.png"
+ ALT="$ \hat{{h}}$">(<I>l</I>, 0)
+
+<P>
+with <IMG
+ WIDTH="12" HEIGHT="17" ALIGN="BOTTOM" BORDER="0"
+ SRC="img4.png"
+ ALT="$ \hat{{c}}$"> the spherical transform of <!-- MATH
+ $c=f\star h$
+ -->
+<I>c</I> = <I>f</I><IMG
+ WIDTH="13" HEIGHT="16" ALIGN="BOTTOM" BORDER="0"
+ SRC="img8.png"
+ ALT="$ \star$"><I>h</I>, <IMG
+ WIDTH="15" HEIGHT="45" ALIGN="MIDDLE" BORDER="0"
+ SRC="img6.png"
+ ALT="$ \hat{{f}}$">
+and <IMG
+ WIDTH="14" HEIGHT="22" ALIGN="BOTTOM" BORDER="0"
+ SRC="img7.png"
+ ALT="$ \hat{{h}}$"> the spherical transform respectively of <I>f</I> (the
+data) and <I>h</I> (the zonal filter).
+
+<P>
+To perform this spherical convolution, <TT>convsph_semi</TT> program
+uses the C functions of the (GPL) SpharmonicKit [1] based on the
+work of Driscoll, Healy and Rockmore [2] about fast spherical
+transforms.
+
+<P>
+
+<H4><A NAME="SECTION000512210000000000000"></A>
+<A NAME="cmd:convsph_semi:InpD"></A>
+<BR>
+<FONT COLOR="#000080">Input Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>data</STRONG></DT>
+<DD>[REAL MATRIX]: The spherical data described on a
+equi-angular (2B*2B) spherical grid 
+             <!-- MATH
+ $(\theta_i,\phi_j)$
+ -->
+(<IMG
+ WIDTH="18" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.png"
+ ALT="$ \theta_{i}^{}$">,<IMG
+ WIDTH="22" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img10.png"
+ ALT="$ \phi_{j}^{}$">) 
+with <!-- MATH
+ $\phi_j=j\frac{2\pi}{2B}$
+ -->
+<IMG
+ WIDTH="22" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img10.png"
+ ALT="$ \phi_{j}^{}$"> = <I>j</I><IMG
+ WIDTH="25" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img11.png"
+ ALT="$ {\frac{{2\pi}}{{2B}}}$"> (<I>j</I> = 0..2<I>B</I> - 1) and
+<!-- MATH
+ $\theta_i=(2i+1)\frac{\pi}{2B}$
+ -->
+<IMG
+ WIDTH="18" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.png"
+ ALT="$ \theta_{i}^{}$"> = (2<I>i</I> + 1)<IMG
+ WIDTH="25" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img12.png"
+ ALT="$ {\frac{{\pi}}{{2B}}}$"> (<I>i</I> = 0..2<I>B</I> - 1).
+
+<P>
+Notice that <I>B</I> must be a power of 2. 
+
+<P>
+</DD>
+<DT><STRONG>filter</STRONG></DT>
+<DD>[REAL MATRIX]: the zonal filter, that is invariant
+under rotations around the North pole, defined on the same 2B*2B
+spherical equi-angular grid.
+</DD>
+</DL> 
+
+<P>
+
+<H4><A NAME="SECTION000512220000000000000"></A>
+<A NAME="cmd:convsph_semi:OutD"></A>
+<BR>
+<FONT COLOR="#000080">Output Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>out</STRONG></DT>
+<DD>[REAL MATRIX]: the convolution defined on the same
+spherical equi-angular grid
+</DD>
+</DL> 
+
+<P>
+
+<H3><A NAME="SECTION000512300000000000000"></A>
+<A NAME="cmd:convsph_semi:Exa"></A>
+<BR>
+<FONT COLOR="#000080">Example(s)</FONT>
+</H3>
+
+<P>
+<PRE>
+&gt;&gt; load world2; mat=mat(1:4:end,1:4:end);
+&gt;&gt; figure; yashow(mat, 'spheric');
+&gt;&gt; [phi,theta] = sphgrid(size(mat,1));
+&gt;&gt; filter = exp(-(tan(theta/2)/0.05).^2);
+&gt;&gt; out = convsph\_semi(double(mat), filter);
+&gt;&gt; figure; yashow(out, 'spheric', 'mode','real'); colorbar;
+</PRE>
+
+<P>
+
+<H3><A NAME="SECTION000512400000000000000"></A>
+<A NAME="cmd:convsph_semi:Ref"></A>
+<BR>
+<FONT COLOR="#000080">References</FONT>
+</H3>
+
+<P>
+[1] SpharmonicKit: http://www.cs.dartmouth.edu/&nbsp;geelong/sphere/. 
+Developed by Sean Moore, Dennis Healy, Dan Rockmore, Peter
+Kostelec.
+
+<P>
+[2] D. Healy Jr., D. Rockmore, P. Kostelec and S. Moore, 
+"FFTs for the 2-Sphere - Improvements and Variations", 
+Journal of Fourier Analysis and Applications, 9:4 (2003), 
+pp. 341 - 385. 
+
+<P>
+
+<H3><A NAME="SECTION000512500000000000000"></A>
+<A NAME="cmd:convsph_semi:See"></A>
+<BR>
+<FONT COLOR="#000080">See Also</FONT>
+</H3>
+
+<P>
+<A HREF="node45.html#cmd:fst">fst</A>, <A HREF="node61.html#cmd:fzt">fzt</A>, <A HREF="node72.html#cmd:ifst">ifst</A>, <A HREF="node72.html#cmd:ifst">ifst</A>, <A HREF="node78.html#cmd:ilmshape">ilmshape</A>, <A HREF="node78.html#cmd:ilmshape">ilmshape</A>, <A HREF="node85.html#cmd:lmshape">lmshape</A>
+
+<P>
+
+<H3><A NAME="SECTION000512600000000000000">
+<FONT COLOR="#000080">Location</FONT></A>
+</H3>
+interfaces/spharmonickit/convsph_semi.m
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html3054"
+  HREF="node26.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html3050"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html3044"
+  HREF="node24.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html3052"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html3055"
+  HREF="node26.html">cube</A>
+<B> Up:</B> <A NAME="tex2html3051"
+  HREF="node13.html">The commands in alphabetical</A>
+<B> Previous:</B> <A NAME="tex2html3045"
+  HREF="node24.html">convsph</A>
+ &nbsp; <B>  <A NAME="tex2html3053"
+  HREF="node1.html">Contents</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+<yawtb-devel@sourceforge.net>
+</ADDRESS>
+</BODY>
+</HTML>

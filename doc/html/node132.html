@@ -1,0 +1,244 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>yahist</TITLE>
+<META NAME="description" CONTENT="yahist">
+<META NAME="keywords" CONTENT="YAWTBReferenceManual">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="YAWTBReferenceManual.css">
+
+<LINK REL="next" HREF="node133.html">
+<LINK REL="previous" HREF="node131.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node133.html">
+</HEAD>
+
+<BODY  bgcolor="#ffffff">
+<!--Navigation Panel-->
+<A NAME="tex2html5176"
+  HREF="node133.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html5172"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html5166"
+  HREF="node131.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html5174"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html5177"
+  HREF="node133.html">yaload</A>
+<B> Up:</B> <A NAME="tex2html5173"
+  HREF="node13.html">The commands in alphabetical</A>
+<B> Previous:</B> <A NAME="tex2html5167"
+  HREF="node131.html">yahelp</A>
+ &nbsp; <B>  <A NAME="tex2html5175"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html5178"
+  HREF="node132.html#SECTION0005119100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html5179"
+  HREF="node132.html#SECTION0005119200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html5180"
+  HREF="node132.html#SECTION0005119210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html5181"
+  HREF="node132.html#SECTION0005119220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<BR>
+<LI><A NAME="tex2html5182"
+  HREF="node132.html#SECTION0005119300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html5183"
+  HREF="node132.html#SECTION0005119400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html5184"
+  HREF="node132.html#SECTION0005119500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html5185"
+  HREF="node132.html#SECTION0005119600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H2><A NAME="SECTION0005119000000000000000"></A>
+<A NAME="cmd:yahist"></A>
+<BR>
+<FONT COLOR="#ff0000">yahist</FONT>
+</H2>
+
+<P>
+Computes 1D and 2D histograms.
+
+<P>
+
+<H3><A NAME="SECTION0005119100000000000000"></A>
+<A NAME="cmd:yahist:Syn"></A>
+<BR>
+<FONT COLOR="#000080">Syntax</FONT>
+</H3>
+
+<P>
+[out[,l]] = yahist(V,N [,'min',m] [,'max',M]) 
+[out[,lx,ly]] = yahist(Vx,Vy,N [,'minx',mx] [,'miny', my] ...
+				 [,'maxx',Mx] [,'maxy', My] )
+
+<P>
+
+<H3><A NAME="SECTION0005119200000000000000"></A>
+<A NAME="cmd:yahist:Des"></A>
+<BR>
+<FONT COLOR="#000080">Description</FONT>
+</H3>
+
+<P>
+This function computes the 1D or 2D histograms of vectors or matrices data.
+
+<P>
+
+<H4><A NAME="SECTION0005119210000000000000"></A>
+<A NAME="cmd:yahist:InpD"></A>
+<BR>
+<FONT COLOR="#000080">Input Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>V</STRONG></DT>
+<DD>[VECTOR|ARRAY]: a vector or an array of values (an
+image) to transform into an histogram; 
+
+<P>
+</DD>
+<DT><STRONG>Vx,Vy</STRONG></DT>
+<DD>[VECTORS|ARRAYS]: in the case of 2D histogram, vx and vy
+are two vectors or arrays of same sizes which values describe
+respectively the x and the y coordinates of the 2D histogram;
+
+<P>
+</DD>
+<DT><STRONG>N</STRONG></DT>
+<DD>[INTEGER|VECTOR]: N contains the number of desired levels
+into the output histogram. in the 2D case, N could be either a
+vector of length 2 containing the number of levels in x and y
+coordinates, or an integer assuming that these numbers of levels
+are equal.
+
+<P>
+</DD>
+<DT><STRONG>m,M,mx,my,Mx,My</STRONG></DT>
+<DD>[REALS]: user defined range of value
+instead of those defined by minimum and maximum of data.
+
+<P>
+</DD>
+</DL> 
+
+<P>
+
+<H4><A NAME="SECTION0005119220000000000000"></A>
+<A NAME="cmd:yahist:OutD"></A>
+<BR>
+<FONT COLOR="#000080">Output Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>out</STRONG></DT>
+<DD>[VECTOR|MATRIX]: a 1D or a 2D histogram, that is a vector or a
+matrix;
+
+<P>
+</DD>
+<DT><STRONG>l,lx,ly</STRONG></DT>
+<DD>[VECTORS]: the range of data in 1D, or in 2D for
+the x or y coordinates.
+
+<P>
+</DD>
+</DL> 
+
+<P>
+
+<H3><A NAME="SECTION0005119300000000000000"></A>
+<A NAME="cmd:yahist:Exa"></A>
+<BR>
+<FONT COLOR="#000080">Example(s)</FONT>
+</H3>
+
+<P>
+<PRE>
+&gt;&gt; load woman;
+&gt;&gt; [h,l] = yahist(X,20);
+&gt;&gt; plot(l,h);
+</PRE>
+
+<P>
+
+<H3><A NAME="SECTION0005119400000000000000"></A>
+<A NAME="cmd:yahist:Ref"></A>
+<BR>
+<FONT COLOR="#000080">References</FONT>
+</H3>
+
+<P>
+
+<H3><A NAME="SECTION0005119500000000000000"></A>
+<A NAME="cmd:yahist:See"></A>
+<BR>
+<FONT COLOR="#000080">See Also</FONT>
+</H3>
+
+<P>
+
+<H3><A NAME="SECTION0005119600000000000000">
+<FONT COLOR="#000080">Location</FONT></A>
+</H3>
+tools/misc/yahist.m
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html5176"
+  HREF="node133.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html5172"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html5166"
+  HREF="node131.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html5174"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html5177"
+  HREF="node133.html">yaload</A>
+<B> Up:</B> <A NAME="tex2html5173"
+  HREF="node13.html">The commands in alphabetical</A>
+<B> Previous:</B> <A NAME="tex2html5167"
+  HREF="node131.html">yahelp</A>
+ &nbsp; <B>  <A NAME="tex2html5175"
+  HREF="node1.html">Contents</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+<yawtb-devel@sourceforge.net>
+</ADDRESS>
+</BODY>
+</HTML>

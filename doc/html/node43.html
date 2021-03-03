@@ -1,0 +1,253 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>fftsph</TITLE>
+<META NAME="description" CONTENT="fftsph">
+<META NAME="keywords" CONTENT="YAWTBReferenceManual">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="YAWTBReferenceManual.css">
+
+<LINK REL="next" HREF="node44.html">
+<LINK REL="previous" HREF="node42.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node44.html">
+</HEAD>
+
+<BODY  bgcolor="#ffffff">
+<!--Navigation Panel-->
+<A NAME="tex2html3414"
+  HREF="node44.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html3410"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html3404"
+  HREF="node42.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html3412"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html3415"
+  HREF="node44.html">freq_delta</A>
+<B> Up:</B> <A NAME="tex2html3411"
+  HREF="node13.html">The commands in alphabetical</A>
+<B> Previous:</B> <A NAME="tex2html3405"
+  HREF="node42.html">fcwtsph</A>
+ &nbsp; <B>  <A NAME="tex2html3413"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html3416"
+  HREF="node43.html#SECTION000530100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html3417"
+  HREF="node43.html#SECTION000530200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html3418"
+  HREF="node43.html#SECTION000530210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html3419"
+  HREF="node43.html#SECTION000530220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<BR>
+<LI><A NAME="tex2html3420"
+  HREF="node43.html#SECTION000530300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html3421"
+  HREF="node43.html#SECTION000530400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html3422"
+  HREF="node43.html#SECTION000530500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html3423"
+  HREF="node43.html#SECTION000530600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H2><A NAME="SECTION000530000000000000000"></A>
+<A NAME="cmd:fftsph"></A>
+<BR>
+<FONT COLOR="#ff0000">fftsph</FONT>
+</H2>
+
+<P>
+Spherical Harmonic Transform
+
+<P>
+
+<H3><A NAME="SECTION000530100000000000000"></A>
+<A NAME="cmd:fftsph:Syn"></A>
+<BR>
+<FONT COLOR="#000080">Syntax</FONT>
+</H3>
+
+<P>
+out = fftsph(mat, [,'L', L] [,'axisym'] [,'cache'])
+
+<P>
+
+<H3><A NAME="SECTION000530200000000000000"></A>
+<A NAME="cmd:fftsph:Des"></A>
+<BR>
+<FONT COLOR="#000080">Description</FONT>
+</H3>
+
+<P>
+Compute the Spherical Harmonic transform.
+
+<P>
+
+<H4><A NAME="SECTION000530210000000000000"></A>
+<A NAME="cmd:fftsph:InpD"></A>
+<BR>
+<FONT COLOR="#000080">Input Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>mat</STRONG></DT>
+<DD>[MATRIX]: the function to transform on an equiangular
+latitude-longitude spherical grid of size (2M+1)xN. 
+The number of latitudes must be odd!
+
+<P>
+</DD>
+<DT><STRONG>L</STRONG></DT>
+<DD>[INT]: the order where to stop the transform. Default
+value: M.
+
+<P>
+</DD>
+<DT><STRONG>'axisym'</STRONG></DT>
+<DD>[BOOL]: tells to fftsph if mat represent an
+axisymmetric function, that is a function symmetric around the
+poles.
+
+<P>
+</DD>
+<DT><STRONG>'cache'</STRONG></DT>
+<DD>[BOOL]: tells to fftsph to cache spherical
+harmonics in tempdir (normally /tmp/) for further uses. If
+previous caches are detected, fftsph load the previous result
+instead of computing once again the spherical harmonics. This
+caching becomes intersting only from M greater than 64 in the
+axisymmetric case.
+
+<P>
+Remark: The call of fftsph([], 'clearcache') clear the cache.
+
+<P>
+</DD>
+</DL> 
+
+<P>
+
+<H4><A NAME="SECTION000530220000000000000"></A>
+<A NAME="cmd:fftsph:OutD"></A>
+<BR>
+<FONT COLOR="#000080">Output Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>out</STRONG></DT>
+<DD>[MATRIX]: the resulting coefficients. The size of out
+is 1x(L+1) if mat is axisymmetric, and (L+1)x(2L+1) if not. In the
+last case, for each l&lt;=L, coefficents are sorted in out(l,:) as
+    -l, -l+1, ..., l-1, l, 0, ..., 0
+with 2L+1 - (2l+1) zeros at the end.
+</DD>
+</DL> 
+
+<P>
+
+<H3><A NAME="SECTION000530300000000000000"></A>
+<A NAME="cmd:fftsph:Exa"></A>
+<BR>
+<FONT COLOR="#000080">Example(s)</FONT>
+</H3>
+
+<P>
+<PRE>
+&gt;&gt; %% Creating the equiangular spherical grid
+&gt;&gt; [phi, theta] = meshgrid(vect(0,2*pi,16,'open'), vect(0,pi,9));
+&gt;&gt; %% Creating a spherical function, here its is just Y43
+&gt;&gt; mat = yaspharm(theta, phi, 4, 3);
+&gt;&gt; figure; yashow(mat, 'spheric', 'relief', 'mode', 'real');
+&gt;&gt; %% Computing the SH transform
+&gt;&gt; tmat = fftsph(mat);
+&gt;&gt; %% Finding important values (&gt; 10*eps ~10^-15)
+&gt;&gt; abs(tmat) &gt; 10*eps
+&gt;&gt; %% Not zero value in (5,8), i.e. l=4 and m=3 (8 - l - 1)
+&gt;&gt; tmat(5,8)
+</PRE>
+
+<P>
+
+<H3><A NAME="SECTION000530400000000000000"></A>
+<A NAME="cmd:fftsph:Ref"></A>
+<BR>
+<FONT COLOR="#000080">References</FONT>
+</H3>
+
+<P>
+
+<H3><A NAME="SECTION000530500000000000000"></A>
+<A NAME="cmd:fftsph:See"></A>
+<BR>
+<FONT COLOR="#000080">See Also</FONT>
+</H3>
+
+<P>
+ifftsph,, sphweight,, <A HREF="node156.html#cmd:yaspharm">yaspharm</A>
+
+<P>
+
+<H3><A NAME="SECTION000530600000000000000">
+<FONT COLOR="#000080">Location</FONT></A>
+</H3>
+tools/misc/fftsph.m
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html3414"
+  HREF="node44.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html3410"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html3404"
+  HREF="node42.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html3412"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html3415"
+  HREF="node44.html">freq_delta</A>
+<B> Up:</B> <A NAME="tex2html3411"
+  HREF="node13.html">The commands in alphabetical</A>
+<B> Previous:</B> <A NAME="tex2html3405"
+  HREF="node42.html">fcwtsph</A>
+ &nbsp; <B>  <A NAME="tex2html3413"
+  HREF="node1.html">Contents</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+<yawtb-devel@sourceforge.net>
+</ADDRESS>
+</BODY>
+</HTML>

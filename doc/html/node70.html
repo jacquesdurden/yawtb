@@ -1,0 +1,200 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>getyawtbprefs</TITLE>
+<META NAME="description" CONTENT="getyawtbprefs">
+<META NAME="keywords" CONTENT="YAWTBReferenceManual">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="YAWTBReferenceManual.css">
+
+<LINK REL="next" HREF="node71.html">
+<LINK REL="previous" HREF="node69.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node71.html">
+</HEAD>
+
+<BODY  bgcolor="#ffffff">
+<!--Navigation Panel-->
+<A NAME="tex2html3952"
+  HREF="node71.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html3948"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html3942"
+  HREF="node69.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html3950"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html3953"
+  HREF="node71.html">ifftsph</A>
+<B> Up:</B> <A NAME="tex2html3949"
+  HREF="node13.html">The commands in alphabetical</A>
+<B> Previous:</B> <A NAME="tex2html3943"
+  HREF="node69.html">getopts</A>
+ &nbsp; <B>  <A NAME="tex2html3951"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html3954"
+  HREF="node70.html#SECTION000557100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html3955"
+  HREF="node70.html#SECTION000557200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html3956"
+  HREF="node70.html#SECTION000557210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html3957"
+  HREF="node70.html#SECTION000557220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<BR>
+<LI><A NAME="tex2html3958"
+  HREF="node70.html#SECTION000557300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html3959"
+  HREF="node70.html#SECTION000557400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html3960"
+  HREF="node70.html#SECTION000557500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html3961"
+  HREF="node70.html#SECTION000557600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H2><A NAME="SECTION000557000000000000000"></A>
+<A NAME="cmd:getyawtbprefs"></A>
+<BR>
+<FONT COLOR="#ff0000">getyawtbprefs</FONT>
+</H2>
+
+<P>
+Get the YAWtb preferences
+
+<P>
+
+<H3><A NAME="SECTION000557100000000000000"></A>
+<A NAME="cmd:getyawtbprefs:Syn"></A>
+<BR>
+<FONT COLOR="#000080">Syntax</FONT>
+</H3>
+
+<P>
+getyawtbpref
+properties = getyawtbpref
+value = getyawtbpref('property_name')
+
+<P>
+
+<H3><A NAME="SECTION000557200000000000000"></A>
+<A NAME="cmd:getyawtbprefs:Des"></A>
+<BR>
+<FONT COLOR="#000080">Description</FONT>
+</H3>
+
+<P>
+Get the YAWtb preferences.
+This command display all the YAWtb properties
+      getyawtbprefs
+The following command return all the pereferences in  'properties'
+      properties = getyawtbpref 
+To select only one property enter
+      value = getyawtbpref('property_name')
+Value is set to [] if the property doesn't exist.
+
+<P>
+
+<H4><A NAME="SECTION000557210000000000000"></A>
+<A NAME="cmd:getyawtbprefs:InpD"></A>
+<BR>
+<FONT COLOR="#000080">Input Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>property_name</STRONG></DT>
+<DD>[STRING]: the name of the desired property.
+</DD>
+</DL> 
+
+<P>
+
+<H4><A NAME="SECTION000557220000000000000"></A>
+<A NAME="cmd:getyawtbprefs:OutD"></A>
+<BR>
+<FONT COLOR="#000080">Output Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>properties</STRONG></DT>
+<DD>[STRUCT]: a structure with all the properties
+for fields and their corresponding values.
+</DD>
+<DT><STRONG>value</STRONG></DT>
+<DD>[MISC]: the value of the property (empty if not existing)
+</DD>
+</DL> 
+
+<P>
+
+<H3><A NAME="SECTION000557300000000000000"></A>
+<A NAME="cmd:getyawtbprefs:Exa"></A>
+<BR>
+<FONT COLOR="#000080">Example(s)</FONT>
+</H3>
+
+<P>
+<PRE>
+&gt;&gt; getyawtbprefs
+&gt;&gt; getyawtbprefs('yapbarVisible')
+</PRE>
+
+<P>
+
+<H3><A NAME="SECTION000557400000000000000"></A>
+<A NAME="cmd:getyawtbprefs:Ref"></A>
+<BR>
+<FONT COLOR="#000080">References</FONT>
+</H3>
+
+<P>
+
+<H3><A NAME="SECTION000557500000000000000"></A>
+<A NAME="cmd:getyawtbprefs:See"></A>
+<BR>
+<FONT COLOR="#000080">See Also</FONT>
+</H3>
+
+<P>
+<A HREF="node114.html#cmd:setyawtbprefs">setyawtbprefs</A>
+
+<P>
+
+<H3><A NAME="SECTION000557600000000000000">
+<FONT COLOR="#000080">Location</FONT></A>
+</H3>
+tools/misc/getyawtbprefs.m
+
+<P>
+<BR><HR>
+<ADDRESS>
+<yawtb-devel@sourceforge.net>
+</ADDRESS>
+</BODY>
+</HTML>

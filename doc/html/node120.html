@@ -1,0 +1,188 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>the3dL</TITLE>
+<META NAME="description" CONTENT="the3dL">
+<META NAME="keywords" CONTENT="YAWTBReferenceManual">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="YAWTBReferenceManual.css">
+
+<LINK REL="next" HREF="node121.html">
+<LINK REL="previous" HREF="node119.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node121.html">
+</HEAD>
+
+<BODY  bgcolor="#ffffff">
+<!--Navigation Panel-->
+<A NAME="tex2html4944"
+  HREF="node121.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html4940"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html4934"
+  HREF="node119.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html4942"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html4945"
+  HREF="node121.html">theL</A>
+<B> Up:</B> <A NAME="tex2html4941"
+  HREF="node13.html">The commands in alphabetical</A>
+<B> Previous:</B> <A NAME="tex2html4935"
+  HREF="node119.html">sqdog2d</A>
+ &nbsp; <B>  <A NAME="tex2html4943"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html4946"
+  HREF="node120.html#SECTION0005107100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html4947"
+  HREF="node120.html#SECTION0005107200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html4948"
+  HREF="node120.html#SECTION0005107210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html4949"
+  HREF="node120.html#SECTION0005107220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<BR>
+<LI><A NAME="tex2html4950"
+  HREF="node120.html#SECTION0005107300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html4951"
+  HREF="node120.html#SECTION0005107400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html4952"
+  HREF="node120.html#SECTION0005107500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html4953"
+  HREF="node120.html#SECTION0005107600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H2><A NAME="SECTION0005107000000000000000"></A>
+<A NAME="cmd:the3dL"></A>
+<BR>
+<FONT COLOR="#ff0000">the3dL</FONT>
+</H2>
+
+<P>
+Generate a the 3D version of the L shape.
+
+<P>
+
+<H3><A NAME="SECTION0005107100000000000000"></A>
+<A NAME="cmd:the3dL:Syn"></A>
+<BR>
+<FONT COLOR="#000080">Syntax</FONT>
+</H3>
+
+<P>
+[out] = cube(n [,ncube])
+
+<P>
+
+<H3><A NAME="SECTION0005107200000000000000"></A>
+<A NAME="cmd:the3dL:Des"></A>
+<BR>
+<FONT COLOR="#000080">Description</FONT>
+</H3>
+
+<P>
+
+<H4><A NAME="SECTION0005107210000000000000"></A>
+<A NAME="cmd:the3dL:InpD"></A>
+<BR>
+<FONT COLOR="#000080">Input Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>n</STRONG></DT>
+<DD>[INTEGER]: The size of the cubic domain where the L shape
+is defined.
+
+<P>
+</DD>
+<DT><STRONG>ncube</STRONG></DT>
+<DD>[INTEGER]: the size of the cube containing the L 
+set to n/2 by default.
+</DD>
+</DL> 
+
+<P>
+
+<H4><A NAME="SECTION0005107220000000000000"></A>
+<A NAME="cmd:the3dL:OutD"></A>
+<BR>
+<FONT COLOR="#000080">Output Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>out</STRONG></DT>
+<DD>[ARRAY]: the volume describing the L shape (1 inside &amp; 0 outside)
+</DD>
+</DL> 
+
+<P>
+
+<H3><A NAME="SECTION0005107300000000000000"></A>
+<A NAME="cmd:the3dL:Exa"></A>
+<BR>
+<FONT COLOR="#000080">Example(s)</FONT>
+</H3>
+
+<P>
+<PRE>
+&gt;&gt; theL = the3dL(64);
+&gt;&gt; yashow(theL);
+</PRE>
+
+<P>
+
+<H3><A NAME="SECTION0005107400000000000000"></A>
+<A NAME="cmd:the3dL:Ref"></A>
+<BR>
+<FONT COLOR="#000080">References</FONT>
+</H3>
+
+<P>
+
+<H3><A NAME="SECTION0005107500000000000000"></A>
+<A NAME="cmd:the3dL:See"></A>
+<BR>
+<FONT COLOR="#000080">See Also</FONT>
+</H3>
+
+<P>
+
+<H3><A NAME="SECTION0005107600000000000000">
+<FONT COLOR="#000080">Location</FONT></A>
+</H3>
+sample/3d/the3dL.m
+
+<P>
+<BR><HR>
+<ADDRESS>
+<yawtb-devel@sourceforge.net>
+</ADDRESS>
+</BODY>
+</HTML>

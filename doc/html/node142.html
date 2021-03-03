@@ -1,0 +1,341 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>yashow</TITLE>
+<META NAME="description" CONTENT="yashow">
+<META NAME="keywords" CONTENT="YAWTBReferenceManual">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="YAWTBReferenceManual.css">
+
+<LINK REL="next" HREF="node143.html">
+<LINK REL="previous" HREF="node141.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node143.html">
+</HEAD>
+
+<BODY  bgcolor="#ffffff">
+<!--Navigation Panel-->
+<A NAME="tex2html5363"
+  HREF="node143.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html5359"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html5353"
+  HREF="node141.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html5361"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html5364"
+  HREF="node143.html">yashow_cgt1d</A>
+<B> Up:</B> <A NAME="tex2html5360"
+  HREF="node13.html">The commands in alphabetical</A>
+<B> Previous:</B> <A NAME="tex2html5354"
+  HREF="node141.html">yasave</A>
+ &nbsp; <B>  <A NAME="tex2html5362"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html5365"
+  HREF="node142.html#SECTION0005129100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html5366"
+  HREF="node142.html#SECTION0005129200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html5367"
+  HREF="node142.html#SECTION0005129210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+</UL>
+<BR>
+<LI><A NAME="tex2html5368"
+  HREF="node142.html#SECTION0005129300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html5369"
+  HREF="node142.html#SECTION0005129400000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html5370"
+  HREF="node142.html#SECTION0005129500000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H2><A NAME="SECTION0005129000000000000000"></A>
+<A NAME="cmd:yashow"></A>
+<BR>
+<FONT COLOR="#ff0000">yashow</FONT>
+</H2>
+
+<P>
+Display the result of any transform defined in YAWT<SMALL>B</SMALL>
+
+<P>
+
+<H3><A NAME="SECTION0005129100000000000000"></A>
+<A NAME="cmd:yashow:Syn"></A>
+<BR>
+<FONT COLOR="#000080">Syntax</FONT>
+</H3>
+
+<P>
+yashow(yastruct ['Fig',fig] [,'Mode',mode [,ModeParam]] [,'CMap',cmap] ...
+         [,'Square'] [,'Equal'] [,'HistEq'] [,'Normalize'] ...
+         [,'Contour' [,nlevel] ] ...
+         [,'Contour' [,vlevel] ] ...
+         [,'Surf' ] ...
+         [,'Spheric'[,'Relief'[,'Ratio',ratio]]] ...
+         [,'maxi'[,T]] [,'mini'[,T]] )
+
+<P>
+
+<H3><A NAME="SECTION0005129200000000000000"></A>
+<A NAME="cmd:yashow:Des"></A>
+<BR>
+<FONT COLOR="#000080">Description</FONT>
+</H3>
+
+<P>
+The aim of this function is to simplify the use of the <A NAME="tex2html11"
+  HREF="http://www.mathworks.com">Matlab</A>
+visualization tools for any YAWT<SMALL>B</SMALL>result coming, for instance,
+from <TT>cwt1d</TT>, <TT>cwt2d</TT> and <TT>cwtsph</TT>.
+
+<P>
+
+<H4><A NAME="SECTION0005129210000000000000"></A>
+<A NAME="cmd:yashow:InpD"></A>
+<BR>
+<FONT COLOR="#000080">Input Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>yastruct</STRONG></DT>
+<DD>[STRUCT]: the result of a particular YAWT<SMALL>B</SMALL>
+transform. 
+
+<P>
+</DD>
+<DT><STRONG>fig</STRONG></DT>
+<DD>[POSITIVE INTEGER]: specifies the figure in which to
+display the input. 
+
+<P>
+</DD>
+<DT><STRONG>mode</STRONG></DT>
+<DD>['abs','angle', 'essangle', 'real','imag']: is a string which
+defines the display mode. Available modes for the data
+representation are: 
+<DL>
+<DT><STRONG>'abs'</STRONG></DT>
+<DD>: the absolute value;
+</DD>
+<DT><STRONG>'angle'</STRONG></DT>
+<DD>: the complex argument;
+</DD>
+<DT><STRONG>'essangle'</STRONG></DT>
+<DD>: the essential argument, that is the argument
+thesholded by default at 1% of the modulus. You may change this
+value by putting a real number between 0 and 1 after 'essangle'
+in the yashow call.
+</DD>
+<DT><STRONG>'real'</STRONG></DT>
+<DD>: the real part;
+</DD>
+<DT><STRONG>'imag'</STRONG></DT>
+<DD>: the imaginary part.
+</DD>
+</DL>
+
+<P>
+</DD>
+<DT><STRONG>cmap</STRONG></DT>
+<DD>[STRING]: define the colormap to use in the display,
+e.g. 'jet' [default], 'hsv', 'gray'.
+
+<P>
+</DD>
+<DT><STRONG>'Square'</STRONG></DT>
+<DD>[BOOLEAN]: specifies if yashow must display a
+matrix like a square
+
+<P>
+</DD>
+<DT><STRONG>'Equal'</STRONG></DT>
+<DD>[BOOLEAN]: specifies if yashow must keep the
+square shape of the pixels (dx==dy).  
+
+<P>
+</DD>
+<DT><STRONG>'HistEq'</STRONG></DT>
+<DD>[BOOLEAN]: specifies if yashow must equalize
+histogram of the display matrix.
+
+<P>
+</DD>
+<DT><STRONG>'Normalize'</STRONG></DT>
+<DD>[BOOLEAN]: specifies if the data must be
+normalized to [-1,1]. This can be useful in 1D, if you plot several
+signal with hold on and you are interested in their shape.
+
+<P>
+</DD>
+<DT><STRONG>'Contour'</STRONG></DT>
+<DD>[BOOLEAN]: display the contour of the
+matrix. Possible modifiers are:
+<DL>
+<DT><STRONG>nlevel</STRONG></DT>
+<DD>[INTEGER]: the number of levels to display;
+
+<P>
+</DD>
+<DT><STRONG>vlevel</STRONG></DT>
+<DD>[1x2 VECTOR]: a vector containing twice the curve level
+to display, e.g. [0 0] to show the curve level of zero height.
+</DD>
+</DL>
+
+<P>
+</DD>
+<DT><STRONG>'Surf'</STRONG></DT>
+<DD>[BOOLEAN]: display the matrix as a 3D surface.
+
+<P>
+</DD>
+<DT><STRONG>'maxi'</STRONG></DT>
+<DD>[BOOLEAN]: specifies if crosses representing maxima
+must be added to the displayed image.
+
+<P>
+</DD>
+<DT><STRONG>'mini'</STRONG></DT>
+<DD>[BOOLEAN]: specifies if circles representing minima
+must be added to the displayed image.
+
+<P>
+</DD>
+<DT><STRONG>T</STRONG></DT>
+<DD>[REAL]: gives an eventual threshold for the maxima or
+the minima displayed by the two preceeding options. T belongs to
+the interval 0&lt;=T&lt;=1. The maxima shown are those which have a
+value greater than MIN + T*(MAX-MIN), where MIN is the global
+minimum of the data and MAX its global maximum. Similarly, the
+minima must be below MAX - T*(MAX-MIN) to be represented.
+
+<P>
+</DD>
+<DT><STRONG>'Spheric'</STRONG></DT>
+<DD>[BOOLEAN]: (for matrix only !) Specifies if the
+matrix must be mapped onto a sphere (useful for cwtsph &amp;
+al.). 
+
+<P>
+The suboptions of this mode are :
+<DL>
+<DT><STRONG>'Relief'</STRONG></DT>
+<DD>[BOOLEAN]: the mapping is done in relief, that
+is, the values of the input matrix correspond to the variation of
+spherical radius around 1. The maximum absolute value of this matrix is
+set by default to 1/3 of the sphere radius. This can be changed
+by the ratio variable.
+
+<P>
+</DD>
+<DT><STRONG>ratio</STRONG></DT>
+<DD>[DOUBLE]: set the ratio between the highest absolute
+value of the input matrix and the sphere radius.
+</DD>
+</DL>
+</DD>
+</DL> 
+
+<P>
+
+<H3><A NAME="SECTION0005129300000000000000"></A>
+<A NAME="cmd:yashow:Exa"></A>
+<BR>
+<FONT COLOR="#000080">Example(s)</FONT>
+</H3>
+
+<P>
+In its easiest form, yashow can be used like this:
+<PRE>
+&gt;&gt; [x,y] = meshgrid(-64:64);
+&gt;&gt; square = max(abs(x), abs(y)) &lt; 20;
+&gt;&gt; fsquare = fft2(square);
+&gt;&gt; wsquare = cwt2d(fsquare,'cauchy',2,0);
+&gt;&gt; yashow(wsquare);
+</PRE>
+
+<P>
+So, the absolute value the square 2D wavelet transform is shown.
+The last line can be change by
+<PRE>
+&gt;&gt; yashow(wsquare,'Mode','angle','CMap','gray(40)');
+</PRE>
+
+<P>
+to display the argument of this transform in the colormap 'gray'
+of 40 levels.
+
+<P>
+
+<H3><A NAME="SECTION0005129400000000000000"></A>
+<A NAME="cmd:yashow:See"></A>
+<BR>
+<FONT COLOR="#000080">See Also</FONT>
+</H3>
+
+<P>
+<A HREF="node23.html#cmd:cgt1d">cgt1d</A>, <A HREF="node27.html#cmd:cwt1d">cwt1d</A>, <A HREF="node29.html#cmd:cwt2d">cwt2d</A>, <A HREF="node31.html#cmd:cwtsph">cwtsph</A>, <A HREF="node126.html#cmd:wpck2d">wpck2d</A>, <A HREF="#cmd:yashow">yashow</A>
+
+<P>
+
+<H3><A NAME="SECTION0005129500000000000000">
+<FONT COLOR="#000080">Location</FONT></A>
+</H3>
+tools/display/yashow.m
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html5363"
+  HREF="node143.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html5359"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html5353"
+  HREF="node141.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html5361"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html5364"
+  HREF="node143.html">yashow_cgt1d</A>
+<B> Up:</B> <A NAME="tex2html5360"
+  HREF="node13.html">The commands in alphabetical</A>
+<B> Previous:</B> <A NAME="tex2html5354"
+  HREF="node141.html">yasave</A>
+ &nbsp; <B>  <A NAME="tex2html5362"
+  HREF="node1.html">Contents</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+<yawtb-devel@sourceforge.net>
+</ADDRESS>
+</BODY>
+</HTML>

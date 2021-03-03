@@ -1,0 +1,221 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>morlet1dt</TITLE>
+<META NAME="description" CONTENT="morlet1dt">
+<META NAME="keywords" CONTENT="YAWTBReferenceManual">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="YAWTBReferenceManual.css">
+
+<LINK REL="next" HREF="node96.html">
+<LINK REL="previous" HREF="node94.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node96.html">
+</HEAD>
+
+<BODY  bgcolor="#ffffff">
+<!--Navigation Panel-->
+<A NAME="tex2html4450"
+  HREF="node96.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html4446"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html4440"
+  HREF="node94.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html4448"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html4451"
+  HREF="node96.html">morlet2d</A>
+<B> Up:</B> <A NAME="tex2html4447"
+  HREF="node13.html">The commands in alphabetical</A>
+<B> Previous:</B> <A NAME="tex2html4441"
+  HREF="node94.html">morlet1d</A>
+ &nbsp; <B>  <A NAME="tex2html4449"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html4452"
+  HREF="node95.html#SECTION000582100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html4453"
+  HREF="node95.html#SECTION000582200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html4454"
+  HREF="node95.html#SECTION000582210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html4455"
+  HREF="node95.html#SECTION000582220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<BR>
+<LI><A NAME="tex2html4456"
+  HREF="node95.html#SECTION000582300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html4457"
+  HREF="node95.html#SECTION000582400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html4458"
+  HREF="node95.html#SECTION000582500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html4459"
+  HREF="node95.html#SECTION000582600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H2><A NAME="SECTION000582000000000000000"></A>
+<A NAME="cmd:morlet1dt"></A>
+<BR>
+<FONT COLOR="#ff0000">morlet1dt</FONT>
+</H2>
+
+<P>
+1D+T Morlet Wavelet in wave-number/frequency domain
+
+<P>
+
+<H3><A NAME="SECTION000582100000000000000"></A>
+<A NAME="cmd:morlet1dt:Syn"></A>
+<BR>
+<FONT COLOR="#000080">Syntax</FONT>
+</H3>
+
+<P>
+out = morlet1dt(k,w,k_0,w_0)
+
+<P>
+
+<H3><A NAME="SECTION000582200000000000000"></A>
+<A NAME="cmd:morlet1dt:Des"></A>
+<BR>
+<FONT COLOR="#000080">Description</FONT>
+</H3>
+
+<P>
+This function returns <TT>out</TT> the 1D+T Morlet wavelet in the
+wave-number/frequency domain defined in that domain by:
+<PRE>
+  out = exp( - ( (k - k0).^2 + (w - w_0).^2 ) / 2).
+</PRE>
+
+<P>
+This wavelet depends on two parameters: <TT>k_0</TT> and <TT>w_0</TT>.
+It is not truly admissible but for <TT>k_0</TT>&gt;5.5 and
+<TT>w_0</TT>&gt;5.5, it is considered as numerically admissible.  This
+function is used by the <TT>cwt1dt</TT> routine which computes 1D+T
+continuous wavelet transform.
+
+<P>
+
+<H4><A NAME="SECTION000582210000000000000"></A>
+<A NAME="cmd:morlet1dt:InpD"></A>
+<BR>
+<FONT COLOR="#000080">Input Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>k, w</STRONG></DT>
+<DD>[REAL MATRICES]: The wave-number/frequency domain. Use
+meshgrid to create them.
+
+<P>
+</DD>
+<DT><STRONG>k_0, w_0</STRONG></DT>
+<DD>[REAL SCALARS]: The wavelet parameters. 
+</DD>
+</DL> 
+
+<P>
+
+<H4><A NAME="SECTION000582220000000000000"></A>
+<A NAME="cmd:morlet1dt:OutD"></A>
+<BR>
+<FONT COLOR="#000080">Output Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>out</STRONG></DT>
+<DD>[REAL MATRIX]: The wavelet in wave-number/frequency domain. 
+</DD>
+</DL> 
+
+<P>
+
+<H3><A NAME="SECTION000582300000000000000"></A>
+<A NAME="cmd:morlet1dt:Exa"></A>
+<BR>
+<FONT COLOR="#000080">Example(s)</FONT>
+</H3>
+
+<P>
+
+<H3><A NAME="SECTION000582400000000000000"></A>
+<A NAME="cmd:morlet1dt:Ref"></A>
+<BR>
+<FONT COLOR="#000080">References</FONT>
+</H3>
+
+<P>
+
+<H3><A NAME="SECTION000582500000000000000"></A>
+<A NAME="cmd:morlet1dt:See"></A>
+<BR>
+<FONT COLOR="#000080">See Also</FONT>
+</H3>
+
+<P>
+<A HREF="node28.html#cmd:cwt1dt">cwt1dt</A>, meshgrid, <A HREF="node86.html#cmd:mexican1dt">mexican1dt</A>, <A HREF="#cmd:morlet1dt">morlet1dt</A>, <A HREF="node145.html#cmd:yashow_cwt1dt">yashow_cwt1dt</A>
+
+<P>
+
+<H3><A NAME="SECTION000582600000000000000">
+<FONT COLOR="#000080">Location</FONT></A>
+</H3>
+continuous/1dt/wave_defs/morlet1dt.m
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html4450"
+  HREF="node96.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html4446"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html4440"
+  HREF="node94.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html4448"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html4451"
+  HREF="node96.html">morlet2d</A>
+<B> Up:</B> <A NAME="tex2html4447"
+  HREF="node13.html">The commands in alphabetical</A>
+<B> Previous:</B> <A NAME="tex2html4441"
+  HREF="node94.html">morlet1d</A>
+ &nbsp; <B>  <A NAME="tex2html4449"
+  HREF="node1.html">Contents</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+<yawtb-devel@sourceforge.net>
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,235 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>mexican2d_ctr</TITLE>
+<META NAME="description" CONTENT="mexican2d_ctr">
+<META NAME="keywords" CONTENT="YAWTBReferenceManual">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="YAWTBReferenceManual.css">
+
+<LINK REL="next" HREF="node89.html">
+<LINK REL="previous" HREF="node87.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node89.html">
+</HEAD>
+
+<BODY  bgcolor="#ffffff">
+<!--Navigation Panel-->
+<A NAME="tex2html4310"
+  HREF="node89.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html4306"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html4300"
+  HREF="node87.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html4308"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html4311"
+  HREF="node89.html">mexican3d</A>
+<B> Up:</B> <A NAME="tex2html4307"
+  HREF="node13.html">The commands in alphabetical</A>
+<B> Previous:</B> <A NAME="tex2html4301"
+  HREF="node87.html">mexican2d</A>
+ &nbsp; <B>  <A NAME="tex2html4309"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html4312"
+  HREF="node88.html#SECTION000575100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html4313"
+  HREF="node88.html#SECTION000575200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html4314"
+  HREF="node88.html#SECTION000575210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html4315"
+  HREF="node88.html#SECTION000575220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<BR>
+<LI><A NAME="tex2html4316"
+  HREF="node88.html#SECTION000575300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html4317"
+  HREF="node88.html#SECTION000575400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html4318"
+  HREF="node88.html#SECTION000575500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html4319"
+  HREF="node88.html#SECTION000575600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H2><A NAME="SECTION000575000000000000000"></A>
+<A NAME="cmd:mexican2d_ctr"></A>
+<BR>
+<FONT COLOR="#ff0000">mexican2d_ctr</FONT>
+</H2>
+
+<P>
+Compute the 2D Mexican Wavelet in frequency plane
+
+<P>
+
+<H3><A NAME="SECTION000575100000000000000"></A>
+<A NAME="cmd:mexican2d_ctr:Syn"></A>
+<BR>
+<FONT COLOR="#000080">Syntax</FONT>
+</H3>
+
+<P>
+[out] = mexican2d(kx,ky,order,sigma[,sigmax][,sigmay])
+
+<P>
+
+<H3><A NAME="SECTION000575200000000000000"></A>
+<A NAME="cmd:mexican2d_ctr:Des"></A>
+<BR>
+<FONT COLOR="#000080">Description</FONT>
+</H3>
+
+<P>
+This function computes the 2D Mexican wavelet in frequency plane.
+That is, the wavelet given by
+<PRE>
+  PSIHAT (kx,ky) = |K|.^order .* exp( - (A*K).^2 / 2 )
+</PRE>
+where PSIHAT is the Fourier transform of PSI;
+<PRE>
+      K = (kx,ky);
+      A = diag(sigmax,sigmay).
+</PRE>
+
+<P>
+This wavelet depends of three parameters: order, sigmax, sigmay. 
+This function is used by the cwt2d routine which compute
+continuous wavelet transform in 2D.
+
+<P>
+
+<H4><A NAME="SECTION000575210000000000000"></A>
+<A NAME="cmd:mexican2d_ctr:InpD"></A>
+<BR>
+<FONT COLOR="#000080">Input Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>kx, ky</STRONG></DT>
+<DD>[REAL MATRICES]: The frequency plane. Use meshgrid
+to create it. 
+
+<P>
+</DD>
+<DT><STRONG>order, sigma, sigmax, sigmay</STRONG></DT>
+<DD>[REAL SCALARS]: The wavelet
+parameters. By default, sigmax = sigmay = sigma (isotropic case).
+
+<P>
+</DD>
+</DL> 
+
+<P>
+
+<H4><A NAME="SECTION000575220000000000000"></A>
+<A NAME="cmd:mexican2d_ctr:OutD"></A>
+<BR>
+<FONT COLOR="#000080">Output Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>out</STRONG></DT>
+<DD>[REAL MATRIX]: The wavelet in frequency plane. 
+</DD>
+</DL> 
+
+<P>
+
+<H3><A NAME="SECTION000575300000000000000"></A>
+<A NAME="cmd:mexican2d_ctr:Exa"></A>
+<BR>
+<FONT COLOR="#000080">Example(s)</FONT>
+</H3>
+
+<P>
+<PRE>
+&gt;&gt; step = 2*pi/128;
+&gt;&gt; [kx,ky] = meshgrid( -pi : step : (pi-step) );
+&gt;&gt; wav = mexican2d(kx,ky,6,1);
+&gt;&gt; imagesc(wav);
+</PRE>
+
+<P>
+
+<H3><A NAME="SECTION000575400000000000000"></A>
+<A NAME="cmd:mexican2d_ctr:Ref"></A>
+<BR>
+<FONT COLOR="#000080">References</FONT>
+</H3>
+
+<P>
+
+<H3><A NAME="SECTION000575500000000000000"></A>
+<A NAME="cmd:mexican2d_ctr:See"></A>
+<BR>
+<FONT COLOR="#000080">See Also</FONT>
+</H3>
+
+<P>
+<A HREF="node29.html#cmd:cwt2d">cwt2d</A>, meshgrid, <A HREF="node110.html#cmd:samcwt2d">samcwt2d</A>, <A HREF="node111.html#cmd:sarcwt2d">sarcwt2d</A>, <A HREF="node146.html#cmd:yashow_cwt2d">yashow_cwt2d</A>, <A HREF="node150.html#cmd:yashow_samcwt2d">yashow_samcwt2d</A>
+
+<P>
+
+<H3><A NAME="SECTION000575600000000000000">
+<FONT COLOR="#000080">Location</FONT></A>
+</H3>
+continuous/2d/wave_defs/mexican2d_ctr.m
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html4310"
+  HREF="node89.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html4306"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html4300"
+  HREF="node87.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html4308"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html4311"
+  HREF="node89.html">mexican3d</A>
+<B> Up:</B> <A NAME="tex2html4307"
+  HREF="node13.html">The commands in alphabetical</A>
+<B> Previous:</B> <A NAME="tex2html4301"
+  HREF="node87.html">mexican2d</A>
+ &nbsp; <B>  <A NAME="tex2html4309"
+  HREF="node1.html">Contents</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+<yawtb-devel@sourceforge.net>
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,181 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>inputeof</TITLE>
+<META NAME="description" CONTENT="inputeof">
+<META NAME="keywords" CONTENT="YAWTBReferenceManual">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="YAWTBReferenceManual.css">
+
+<LINK REL="next" HREF="node80.html">
+<LINK REL="previous" HREF="node78.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node80.html">
+</HEAD>
+
+<BODY  bgcolor="#ffffff">
+<!--Navigation Panel-->
+<A NAME="tex2html4131"
+  HREF="node80.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html4127"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html4121"
+  HREF="node78.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html4129"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html4132"
+  HREF="node80.html">isdog2d</A>
+<B> Up:</B> <A NAME="tex2html4128"
+  HREF="node13.html">The commands in alphabetical</A>
+<B> Previous:</B> <A NAME="tex2html4122"
+  HREF="node78.html">ilmshape</A>
+ &nbsp; <B>  <A NAME="tex2html4130"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html4133"
+  HREF="node79.html#SECTION000566100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html4134"
+  HREF="node79.html#SECTION000566200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html4135"
+  HREF="node79.html#SECTION000566210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html4136"
+  HREF="node79.html#SECTION000566220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<BR>
+<LI><A NAME="tex2html4137"
+  HREF="node79.html#SECTION000566300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html4138"
+  HREF="node79.html#SECTION000566400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html4139"
+  HREF="node79.html#SECTION000566500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html4140"
+  HREF="node79.html#SECTION000566600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H2><A NAME="SECTION000566000000000000000"></A>
+<A NAME="cmd:inputeof"></A>
+<BR>
+<FONT COLOR="#ff0000">inputeof</FONT>
+</H2>
+
+<P>
+Work like input(msg,'s') but ends by a EOF
+
+<P>
+
+<H3><A NAME="SECTION000566100000000000000"></A>
+<A NAME="cmd:inputeof:Syn"></A>
+<BR>
+<FONT COLOR="#000080">Syntax</FONT>
+</H3>
+
+<P>
+out = inputeof(msg)
+
+<P>
+
+<H3><A NAME="SECTION000566200000000000000"></A>
+<A NAME="cmd:inputeof:Des"></A>
+<BR>
+<FONT COLOR="#000080">Description</FONT>
+</H3>
+
+<P>
+
+<H4><A NAME="SECTION000566210000000000000"></A>
+<A NAME="cmd:inputeof:InpD"></A>
+<BR>
+<FONT COLOR="#000080">Input Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>msg</STRONG></DT>
+<DD>[STRING]: your prompt message 
+</DD>
+</DL> 
+
+<P>
+
+<H4><A NAME="SECTION000566220000000000000"></A>
+<A NAME="cmd:inputeof:OutD"></A>
+<BR>
+<FONT COLOR="#000080">Output Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>out</STRONG></DT>
+<DD>[STRING]: the text entered before the closing EOF
+</DD>
+</DL> 
+
+<P>
+
+<H3><A NAME="SECTION000566300000000000000"></A>
+<A NAME="cmd:inputeof:Exa"></A>
+<BR>
+<FONT COLOR="#000080">Example(s)</FONT>
+</H3>
+
+<P>
+<PRE>
+&gt;&gt; s=inputeof(['Enter something and terminate by typing ...
+EOF&lt;enter&gt; on a new line']);
+</PRE>
+
+<P>
+
+<H3><A NAME="SECTION000566400000000000000"></A>
+<A NAME="cmd:inputeof:Ref"></A>
+<BR>
+<FONT COLOR="#000080">References</FONT>
+</H3>
+
+<P>
+
+<H3><A NAME="SECTION000566500000000000000"></A>
+<A NAME="cmd:inputeof:See"></A>
+<BR>
+<FONT COLOR="#000080">See Also</FONT>
+</H3>
+
+<P>
+
+<H3><A NAME="SECTION000566600000000000000">
+<FONT COLOR="#000080">Location</FONT></A>
+</H3>
+tools/misc/inputeof.m
+
+<P>
+<BR><HR>
+<ADDRESS>
+<yawtb-devel@sourceforge.net>
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,197 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>yaspharm</TITLE>
+<META NAME="description" CONTENT="yaspharm">
+<META NAME="keywords" CONTENT="YAWTBReferenceManual">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="YAWTBReferenceManual.css">
+
+<LINK REL="next" HREF="node157.html">
+<LINK REL="previous" HREF="node155.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node157.html">
+</HEAD>
+
+<BODY  bgcolor="#ffffff">
+<!--Navigation Panel-->
+<A NAME="tex2html5639"
+  HREF="node157.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html5635"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html5629"
+  HREF="node155.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html5637"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html5640"
+  HREF="node157.html">yaspline</A>
+<B> Up:</B> <A NAME="tex2html5636"
+  HREF="node13.html">The commands in alphabetical</A>
+<B> Previous:</B> <A NAME="tex2html5630"
+  HREF="node155.html">yasnr</A>
+ &nbsp; <B>  <A NAME="tex2html5638"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html5641"
+  HREF="node156.html#SECTION0005143100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html5642"
+  HREF="node156.html#SECTION0005143200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html5643"
+  HREF="node156.html#SECTION0005143210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html5644"
+  HREF="node156.html#SECTION0005143220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<BR>
+<LI><A NAME="tex2html5645"
+  HREF="node156.html#SECTION0005143300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html5646"
+  HREF="node156.html#SECTION0005143400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html5647"
+  HREF="node156.html#SECTION0005143500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html5648"
+  HREF="node156.html#SECTION0005143600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H2><A NAME="SECTION0005143000000000000000"></A>
+<A NAME="cmd:yaspharm"></A>
+<BR>
+<FONT COLOR="#ff0000">yaspharm</FONT>
+</H2>
+
+<P>
+Generate a spherical harmonic on a regular spherical grid 
+
+<P>
+
+<H3><A NAME="SECTION0005143100000000000000"></A>
+<A NAME="cmd:yaspharm:Syn"></A>
+<BR>
+<FONT COLOR="#000080">Syntax</FONT>
+</H3>
+
+<P>
+Ylk = yaspharm(theta, phi, l, k)
+
+<P>
+
+<H3><A NAME="SECTION0005143200000000000000"></A>
+<A NAME="cmd:yaspharm:Des"></A>
+<BR>
+<FONT COLOR="#000080">Description</FONT>
+</H3>
+
+<P>
+
+<H4><A NAME="SECTION0005143210000000000000"></A>
+<A NAME="cmd:yaspharm:InpD"></A>
+<BR>
+<FONT COLOR="#000080">Input Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>theta</STRONG></DT>
+<DD>[REAL MATRIX]: the grid of co-latitude angles.
+</DD>
+<DT><STRONG>phi</STRONG></DT>
+<DD>[REAL MATRIX]: the grid of longitude angles.
+</DD>
+<DT><STRONG>l</STRONG></DT>
+<DD>[INT]: the degree of the spherical harmonic.
+</DD>
+<DT><STRONG>k</STRONG></DT>
+<DD>[INT]: the order of the spherical harmonic.
+</DD>
+</DL> 
+
+<P>
+
+<H4><A NAME="SECTION0005143220000000000000"></A>
+<A NAME="cmd:yaspharm:OutD"></A>
+<BR>
+<FONT COLOR="#000080">Output Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>Ylk</STRONG></DT>
+<DD>[CPLX MATRIX]: the spherical harmonic computed on the
+spherical grid.
+</DD>
+</DL> 
+
+<P>
+
+<H3><A NAME="SECTION0005143300000000000000"></A>
+<A NAME="cmd:yaspharm:Exa"></A>
+<BR>
+<FONT COLOR="#000080">Example(s)</FONT>
+</H3>
+
+<P>
+<PRE>
+&gt;&gt; [phi, theta] = meshgrid( vect(0,2*pi,256,'open'), vect(0,pi,128));
+&gt;&gt; Ylk = yaspharm(theta, phi, 6, 1);
+&gt;&gt; yashow(Ylk, 'spheric', 'relief', 'mode', 'real');
+&gt;&gt; yashow(Ylk, 'spheric', 'relief', 'mode', 'imag');
+&gt;&gt; yashow(Ylk, 'spheric', 'relief', 'mode', 'abs');
+</PRE>
+
+<P>
+
+<H3><A NAME="SECTION0005143400000000000000"></A>
+<A NAME="cmd:yaspharm:Ref"></A>
+<BR>
+<FONT COLOR="#000080">References</FONT>
+</H3>
+
+<P>
+[1] "Spherical Harmonics" on mathworld.com, http://mathworld.wolfram.com/SphericalHarmonic.html
+
+<P>
+
+<H3><A NAME="SECTION0005143500000000000000"></A>
+<A NAME="cmd:yaspharm:See"></A>
+<BR>
+<FONT COLOR="#000080">See Also</FONT>
+</H3>
+
+<P>
+
+<H3><A NAME="SECTION0005143600000000000000">
+<FONT COLOR="#000080">Location</FONT></A>
+</H3>
+tools/misc/yaspharm.m
+
+<P>
+<BR><HR>
+<ADDRESS>
+<yawtb-devel@sourceforge.net>
+</ADDRESS>
+</BODY>
+</HTML>

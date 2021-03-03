@@ -1,0 +1,200 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>estimnoise2d</TITLE>
+<META NAME="description" CONTENT="estimnoise2d">
+<META NAME="keywords" CONTENT="YAWTBReferenceManual">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="YAWTBReferenceManual.css">
+
+<LINK REL="next" HREF="node42.html">
+<LINK REL="previous" HREF="node40.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node42.html">
+</HEAD>
+
+<BODY  bgcolor="#ffffff">
+<!--Navigation Panel-->
+<A NAME="tex2html3374"
+  HREF="node42.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html3370"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html3364"
+  HREF="node40.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html3372"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html3375"
+  HREF="node42.html">fcwtsph</A>
+<B> Up:</B> <A NAME="tex2html3371"
+  HREF="node13.html">The commands in alphabetical</A>
+<B> Previous:</B> <A NAME="tex2html3365"
+  HREF="node40.html">esmex2d</A>
+ &nbsp; <B>  <A NAME="tex2html3373"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html3376"
+  HREF="node41.html#SECTION000528100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html3377"
+  HREF="node41.html#SECTION000528200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html3378"
+  HREF="node41.html#SECTION000528210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html3379"
+  HREF="node41.html#SECTION000528220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<BR>
+<LI><A NAME="tex2html3380"
+  HREF="node41.html#SECTION000528300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html3381"
+  HREF="node41.html#SECTION000528400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html3382"
+  HREF="node41.html#SECTION000528500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html3383"
+  HREF="node41.html#SECTION000528600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H2><A NAME="SECTION000528000000000000000"></A>
+<A NAME="cmd:estimnoise2d"></A>
+<BR>
+<FONT COLOR="#ff0000">estimnoise2d</FONT>
+</H2>
+
+<P>
+Estimate the std. dev. of a white noise in an image.
+
+<P>
+
+<H3><A NAME="SECTION000528100000000000000"></A>
+<A NAME="cmd:estimnoise2d:Syn"></A>
+<BR>
+<FONT COLOR="#000080">Syntax</FONT>
+</H3>
+
+<P>
+sigma = estimnoise(tmat [, 'cutoff'])
+
+<P>
+
+<H3><A NAME="SECTION000528200000000000000"></A>
+<A NAME="cmd:estimnoise2d:Des"></A>
+<BR>
+<FONT COLOR="#000080">Description</FONT>
+</H3>
+
+<P>
+Estimate the standard devation of a white noise in an image using
+a median filter and the Mexican Hat.
+
+<P>
+
+<H4><A NAME="SECTION000528210000000000000"></A>
+<A NAME="cmd:estimnoise2d:InpD"></A>
+<BR>
+<FONT COLOR="#000080">Input Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>tmat</STRONG></DT>
+<DD>[MATRIX]: the FFT of the noisy image.
+
+<P>
+</DD>
+<DT><STRONG>cutoff</STRONG></DT>
+<DD>[REAL]: the cutoff in frequency below which the
+filter is zero.
+
+<P>
+</DD>
+</DL> 
+
+<P>
+
+<H4><A NAME="SECTION000528220000000000000"></A>
+<A NAME="cmd:estimnoise2d:OutD"></A>
+<BR>
+<FONT COLOR="#000080">Output Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>sigma</STRONG></DT>
+<DD>[REAL]: estimation of the standard deviation of the noise.
+</DD>
+</DL> 
+
+<P>
+
+<H3><A NAME="SECTION000528300000000000000"></A>
+<A NAME="cmd:estimnoise2d:Exa"></A>
+<BR>
+<FONT COLOR="#000080">Example(s)</FONT>
+</H3>
+
+<P>
+<PRE>
+&gt;&gt; %% Loading a simple disk image
+&gt;&gt; X = thedisk(128, 'smooth');
+&gt;&gt; figure; yashow(X,'cmap','rgray');
+&gt;&gt; %% Creating the noisy image (sigma = 0.5)
+&gt;&gt; [nrow,ncol]=size(X); 
+&gt;&gt; nX = X + 0.5 *randn(nrow,ncol);
+&gt;&gt; figure; yashow(nX,'cmap','rgray');
+&gt;&gt; %% Estimating sigma
+&gt;&gt; sigma = estimnoise2d(fft2(nX))
+</PRE>
+
+<P>
+
+<H3><A NAME="SECTION000528400000000000000"></A>
+<A NAME="cmd:estimnoise2d:Ref"></A>
+<BR>
+<FONT COLOR="#000080">References</FONT>
+</H3>
+
+<P>
+
+<H3><A NAME="SECTION000528500000000000000"></A>
+<A NAME="cmd:estimnoise2d:See"></A>
+<BR>
+<FONT COLOR="#000080">See Also</FONT>
+</H3>
+
+<P>
+
+<H3><A NAME="SECTION000528600000000000000">
+<FONT COLOR="#000080">Location</FONT></A>
+</H3>
+demos/denoising/2d/estimnoise2d.m
+
+<P>
+<BR><HR>
+<ADDRESS>
+<yawtb-devel@sourceforge.net>
+</ADDRESS>
+</BODY>
+</HTML>

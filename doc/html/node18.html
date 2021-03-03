@@ -1,0 +1,160 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>box2d_app</TITLE>
+<META NAME="description" CONTENT="box2d_app">
+<META NAME="keywords" CONTENT="YAWTBReferenceManual">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="YAWTBReferenceManual.css">
+
+<LINK REL="next" HREF="node19.html">
+<LINK REL="previous" HREF="node17.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node19.html">
+</HEAD>
+
+<BODY  bgcolor="#ffffff">
+<!--Navigation Panel-->
+<A NAME="tex2html2919"
+  HREF="node19.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html2915"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html2909"
+  HREF="node17.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html2917"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html2920"
+  HREF="node19.html">box2d_wav</A>
+<B> Up:</B> <A NAME="tex2html2916"
+  HREF="node13.html">The commands in alphabetical</A>
+<B> Previous:</B> <A NAME="tex2html2910"
+  HREF="node17.html">aspline2d_wav</A>
+ &nbsp; <B>  <A NAME="tex2html2918"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html2921"
+  HREF="node18.html#SECTION00055100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html2922"
+  HREF="node18.html#SECTION00055200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html2923"
+  HREF="node18.html#SECTION00055210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html2924"
+  HREF="node18.html#SECTION00055220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<BR>
+<LI><A NAME="tex2html2925"
+  HREF="node18.html#SECTION00055300000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H2><A NAME="SECTION00055000000000000000"></A>
+<A NAME="cmd:box2d_app"></A>
+<BR>
+<FONT COLOR="#ff0000">box2d_app</FONT>
+</H2>
+
+<P>
+Approximation function of the "Box" frame
+
+<P>
+
+<H3><A NAME="SECTION00055100000000000000"></A>
+<A NAME="cmd:box2d_app:Syn"></A>
+<BR>
+<FONT COLOR="#000080">Syntax</FONT>
+</H3>
+
+<P>
+out = box2d_app(kx, ky)
+
+<P>
+
+<H3><A NAME="SECTION00055200000000000000"></A>
+<A NAME="cmd:box2d_app:Des"></A>
+<BR>
+<FONT COLOR="#000080">Description</FONT>
+</H3>
+
+<P>
+Compute the approximation function of the "Box" frame, namely the
+isotropic function which takes 1 if <!-- MATH
+ $(kx^2 + ky^2) < pi/2$
+ -->
+(<I>kx</I><SUP>2</SUP> + <I>ky</I><SUP>2</SUP>) &lt; <I>pi</I>/2, and 0
+elsewhere.
+
+<P>
+
+<H4><A NAME="SECTION00055210000000000000"></A>
+<A NAME="cmd:box2d_app:InpD"></A>
+<BR>
+<FONT COLOR="#000080">Input Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>kx</STRONG></DT>
+<DD>[MATRIX]: the horizontal frequencies; 
+
+<P>
+</DD>
+<DT><STRONG>ky</STRONG></DT>
+<DD>[MATRIX]: the vertical frequencies; 
+
+<P>
+</DD>
+</DL> 
+
+<P>
+
+<H4><A NAME="SECTION00055220000000000000"></A>
+<A NAME="cmd:box2d_app:OutD"></A>
+<BR>
+<FONT COLOR="#000080">Output Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>out</STRONG></DT>
+<DD>[MATRIX]: the computed function on the frequency plane.
+</DD>
+</DL> 
+
+<P>
+
+<H3><A NAME="SECTION00055300000000000000">
+<FONT COLOR="#000080">Location</FONT></A>
+</H3>
+discrete/frames/2d/frame_defs/box2d_app.m
+
+<P>
+<BR><HR>
+<ADDRESS>
+<yawtb-devel@sourceforge.net>
+</ADDRESS>
+</BODY>
+</HTML>

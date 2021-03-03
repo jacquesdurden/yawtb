@@ -1,0 +1,202 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>thedisk</TITLE>
+<META NAME="description" CONTENT="thedisk">
+<META NAME="keywords" CONTENT="YAWTBReferenceManual">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="YAWTBReferenceManual.css">
+
+<LINK REL="next" HREF="node123.html">
+<LINK REL="previous" HREF="node121.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node123.html">
+</HEAD>
+
+<BODY  bgcolor="#ffffff">
+<!--Navigation Panel-->
+<A NAME="tex2html4984"
+  HREF="node123.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html4980"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html4974"
+  HREF="node121.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html4982"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html4985"
+  HREF="node123.html">vect</A>
+<B> Up:</B> <A NAME="tex2html4981"
+  HREF="node13.html">The commands in alphabetical</A>
+<B> Previous:</B> <A NAME="tex2html4975"
+  HREF="node121.html">theL</A>
+ &nbsp; <B>  <A NAME="tex2html4983"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html4986"
+  HREF="node122.html#SECTION0005109100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html4987"
+  HREF="node122.html#SECTION0005109200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html4988"
+  HREF="node122.html#SECTION0005109210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html4989"
+  HREF="node122.html#SECTION0005109220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<BR>
+<LI><A NAME="tex2html4990"
+  HREF="node122.html#SECTION0005109300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html4991"
+  HREF="node122.html#SECTION0005109400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html4992"
+  HREF="node122.html#SECTION0005109500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html4993"
+  HREF="node122.html#SECTION0005109600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H2><A NAME="SECTION0005109000000000000000"></A>
+<A NAME="cmd:thedisk"></A>
+<BR>
+<FONT COLOR="#ff0000">thedisk</FONT>
+</H2>
+
+<P>
+Create a disk in a square image.
+
+<P>
+
+<H3><A NAME="SECTION0005109100000000000000"></A>
+<A NAME="cmd:thedisk:Syn"></A>
+<BR>
+<FONT COLOR="#000080">Syntax</FONT>
+</H3>
+
+<P>
+[out] = thedisk([n] ['Center', center] [,'Radius', radius] [,'Smooth', smooth])
+
+<P>
+
+<H3><A NAME="SECTION0005109200000000000000"></A>
+<A NAME="cmd:thedisk:Des"></A>
+<BR>
+<FONT COLOR="#000080">Description</FONT>
+</H3>
+
+<P>
+
+<H4><A NAME="SECTION0005109210000000000000"></A>
+<A NAME="cmd:thedisk:InpD"></A>
+<BR>
+<FONT COLOR="#000080">Input Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>n</STRONG></DT>
+<DD>[INTEGER]: the size of the image (default 64); 
+
+<P>
+</DD>
+<DT><STRONG>center</STRONG></DT>
+<DD>[REAL VECTOR]: specify the center of the disk in
+(x,y) coordinates knowing that 
+the complete image is the domain [-1,1]x[-1,1]. 'center' is set
+to the origin [0 0] by default.
+
+<P>
+</DD>
+<DT><STRONG>radius</STRONG></DT>
+<DD>[REAL]: the radius of the disk relatively to the
+size of the output matrix (0: nothing, 1: the whole matrix).
+
+<P>
+</DD>
+<DT><STRONG>smooth</STRONG></DT>
+<DD>[REAL] specify if the disk must be smooth on the edge.
+
+<P>
+</DD>
+</DL> 
+
+<P>
+
+<H4><A NAME="SECTION0005109220000000000000"></A>
+<A NAME="cmd:thedisk:OutD"></A>
+<BR>
+<FONT COLOR="#000080">Output Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>out</STRONG></DT>
+<DD>[BINARY MATRIX]:
+</DD>
+</DL> 
+
+<P>
+
+<H3><A NAME="SECTION0005109300000000000000"></A>
+<A NAME="cmd:thedisk:Exa"></A>
+<BR>
+<FONT COLOR="#000080">Example(s)</FONT>
+</H3>
+
+<P>
+<PRE>
+&gt;&gt; mat= the disk;
+&gt;&gt; yashwo(mat);
+</PRE>
+
+<P>
+
+<H3><A NAME="SECTION0005109400000000000000"></A>
+<A NAME="cmd:thedisk:Ref"></A>
+<BR>
+<FONT COLOR="#000080">References</FONT>
+</H3>
+
+<P>
+
+<H3><A NAME="SECTION0005109500000000000000"></A>
+<A NAME="cmd:thedisk:See"></A>
+<BR>
+<FONT COLOR="#000080">See Also</FONT>
+</H3>
+
+<P>
+
+<H3><A NAME="SECTION0005109600000000000000">
+<FONT COLOR="#000080">Location</FONT></A>
+</H3>
+sample/2d/thedisk.m
+
+<P>
+<BR><HR>
+<ADDRESS>
+<yawtb-devel@sourceforge.net>
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,289 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>ifst</TITLE>
+<META NAME="description" CONTENT="ifst">
+<META NAME="keywords" CONTENT="YAWTBReferenceManual">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="YAWTBReferenceManual.css">
+
+<LINK REL="next" HREF="node73.html">
+<LINK REL="previous" HREF="node71.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node73.html">
+</HEAD>
+
+<BODY  bgcolor="#ffffff">
+<!--Navigation Panel-->
+<A NAME="tex2html3992"
+  HREF="node73.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html3988"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html3982"
+  HREF="node71.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html3990"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html3993"
+  HREF="node73.html">ifwt2d</A>
+<B> Up:</B> <A NAME="tex2html3989"
+  HREF="node13.html">The commands in alphabetical</A>
+<B> Previous:</B> <A NAME="tex2html3983"
+  HREF="node71.html">ifftsph</A>
+ &nbsp; <B>  <A NAME="tex2html3991"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html3994"
+  HREF="node72.html#SECTION000559100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html3995"
+  HREF="node72.html#SECTION000559200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html3996"
+  HREF="node72.html#SECTION000559210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html3997"
+  HREF="node72.html#SECTION000559220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<BR>
+<LI><A NAME="tex2html3998"
+  HREF="node72.html#SECTION000559300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html3999"
+  HREF="node72.html#SECTION000559400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html4000"
+  HREF="node72.html#SECTION000559500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html4001"
+  HREF="node72.html#SECTION000559600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H2><A NAME="SECTION000559000000000000000"></A>
+<A NAME="cmd:ifst"></A>
+<BR>
+<FONT COLOR="#ff0000">ifst</FONT>
+</H2>
+
+<P>
+Fast spherical harmonic transform
+
+<P>
+
+<H3><A NAME="SECTION000559100000000000000"></A>
+<A NAME="cmd:ifst:Syn"></A>
+<BR>
+<FONT COLOR="#000080">Syntax</FONT>
+</H3>
+
+<P>
+data = ifst(coeffs)
+
+<P>
+
+<H3><A NAME="SECTION000559200000000000000"></A>
+<A NAME="cmd:ifst:Des"></A>
+<BR>
+<FONT COLOR="#000080">Description</FONT>
+</H3>
+
+<P>
+This mex file computes a fast inverse spherical harmonic
+transform of the spherical coefficients <TT>coeffs</TT> defined
+on a grid B*B where B is the frequency bandwidth of the data.
+Be carreful to either use the output of <TT>fst</TT> for these
+coefficients, ot to form them by using <TT>ilmshape</TT>.
+
+<P>
+To perform this spherical convolution, <TT>ifst</TT> program
+uses the C functions of the (GPL) SpharmonicKit [1] based on the
+work of Driscoll, Healy and Rockmore [2] about fast spherical
+transforms.
+
+<P>
+
+<H4><A NAME="SECTION000559210000000000000"></A>
+<A NAME="cmd:ifst:InpD"></A>
+<BR>
+<FONT COLOR="#000080">Input Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>coeff</STRONG></DT>
+<DD>[COMPLEX MATRIX]: The spherical harmonic
+coefficients. Those are defined in a matrix of size B*B (with B
+the spherical bandwidth such that the parameter l&lt;=B). This
+matrix is formed by the concataining of the coefficents C(m,l)
+(| <I>m</I>| <IMG
+ WIDTH="18" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img13.png"
+ ALT="$ \leq$"> <I>l</I>) in the following order:
+  C(0,0) C(0,1) C(0,2)  ...                 ... C(0,B-1)
+         C(1,1) C(1,2)  ...                 ... C(1,B-1)
+         etc.
+                                  C(B-2,B-2)    C(B-2,B-1)
+		                                  C(B-1,B-1)
+			                          C(-(B-1),B-1)
+		                    C(-(B-2),B-2) C(-(B-2),B-1)
+	  etc.
+	          C(-2,2) ...                 ... C(-2,B-1)
+	  C(-1,1) C(-1,2) ...                 ... C(-1,B-1)
+
+<P>
+This only requires an array of size (B*B).  Use lmshape to turn
+  this representation in a more human readable form. ilmshape may
+  next come back to the original representation. 
+</DD>
+</DL>
+
+<P>
+
+<H4><A NAME="SECTION000559220000000000000"></A>
+<A NAME="cmd:ifst:OutD"></A>
+<BR>
+<FONT COLOR="#000080">Output Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>data</STRONG></DT>
+<DD>[REAL MATRIX]: The spherical data described on a
+equi-angular (2B*2B) spherical grid 
+             <!-- MATH
+ $(\theta_i,\phi_j)$
+ -->
+(<IMG
+ WIDTH="18" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.png"
+ ALT="$ \theta_{i}^{}$">,<IMG
+ WIDTH="22" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img10.png"
+ ALT="$ \phi_{j}^{}$">) 
+with <!-- MATH
+ $\phi_j=j\frac{2\pi}{2B}$
+ -->
+<IMG
+ WIDTH="22" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img10.png"
+ ALT="$ \phi_{j}^{}$"> = <I>j</I><IMG
+ WIDTH="25" HEIGHT="40" ALIGN="MIDDLE" BORDER="0"
+ SRC="img11.png"
+ ALT="$ {\frac{{2\pi}}{{2B}}}$"> (<I>j</I> = 0..2<I>B</I> - 1) and
+<!-- MATH
+ $\theta_i=(2i+1)\frac{\pi}{2B}$
+ -->
+<IMG
+ WIDTH="18" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.png"
+ ALT="$ \theta_{i}^{}$"> = (2<I>i</I> + 1)<IMG
+ WIDTH="25" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img12.png"
+ ALT="$ {\frac{{\pi}}{{2B}}}$"> (<I>i</I> = 0..2<I>B</I> - 1).
+
+<P>
+Notice that <I>B</I> must be a power of 2. 
+</DD>
+</DL> 
+
+<P>
+
+<H3><A NAME="SECTION000559300000000000000"></A>
+<A NAME="cmd:ifst:Exa"></A>
+<BR>
+<FONT COLOR="#000080">Example(s)</FONT>
+</H3>
+
+<P>
+<PRE>
+&gt;&gt; load world2; yashow(mat, 'spheric', 'fig', 10); colorbar; %% 256x256 array
+&gt;&gt; nmat = ifst(fst(double(mat)));
+&gt;&gt; yashow(nmat, 'spheric', 'fig', 11); colorbar;
+&gt;&gt; %% Gibs-like oscillating are due to the frequency cutoff at bandwith 128
+</PRE>
+
+<P>
+
+<H3><A NAME="SECTION000559400000000000000"></A>
+<A NAME="cmd:ifst:Ref"></A>
+<BR>
+<FONT COLOR="#000080">References</FONT>
+</H3>
+
+<P>
+[1] SpharmonicKit: http://www.cs.dartmouth.edu/&nbsp;geelong/sphere/. 
+Developed by Sean Moore, Dennis Healy, Dan Rockmore, Peter
+Kostelec.
+
+<P>
+[2] D. Healy Jr., D. Rockmore, P. Kostelec and S. Moore, 
+"FFTs for the 2-Sphere - Improvements and Variations", 
+Journal of Fourier Analysis and Applications, 9:4 (2003), 
+pp. 341 - 385. 
+
+<P>
+
+<H3><A NAME="SECTION000559500000000000000"></A>
+<A NAME="cmd:ifst:See"></A>
+<BR>
+<FONT COLOR="#000080">See Also</FONT>
+</H3>
+
+<P>
+<A HREF="node24.html#cmd:convsph">convsph</A>, <A HREF="node25.html#cmd:convsph_semi">convsph_semi</A>, <A HREF="node45.html#cmd:fst">fst</A>, <A HREF="node61.html#cmd:fzt">fzt</A>, <A HREF="#cmd:ifst">ifst</A>, <A HREF="node78.html#cmd:ilmshape">ilmshape</A>, <A HREF="node78.html#cmd:ilmshape">ilmshape</A>, <A HREF="node85.html#cmd:lmshape">lmshape</A>
+
+<P>
+
+<H3><A NAME="SECTION000559600000000000000">
+<FONT COLOR="#000080">Location</FONT></A>
+</H3>
+interfaces/spharmonickit/ifst.m
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html3992"
+  HREF="node73.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html3988"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html3982"
+  HREF="node71.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html3990"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html3993"
+  HREF="node73.html">ifwt2d</A>
+<B> Up:</B> <A NAME="tex2html3989"
+  HREF="node13.html">The commands in alphabetical</A>
+<B> Previous:</B> <A NAME="tex2html3983"
+  HREF="node71.html">ifftsph</A>
+ &nbsp; <B>  <A NAME="tex2html3991"
+  HREF="node1.html">Contents</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+<yawtb-devel@sourceforge.net>
+</ADDRESS>
+</BODY>
+</HTML>

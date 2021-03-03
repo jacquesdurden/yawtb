@@ -1,0 +1,260 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>sarcwt2d</TITLE>
+<META NAME="description" CONTENT="sarcwt2d">
+<META NAME="keywords" CONTENT="YAWTBReferenceManual">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="YAWTBReferenceManual.css">
+
+<LINK REL="next" HREF="node112.html">
+<LINK REL="previous" HREF="node110.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node112.html">
+</HEAD>
+
+<BODY  bgcolor="#ffffff">
+<!--Navigation Panel-->
+<A NAME="tex2html4768"
+  HREF="node112.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html4764"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html4758"
+  HREF="node110.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html4766"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html4769"
+  HREF="node112.html">sdog1d</A>
+<B> Up:</B> <A NAME="tex2html4765"
+  HREF="node13.html">The commands in alphabetical</A>
+<B> Previous:</B> <A NAME="tex2html4759"
+  HREF="node110.html">samcwt2d</A>
+ &nbsp; <B>  <A NAME="tex2html4767"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html4770"
+  HREF="node111.html#SECTION000598100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html4771"
+  HREF="node111.html#SECTION000598200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html4772"
+  HREF="node111.html#SECTION000598210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html4773"
+  HREF="node111.html#SECTION000598220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<BR>
+<LI><A NAME="tex2html4774"
+  HREF="node111.html#SECTION000598300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html4775"
+  HREF="node111.html#SECTION000598400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html4776"
+  HREF="node111.html#SECTION000598500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html4777"
+  HREF="node111.html#SECTION000598600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H2><A NAME="SECTION000598000000000000000"></A>
+<A NAME="cmd:sarcwt2d"></A>
+<BR>
+<FONT COLOR="#ff0000">sarcwt2d</FONT>
+</H2>
+
+<P>
+Compute the CWT scale (angle) representation of mat
+
+<P>
+<PRE> 
+Implement this program without cwt2d, directly with the
+scalar product of mat and the wavelet.
+This will of course decrease the computing time!
+</PRE>
+
+<P>
+
+<H3><A NAME="SECTION000598100000000000000"></A>
+<A NAME="cmd:sarcwt2d:Syn"></A>
+<BR>
+<FONT COLOR="#000080">Syntax</FONT>
+</H3>
+
+<P>
+coeff = sarcwt2d(mat,wavname,scales,angles
+          [,'x',x,'y',y] 
+          [,'Show'] ['ShowIn',resfig] [,'Fig',fig] 
+          [,'WaveletParameterName',WaveletParameterValue']) 
+
+<P>
+
+<H3><A NAME="SECTION000598200000000000000"></A>
+<A NAME="cmd:sarcwt2d:Des"></A>
+<BR>
+<FONT COLOR="#000080">Description</FONT>
+</H3>
+
+<P>
+Compute the scale angle continuous wavelet representation at the
+point (x:col, y:row) of the matrix mat. These coordinates can be
+either given to the program through with the ('x', x) and
+('y', y) options, or directly selected with the mouse on a figure
+of mat. This figure is either display by the call of sarcwt2d, or
+taken in an existent figure if the fig option is set (through the
+command ('Fig',n) with 'n' the index of the current figure).
+As in cwt2d, the wavelet parameters can be introduced with the
+usual syntax (see cwt2d for explanations).  
+
+<P>
+
+<H4><A NAME="SECTION000598210000000000000"></A>
+<A NAME="cmd:sarcwt2d:InpD"></A>
+<BR>
+<FONT COLOR="#000080">Input Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>mat</STRONG></DT>
+<DD>[MATRIX]: the input image.
+
+<P>
+</DD>
+<DT><STRONG>wavname</STRONG></DT>
+<DD>[STRING]: the name of the wavelet. See cwt2d for
+an exact list of the available wavelets.
+
+<P>
+</DD>
+<DT><STRONG>scales</STRONG></DT>
+<DD>[REAL VECTOR]: the vector of scales.
+
+<P>
+</DD>
+<DT><STRONG>angles</STRONG></DT>
+<DD>[REAL VECTOR]: the vector of angles.
+
+<P>
+</DD>
+<DT><STRONG>x, y</STRONG></DT>
+<DD>[REAL]: the coordinates of the point (x:col, y:row),
+that is the fixed position b of the wavelet transform.
+
+<P>
+</DD>
+<DT><STRONG>fig</STRONG></DT>
+<DD>[INTEGER]: the index of the figure where to select the
+position b if not given through x and y.
+
+<P>
+</DD>
+<DT><STRONG>WaveletParameterValue</STRONG></DT>
+<DD>[MISC]: the parameters of the
+wavelet. See the corresponding wavelet code for explanation. 
+
+<P>
+</DD>
+</DL>
+
+<P>
+
+<H4><A NAME="SECTION000598220000000000000"></A>
+<A NAME="cmd:sarcwt2d:OutD"></A>
+<BR>
+<FONT COLOR="#000080">Output Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>out</STRONG></DT>
+<DD>[VECTOR]: the vector of wavelet coefficient according scales.
+
+<P>
+</DD>
+</DL> 
+
+<P>
+
+<H3><A NAME="SECTION000598300000000000000"></A>
+<A NAME="cmd:sarcwt2d:Exa"></A>
+<BR>
+<FONT COLOR="#000080">Example(s)</FONT>
+</H3>
+
+<P>
+
+<H3><A NAME="SECTION000598400000000000000"></A>
+<A NAME="cmd:sarcwt2d:Ref"></A>
+<BR>
+<FONT COLOR="#000080">References</FONT>
+</H3>
+
+<P>
+
+<H3><A NAME="SECTION000598500000000000000"></A>
+<A NAME="cmd:sarcwt2d:See"></A>
+<BR>
+<FONT COLOR="#000080">See Also</FONT>
+</H3>
+
+<P>
+<A HREF="node29.html#cmd:cwt2d">cwt2d</A>, <A HREF="node110.html#cmd:samcwt2d">samcwt2d</A>, <A HREF="#cmd:sarcwt2d">sarcwt2d</A>, <A HREF="node146.html#cmd:yashow_cwt2d">yashow_cwt2d</A>, <A HREF="node150.html#cmd:yashow_samcwt2d">yashow_samcwt2d</A>
+
+<P>
+
+<H3><A NAME="SECTION000598600000000000000">
+<FONT COLOR="#000080">Location</FONT></A>
+</H3>
+continuous/2d/sarcwt2d.m
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html4768"
+  HREF="node112.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html4764"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html4758"
+  HREF="node110.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html4766"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html4769"
+  HREF="node112.html">sdog1d</A>
+<B> Up:</B> <A NAME="tex2html4765"
+  HREF="node13.html">The commands in alphabetical</A>
+<B> Previous:</B> <A NAME="tex2html4759"
+  HREF="node110.html">samcwt2d</A>
+ &nbsp; <B>  <A NAME="tex2html4767"
+  HREF="node1.html">Contents</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+<yawtb-devel@sourceforge.net>
+</ADDRESS>
+</BODY>
+</HTML>

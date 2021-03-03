@@ -1,0 +1,190 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>normopts</TITLE>
+<META NAME="description" CONTENT="normopts">
+<META NAME="keywords" CONTENT="YAWTBReferenceManual">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="YAWTBReferenceManual.css">
+
+<LINK REL="next" HREF="node101.html">
+<LINK REL="previous" HREF="node99.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node101.html">
+</HEAD>
+
+<BODY  bgcolor="#ffffff">
+<!--Navigation Panel-->
+<A NAME="tex2html4550"
+  HREF="node101.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html4546"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html4540"
+  HREF="node99.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html4548"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html4551"
+  HREF="node101.html">pethat2d</A>
+<B> Up:</B> <A NAME="tex2html4547"
+  HREF="node13.html">The commands in alphabetical</A>
+<B> Previous:</B> <A NAME="tex2html4541"
+  HREF="node99.html">movgauss</A>
+ &nbsp; <B>  <A NAME="tex2html4549"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html4552"
+  HREF="node100.html#SECTION000587100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html4553"
+  HREF="node100.html#SECTION000587200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html4554"
+  HREF="node100.html#SECTION000587210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html4555"
+  HREF="node100.html#SECTION000587220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<BR>
+<LI><A NAME="tex2html4556"
+  HREF="node100.html#SECTION000587300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html4557"
+  HREF="node100.html#SECTION000587400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html4558"
+  HREF="node100.html#SECTION000587500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html4559"
+  HREF="node100.html#SECTION000587600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H2><A NAME="SECTION000587000000000000000"></A>
+<A NAME="cmd:normopts"></A>
+<BR>
+<FONT COLOR="#ff0000">normopts</FONT>
+</H2>
+
+<P>
+Reject to the end of list the options charaterized by a string.
+
+<P>
+
+<H3><A NAME="SECTION000587100000000000000"></A>
+<A NAME="cmd:normopts:Syn"></A>
+<BR>
+<FONT COLOR="#000080">Syntax</FONT>
+</H3>
+
+<P>
+[out] = normopts(list)
+
+<P>
+
+<H3><A NAME="SECTION000587200000000000000"></A>
+<A NAME="cmd:normopts:Des"></A>
+<BR>
+<FONT COLOR="#000080">Description</FONT>
+</H3>
+
+<P>
+Reject to the end of list 'list' the options
+charaterized by a string. So 1,2, 'Opt', OptVal, 4,3 will be 
+turn into 1,2,4,3, 'Opt', OptVal.
+
+<P>
+
+<H4><A NAME="SECTION000587210000000000000"></A>
+<A NAME="cmd:normopts:InpD"></A>
+<BR>
+<FONT COLOR="#000080">Input Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>list</STRONG></DT>
+<DD>[LIST] the input options list. 
+</DD>
+</DL> 
+
+<P>
+
+<H4><A NAME="SECTION000587220000000000000"></A>
+<A NAME="cmd:normopts:OutD"></A>
+<BR>
+<FONT COLOR="#000080">Output Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>out</STRONG></DT>
+<DD>[LIST] the output list.
+</DD>
+</DL> 
+
+<P>
+
+<H3><A NAME="SECTION000587300000000000000"></A>
+<A NAME="cmd:normopts:Exa"></A>
+<BR>
+<FONT COLOR="#000080">Example(s)</FONT>
+</H3>
+
+<P>
+<PRE>
+&gt;&gt; out = normopts({'sigma',6, 1,pi})\\
+out =
+     [1] [3.1416] 'sigma' [6]
+</PRE>
+
+<P>
+
+<H3><A NAME="SECTION000587400000000000000"></A>
+<A NAME="cmd:normopts:Ref"></A>
+<BR>
+<FONT COLOR="#000080">References</FONT>
+</H3>
+
+<P>
+
+<H3><A NAME="SECTION000587500000000000000"></A>
+<A NAME="cmd:normopts:See"></A>
+<BR>
+<FONT COLOR="#000080">See Also</FONT>
+</H3>
+
+<P>
+<A HREF="node69.html#cmd:getopts">getopts</A>
+
+<P>
+
+<H3><A NAME="SECTION000587600000000000000">
+<FONT COLOR="#000080">Location</FONT></A>
+</H3>
+tools/misc/normopts.m
+
+<P>
+<BR><HR>
+<ADDRESS>
+<yawtb-devel@sourceforge.net>
+</ADDRESS>
+</BODY>
+</HTML>

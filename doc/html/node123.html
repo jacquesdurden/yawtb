@@ -1,0 +1,249 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>vect</TITLE>
+<META NAME="description" CONTENT="vect">
+<META NAME="keywords" CONTENT="YAWTBReferenceManual">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="YAWTBReferenceManual.css">
+
+<LINK REL="next" HREF="node124.html">
+<LINK REL="previous" HREF="node122.html">
+<LINK REL="up" HREF="node13.html">
+<LINK REL="next" HREF="node124.html">
+</HEAD>
+
+<BODY  bgcolor="#ffffff">
+<!--Navigation Panel-->
+<A NAME="tex2html5004"
+  HREF="node124.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html5000"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html4994"
+  HREF="node122.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html5002"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html5005"
+  HREF="node124.html">whatin</A>
+<B> Up:</B> <A NAME="tex2html5001"
+  HREF="node13.html">The commands in alphabetical</A>
+<B> Previous:</B> <A NAME="tex2html4995"
+  HREF="node122.html">thedisk</A>
+ &nbsp; <B>  <A NAME="tex2html5003"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html5006"
+  HREF="node123.html#SECTION0005110100000000000000"><FONT COLOR="#000080">Syntax</FONT></A>
+<LI><A NAME="tex2html5007"
+  HREF="node123.html#SECTION0005110200000000000000"><FONT COLOR="#000080">Description</FONT></A>
+<UL>
+<LI><A NAME="tex2html5008"
+  HREF="node123.html#SECTION0005110210000000000000"><FONT COLOR="#000080">Input Data</FONT></A>
+<LI><A NAME="tex2html5009"
+  HREF="node123.html#SECTION0005110220000000000000"><FONT COLOR="#000080">Output Data</FONT></A>
+</UL>
+<BR>
+<LI><A NAME="tex2html5010"
+  HREF="node123.html#SECTION0005110300000000000000"><FONT COLOR="#000080">Example(s)</FONT></A>
+<LI><A NAME="tex2html5011"
+  HREF="node123.html#SECTION0005110400000000000000"><FONT COLOR="#000080">References</FONT></A>
+<LI><A NAME="tex2html5012"
+  HREF="node123.html#SECTION0005110500000000000000"><FONT COLOR="#000080">See Also</FONT></A>
+<LI><A NAME="tex2html5013"
+  HREF="node123.html#SECTION0005110600000000000000"><FONT COLOR="#000080">Location</FONT></A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H2><A NAME="SECTION0005110000000000000000"></A>
+<A NAME="cmd:vect"></A>
+<BR>
+<FONT COLOR="#ff0000">vect</FONT>
+</H2>
+
+<P>
+Compute vector of several shape (linear,exponential, ...)
+
+<P>
+
+<H3><A NAME="SECTION0005110100000000000000"></A>
+<A NAME="cmd:vect:Syn"></A>
+<BR>
+<FONT COLOR="#000080">Syntax</FONT>
+</H3>
+
+<P>
+[out] = vect(deb, fin, N [, typ] [, closeness])
+
+<P>
+
+<H3><A NAME="SECTION0005110200000000000000"></A>
+<A NAME="cmd:vect:Des"></A>
+<BR>
+<FONT COLOR="#000080">Description</FONT>
+</H3>
+
+<P>
+This function compute several kind of N points vectors of
+beginning 'deb' and end 'end'. It resumes the
+action of 'linspace' and 'logspace' and add some extra options.
+
+<P>
+
+<H4><A NAME="SECTION0005110210000000000000"></A>
+<A NAME="cmd:vect:InpD"></A>
+<BR>
+<FONT COLOR="#000080">Input Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>deb, fin</STRONG></DT>
+<DD>[REALS] extremities of the vector
+</DD>
+<DT><STRONG>N</STRONG></DT>
+<DD>[INTEGER] number of points inside the vector
+</DD>
+<DT><STRONG>typ</STRONG></DT>
+<DD>[STRING] the type of the vector.  It can be: 
+  <DL>
+<DT><STRONG>'log'</STRONG></DT>
+<DD>logarithmic spaced;
+  
+</DD>
+<DT><STRONG>'sqr'</STRONG></DT>
+<DD>squared spaced;
+  
+</DD>
+</DL>
+
+<P>
+</DD>
+<DT><STRONG>closeness</STRONG></DT>
+<DD>[STRING]: The type of interval to
+implement. Allowed type are:
+  <DL>
+<DT><STRONG>'close'</STRONG></DT>
+<DD>linear spaced with step = (fin-deb)/(N-1)
+  
+</DD>
+<DT><STRONG>'open'|'ropen'</STRONG></DT>
+<DD>linear spaced with step = (fin-deb)/N. Useful for
+    cases where 'fin' is identified to 'deb' (e.g. frequencies with
+    pi and -pi). It modelizes the right open interval [deb,fin[
+  
+</DD>
+<DT><STRONG>'lopen'</STRONG></DT>
+<DD>same than 'open' but modelizes the left-open interval
+  ]deb,fin].
+  
+</DD>
+<DT><STRONG>'rlopen'|'lropen'</STRONG></DT>
+<DD>modelizes the open interval ]deb,fin[.
+ 
+</DD>
+</DL>
+</DD>
+</DL> 
+
+<P>
+
+<H4><A NAME="SECTION0005110220000000000000"></A>
+<A NAME="cmd:vect:OutD"></A>
+<BR>
+<FONT COLOR="#000080">Output Data</FONT>
+</H4>
+
+<P>
+<DL>
+<DT><STRONG>out</STRONG></DT>
+<DD>[REAL VECTOR] output vector.
+</DD>
+</DL> 
+
+<P>
+
+<H3><A NAME="SECTION0005110300000000000000"></A>
+<A NAME="cmd:vect:Exa"></A>
+<BR>
+<FONT COLOR="#000080">Example(s)</FONT>
+</H3>
+
+<P>
+
+<H3><A NAME="SECTION0005110400000000000000"></A>
+<A NAME="cmd:vect:Ref"></A>
+<BR>
+<FONT COLOR="#000080">References</FONT>
+</H3>
+
+<P>
+
+<H3><A NAME="SECTION0005110500000000000000"></A>
+<A NAME="cmd:vect:See"></A>
+<BR>
+<FONT COLOR="#000080">See Also</FONT>
+</H3>
+
+<P>
+linspace, logspace
+
+<P>
+
+<H3><A NAME="SECTION0005110600000000000000">
+<FONT COLOR="#000080">Location</FONT></A>
+</H3>
+tools/misc/vect.m
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html5004"
+  HREF="node124.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html5000"
+  HREF="node13.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html4994"
+  HREF="node122.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html5002"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html5005"
+  HREF="node124.html">whatin</A>
+<B> Up:</B> <A NAME="tex2html5001"
+  HREF="node13.html">The commands in alphabetical</A>
+<B> Previous:</B> <A NAME="tex2html4995"
+  HREF="node122.html">thedisk</A>
+ &nbsp; <B>  <A NAME="tex2html5003"
+  HREF="node1.html">Contents</A></B> 
+<!--End of Navigation Panel-->
+<ADDRESS>
+<yawtb-devel@sourceforge.net>
+</ADDRESS>
+</BODY>
+</HTML>
