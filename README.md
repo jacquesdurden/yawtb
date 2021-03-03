@@ -16,9 +16,10 @@ This toolbox was under active development till about 2010 but **it is no longer 
 ## Documentation
 
 If you want to know more about the content and purpose of this Matlab toolbox, you can have a look to the following documents:
-- Some [slides](doc/slides/yawtb.pdf) describing the toolbox and its philosophy (2003)
-- [Yet Another Wavelet Toolbox Reference Guide](doc/tex/YAWTBReferenceManual.pdf) (2003, pdf)<br/>
-(remark: LaTeX sources are available in the repository) 
+- Some [slides](doc/slides/yawtb.pdf) describing the toolbox and its philosophy (HASSIP minischool, Marseille, 1-5 November 2003)
+- Yet Another Wavelet Toolbox Reference Guide (2003, pdf):
+  - [pdf](doc/tex/YAWTBReferenceManual.pdf) (LaTeX sources are available in the repository) 
+  - [html](https://htmlpreview.github.io/?https://github.com/jacquesdurden/yawtb/blob/main/doc/html/index.html)
 
 ## You wanna help?
 
