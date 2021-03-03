@@ -174,14 +174,29 @@ yawtb (=>:directories, ->:files)
     `=> sphere  
 ```
 
-
-
 ## Authors (alphabetical order)
 - Alain Coron 
 - Laurent Demanet
 - [Laurent Jacques](https://perso.uclouvain.be/laurent.jacques/) (corresponding author) 
 - Attilio Rivoldini 
 - Pierre Vandergheynst
+
+## News
+- **March 2nd, 2021**: YAWtb now hosted on GitHub and the full repository in now on Git; previous website is down and redirect here.
+- **December 15th 2011**: YAWtb hosted on  UCLouvain: The project is now hosted as an official page on the UCL server (UCLouvain.be server)
+- **April 15th 2007**: Ubuntu package available. Thanks to Vincent Boucher, a Ubuntu package of the YAWtb daily snapshot are available in the Download section.
+- **January 11th 2006**: The YAWtb website has moved. We are now hosted gracefully by the Telecommunication and Teledetection Laboratory (TELE). The team thanks the TELE lab for this kind support.
+- **June 14th 2002**: First (unstable) release of the YAWtb. The YAWtb developpers have the pleasure to announce you the creation of the first unstable release called YAWtb-0.1.0 However, this version has no tutorial and many programs may not work correctly. Go to the download section of this site to get YAWtb-0.1.0. All the comments, remarks, contributions are welcome in the YAWtb Wiki or in our mailing lists. Update (15th June): A separated archive for all the documentations (ps, pdf, html) has been created in the download section.
+- **June 4th 2002**: Adding a YAWtb Wiki. A Wiki has been added to the YAWtb site here (or click on "Yawtb Wiki Help Pages" in the left menu). This allows to create an html YAWtb tutorial based on a Wiki in complement of the existing YAWtb reference document. The main idea is that every pages of this tutorial may be modified by every one to add his own comments, remarks, experiments about the use of the yawtb.
+- **January 22th 2002**: Adding of a new CWT. The 3D CWT. A new CWT has been added to the toolbox, the three dimensional CWT. Screenshots and explanations can be found here.
+- **January 7th 2002**: The YAWtb user reference is done. The YAWtb project contains now a complete user reference thanks to the work of Alain. Functions are now described by categories and by alphabetical order here. A YAWtb tutorial will be realized soon and the first YAWtb stable release will follow.
+- **August 7th 2001**: Spherical Continous Wavelet Transform. The YAWtb (the cvs version) supports now the spherical continuous wavelet transform. You can find some screenshots here.
+- **July 20th 2001**: View CVS. Removing CVS Web and replacing it by View CVS. This choice gives better results in the CVS visualization (syntax highlightings).
+- **July 16th 2001**: CVS Web. The whole YAWtb's CVS repository can now be browsed through a CVSWeb? interface at the link CVS Web located in the left menu. (More information about the CVSWeb? cgi script here)
+- **July 13th 2001**: Web site updated. Adding one other example to the "Tests & Screenshots" section. There is now an explanation of how to compute multiple scales/angles with cwt2d.
+- **July 13th 2001**: Web site updated. Adding a "News" section to the YAWtb site. The aim of this section is to present the evolution of the YAWtb in all its aspects (source code, mathematical concepts, documentation, web site, ...)
+- **July 12th 2001**: Web site updated. The "Tests & Screenshots" section is now completed. It contains currently only a few Continuous Wavelet Transform (1D and 2D) examples.
+- **December 21th 2000**: the YAWtb is born. Creation of the YAWtb (Yet Another Wavelet toolbox) project. The developpers are A.Coron, L. Jacques, A. Rivoldini and P. Vandergheynst.
 
 ## Acknowledgements
 
